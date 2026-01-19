@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
@@ -12,7 +13,7 @@ import { productosMock } from '../data/mockData';
 import type { Product } from '../data/mockData';
 
 export default function DecoracionesPage() {
-  const productos = productosMock.filter(p => p.categoria === 'decoraciones');
+  const productos = productosMock.filter(p => p.categoria === 'Decoraciones');
 
   // Estados de filtros
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
@@ -25,7 +26,6 @@ export default function DecoracionesPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [windowWidth, setWindowWidth] = useState(0);
 
-  // Detectar tamaño de ventana
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -33,7 +33,6 @@ export default function DecoracionesPage() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Determinar items por página según el tamaño de pantalla
   const itemsPerPage = useMemo(() => {
     if (windowWidth === 0) return 9;
     if (windowWidth < 768) return 3;
@@ -41,22 +40,17 @@ export default function DecoracionesPage() {
     return 9;
   }, [windowWidth]);
 
-  // Extraer tipos únicos de productos
+  // Extraer tipos únicos
   const tiposUnicos = useMemo(() => {
     const tipos = new Set<string>();
     productos.forEach(p => {
       const nombreLower = p.nombre.toLowerCase();
-
-      if (nombreLower.includes('infantil') || nombreLower.includes('cumpleaños') || nombreLower.includes('princesa') || nombreLower.includes('super') || nombreLower.includes('unicornio') || nombreLower.includes('safari') || nombreLower.includes('frozen') || nombreLower.includes('dinosaurio') || nombreLower.includes('sirena') || nombreLower.includes('circo') || nombreLower.includes('granja')) {
+      if (nombreLower.includes('infantil') || nombreLower.includes('cumpleaños') || nombreLower.includes('princesa')) {
         tipos.add('Infantiles');
-      } else if (nombreLower.includes('boda') || nombreLower.includes('baby shower') || nombreLower.includes('comunión') || nombreLower.includes('quinceañera') || nombreLower.includes('gender reveal') || nombreLower.includes('bautizo') || nombreLower.includes('aniversario') || nombreLower.includes('graduación') || nombreLower.includes('soltera') || nombreLower.includes('pedida')) {
+      } else if (nombreLower.includes('boda') || nombreLower.includes('baby shower') || nombreLower.includes('quinceañera')) {
         tipos.add('Eventos Especiales');
       } else if (nombreLower.includes('corporativo') || nombreLower.includes('empresarial')) {
         tipos.add('Corporativos');
-      } else if (nombreLower.includes('navidad') || nombreLower.includes('halloween') || nombreLower.includes('año nuevo') || nombreLower.includes('día de muertos')) {
-        tipos.add('Festividades');
-      } else if (nombreLower.includes('romántica') || nombreLower.includes('cena')) {
-        tipos.add('Románticos');
       } else {
         tipos.add('Otros');
       }
@@ -64,17 +58,13 @@ export default function DecoracionesPage() {
     return Array.from(tipos).sort();
   }, [productos]);
 
-  // Manejar toggle de tipos
   const toggleType = (tipo: string) => {
     setSelectedTypes(prev =>
-      prev.includes(tipo)
-        ? prev.filter(t => t !== tipo)
-        : [...prev, tipo]
+      prev.includes(tipo) ? prev.filter(t => t !== tipo) : [...prev, tipo]
     );
     setCurrentPage(1);
   };
 
-  // Limpiar todos los filtros
   const clearAllFilters = () => {
     setSelectedTypes([]);
     setMinPrice('');
@@ -83,44 +73,35 @@ export default function DecoracionesPage() {
     setCurrentPage(1);
   };
 
-  // Función para extraer precio numérico
-  const extractPrice = (priceStr?: string): number => {
-    if (!priceStr) return 0;
-    const match = priceStr.match(/\d+/);
-    return match ? parseInt(match[0]) : 0;
-  };
-
   // Determinar tipo de producto
   const getProductType = (product: Product): string => {
     const nombreLower = product.nombre.toLowerCase();
-
-    if (nombreLower.includes('infantil') || nombreLower.includes('cumpleaños') || nombreLower.includes('princesa') || nombreLower.includes('super') || nombreLower.includes('unicornio') || nombreLower.includes('safari') || nombreLower.includes('frozen') || nombreLower.includes('dinosaurio') || nombreLower.includes('sirena') || nombreLower.includes('circo') || nombreLower.includes('granja')) {
+    if (nombreLower.includes('infantil') || nombreLower.includes('cumpleaños') || nombreLower.includes('princesa')) {
       return 'Infantiles';
-    } else if (nombreLower.includes('boda') || nombreLower.includes('baby shower') || nombreLower.includes('comunión') || nombreLower.includes('quinceañera') || nombreLower.includes('gender reveal') || nombreLower.includes('bautizo') || nombreLower.includes('aniversario') || nombreLower.includes('graduación') || nombreLower.includes('soltera') || nombreLower.includes('pedida')) {
-      return 'Eventos Especiales';
-    } else if (nombreLower.includes('corporativo') || nombreLower.includes('empresarial')) {
-      return 'Corporativos';
-    } else if (nombreLower.includes('navidad') || nombreLower.includes('halloween') || nombreLower.includes('año nuevo') || nombreLower.includes('día de muertos')) {
-      return 'Festividades';
-    } else if (nombreLower.includes('romántica') || nombreLower.includes('cena')) {
-      return 'Románticos';
     }
-
+    if (nombreLower.includes('boda') || nombreLower.includes('baby shower') || nombreLower.includes('quinceañera')) {
+      return 'Eventos Especiales';
+    }
+    if (nombreLower.includes('corporativo') || nombreLower.includes('empresarial')) {
+      return 'Corporativos';
+    }
     return 'Otros';
   };
 
-  // Filtrar productos
+  // Filtrar productos (precio ahora es number)
   const productosFiltrados = useMemo(() => {
     return productos.filter(producto => {
+      // Filtro por tipo
       if (selectedTypes.length > 0) {
         const productType = getProductType(producto);
         if (!selectedTypes.includes(productType)) return false;
       }
 
-      const price = extractPrice(producto.precio);
-      if (minPrice && price < parseInt(minPrice) * 1000) return false;
-      if (maxPrice && price > parseInt(maxPrice) * 1000) return false;
+      // Filtro por precio (ahora precio es number directamente)
+      if (minPrice && producto.precio < parseInt(minPrice) * 1000) return false;
+      if (maxPrice && producto.precio > parseInt(maxPrice) * 1000) return false;
 
+      // Filtro por búsqueda
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         return producto.nombre.toLowerCase().includes(searchLower) ||
@@ -131,24 +112,18 @@ export default function DecoracionesPage() {
     });
   }, [productos, selectedTypes, minPrice, maxPrice, searchTerm]);
 
-  // Calcular paginación
   const totalPages = Math.ceil(productosFiltrados.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const productosPaginados = productosFiltrados.slice(startIndex, endIndex);
 
-  // Scroll al top al cambiar de página
   const scrollToTop = () => {
     const catalogSection = document.getElementById('catalog-section');
     if (catalogSection) {
       const offset = 100;
       const elementPosition = catalogSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
@@ -157,12 +132,10 @@ export default function DecoracionesPage() {
     scrollToTop();
   };
 
-  // Reset página cuando cambian filtros
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, minPrice, maxPrice]);
 
-  // Componente de paginación
   const Pagination = () => {
     if (totalPages <= 1) return null;
 
@@ -171,19 +144,16 @@ export default function DecoracionesPage() {
       const showEllipsis = totalPages > 7;
 
       if (!showEllipsis) {
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
+        for (let i = 1; i <= totalPages; i++) pages.push(i);
       } else {
         if (currentPage <= 3) {
-          pages.push(1, 2, 3, 4, '...', totalPages);
+          pages.push(1, 2, 3, '...', totalPages);
         } else if (currentPage >= totalPages - 2) {
-          pages.push(1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+          pages.push(1, '...', totalPages - 2, totalPages - 1, totalPages);
         } else {
           pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
         }
       }
-
       return pages;
     };
 
@@ -213,9 +183,7 @@ export default function DecoracionesPage() {
               {page}
             </button>
           ) : (
-            <span key={index} className="px-2 text-gray-400">
-              {page}
-            </span>
+            <span key={index} className="px-2 text-gray-400">{page}</span>
           )
         ))}
 
@@ -242,18 +210,18 @@ export default function DecoracionesPage() {
             src="/banner-decoraciones.png"
             alt="Banner Decoraciones Vane"
             fill
-            className="object-cover object-center blur-[4px]"
+            className="object-cover object-center blur-[5px]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/90 via-[#FFD1DC]/80 via-[#B39DDB]/45 to-[#A0E7E5]/100" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/50 via-[#FFD1DC]/100 via-[#B39DDB]/55 to-[#A0E7E5]/50" />
 
           <div className="relative z-10 text-center px-4 max-w-4xl w-full">
             <ScrollReveal direction="down" delay={0.2}>
               <Image
                 src="/logo-decoraciones.jpeg"
                 alt="Logo Decoraciones Vane"
-                width={110}
-                height={115}
+                width={120}
+                height={120}
                 className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
               />
             </ScrollReveal>
@@ -262,14 +230,14 @@ export default function DecoracionesPage() {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
                 Decoraciones Vane
               </h1>
-              <p className="text-2xl md:text-3xl text-white mb-4 font-script drop-shadow-md">
+              <h2 className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                 Espacios que inspiran
-              </p>
+              </h2>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
-              <p className="text-base md:text-lg font-semibold text-white max-w-2xl mx-auto drop-shadow-md">
-                Decoración profesional para todo tipo de eventos. Hacemos realidad la celebración que imaginas.
+              <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
+                Decoración profesional para toda ocasión. Hacemos realidad la celebración que imaginas.
               </p>
             </ScrollReveal>
           </div>
@@ -306,9 +274,9 @@ export default function DecoracionesPage() {
                   />
                   <button
                     onClick={() => setMobileFiltersOpen(false)}
-                    className="w-full mt-6 bg-decoraciones-pink hover:bg-decoraciones-pink/80 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                    className="w-full mt-6 bg-decoraciones-pink hover:bg-decoraciones-pink/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
                   >
-                    Ver {productosFiltrados.length} decoraciones
+                    Ver {productosFiltrados.length} productos
                   </button>
                 </div>
               </div>
@@ -348,7 +316,6 @@ export default function DecoracionesPage() {
                   </div>
                 </ScrollReveal>
 
-                {/* Botón filtros móvil */}
                 <div className="lg:hidden mb-6">
                   <button
                     onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
@@ -376,23 +343,20 @@ export default function DecoracionesPage() {
                   </>
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center py-20 px-4 bg-gray-50/50 rounded-3xl border border-dashed border-gray-200">
-                    <div className="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center mb-6 animate-bounce-slow">
+                    <div className="w-24 h-24 bg-pink-100 rounded-full flex items-center justify-center mb-6">
                       <span className="text-5xl">🔍</span>
                     </div>
-
                     <h3 className="text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">
                       ¡Vaya! No encontramos coincidencias
                     </h3>
-
                     <p className="text-gray-500 max-w-md mx-auto mb-8 text-lg leading-relaxed">
                       No te preocupes, podemos crear la <span className="text-decoraciones-pink font-semibold">decoración personalizada</span> perfecta para tu evento.
                     </p>
                     <a
-                    
                       href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20cotizar%20una%20decoración%20para%20mi%20evento%20🎈"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-decoraciones-pink rounded-full hover:bg-decoraciones-pink/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-decoraciones-pink shadow-lg hover:shadow-pink-200/50"
+                      className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-decoraciones-pink rounded-full hover:bg-decoraciones-pink/90 shadow-lg"
                     >
                       <span className="mr-2">Contáctanos por WhatsApp</span>
                       <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -405,6 +369,7 @@ export default function DecoracionesPage() {
             </div>
           </div>
         </section>
+
 
         {/* CTA Final */}
         <section className="relative py-16 md:py-18 overflow-hidden">
@@ -483,7 +448,6 @@ export default function DecoracionesPage() {
           </div>
         </section>
       </main>
-
       <Footer />
       <WhatsAppButton />
     </>

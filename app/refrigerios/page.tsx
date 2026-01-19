@@ -12,7 +12,7 @@ import { productosMock } from '../data/mockData';
 import type { Product } from '../data/mockData';
 
 export default function RefrigeriosPage() {
-  const productos = productosMock.filter(p => p.categoria === 'refrigerios');
+  const productos = productosMock.filter(p => p.categoria === 'Refrigerios');
 
   // Estados de filtros
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
@@ -25,7 +25,6 @@ export default function RefrigeriosPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [windowWidth, setWindowWidth] = useState(0);
 
-  // Detectar tamaño de ventana
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -33,7 +32,6 @@ export default function RefrigeriosPage() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Determinar items por página según el tamaño de pantalla
   const itemsPerPage = useMemo(() => {
     if (windowWidth === 0) return 9;
     if (windowWidth < 768) return 3;
@@ -41,16 +39,16 @@ export default function RefrigeriosPage() {
     return 9;
   }, [windowWidth]);
 
-  // Extraer tipos únicos de productos
+  // Extraer tipos únicos
   const tiposUnicos = useMemo(() => {
     const tipos = new Set<string>();
     productos.forEach(p => {
       const nombreLower = p.nombre.toLowerCase();
       if (nombreLower.includes('infantil') || nombreLower.includes('kids') || nombreLower.includes('niño')) {
         tipos.add('Infantiles');
-      } else if (nombreLower.includes('empresarial') || nombreLower.includes('ejecutivo') || nombreLower.includes('corporativo') || nombreLower.includes('conferencia') || nombreLower.includes('capacitación') || nombreLower.includes('reunión') || nombreLower.includes('lanzamiento') || nombreLower.includes('networking')) {
+      } else if (nombreLower.includes('empresarial') || nombreLower.includes('ejecutivo') || nombreLower.includes('corporativo') || nombreLower.includes('conferencia')) {
         tipos.add('Empresariales');
-      } else if (nombreLower.includes('saludable') || nombreLower.includes('light') || nombreLower.includes('vegano') || nombreLower.includes('fitness') || nombreLower.includes('gluten') || nombreLower.includes('keto') || nombreLower.includes('deportivo') || nombreLower.includes('orgánico') || nombreLower.includes('diabético') || nombreLower.includes('detox') || nombreLower.includes('mediterráneo') || nombreLower.includes('lácteos')) {
+      } else if (nombreLower.includes('saludable') || nombreLower.includes('light') || nombreLower.includes('vegano')) {
         tipos.add('Saludables');
       } else if (nombreLower.includes('box lunch')) {
         tipos.add('Box Lunch');
@@ -63,17 +61,13 @@ export default function RefrigeriosPage() {
     return Array.from(tipos).sort();
   }, [productos]);
 
-  // Manejar toggle de tipos
   const toggleType = (tipo: string) => {
     setSelectedTypes(prev =>
-      prev.includes(tipo)
-        ? prev.filter(t => t !== tipo)
-        : [...prev, tipo]
+      prev.includes(tipo) ? prev.filter(t => t !== tipo) : [...prev, tipo]
     );
     setCurrentPage(1);
   };
 
-  // Limpiar todos los filtros
   const clearAllFilters = () => {
     setSelectedTypes([]);
     setMinPrice('');
@@ -82,44 +76,41 @@ export default function RefrigeriosPage() {
     setCurrentPage(1);
   };
 
-  // Función para extraer precio numérico
-  const extractPrice = (priceStr?: string): number => {
-    if (!priceStr) return 0;
-    const match = priceStr.match(/\d+/);
-    return match ? parseInt(match[0]) : 0;
-  };
-
   // Determinar tipo de producto
   const getProductType = (product: Product): string => {
     const nombreLower = product.nombre.toLowerCase();
-
     if (nombreLower.includes('infantil') || nombreLower.includes('kids') || nombreLower.includes('niño')) {
       return 'Infantiles';
-    } else if (nombreLower.includes('empresarial') || nombreLower.includes('ejecutivo') || nombreLower.includes('corporativo') || nombreLower.includes('conferencia') || nombreLower.includes('capacitación') || nombreLower.includes('reunión') || nombreLower.includes('lanzamiento') || nombreLower.includes('networking')) {
+    }
+    if (nombreLower.includes('empresarial') || nombreLower.includes('ejecutivo') || nombreLower.includes('corporativo') || nombreLower.includes('conferencia')) {
       return 'Empresariales';
-    } else if (nombreLower.includes('saludable') || nombreLower.includes('light') || nombreLower.includes('vegano') || nombreLower.includes('fitness') || nombreLower.includes('gluten') || nombreLower.includes('keto') || nombreLower.includes('deportivo') || nombreLower.includes('orgánico') || nombreLower.includes('diabético') || nombreLower.includes('detox') || nombreLower.includes('mediterráneo') || nombreLower.includes('lácteos')) {
+    }
+    if (nombreLower.includes('saludable') || nombreLower.includes('light') || nombreLower.includes('vegano')) {
       return 'Saludables';
-    } else if (nombreLower.includes('box lunch')) {
+    }
+    if (nombreLower.includes('box lunch')) {
       return 'Box Lunch';
-    } else if (nombreLower.includes('coffee break')) {
+    }
+    if (nombreLower.includes('coffee break')) {
       return 'Coffee Break';
     }
-
     return 'Otros';
   };
 
-  // Filtrar productos
+  // Filtrar productos (precio ahora es number)
   const productosFiltrados = useMemo(() => {
     return productos.filter(producto => {
+      // Filtro por tipo
       if (selectedTypes.length > 0) {
         const productType = getProductType(producto);
         if (!selectedTypes.includes(productType)) return false;
       }
 
-      const price = extractPrice(producto.precio);
-      if (minPrice && price < parseInt(minPrice) * 1000) return false;
-      if (maxPrice && price > parseInt(maxPrice) * 1000) return false;
+      // Filtro por precio (ahora precio es number directamente)
+      if (minPrice && producto.precio < parseInt(minPrice) * 1000) return false;
+      if (maxPrice && producto.precio > parseInt(maxPrice) * 1000) return false;
 
+      // Filtro por búsqueda
       if (searchTerm) {
         const searchLower = searchTerm.toLowerCase();
         return producto.nombre.toLowerCase().includes(searchLower) ||
@@ -130,24 +121,18 @@ export default function RefrigeriosPage() {
     });
   }, [productos, selectedTypes, minPrice, maxPrice, searchTerm]);
 
-  // Calcular paginación
   const totalPages = Math.ceil(productosFiltrados.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const productosPaginados = productosFiltrados.slice(startIndex, endIndex);
 
-  // Scroll al top al cambiar de página
   const scrollToTop = () => {
     const catalogSection = document.getElementById('catalog-section');
     if (catalogSection) {
       const offset = 100;
       const elementPosition = catalogSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
     }
   };
 
@@ -156,12 +141,10 @@ export default function RefrigeriosPage() {
     scrollToTop();
   };
 
-  // Reset página cuando cambian filtros
   useEffect(() => {
     setCurrentPage(1);
   }, [searchTerm, minPrice, maxPrice]);
 
-  // Componente de paginación
   const Pagination = () => {
     if (totalPages <= 1) return null;
 
@@ -170,9 +153,7 @@ export default function RefrigeriosPage() {
       const showEllipsis = totalPages > 7;
 
       if (!showEllipsis) {
-        for (let i = 1; i <= totalPages; i++) {
-          pages.push(i);
-        }
+        for (let i = 1; i <= totalPages; i++) pages.push(i);
       } else {
         if (currentPage <= 3) {
           pages.push(1, 2, 3, '...', totalPages);
@@ -182,7 +163,6 @@ export default function RefrigeriosPage() {
           pages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
         }
       }
-
       return pages;
     };
 
@@ -212,9 +192,7 @@ export default function RefrigeriosPage() {
               {page}
             </button>
           ) : (
-            <span key={index} className="px-2 text-gray-400">
-              {page}
-            </span>
+            <span key={index} className="px-2 text-gray-400">{page}</span>
           )
         ))}
 
@@ -261,15 +239,14 @@ export default function RefrigeriosPage() {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
                 Refrigerios Vane
               </h1>
-              <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+              <h2 className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                 Sabor en cada evento
-              </p>
+              </h2>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
               <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
-                Refrigerios deliciosos para fiestas infantiles, eventos corporativos
-                y reuniones. Calidad y puntualidad garantizada.
+                Refrigerios deliciosos para fiestas, eventos corporativos y reuniones. Calidad garantizada.
               </p>
             </ScrollReveal>
           </div>
@@ -308,7 +285,7 @@ export default function RefrigeriosPage() {
                     onClick={() => setMobileFiltersOpen(false)}
                     className="w-full mt-6 bg-vane-500 hover:bg-vane-600 text-white px-6 py-3 rounded-lg font-semibold transition-all"
                   >
-                    Ver {productosFiltrados.length} refrigerios
+                    Ver {productosFiltrados.length} productos
                   </button>
                 </div>
               </div>
@@ -348,7 +325,6 @@ export default function RefrigeriosPage() {
                   </div>
                 </ScrollReveal>
 
-                {/* Botón filtros móvil */}
                 <div className="lg:hidden mb-6">
                   <button
                     onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
@@ -376,14 +352,12 @@ export default function RefrigeriosPage() {
                   </>
                 ) : (
                   <div className="flex flex-col items-center justify-center text-center py-20 px-4 bg-gray-50/50 rounded-3xl border border-dashed border-gray-200">
-                    <div className="w-24 h-24 bg-vane-100 rounded-full flex items-center justify-center mb-6 animate-bounce-slow">
+                    <div className="w-24 h-24 bg-orange-100 rounded-full flex items-center justify-center mb-6">
                       <span className="text-5xl">🔍</span>
                     </div>
-
                     <h3 className="text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">
                       ¡Vaya! No encontramos coincidencias
                     </h3>
-
                     <p className="text-gray-500 max-w-md mx-auto mb-8 text-lg leading-relaxed">
                       No te preocupes, podemos crear el <span className="text-vane-600 font-semibold">refrigerio personalizado</span> que necesitas.
                     </p>
@@ -391,7 +365,7 @@ export default function RefrigeriosPage() {
                       href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20cotizar%20refrigerios%20para%20mi%20evento%20🍱"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-vane-500 rounded-full hover:bg-vane-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-vane-500 shadow-lg hover:shadow-vane-200/50"
+                      className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-vane-500 rounded-full hover:bg-vane-600 shadow-lg"
                     >
                       <span className="mr-2">Contáctanos por WhatsApp</span>
                       <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -404,6 +378,7 @@ export default function RefrigeriosPage() {
             </div>
           </div>
         </section>
+
 
         {/* CTA Final */}
         <section className="relative py-16 md:py-18 overflow-hidden">
@@ -482,7 +457,6 @@ export default function RefrigeriosPage() {
           </div>
         </section>
       </main>
-
       <Footer />
       <WhatsAppButton />
     </>
