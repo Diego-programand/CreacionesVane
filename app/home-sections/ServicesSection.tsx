@@ -4,6 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import { categorias } from '../data/mockData';
 
 export default function ServicesSection() {
+  // Imágenes de fondo locales
   const imagenes: Record<string, string> = {
     'detalles': '/categorias/anchetas.webp',
     'refrigerios': '/categorias/refrigerios.webp',
@@ -47,8 +48,15 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/65 transition-all duration-700"></div>
 
                 <div className="absolute inset-0 flex flex-col justify-center items-center p-6 2xl:p-8 text-white opacity-0 group-hover:opacity-100 transition-all duration-700">
-                  <div className="text-4xl 2xl:text-6xl mb-3 2xl:mb-6 transform scale-0 group-hover:scale-100 transition-transform duration-700">
-                    {categoria.icono}
+                  
+                  {/* ICONO COMO IMAGEN (LOCAL) */}
+                  <div className="relative w-20 h-20 2xl:w-28 2xl:h-28 mb-3 2xl:mb-6 transform scale-0 group-hover:scale-100 transition-transform duration-700">
+                    <Image
+                      src={categoria.icono} // Usa la ruta: /images/corazones.webp
+                      alt="Icono Categoría"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
 
                   <h3 className="text-xl 2xl:text-4xl font-bold mb-2 2xl:mb-3 drop-shadow-lg transform translate-y-8 group-hover:translate-y-0 transition-all duration-700 delay-100">
@@ -65,9 +73,6 @@ export default function ServicesSection() {
 
                   <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 2xl:px-6 py-2 2xl:py-3 rounded-full border-2 border-white/60 hover:bg-white/40 transition-all transform translate-y-8 group-hover:translate-y-0 duration-700 delay-300">
                     <span className="font-semibold text-xs 2xl:text-base">Ver catálogo completo</span>
-                    <svg className="w-3 2xl:w-5 h-3 2xl:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
                   </div>
                 </div>
               </Link>
@@ -95,8 +100,15 @@ export default function ServicesSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
                 <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6 text-white">
-                  <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">
-                    {categoria.icono}
+                  
+                  {/* ICONO COMO IMAGEN EN MÓVIL (LOCAL) */}
+                  <div className="relative w-16 h-16 mb-3 sm:mb-4">
+                    <Image
+                      src={categoria.icono}
+                      alt="Icono Categoría"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
 
                   <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-1.5 sm:mb-2 drop-shadow-lg">
@@ -111,11 +123,8 @@ export default function ServicesSection() {
                     {categoria.descripcion}
                   </p>
 
-                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border-2 border-white/60 hover:bg-white/40 transition-all self-start">
+                  <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border-2 border-white/60 self-start">
                     <span className="font-semibold text-xs sm:text-sm">Ver catálogo</span>
-                    <svg className="w-3.5 sm:w-4 h-3.5 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
                   </div>
                 </div>
               </Link>

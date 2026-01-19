@@ -511,14 +511,13 @@ export const productosMock: Product[] = [
     destacado: false,
   },
 ];
-
 export const categorias = [
   {
     id: 'detalles',
     nombre: 'Creaciones Vane',
     subtitulo: 'Cómplice que endulza',
     descripcion: 'Detalles de amor que alegran el corazón',
-    icono: '💝',
+    icono: '/images/corazon.svg',
     ruta: '/creaciones-vane',
   },
   {
@@ -526,7 +525,7 @@ export const categorias = [
     nombre: 'Refrigerios Vane',
     subtitulo: 'Sabor en cada evento',
     descripcion: 'Refrigerios para fiestas, eventos y reuniones',
-    icono: '🍱',
+    icono: '/images/refrigerio.svg', 
     ruta: '/refrigerios',
   },
   {
@@ -534,7 +533,7 @@ export const categorias = [
     nombre: 'Decoraciones Vane',
     subtitulo: 'Espacios que inspiran',
     descripcion: 'Decoración profesional para toda ocasión',
-    icono: '🎈',
+    icono: '/images/decoracion.svg',
     ruta: '/decoraciones',
   },
 ];
