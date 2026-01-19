@@ -1,7 +1,5 @@
 'use client';
 
-import { Product } from '@/app/data/mockData';
-
 export type FilterTheme = 'detalles' | 'refrigerios' | 'decoraciones';
 
 interface FilterConfig {
@@ -21,9 +19,9 @@ const THEME_CONFIGS: Record<FilterTheme, FilterConfig> = {
   detalles: {
     title: 'Filtros Detalles',
     searchLabel: 'Buscar producto',
-    placeholder: 'Ej: Ancheta, chocolates...',
+    placeholder: 'Ej: Ancheta, ramo, desayuno...',
     itemLabel: 'Tipo de detalle',
-    priceLabel: 'Rango de precio',
+    priceLabel: 'Rango de precio (miles COP)',
     accentClass: 'text-primary-600',
     borderClass: 'border-primary-100',
     ringClass: 'focus:ring-primary-500',
@@ -35,7 +33,7 @@ const THEME_CONFIGS: Record<FilterTheme, FilterConfig> = {
     searchLabel: 'Buscar refrigerio',
     placeholder: 'Ej: Box lunch, infantil...',
     itemLabel: 'Tipo de refrigerio',
-    priceLabel: 'Rango de precio (miles)',
+    priceLabel: 'Rango de precio (miles COP)',
     accentClass: 'text-vane-600',
     borderClass: 'border-vane-200',
     ringClass: 'focus:ring-vane-500',
@@ -47,7 +45,7 @@ const THEME_CONFIGS: Record<FilterTheme, FilterConfig> = {
     searchLabel: 'Buscar temática',
     placeholder: 'Ej: Boda, Grado...',
     itemLabel: 'Tipo de decoración',
-    priceLabel: 'Rango de precio',
+    priceLabel: 'Rango de precio (miles COP)',
     accentClass: 'text-decoraciones-pink',
     borderClass: 'border-decoraciones-pink-border/30',
     ringClass: 'focus:ring-decoraciones-pink',
@@ -160,6 +158,9 @@ export default function FilterSidebar({
             className={`w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 ${config.ringClass} text-sm`}
           />
         </div>
+        <p className="text-xs text-gray-500 mt-2">
+          Ejemplo: 50 = $50.000 COP
+        </p>
       </div>
 
       <div className="pt-4 border-t border-gray-100 text-center">
