@@ -1,0 +1,56 @@
+import Image from 'next/image';
+import ScrollReveal from '../components/ScrollReveal';
+
+export default function HeroSection() {
+    return (
+        <section className="relative h-[350px] flex items-center justify-center overflow-hidden">
+            <Image
+                src="/banner-detalles.png"
+                alt="Banner Creaciones Vane"
+                fill
+                className="object-cover object-center blur-[5px]"
+                priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary-600/80 via-primary-500/70 to-primary-700/80" />
+
+            <div className="relative z-10 text-center px-4 max-w-4xl w-full">
+                <ScrollReveal direction="down" delay={0.2}>
+                    <Image
+                        src="/logo.png"
+                        alt="Creaciones Vane Logo"
+                        width={120}
+                        height={120}
+                        className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
+                    />
+                </ScrollReveal>
+
+                <ScrollReveal direction="up" delay={0.4}>
+                    <p className="text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
+                        Desde 2019 creando momentos especiales con detalles de amor,
+                        refrigerios deliciosos y decoraciones que inspiran
+                    </p>
+                </ScrollReveal>
+
+                <ScrollReveal direction="up" delay={0.6}>
+                    <div className="grid-2 pd-3 gap-4 sm:flex sm:justify-center sm:gap-6">
+                        <a
+                            href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios%20💝"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block bg-white text-primary-600 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary-50 transition-all duration-300"
+                        >
+                            Contáctanos
+                        </a>
+                        <a  
+                            href="#location"
+                            className="inline-block bg-transparent border border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-white hover:text-primary-600 hover:border-primary-600 transition-all duration-300"
+                        >
+                            Como llegar
+                        </a>
+                    </div>
+                </ScrollReveal>
+
+            </div>
+        </section>
+    );
+}
