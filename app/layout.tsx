@@ -1,0 +1,30 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import PageTransition from "./components/PageTransition";
+
+export const metadata: Metadata = {
+  title: "Creaciones Vane - Detalles que enamoran",
+  description: "Anchetas, desayunos sorpresa, refrigerios y decoraciones para eventos en Medellín. Endulza momentos especiales desde 2019.",
+  keywords: ["anchetas", "desayunos sorpresa", "refrigerios", "decoraciones", "eventos", "Medellin"],
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="antialiased font-[Poppins,sans-serif] bg-white">
+        <PageTransition>
+          {children}
+        </PageTransition>
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  /* Fix para prevenir scroll horizontal en móvil */
+  #catalog-section {
+    overflow-x: hidden;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* AÑADE ESTO: */
+@layer utilities {
+  .section-container {
+    @apply relative w-full overflow-hidden;
+  }
+  
+  /* Asegurar que nada se salga del viewport */
+  .safe-area {
+    @apply max-w-full overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+
+  /* Botones reutilizables */
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg;
+  }
+
+  .btn-primary-outline {
+    @apply border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold px-6 py-3 rounded-lg transition-all;
+  }
+
+  .btn-whatsapp {
+    @apply bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md hover:shadow-lg;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300;
+  }
+
+  /* Gradientes de marca */
+  .gradient-primary {
+    @apply bg-gradient-to-br from-primary-400 to-primary-600;
+  }
+
+  .gradient-primary-light {
+    @apply bg-gradient-to-br from-primary-200 to-primary-400;
+  }
+
+  .gradient-primary-dark {
+    @apply bg-gradient-to-br from-primary-600 to-primary-900;
+  }
+
+  /* Overlays para imágenes */
+  .overlay-primary {
+    @apply bg-gradient-to-b from-primary-600/40 via-primary-600/50 to-primary-700/60;
+  }
+
+  .overlay-dark {
+    @apply bg-gradient-to-b from-black/30 to-black/50;
+  }
+
+  /* Textos con efectos */
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+  }
+
+  /* Animaciones personalizadas */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
