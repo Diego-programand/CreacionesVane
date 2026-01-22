@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Creaciones Vane - Detalles que Enamoran",
+    title: "Creaciones Vane - Complice que endulza tus momentos",
     description: "Expertos en crear sonrisas con desayunos sorpresa y detalles personalizados.",
     images: ["/og-image.jpg"],
   },
