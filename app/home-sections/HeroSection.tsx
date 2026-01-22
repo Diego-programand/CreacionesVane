@@ -7,38 +7,37 @@ export default function HeroSection() {
             <Image
                 src="/banner-detalles.webp"
                 alt="Banner Creaciones Vane"
+                priority={true}
+                fetchPriority="high"
+                loading="eager"
                 fill
                 className="object-cover object-center blur-[5px]"
-                priority
             />
             <div className="absolute inset-0 bg-gradient-to-b from-primary-600/80 via-primary-500/70 to-primary-700/80" />
 
             <div className="relative z-10 text-center px-4 max-w-4xl w-full">
-                <ScrollReveal direction="down" delay={0.2}>
-                    <Image
-                        src="/logo.png"
-                        alt="Creaciones Vane Logo"
-                        width={120}
-                        height={120}
-                        className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
-                    />
-                </ScrollReveal>
+                {/* QUITAMOS SCROLLREVEAL DEL LOGO */}
+                <Image
+                    src="/logo.png"
+                    alt="Creaciones Vane Logo"
+                    width={120}
+                    height={120}
+                    priority // Añade priority también al logo si es parte del LCP
+                    className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
+                />
 
-                <ScrollReveal direction="up" delay={0.2}>
-                    <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
-                        Creaciones Vane
-                    </h1>
-                    <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                        Cómplice que endulza
-                    </p>
-                </ScrollReveal>
+                {/* QUITAMOS SCROLLREVEAL DE LOS TÍTULOS */}
+                <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
+                    Creaciones Vane
+                </h1>
+                <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+                    Cómplice que endulza
+                </p>
 
-                <ScrollReveal direction="up" delay={0.2}>
-                    <p className="text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
-                        Desde 2019 creando momentos especiales con detalles de amor,
-                        refrigerios deliciosos y decoraciones que inspiran
-                    </p>
-                </ScrollReveal>
+                <p className="text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
+                    Desde 2019 creando momentos especiales con detalles de amor,
+                    refrigerios deliciosos y decoraciones que inspiran
+                </p>
                 <ScrollReveal direction="up" delay={0.2}>
                     <div className="grid grid-cols-2 p-3 gap-3 sm:flex sm:justify-center sm:gap-6">
                         <a
