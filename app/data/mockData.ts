@@ -53,7 +53,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ramo-002',
     nombre: 'Majestic Red: Ramo de Rosas Imperial',
-    descripcion: 'Impactante ramo de rosas rojas premium seleccionadas, decorado con delicadas mariposas doradas y una corona de cristal que simboliza la elegancia. Un detalle diseñado para cautivar y demostrar un amor profundo. Envuelto en cintas de seda roja, es el regalo perfecto para aniversarios o propuestas inolvidables.',
+    descripcion: 'Ramo de rosas rojas premium en Medellín que conquista corazones. Seleccionadas una por una, estas rosas de tallo largo vienen decoradas con mariposas doradas artesanales y una corona de cristal que simboliza amor eterno. Perfecto para aniversarios, propuestas de matrimonio o reconquistar ese amor especial. Incluye envoltura en seda roja de lujo y tarjeta personalizada. Ideal para regalar en El Poblado, Envigado o cualquier zona de Medellín. Domicilio en el área metropolitana.',
     precio: 135000,
     imagen: getCldUrl('ramo1_pt_2_gkjfsv'),
     categoria: 'Detalles',
@@ -62,7 +62,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-001',
     nombre: 'Ramillete Ternura Cow: Rosas y Peluche',
-    descripcion: '¡El regalo más tierno para un feliz cumpleaños! Este exclusivo ramillete combina 24 rosas blancas y negras premium con un adorable peluche de vaquita. Incluye una carta de mensaje personalizado y detalles temáticos. Ideal para quienes buscan un detalle original, divertido y lleno de dulzura que robe una sonrisa al instante.',
+    descripcion: 'Ramillete de cumpleaños original en Medellín con diseño de vaquita. Combina 24 rosas blancas y negras premium con peluche suave ultra tierno y carta personalizada. Este detalle único causa sensación en fiestas, celebraciones y sorpresas especiales. Perfecto para regalar a amigas, hermanas o esa persona que ama lo diferente. Entrega a domicilio en toda el área metropolitana de Medellín: Laureles, Belén, Sabaneta y más. ¡Un regalo que roba sonrisas y derrite corazones!',
     precio: 130000,
     imagen: getCldUrl('ramillete1_ieegys'),
     categoria: 'Detalles',
@@ -71,7 +71,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-002',
     nombre: 'Pasión Clásica: Ramillete de 24 Rosas',
-    descripcion: 'La elegancia hecha flores. Ramillete de 24 rosas rojas intensas, símbolo universal del amor, con un follaje decorativo fresco y una envoltura sofisticada en contraste blanco y negro. Su diseño minimalista y moderno resalta la belleza natural de cada flor. Perfecto para sorprender en cualquier momento del día.',
+    descripcion: 'Ramillete de 24 rosas rojas en Medellín, el símbolo universal del amor verdadero. Diseño minimalista y elegante con follaje fresco y envoltura sofisticada en blanco y negro. Ideal para San Valentín, aniversarios o simplemente para decir "te amo" de la forma más romántica. Cada rosa es seleccionada por su frescura y belleza. Envío express disponible en Medellín, Envigado, Itagüí y Sabaneta. El regalo perfecto para enamorar en cualquier ocasión especial.',
     precio: 100000,
     imagen: getCldUrl('ramillete3_ot9lnt'),
     categoria: 'Detalles',
@@ -80,7 +80,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-003',
     nombre: 'Sinfonía Rosada: Ramillete Dulce Amor',
-    descripcion: 'Un degradado de sentimientos en un solo ramo. Combinación de 36 rosas en tonos rosados, fucsia y blanco, que transmiten gratitud y admiración. Incluye follaje suave, una envoltura delicada en tonos pastel y una tarjeta para tu mensaje personalizado. Es el detalle ideal para celebrar a mamá o un amor joven y vibrante.',
+    descripcion: 'Arreglo floral con 36 rosas en degradé rosado, fucsia y blanco para Medellín. Un poema visual que transmite gratitud, admiración y amor incondicional. Incluye follaje delicado, envoltura en tonos pastel y tarjeta para mensaje personalizado. Perfecto para el Día de la Madre, cumpleaños de mamá o esa mujer especial que ilumina tu vida. Disponible con entrega en Medellín y municipios cercanos. ¡Haz que su día sea inolvidable con flores de la más alta calidad!',
     precio: 140000,
     imagen: getCldUrl('ramillete4_fob1od'),
     categoria: 'Detalles',
@@ -90,7 +90,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-004',
     nombre: 'Sol Radiante: Ramillete de Girasol y Esperanza',
-    descripcion: 'Ilumina el día de esa persona especial con este vibrante ramillete. Protagonizado por un girasol majestuoso y complementado con flores amarillas silvestres, follaje premium y una envoltura transparente moderna. Es el detalle perfecto para desear éxito, alegría o simplemente decir "estoy pensando en ti". Un regalo lleno de energía positiva.',
+    descripcion: 'Ramillete de girasoles vibrantes en Medellín que ilumina cualquier espacio. Diseño alegre con girasol protagonista, flores amarillas silvestres y follaje premium en envoltura moderna. Ideal para desear éxito en nuevos proyectos, pronta recuperación o simplemente alegrar el día. El girasol representa lealtad y energía positiva. Envío disponible en toda Medellín: Laureles, El Poblado, Envigado, Sabaneta. ¡El regalo perfecto para transmitir felicidad y buenos deseos!',
     precio: 50000,
     imagen: getCldUrl('ramillete5_x2asdp'),
     categoria: 'Detalles',
@@ -99,7 +99,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-005',
     nombre: 'Realeza Rosa: Ramillete Premium con Corona',
-    descripcion: 'Haz que se sienta como una reina. Este exclusivo ramillete combina 15 rosas en tonos rosado pastel con flores blancas de ensueño. Incluye una corona dorada brillante, una mariposa decorativa y un mensaje personalizado. Ideal para cumpleaños de abuelas, madres o esa persona que merece un trato real. Elegancia y delicadeza en cada pétalo.',
+    descripcion: 'Ramillete de rosas con corona dorada en Medellín para cumpleaños de reinas. 15 rosas rosado pastel con flores blancas de ensueño, corona brillante, mariposa decorativa y mensaje personalizado. El detalle perfecto para abuelas, madres o mujeres especiales que merecen sentirse como realeza. Elegancia y delicadeza en cada pétalo. Disponible para entrega en Medellín, Envigado, Itagüí y La Estrella. ¡Haz que se sienta única en su día especial!',
     precio: 120000,
     imagen: getCldUrl('ramillete6_kqsgtx'),
     categoria: 'Detalles',
@@ -108,7 +108,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-006',
     nombre: 'Burbuja de Amor: Ramillete con Globo Personalizado',
-    descripcion: 'Un regalo que flota sobre lo ordinario. Incluye 24 rosas premium en tonos suaves, acompañadas de un globo burbuja personalizado con un mensaje de "Te Amo" y un diseño de puntos sutil. Con su envoltura de diseño "Love" y un moño decorativo artesanal, es la máxima expresión de romanticismo para aniversarios o sorpresas inolvidables.',
+    descripcion: 'Ramo de rosas con globo burbuja personalizado en Medellín. 24 rosas premium en tonos románticos acompañadas de globo transparente con mensaje "Te Amo" y diseño de puntos elegante. Envoltura artesanal con diseño "Love" y moño decorativo. La expresión máxima del romanticismo para aniversarios, sorpresas de amor o reconquistar. Entrega disponible en toda el área metropolitana de Medellín. ¡Un detalle que flota sobre lo ordinario y conquista corazones!',
     precio: 120000,
     imagen: getCldUrl('ramillete7_qrilnq'),
     categoria: 'Detalles',
@@ -117,7 +117,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-007',
     nombre: 'Éxito y Dulzura: Ramillete Especial de Graduación',
-    descripcion: 'Celebra sus logros con un detalle a su altura. Este ramillete de 10 rosas en tonos fucsia y durazno viene decorado con mariposas vibrantes, follaje dorado y un tierno peluche de oso graduado con birrete. Incluye un listón personalizado para "La Graduada más Linda". El equilibrio perfecto entre orgullo, felicitación y ternura.',
+    descripcion: 'Ramillete de graduación en Medellín con oso y rosas elegantes. 10 rosas en tonos fucsia y durazno decoradas con mariposas vibrantes, follaje dorado y tierno peluche de oso graduado con birrete académico. Incluye listón personalizado "La Graduada Más Linda". Ideal para celebrar logros académicos, títulos universitarios o culminación de estudios. Envío disponible para universidades en Medellín: UdeA, EAFIT, UPB, CES. ¡Celebra el éxito con orgullo y ternura!',
     precio: 140000,
     imagen: getCldUrl('ramillete8_peijyf'),
     categoria: 'Detalles',
@@ -126,7 +126,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-008',
     nombre: 'Dulce Compañía: Ramillete Exótico con Peluche',
-    descripcion: 'Un detalle que lo tiene todo para enamorar. Combina 5 rosas premium con claveles seleccionados en un diseño compacto y armonioso. Incluye un tierno peluche de vaquita, una mariposa decorativa dorada y un globo festivo que eleva la sorpresa. Perfecto para aniversarios o para alegrar un día cualquiera con un gesto inolvidable.',
+    descripcion: 'Arreglo floral con peluche y globo en Medellín que enamora. Combina 5 rosas premium con claveles seleccionados en diseño compacto, peluche tierno de vaquita, mariposa dorada decorativa y globo festivo. Perfecto para aniversarios mensuales, fechas especiales o alegrar un día cualquiera con un gesto inolvidable. Disponible con entrega en Medellín, Envigado y Sabaneta. ¡Un detalle que tiene todo para cautivar corazones!',
     precio: 88000,
     imagen: getCldUrl('ramillete9_wnvws0'),
     categoria: 'Detalles',
@@ -135,7 +135,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-009',
     nombre: 'Logro Soñado: Ramillete Mini Graduación',
-    descripcion: 'El reconocimiento perfecto para un esfuerzo cumplido. Este ramillete cuenta con 5 rosas rojas vibrantes y claveles blancos, coronado por un tierno oso graduado con birrete. Incluye un elegante listón dorado personalizado con la frase "Para la Graduada más Linda", convirtiéndolo en un tesoro memorable de su gran día.',
+    descripcion: 'Mini ramillete de graduación en Medellín con oso graduado. 5 rosas rojas vibrantes con claveles blancos y osito con birrete académico. Incluye listón dorado personalizado "Para La Graduada Más Linda". El reconocimiento perfecto para graduaciones de bachillerato, pregrado o posgrado. Ideal para enviar a colegios y universidades en Medellín. Entrega en Medellin. ¡Un tesoro memorable que celebra el esfuerzo y los sueños cumplidos!',
     precio: 95000,
     imagen: getCldUrl('ramillete10_nfp8bu'),
     categoria: 'Detalles',
@@ -146,7 +146,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-001',
     nombre: 'Festín de Gratitud: Arreglo de Frutas y Rosas Premium',
-    descripcion: 'La combinación perfecta entre salud, belleza y afecto. Este imponente arreglo incluye 24 rosas rojas y naranjas de exportación, acompañadas de 6 variedades de frutas frescas seleccionadas (piña, manzanas, fresas y más). Incluye un mensaje personalizado y un oso de peluche ultra suave. Es el regalo ideal para dar las gracias o celebrar una recuperación con estilo.',
+    descripcion: 'Arreglo de frutas con flores en Medellín que combina salud y belleza. Incluye 24 rosas rojas y naranjas de exportación con 6 variedades de frutas frescas premium (piña, manzanas, fresas, uvas y más), mensaje personalizado y oso de peluche ultra suave. Ideal para dar las gracias, celebrar recuperaciones o enviar buenos deseos. Frutas seleccionadas diariamente en las mejores plazas de Medellín. Entrega refrigerada en El Poblado, Laureles, Envigado. ¡El regalo que nutre cuerpo y alma!',
     precio: 160000,
     imagen: getCldUrl('desayunoflorez1_t5v6wb'),
     categoria: 'Detalles',
@@ -155,7 +155,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-002',
     nombre: 'Dulce Despertar: Ramo de Frutas y Rosas',
-    descripcion: '¿Por qué elegir uno si puedes darle todo? Este imponente arreglo combina la pasión de 10 rosas rojas con la frescura de 13 variedades de frutas seleccionadas. Acompañado de un adorable patito de peluche con gafas y mensaje personalizado, es el detalle ideal para decir "recupérate pronto" o "feliz cumpleaños" con un toque de ternura y salud.',
+    descripcion: 'Desayuno sorpresa con frutas y flores en Medellín. Combina 10 rosas rojas pasión con 13 variedades de frutas frescas seleccionadas y adorable patito de peluche con gafas. Incluye mensaje personalizado. Ideal para decir "recupérate pronto", felicitar cumpleaños o simplemente enviar amor y salud. Preparado fresco cada mañana. Disponible con entrega en toda Medellín. ¡Dale todo en un solo detalle lleno de ternura y frescura!',
     precio: 160000,
     imagen: getCldUrl('desayunoflorez2_ibbt78'),
     categoria: 'Detalles',
@@ -164,7 +164,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-003',
     nombre: 'Celebración Real: Rosas, Baileys & Hershey\'s',
-    descripcion: 'Para los que brindan por la vida y el amor. Un exclusivo diseño en caja cilíndrica que incluye 17 rosas premium, una botella de Baileys para un brindis inolvidable, una chocolatina Hershey\'s y un tierno oso Lotso de peluche. Coronado con un globo de corazón metalizado, es la definición de un "Feliz Día" con clase y mucho sabor.',
+    descripcion: 'Ancheta con Baileys y chocolates en Medellín para celebraciones especiales. Diseño exclusivo en caja cilíndrica con 17 rosas premium, botella de Baileys Original Irish Cream, chocolatina Hershey\'s, oso Lotso de peluche y globo corazón metalizado. Ideal para cumpleaños, aniversarios o festejar logros importantes. El brindis perfecto con clase y dulzura. Entrega en diferentes zonas de Medellín: El Poblado, Manila, Envigado. ¡Un "Feliz Día" con sabor inolvidable!',
     precio: 175000,
     imagen: getCldUrl('desayunoflorez3_scaqwc'),
     categoria: 'Detalles',
@@ -173,7 +173,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-004',
     nombre: 'Reina de la Casa: Ramo Gourmet Primaveral',
-    descripcion: 'Ella se merece el mundo, comienza dándole la mañana más hermosa. Este ramo primaveral es un festival de color con rosas rojas, frutas tropicales (piña, manzana, papaya) y una selección de snacks premium como Ferrero Rocher, M&M y barquillos. Incluye un globo con mensaje "Para la Reina de la Casa" que hará latir su corazón con fuerza.',
+    descripcion: 'Desayuno sorpresa gourmet en Medellín para la reina del hogar. Ramo primaveral con rosas rojas, frutas tropicales frescas (piña, manzana, papaya) y snacks premium: Ferrero Rocher, M&M\'s, barquillos artesanales. Incluye globo con mensaje "Para la Reina de la Casa". Perfecto para Día de la Madre, cumpleaños de mamá o simplemente consentir a esa mujer que lo merece todo. Entrega disponible en toda Medellín. ¡Haz que su mañana sea tan hermosa como ella!',
     precio: 170000,
     imagen: getCldUrl('desayunoflorez4_qgawll'),
     categoria: 'Detalles',
@@ -182,7 +182,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-005',
     nombre: 'Elegancia: Ramo Hermoso Floral',
-    descripcion: 'La sofisticación hecha detalle. Cajas de madera artesanal que equilibran la sobriedad del follaje verde con el romance de las rosas rojas. Incluye frutas frescas y snacks de barquillos Piazza, ideal para un gesto corporativo elegante o para sorprender a esa persona con gustos refinados que valora la armonía y la naturaleza.',
+    descripcion: 'Arreglo floral corporativo elegante en Medellín con caja de madera artesanal. Equilibrio perfecto entre follaje verde sobrio y romance de rosas rojas. Incluye frutas frescas y barquillos Piazza gourmet. Ideal para regalos corporativos, agradecimientos empresariales o sorprender personas con gustos refinados que valoran la armonía natural. Perfecto para oficinas en El Poblado, Laureles o zona corporativa de Medellín. ¡La sofisticación hecha detalle que habla muy bien de quien lo envía!',
     precio: 120000,
     imagen: getCldUrl('desayunoflorez5_yrgpt6'),
     categoria: 'Detalles',
@@ -191,7 +191,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-006',
     nombre: 'Amor Infinito: Explosión Tropical y Stitch',
-    descripcion: 'Un detalle tan vibrante como tu amor. Este arreglo tropical es una obra de arte con rosas en degradé fucsia y lila, flores de relleno blancas y un toque de champaña JP. Chenet para celebrar. Lo acompaña un tierno peluche de Stitch y un imponente globo burbuja personalizado con la frase "Te Amo". Diseñado para quienes no temen expresar sus sentimientos en grande.',
+    descripcion: 'Ancheta de amor con Stitch y champaña en Medellín. Arreglo tropical vibrante con rosas en degradé fucsia y lila, flores blancas de relleno, botella de champaña JP Chenet, peluche oficial de Stitch y globo burbuja gigante personalizado "Te Amo". Diseñado para quienes expresan sentimientos en grande. Ideal para aniversarios, reconciliaciones o declaraciones de amor. Entrega disponible en toda Medellín. ¡Un detalle tan vibrante como tu amor eterno!',
     precio: 190000,
     imagen: getCldUrl('desayunoflorez6_ow4bmm'),
     categoria: 'Detalles',
@@ -200,7 +200,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-007',
     nombre: 'Amanecer Dorado: Arreglo de Girasoles y Baileys',
-    descripcion: 'Para los que iluminan tu vida como el sol. Este imponente arreglo cuenta con 12 girasoles radiantes, símbolos de lealtad y alegría, acompañados de una botella de Baileys para un brindis dulce. Incluye una selección premium de chocolates (MontBlanc, Ferrero Rocher, Jet), globos metalizados y mariposas doradas. Un regalo diseñado para dejar una huella imborrable en aniversarios o fechas memorables.',
+    descripcion: 'Ancheta de girasoles con Baileys en Medellín para celebraciones radiantes. Incluye 12 girasoles frescos (símbolo de lealtad y alegría), botella de Baileys Original, chocolates premium (MontBlanc, Ferrero Rocher, Jet), globos metalizados y mariposas doradas decorativas. Perfecto para cumpleaños, aniversarios o fechas memorables. Ideal para quienes iluminan tu vida como el sol. Entrega en Medellín y área metropolitana. ¡Un regalo diseñado para dejar huella imborrable en corazones agradecidos!',
     precio: 190000,
     imagen: getCldUrl('desayunoflorez7_spd5cb'),
     categoria: 'Detalles',
@@ -209,7 +209,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-008',
     nombre: 'Jardín de Amoroso: Girasoles, Rosas y Globos',
-    descripcion: 'La combinación perfecta entre la fuerza del girasol y la delicadeza de la rosa roja. Este exuberante arreglo floral se eleva con tres globos premium: un globo burbuja personalizado y dos globos de "Feliz Cumpleaños" y "Te Amo". Acompañado de frutas frescas y un follaje verde vibrante, es el mensajero ideal para expresar los sentimientos más profundos en una gran celebración.',
+    descripcion: 'Arreglo floral con globos en Medellín para grandes celebraciones. Combina fuerza de girasoles con delicadeza de rosas rojas. Incluye tres globos premium: burbuja personalizado, "Feliz Cumpleaños" y "Te Amo". Acompañado de frutas frescas y follaje verde vibrante. El mensajero ideal para expresar sentimientos profundos en cumpleaños, aniversarios o fechas especiales. Disponible con entrega en toda Medellín. ¡Naturaleza y amor en un solo detalle exuberante!',
     precio: 105000,
     imagen: getCldUrl('desayunoflorez8_hdd08q'),
     categoria: 'Detalles',
@@ -218,7 +218,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-009',
     nombre: 'Abrazo de Rosas: Arreglo Amor con Peluche y Chocolates',
-    descripcion: 'Más que un ramo, es una experiencia de ternura. Un diseño vertical único donde rosas rojas de tallo largo rodean un suave oso de peluche que sostiene una elegante caja de chocolates Ferrero Rocher en forma de corazón. Adornado con follaje tipo helecho y flores de relleno blancas, es el detalle "destronador" para conquistar o reafirmar un amor puro.',
+    descripcion: 'Arreglo de rosas con chocolates Ferrero en Medellín. Diseño vertical único donde rosas rojas de tallo largo abrazan oso de peluche suave que sostiene caja corazón de Ferrero Rocher. Decorado con follaje helecho y flores blancas de relleno. El detalle "destronador" para conquistar, reconquistar o reafirmar amor puro. Ideal para San Valentín, aniversarios o sorpresas románticas. Entrega express disponible en Medellín. ¡Más que un ramo, es una experiencia de ternura inolvidable!',
     precio: 118000,
     imagen: getCldUrl('desayunoflorez9_falawe'),
     categoria: 'Detalles',
@@ -227,7 +227,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-016',
     nombre: 'Jardín de Gala: Explosión de Girasoles',
-    descripcion: 'Para cuando las palabras no bastan y quieres regalar el mundo entero. Este imponente arreglo Deluxe combina la energía de los girasoles con la pasión de las frutas frescas premium en una base artesanal. Decorado con frutas frescas seleccionadas, una tarjeta personalizada y un espectacular globo de "Feliz Cumpleaños", es una obra de arte floral que llenará cualquier espacio de luz, color y gratitud.',
+    descripcion: 'Arreglo Deluxe de girasoles con frutas en Medellín. Combina energía de girasoles radiantes con frutas frescas premium en base artesanal de madera. Decorado con frutas de temporada, tarjeta personalizada y globo espectacular "Feliz Cumpleaños". Una obra de arte floral que llena espacios de luz, color y gratitud. Ideal para cumpleaños especiales, celebraciones grandes o cuando las palabras no bastan. Entrega en toda Medellín. ¡Regala el mundo entero en un solo detalle imponente!',
     precio: 175000,
     imagen: getCldUrl('desayunoflorez16_d2qo30'),
     categoria: 'Detalles',
@@ -238,7 +238,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-001',
     nombre: 'Explosión de Ternura: Edición Capibara Infantil',
-    descripcion: 'Celebra la dulzura con nuestro desayuno infantil temática de Capibara. Esta ancheta única incluye un peluche ultra suave, deliciosos snacks seleccionados, bebidas refrescantes y un imponente globo burbuja personalizado. Decorada con mariposas doradas y un arco orgánico de globos, es el regalo perfecto para derretir el corazón de esa persona especial en su cumpleaños.',
+    descripcion: 'Desayuno sorpresa infantil de Capibara en Medellín. Ancheta temática única con peluche ultra suave, snacks seleccionados para niños, bebidas refrescantes y globo burbuja personalizado gigante. Decorada con mariposas doradas y arco orgánico de globos. El regalo perfecto para cumpleaños infantiles que derrite corazones. Disponible para entrega en colegios y casas de Medellín, Envigado, Sabaneta. ¡Celebra la dulzura de la infancia con un detalle que causa sensación!',
     precio: 150000,
     imagen: getCldUrl('ancheta1_njae6z'),
     categoria: 'Detalles',
@@ -247,7 +247,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-002',
     nombre: 'Mundo Rosa: Especial Hello Kitty',
-    descripcion: 'Haz realidad el sueño de cualquier fan con esta espectacular ancheta de Hello Kitty. Incluye un peluche original, variedad de dulces, jugos y un diseño de globos en tonos fucsia y blanco que roban miradas. Ideal para niñas y coleccionistas que aman el detalle y la delicadeza. ¡Un regalo que se convierte en un recuerdo inolvidable!',
+    descripcion: 'Ancheta de Hello Kitty en Medellín para fanáticas soñadoras. Incluye peluche oficial Hello Kitty, variedad de dulces importados, jugos premium y diseño de globos en tonos fucsia y blanco que roban miradas. Ideal para niñas, adolescentes y coleccionistas que aman el detalle y la delicadeza. Perfecta para cumpleaños temáticos, celebraciones kawaii o sorpresas especiales. Entrega en toda Medellín. ¡Un regalo que se convierte en recuerdo inolvidable del día más feliz!',
     precio: 150000,
     imagen: getCldUrl('ancheta2_i7wvef'),
     categoria: 'Detalles',
@@ -256,7 +256,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-003',
     nombre: 'Aventura Tropical: Moana Edition',
-    descripcion: '¡Lleva la magia del océano a su celebración! Nuestra ancheta de Moana destaca por su impresionante arco circular de globos azul cielo con mariposas monarca. Incluye una selección premium de snacks, postres decorados y un globo de cristal con mensaje personalizado. Perfecta para quienes buscan un detalle temático impactante y lleno de color.',
+    descripcion: 'Desayuno sorpresa de Moana en Medellín. Ancheta temática con arco circular impresionante de globos azul cielo decorado con mariposas monarca. Incluye snacks premium, postres decorados artesanalmente y globo de cristal con mensaje personalizado. Perfecta para fans de Disney, cumpleaños temáticos o quienes buscan detalle impactante lleno de color océano. Entrega disponible en Medellín y municipios. ¡Lleva la magia del mar a su celebración de ensueño!',
     precio: 140000,
     imagen: getCldUrl('ancheta3_gdta3g'),
     categoria: 'Detalles',
@@ -265,7 +265,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-004',
     nombre: 'Noche Mágica: Kuromi Style',
-    descripcion: 'Para las personalidades con más estilo, llega nuestra ancheta de Kuromi. Con una estética rebelde en tonos morados y negros, este detalle incluye un peluche de alta calidad, dulces importados y un globo metalizado gigante del número de tu elección. Es la combinación perfecta entre lo tierno y lo cool para un cumpleaños inolvidable.',
+    descripcion: 'Ancheta de Kuromi en Medellín para personalidades con estilo único. Estética rebelde en tonos morados y negros que causa impacto. Incluye peluche Kuromi de alta calidad, dulces importados gourmet y globo metalizado gigante del número personalizado. La combinación perfecta entre tierno y cool para cumpleaños inolvidables. Ideal para adolescentes, jóvenes y fans de Sanrio. Entrega express en Medellín. ¡El detalle que refleja personalidad auténtica y estilo inconfundible!',
     precio: 160000,
     imagen: getCldUrl('ancheta4_m4yrqu'),
     categoria: 'Detalles',
@@ -274,7 +274,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-005',
     nombre: 'Ohana: Especial Lilo & Stitch',
-    descripcion: 'Porque la familia nunca se olvida, regala esta vibrante ancheta inspirada en el mundo de Lilo & Stitch. Colores tropicales, globos decorados a mano con arte de tablas de surf y una selección de golosinas que encantará a chicos y grandes. Un detalle lleno de alegría y frescura tropical que celebra la unión y el amor.',
+    descripcion: 'Ancheta de Lilo & Stitch en Medellín que celebra la familia. Colores tropicales vibrantes, globos decorados a mano con arte de tablas de surf y selección de golosinas que encanta a todas las edades. Un detalle lleno de alegría hawaiana y frescura tropical que celebra la unión, el amor familiar y la amistad verdadera. Ideal para cumpleaños, Baby Showers o celebraciones familiares. Entrega en Medellín. ¡Porque Ohana significa familia, y la familia nunca se olvida!',
     precio: 150000,
     imagen: getCldUrl('ancheta5_pqt7ls'),
     categoria: 'Detalles',
@@ -283,16 +283,16 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-006',
     nombre: 'Amanecer Galáctico con Stitch',
-    descripcion: '¡Haz que su mañana sea de otro planeta! Este desayuno temático de Stitch es pura alegría azul. Incluye un tierno peluche original, globos metalizados con destellos estelares y una deliciosa combinación de snacks y bebidas frescas. Es el detalle ideal para fans de Lilo & Stitch que buscan una sorpresa llena de color y ternura desde temprano.',
+    descripcion: 'Desayuno sorpresa de Stitch en Medellín azul radiante. Incluye peluche oficial Stitch, globos metalizados con destellos estelares y deliciosa combinación de snacks y bebidas frescas. El detalle ideal para fans de Lilo & Stitch que merecen despertar con sorpresa llena de color y ternura espacial. Perfecto para cumpleaños matutinos, sorpresas románticas o celebraciones especiales. Entrega disponible en toda Medellín. ¡Haz que su mañana sea de otro planeta con amor galáctico!',
     precio: 135000,
     imagen: getCldUrl('ancheta6_kebhuz'),
     categoria: 'Detalles',
-    destacado: false, // Lo marqué como true por el impacto visual del peluche y globos
+    destacado: false,
   },
   {
     id: 'det-anc-007',
     nombre: 'Mi Primera Gran Sorpresa: Pocoyó',
-    descripcion: 'Diseñado para los más pequeñitos de la casa. Este desayuno infantil de Pocoyó transforma el despertar en una fiesta. Viene cargado de colores primarios, globos juguetones y una selección de alimentos nutritivos y deliciosos que les encantarán. Personalizado con el nombre del cumpleañero para que se sienta el verdadero protagonista de su día.',
+    descripcion: 'Desayuno infantil de Pocoyó en Medellín para los más pequeñitos. Diseñado especialmente para primeros cumpleaños y edades tempranas. Cargado de colores primarios estimulantes, globos juguetones seguros y selección de alimentos nutritivos y deliciosos. Personalizado con nombre del cumpleañero para que se sienta protagonista de su día. Ideal para celebraciones en casa o jardines infantiles de Medellín. ¡Transforma el despertar en fiesta de alegría y diversión!',
     precio: 55000,
     imagen: getCldUrl('ancheta7_z0aa3b'),
     categoria: 'Detalles',
@@ -301,7 +301,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-008',
     nombre: 'Despertar Natural: Girasoles & Fruta',
-    descripcion: 'La elegancia de la naturaleza en su mesa. Este desayuno premium combina la energía de los girasoles y la pasión de las rosas rojas con una selección de frutas frescas de temporada, yogurt y panadería artesanal. Un detalle sofisticado y saludable, coronado con un globo personalizado que lleva bendiciones y amor en cada palabra.',
+    descripcion: 'Desayuno saludable con girasoles en Medellín. Combina energía de girasoles frescos y pasión de rosas rojas con frutas frescas de temporada, yogurt griego y panadería artesanal. Detalle sofisticado y nutritivo, coronado con globo personalizado que lleva bendiciones y amor. Ideal para personas que cuidan su salud, deportistas o quienes valoran bienestar. Perfecto para recuperaciones, cumpleaños saludables. Entrega refrigerada en Medellín. ¡La elegancia de la naturaleza directo a su mesa!',
     precio: 100000,
     imagen: getCldUrl('ancheta8_t3ftdl'),
     categoria: 'Detalles',
@@ -310,25 +310,25 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-009',
     nombre: 'Banquete Romántico: Edition Deluxe',
-    descripcion: 'Para el amor de tu vida, solo lo mejor. Este es nuestro desayuno más completo y apasionado: un espectacular bouquet de rosas rojas frescas, chocolates Ferrero Rocher, frutas seleccionadas y waffles con Nutella. Acompañado de globos en tonos rose gold (oro rosa) y rojo, es la declaración de amor perfecta para aniversarios o mañanas inolvidables.',
+    descripcion: 'Desayuno sorpresa romántico en Medellín más completo y apasionado. Espectacular bouquet de rosas rojas frescas, chocolates Ferrero Rocher, frutas premium seleccionadas y waffles gourmet con Nutella. Acompañado de globos en tonos rose gold (oro rosa) y rojo pasión. La declaración de amor perfecta para aniversarios, San Valentín o mañanas que quieres que sean inolvidables. Entrega disponible en toda Medellín. ¡Para el amor de tu vida, solo lo mejor de Medellín!',
     precio: 145000,
     imagen: getCldUrl('ancheta9_kizbr5'),
     categoria: 'Detalles',
-    destacado: false, // Por la cantidad de elementos y las rosas, suele ser el favorito para parejas
+    destacado: false,
   },
   {
     id: 'det-anc-010',
     nombre: 'Desayuno "Te Adoro" con Rosas & Pasión',
-    descripcion: 'Diseñado para quienes no temen decir lo que sienten. Este imponente desayuno incluye un bouquet de rosas rojas frescas, chocolates Ferrero Rocher y un globo metalizado de gran formato con la frase "Te Adoro". Personalizado con un mensaje que llega al alma y detalles en rojo vibrante, es la sorpresa definitiva para reconquistar o celebrar un amor intenso.',
+    descripcion: 'Desayuno romántico con rosas en Medellín para declaraciones de amor. Diseñado para quienes no temen decir lo que sienten con intensidad. Incluye bouquet de rosas rojas frescas, chocolates Ferrero Rocher y globo metalizado de gran formato con frase "Te Adoro". Personalizado con mensaje que llega al alma y detalles en rojo vibrante. La sorpresa definitiva para reconquistar, enamorar o celebrar amor intenso. Entrega express en Medellín. ¡Di "Te Adoro" de la forma más imponente!',
     precio: 190000,
     imagen: getCldUrl('ancheta10_vs00xg'),
     categoria: 'Detalles',
-    destacado: false, // Por su alto impacto emocional y elegancia
+    destacado: false,
   },
   {
     id: 'det-anc-011',
     nombre: 'Amanecer de Reina: Rose Gold & Corona',
-    descripcion: 'Haz que se sienta como la realeza desde el primer minuto del día. Este desayuno destaca por su sofisticación en tonos rosa y oro rosa, incluyendo una corona decorativa, globo de burbuja y una selección gourmet de yogurt, frutas y repostería fina. Es el regalo ideal para una mujer que merece ser consentida con elegancia y distinción en su cumpleaños.',
+    descripcion: 'Desayuno de reina en Medellín con elegancia rose gold. Sofisticación premium en tonos rosa y oro rosa incluyendo corona decorativa dorada, globo de burbuja personalizado y selección gourmet de yogurt griego, frutas exóticas y repostería fina artesanal. El regalo ideal para mujer que merece ser consentida con elegancia y distinción en su cumpleaños. Perfecto para jefas, amigas especiales, hermanas. Entrega en diferentes zonas de Medellín. ¡Haz que se sienta realeza desde el primer minuto del día!',
     precio: 145000,
     imagen: getCldUrl('ancheta11_wcr0ih'),
     categoria: 'Detalles',
@@ -337,7 +337,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-anc-012',
     nombre: 'Tributo de Amor: Especial para Mamá',
-    descripcion: 'Porque no hay amor como el de ella. Este desayuno es una caricia al corazón, decorado con rosas delicadas, globos dorados y una carta de agradecimiento que le recordará lo especial que es. Incluye delicias artesanales, jugos naturales y una presentación impecable en madera. El detalle perfecto para decirle "Gracias, Mamá" de la manera más dulce y elegante.',
+    descripcion: 'Desayuno para mamá en Medellín que es caricia al corazón. Decorado con rosas delicadas frescas, globos dorados elegantes y carta de agradecimiento conmovedora que le recordará lo especial que es. Incluye delicias artesanales caseras, jugos naturales y presentación impecable en madera. El detalle perfecto para Día de la Madre, cumpleaños de mamá o simplemente decirle "Gracias, Mamá" de la manera más dulce y elegante. Entrega disponible en toda Medellín. ¡Porque no hay amor como el de ella!',
     precio: 140000,
     imagen: getCldUrl('ancheta12_ljru12'),
     categoria: 'Detalles',
@@ -348,7 +348,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-001',
     nombre: 'Refrigerio Chispas de queso',
-    descripcion: 'Sanduche de jamón, queso, lechuga y salsas de la casa. El refrierio clásico que encanta los momentos más especiales, ideal para eventos familiares infantiles.',
+    descripcion: 'Refrigerio para eventos infantiles en Medellín. Sándwich de jamón premium, queso fresco, lechuga crocante y salsas caseras de la casa. El refrigerio clásico que nunca falla en fiestas de cumpleaños, primeras comuniones y eventos familiares. Empaque individual higiénico y colorido. Ideal para fiestas en salones de Medellín, colegios, jardines infantiles. Pedido mínimo 20 unidades. Entrega puntual garantizada. ¡El sabor que encanta a niños y tranquiliza a padres!',
     precio: 6000,
     imagen: getCldUrl('refrigerio10_jvg3nv'),
     categoria: 'Refrigerios',
@@ -357,7 +357,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-002',
     nombre: 'Refrigerio Chispas de queso',
-    descripcion: 'Sanduche de jamón, queso, lechuga y salsas de la casa. El refrierio clásico que nunca falla en los momentos inolvidables.',
+    descripcion: 'Refrigerio económico para eventos en Medellín. Sándwich preparado con jamón de primera, queso fresco del día, lechuga y salsas artesanales de la casa. El refrigerio clásico que nunca decepciona en momentos inolvidables: cumpleaños, bautizos, reuniones familiares. Empaque higiénico individual. Disponible para eventos en toda Medellín y área metropolitana. Pedido mínimo 15 unidades. ¡Calidad y frescura a precio justo para tu celebración!',
     precio: 7000,
     imagen: getCldUrl('refrigerio2_d5sdy7'),
     categoria: 'Refrigerios',
@@ -366,7 +366,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-003',
     nombre: 'Refrigerio Vitalidad: Fruta & Néctar Natural',
-    descripcion: 'Una opción refrescante que incluye una porción generosa de frutas tropicales picadas (mango y sandía), acompañada de un néctar de fruta artesanal en botella de cristal y un sándwich clásico de jamón y queso. Es el equilibrio perfecto entre frescura y sabor; ese toque secreto que mantendrá la energía de tus invitados al máximo y demostrará tu atención a cada detalle del evento.',
+    descripcion: 'Refrigerio saludable con frutas en Medellín. Opción refrescante premium con porción generosa de frutas tropicales picadas frescas (mango, sandía, melón), néctar de fruta artesanal en botella de vidrio y sándwich clásico de jamón y queso. El equilibrio perfecto entre frescura, nutrición y sabor. Mantiene energía de invitados al máximo en eventos corporativos, conferencias, talleres. Ideal para empresas en El Poblado que cuidan bienestar. ¡El toque secreto que demuestra atención a cada detalle!',
     precio: 13000,
     imagen: getCldUrl('refrigerio3_xsohqv'),
     categoria: 'Refrigerios',
@@ -375,7 +375,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-004',
     nombre: 'Eventos de Oro: Sándwich & Fruta',
-    descripcion: 'Nuestra solución estrella para eventos masivos. Contiene un sándwich gourmet con lechuga fresca, una combinación de frutas de temporada perfectamente seleccionadas y una bebida frutal refrescante con tapa de seguridad. Presentado de forma impecable en empaques individuales, este refrigerio garantiza que cada asistente reciba una experiencia deliciosa y profesional, convirtiendo una pausa simple en el momento favorito de la jornada.',
+    descripcion: 'Refrigerio para eventos masivos en Medellín. Solución estrella para conferencias, seminarios, capacitaciones. Contiene sándwich gourmet con lechuga fresca crocante, combinación de frutas de temporada perfectamente seleccionadas y bebida frutal refrescante con tapa de seguridad. Presentación impecable en empaques individuales higiénicos. Garantiza que cada asistente reciba experiencia deliciosa y profesional. Logística perfecta para eventos de 50+ personas. ¡Convierte pausa simple en momento favorito de la jornada!',
     precio: 13000,
     imagen: getCldUrl('refrigerio4_yzgtsl'),
     categoria: 'Refrigerios',
@@ -384,7 +384,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-005',
     nombre: 'Lunch Corporativo: Tradición & Calidad',
-    descripcion: 'Caja individual de alta resistencia que protege un sándwich de receta artesanal, una fruta entera seleccionada por su madurez ideal y un acompañamiento sorpresa. Diseñado específicamente para reuniones de negocios o conferencias donde la practicidad no debe sacrificar el sabor. Al elegir este lunch, aseguras un estándar de calidad que hablará muy bien de tu organización y dejará un excelente sabor de boca en todos los presentes.',
+    descripcion: 'Refrigerio corporativo premium en Medellín. Caja individual de alta resistencia que protege sándwich de receta artesanal exclusiva, fruta entera seleccionada por madurez ideal y acompañamiento sorpresa gourmet. Diseñado específicamente para reuniones de negocios, juntas directivas o conferencias empresariales donde practicidad no sacrifica sabor. Presentación ejecutiva. Ideal para empresas en El Poblado, Laureles, zona corporativa. ¡Estándar de calidad que habla muy bien de tu organización!',
     precio: 15000,
     imagen: getCldUrl('refrigerio5_c6yvyh'),
     categoria: 'Refrigerios',
@@ -393,7 +393,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-006',
     nombre: 'Croissant edición especial: Delicia & Frescura',
-    descripcion: 'Una presentación que enamora a primera vista. Incluye un croissant artesanal premium relleno de jamón y queso madurado, acompañado de una refrescante botella de jugo 100% natural y una porción de fruta seleccionada. El detalle de la servilleta decorativa y el cubierto de madera biodegradable no solo es eco-amigable, sino que es el toque de distinción que hará que tus invitados se sientan verdaderamente valorados.',
+    descripcion: 'Refrigerio gourmet con croissant en Medellín. Presentación que enamora a primera vista. Incluye croissant artesanal premium horneado diariamente, relleno de jamón serrano y queso madurado, botella de jugo 100% natural y porción de fruta seleccionada. Detalle de servilleta decorativa y cubierto de madera biodegradable eco-amigable. Toque de distinción que hace que invitados se sientan verdaderamente valorados. Ideal para eventos corporativos de alto nivel. ¡Sostenibilidad y sabor en perfecta armonía!',
     precio: 15000,
     imagen: getCldUrl('refrigerio6_eeheq4'),
     categoria: 'Refrigerios',
@@ -402,7 +402,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-007',
     nombre: 'Sándwich Express "Spider-Man"',
-    descripcion: 'Diseñado para los pequeños grandes fans. Este refrigerio infantil consta de un sándwich nutritivo envuelto en papel grado alimentario con temática del Hombre Araña y sellado con un sticker personalizado del personaje. Es la solución perfecta para fiestas escolares o eventos infantiles donde la higiene y la temática son la clave del éxito; un detalle que garantiza sonrisas y orden en tu celebración.',
+    descripcion: 'Refrigerio infantil de Spider-Man en Medellín. Diseñado para pequeños grandes fans del Hombre Araña. Sándwich nutritivo y delicioso envuelto en papel grado alimentario con diseño temático Spider-Man y sellado con sticker personalizado del superhéroe. Solución perfecta para fiestas escolares, cumpleaños temáticos o eventos infantiles en colegios de Medellín donde higiene y temática son clave del éxito. Pedido mínimo 15 unidades. ¡Detalle que garantiza sonrisas y orden en tu celebración!',
     precio: 5000,
     imagen: getCldUrl('refrigerio7_wpif0j'),
     categoria: 'Refrigerios',
@@ -411,7 +411,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-008',
     nombre: 'Máxima Eficiencia Corporativa',
-    descripcion: 'Nuestra solución para eventos de alto volumen sin sacrificar la frescura. Este pack destaca por su logística impecable: sándwiches perfectamente sellados, botellas de néctar con tapa de seguridad y postres individuales. La uniformidad en la entrega y el empaque reforzado aseguran que, desde el primer hasta el último invitado, todos disfruten de un producto fresco, seguro y con un sabor casero inigualable.',
+    descripcion: 'Refrigerio para eventos de alto volumen en Medellín. Solución logística perfecta para convenciones, ferias, eventos masivos sin sacrificar frescura ni calidad. Pack con sándwiches perfectamente sellados higiénicos, botellas de néctar con tapa de seguridad y postres individuales. Uniformidad en entrega y empaque reforzado resistente. Asegura que desde primer hasta último invitado disfrute producto fresco, seguro y con sabor casero inigualable. Ideal para eventos 100+ personas. ¡Frescura garantizada de principio a fin!',
     precio: 10000,
     imagen: getCldUrl('refrigerio8_wbywhj'),
     categoria: 'Refrigerios',
@@ -420,7 +420,7 @@ export const productosMock: Product[] = [
   {
     id: 'ref-009',
     nombre: 'Lunch Picnic Tradicional',
-    descripcion: 'La combinación clásica que nunca falla, presentada con un estilo rústico encantador. Este box incluye un sándwich envuelto en papel a cuadros rojo (estilo picnic), una ensalada de frutas frescas con kiwi y mango, y un dulce artesanal de cortesía. Ideal para integraciones al aire libre o jornadas de trabajo dinámicas. Es el toque secreto que transforma un almuerzo rápido en una experiencia reconfortante y deliciosa.',
+    descripcion: 'Refrigerio estilo picnic en Medellín. Combinación clásica que nunca falla con presentación rústica encantadora. Box incluye sándwich envuelto en papel a cuadros rojo estilo picnic campestre, ensalada de frutas frescas con kiwi y mango, y dulce artesanal de cortesía. Ideal para integraciones al aire libre, jornadas de trabajo en parques, team building, pasadías empresariales. Perfecto para día de campo en Medellín. ¡El toque secreto que transforma almuerzo rápido en experiencia reconfortante y deliciosa!',
     precio: 12000,
     imagen: getCldUrl('refrigerio9_axxbk5'),
     categoria: 'Refrigerios',
@@ -428,20 +428,19 @@ export const productosMock: Product[] = [
   },
 
   // ==================== DECORACIONES ====================
-  // Por ahora sin imágenes, se agregarán después
   {
     id: 'dec-001',
     nombre: 'Decoración Cumpleaños Infantil',
-    descripcion: 'Temática personalizada con globos, centros de mesa y piñata',
+    descripcion: 'Decoración para fiestas infantiles en Medellín completamente personalizada. Incluye montaje profesional con globos de helio premium, centros de mesa temáticos artesanales, piñata rellena y ambientación total del salón. Adaptable a cualquier temática: superhéroes, princesas, dinosaurios, unicornios. Ideal para fiestas en salones de eventos de Medellín, Envigado, Sabaneta. Montaje y desmontaje incluidos. Asesoría de diseño gratuita. ¡Convierte el cumpleaños en experiencia mágica inolvidable para niños y padres!',
     precio: 500000,
-    imagen: getCldUrl('decoracion1_rp0efz'), // Sin imagen aún
+    imagen: getCldUrl('decoracion1_rp0efz'),
     categoria: 'Decoraciones',
     destacado: true,
   },
   {
     id: 'dec-002',
     nombre: 'Decoración Princesas Disney',
-    descripcion: 'Mágica decoración inspirada en princesas favoritas',
+    descripcion: 'Decoración temática de Princesas Disney en Medellín. Montaje mágico inspirado en princesas favoritas: Elsa, Bella, Cenicienta, Rapunzel, Ariel. Incluye backdrop fotográfico profesional, arco de globos en colores pasteles, centros de mesa con castillos, globos de helio personalizados. Perfecta para cumpleaños de niñas soñadoras de 3 a 10 años. Disponible para salones en toda Medellín. Montaje profesional incluido. ¡Haz realidad el sueño de convertirse en princesa por un día especial!',
     precio: 300000,
     imagen: getCldUrl('decoracion2_g4lqtm'),
     categoria: 'Decoraciones',
@@ -450,7 +449,7 @@ export const productosMock: Product[] = [
   {
     id: 'dec-003',
     nombre: 'Decoración Baby Shower',
-    descripcion: 'Decoración completa con globos, mesa dulce y backdrop',
+    descripcion: 'Decoración completa para Baby Shower en Medellín. Montaje profesional con globos orgánicos premium, mesa dulce temática decorada, backdrop elegante para fotos y detalles personalizados. Disponible en tonos: rosa, azul, neutro, arcoíris. Incluye letras gigantes, centros de mesa, ambientación total. Ideal para celebraciones en casas, salones, quintas de Medellín. Asesoría de decoradora profesional incluida. Montaje y desmontaje. ¡Celebra la llegada del bebé con elegancia y alegría desbordante!',
     precio: 650000,
     imagen: getCldUrl('decoracion3_saclrf'),
     categoria: 'Decoraciones',
@@ -459,7 +458,7 @@ export const productosMock: Product[] = [
   {
     id: 'dec-004',
     nombre: 'Decoración Boda Elegante',
-    descripcion: 'Decoración sofisticada para ceremonia y recepción',
+    descripcion: 'Decoración sofisticada para bodas en Medellín. Montaje profesional completo para ceremonia y recepción. Incluye arco nupcial con flores naturales, camino del altar decorado, centros de mesa elegantes, iluminación ambiental, backdrop romántico para fotos. Adaptable a estilos: clásico, rústico, moderno, campestre. Ideal para matrimonios en salones, fincas, hoteles de Medellín. Coordinación el día del evento incluida. ¡Convierte tu boda en celebración de ensueño con detalles que enamoran!',
     precio: 480000,
     imagen: getCldUrl('decoracion4_vbr48z'),
     categoria: 'Decoraciones',
@@ -468,7 +467,7 @@ export const productosMock: Product[] = [
   {
     id: 'dec-005',
     nombre: 'Decoración Quinceañera',
-    descripcion: 'Elegante y sofisticada para la celebración de 15 años',
+    descripcion: 'Decoración para fiesta de 15 años en Medellín. Montaje elegante y sofisticado que convierte quinceañera en princesa. Incluye mesa principal decorada, backdrop exclusivo para fotos, arco de globos, centros de mesa, iluminación especial. Colores personalizados según preferencia. Ideal para salones de eventos en Medellín, Envigado, Sabaneta. Coordinación completa el día de la fiesta. ¡Celebra los 15 años con elegancia que merece este momento único e irrepetible!',
     precio: 320000,
     imagen: getCldUrl('decoracion5_pkxkrg'),
     categoria: 'Decoraciones',
@@ -477,7 +476,7 @@ export const productosMock: Product[] = [
   {
     id: 'dec-006',
     nombre: 'Decoración Quinceañera',
-    descripcion: 'Elegante y sofisticada para la celebración de 15 años',
+    descripcion: 'Decoración premium para celebración de 15 años en Medellín. Montaje completo elegante y romántico. Incluye mesa de honor decorada con flores, backdrop profesional para sesión de fotos, arco de globos orgánico, centros de mesa personalizados, iluminación LED ambiental. Temática y colores a elección. Perfecta para salones y fincas de Medellín. Montaje profesional y coordinación incluidos. ¡Haz que su fiesta de quince sea tan especial como ella lo soñó!',
     precio: 400000,
     imagen: getCldUrl('decoracion6_h89sqb'),
     categoria: 'Decoraciones',
@@ -486,7 +485,7 @@ export const productosMock: Product[] = [
   {
     id: 'dec-007',
     nombre: 'Decoración Quinceañera',
-    descripcion: 'Elegante y sofisticada para la celebración de 15 años',
+    descripcion: 'Decoración sofisticada para quince años en Medellín. Paquete completo con ambientación profesional. Incluye decoración de mesa principal, backdrop fotográfico de lujo, arco de globos premium, centros de mesa elegantes, iluminación decorativa. Adaptable a cualquier color y estilo: clásico, moderno, romántico. Ideal para celebraciones en Medellín y municipios cercanos. Asesoría personalizada incluida. ¡Convierte su celebración de 15 años en recuerdo perfecto que durará toda la vida!',
     precio: 310000,
     imagen: getCldUrl('decoracion7_wkggsl'),
     categoria: 'Decoraciones',

@@ -3,7 +3,7 @@ import ScrollReveal from '../components/ScrollReveal';
 
 export default function HeroSection() {
     return (
-        <section className="relative h-[350px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[450px] flex items-center justify-center overflow-hidden">
             <Image
                 src="/banner-detalles.png"
                 alt="Banner Creaciones Vane"
@@ -22,6 +22,15 @@ export default function HeroSection() {
                         height={120}
                         className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
                     />
+                </ScrollReveal>
+
+                <ScrollReveal direction="up" delay={0.4}>
+                    <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
+                        Creaciones Vane
+                    </h1>
+                    <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+                        Cómplice que endulza
+                    </p>
                 </ScrollReveal>
 
                 <ScrollReveal direction="up" delay={0.4}>
