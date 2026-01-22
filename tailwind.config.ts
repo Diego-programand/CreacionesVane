@@ -55,9 +55,9 @@ export default {
 
         // --- NUEVA PALETA (Decoraciones Vane) ---
         decoraciones: {
-          pink: {
+          purple: {
             light: '#FFD1DC', // Globos rosa claro
-            DEFAULT: '#D81B60', // Color del texto principal (Fucsia oscuro)
+            DEFAULT: '#800080', // Color del texto principal (Fucsia oscuro)
             border: '#FF85A2', // Borde circular del logo
           },
           blue: {
@@ -71,7 +71,7 @@ export default {
           green: {
             DEFAULT: '#95E06C', // Globo verde lima
           },
-          purple: {
+          lila: {
             DEFAULT: '#B39DDB', // Globo lila
           },
           // Color de fondo para tarjetas de esta sección
