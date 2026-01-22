@@ -5,7 +5,7 @@ export default function HeroSection() {
     return (
         <section className="relative h-[450px] flex items-center justify-center overflow-hidden">
             <Image
-                src="/banner-detalles.png"
+                src="/banner-detalles.webp"
                 alt="Banner Creaciones Vane"
                 fill
                 className="object-cover object-center blur-[5px]"

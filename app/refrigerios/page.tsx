@@ -387,7 +387,7 @@ export default function RefrigeriosPage() {
         {/* Hero Section */}
         <header className="relative h-[350px] flex items-center justify-center overflow-hidden">
           <Image
-            src="/banner-refrigerios.png"
+            src="/banner-refrigerios.webp"
             alt="Refrigerios para eventos en Medellín - Corporativos e infantiles"
             fill
             className="object-cover object-center blur-[5px]"
@@ -575,7 +575,7 @@ export default function RefrigeriosPage() {
               loop
               muted
               playsInline
-              poster="/images/fallback-food.jpg"
+              poster="/images/fallback-food.webp"
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
             >

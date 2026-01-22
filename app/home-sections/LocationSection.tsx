@@ -1,4 +1,8 @@
 import ScrollReveal from '../components/ScrollReveal';
+import {
+  MapPin as LocationIcon
+
+}from 'lucide-react'
 
 export default function LocationSection() {
   const socialLinks = [
@@ -64,7 +68,7 @@ export default function LocationSection() {
                 <div className="flex items-start gap-4">
                   {/* ... (icono igual) */}
                   <div className="flex-1">
-                    <h3 className="font-bold text-gray-800 text-lg mb-2">Creaciones Vane - Detalles de Amor</h3>
+                    <h3 className="font-bold text-gray-800 text-lg mb-2">Creaciones Vane - Complice que endulza</h3>
                     <p className="text-gray-600 mb-4">
                       Carrera 50 #120-13<br />
                       Barrio Pablo VI, Medellín<br />
@@ -78,6 +82,7 @@ export default function LocationSection() {
                     >
                       <span>Cómo llegar en Google Maps</span>
                       {/* ... (icono igual) */}
+                      <LocationIcon className="w-5 h-5" />
                     </a>
                   </div>
                 </div>

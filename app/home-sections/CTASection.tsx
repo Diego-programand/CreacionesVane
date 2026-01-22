@@ -9,7 +9,7 @@ export default function CTASection() {
           loop
           muted
           playsInline
-          poster="/images/fallback-hearts.jpg"
+          poster="/images/fallback-hearts.webp"
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source

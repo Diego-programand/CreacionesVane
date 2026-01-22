@@ -398,7 +398,7 @@ export default function DecoracionesPage() {
         {/* Hero Section */}
         <header className="relative h-[380px] flex items-center justify-center overflow-hidden">
           <Image
-            src="/banner-decoraciones.png"
+            src="/banner-decoraciones.webp"
             alt="Decoración de eventos en Medellín - Bodas, cumpleaños y Baby Shower"
             fill
             className="object-cover object-center blur-[5px]"
@@ -586,7 +586,7 @@ export default function DecoracionesPage() {
               loop
               muted
               playsInline
-              poster="/images/fallback-balloons.jpg"
+              poster="/images/fallback-balloons.webp"
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
             >

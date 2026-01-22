@@ -20,7 +20,7 @@ export default function ExperienceSection() {
                 <div className="absolute -inset-4 bg-primary-200 rounded-2xl rotate-12 group-hover:rotate-1 transition-transform duration-500"></div>
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/5] sm:aspect-square md:aspect-video lg:aspect-square">
                   <Image
-                    src="/images/experienceSection.jpeg"
+                    src="/images/experienceSection.webp"
                     alt="7 años de experiencia"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"

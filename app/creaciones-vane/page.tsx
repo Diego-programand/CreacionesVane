@@ -335,7 +335,7 @@ export default function CreacionesVanePage() {
         {/* Hero Section */}
         <header className="relative h-[350px] flex items-center justify-center overflow-hidden">
           <Image
-            src="/banner-detalles.png"
+            src="/banner-detalles.webp"
             alt="Anchetas y desayunos sorpresa en Medellín - Creaciones Vane"
             fill
             className="object-cover object-center blur-[2px]"
