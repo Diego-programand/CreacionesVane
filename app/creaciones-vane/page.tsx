@@ -217,7 +217,7 @@ export default function CreacionesVanePage() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
+              <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
                 Creaciones Vane
               </h1>
               <h2 className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">

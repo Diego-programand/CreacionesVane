@@ -6,6 +6,7 @@ import ServicesSection from './home-sections/ServicesSection';
 import FeaturedProductsSection from './home-sections/FeaturedProductsSection';
 import CTASection from './home-sections/CTASection';
 import LocationSection from './home-sections/LocationSection';
+import ExperienceSection from './home-sections/ExperienceSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <FeaturedProductsSection />
         <LocationSection />
         <CTASection />
+        <ExperienceSection />
       </main>
       <Footer />
       <WhatsAppButton />

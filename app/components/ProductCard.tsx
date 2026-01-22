@@ -1,5 +1,10 @@
+// app/components/ProductCard.tsx
+'use client';
+
 import Image from 'next/image';
 import type { Product } from '@/app/data/mockData';
+import { useModal } from '@/app/context/ModalContext';
+import { Eye } from 'lucide-react';
 
 interface ProductCardProps {
   product: Product;
@@ -7,16 +12,12 @@ interface ProductCardProps {
 
 // Helper para construir URLs de Cloudinary con transformaciones
 const getCloudinaryUrl = (imagePath: string) => {
-  if (!imagePath) return '/placeholder.jpg'; // Fallback para productos sin imagen
-
-  // Extraer la ruta después de /upload/
+  if (!imagePath) return '/placeholder.jpg';
   const uploadIndex = imagePath.indexOf('/upload/');
-  if (uploadIndex === -1) return imagePath; // Si no es URL de Cloudinary, retornar tal cual
+  if (uploadIndex === -1) return imagePath;
 
-  const baseUrl = imagePath.substring(0, uploadIndex + 8); // Hasta /upload/ inclusive
-  const imageSuffix = imagePath.substring(uploadIndex + 8); // Después de /upload/
-
-  // Insertar las transformaciones entre /upload/ y la ruta de la imagen
+  const baseUrl = imagePath.substring(0, uploadIndex + 8);
+  const imageSuffix = imagePath.substring(uploadIndex + 8);
   const transformations = 'c_fit,ar_3:4,w_800,q_auto,f_auto,b_white';
 
   return `${baseUrl}${transformations}/${imageSuffix}`;
@@ -33,9 +34,7 @@ const formatPrice = (price: number): string => {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const whatsappMessage = encodeURIComponent(
-    `¡Hola! Me interesa el producto: *${product.nombre}*. ¿Podrían darme más información? 💝`
-  );
+  const { openModal } = useModal(); // 🔥 AQUÍ ESTABA EL ERROR
 
   // Determinar colores según la categoría
   const getColors = () => {
@@ -76,7 +75,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group border border-gray-100 max-w-full">
-      {/* Imagen - MÁS PEQUEÑA EN MÓVIL */}
+      {/* Imagen */}
       <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 overflow-hidden bg-gray-100">
         {product.imagen ? (
           <Image
@@ -85,7 +84,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority={product.destacado} // Prioridad para productos destacados
+            priority={product.destacado}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-200">
@@ -101,7 +100,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      {/* Contenido - MÁS COMPACTO EN MÓVIL */}
+      {/* Contenido */}
       <div className="p-3 sm:p-4 md:p-5">
         <h3 className={`font-bold text-base sm:text-lg md:text-xl text-gray-800 mb-1.5 sm:mb-2 ${colors.hoverText} transition-colors line-clamp-2`}>
           {product.nombre}
@@ -113,16 +112,23 @@ export default function ProductCard({ product }: ProductCardProps) {
         {product.precio && (
           <p className={`${colors.price} font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4`}>
             {formatPrice(product.precio)}
+            {product.categoria === 'Refrigerios' && (
+              <span className="text-xs sm:text-sm font-normal text-gray-500 ml-1.5">
+                /unidad
+              </span>
+            )}
           </p>
         )}
-        <a
-          href={`https://wa.me/573128235654?text=${whatsappMessage}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`block w-full ${colors.button} text-white text-center py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 text-xs sm:text-sm md:text-base`}
+
+        {/* 🔥 BOTÓN QUE ABRE EL MODAL */}
+        <button
+          onClick={() => openModal(product)}
+          className={`group/btn relative flex items-center justify-center gap-2 w-full ${colors.button} text-white py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 overflow-hidden`}
         >
-          Consultar por WhatsApp
-        </a>
+          <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-20deg] -translate-x-full group-hover/btn:animate-shine" />
+          <Eye size={18} className="transition-transform group-hover/btn:scale-110" />
+          <span className="text-sm md:text-base">Ver Detalles</span>
+        </button>
       </div>
     </div>
   );

@@ -1,13 +1,16 @@
+// app/(sections)/FeaturedProductsSection.tsx
+'use client';
+
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
 import InfiniteCarousel from '../components/InfiniteCarousel';
 import { productosMock } from '../data/mockData';
 
 export default function FeaturedProductsSection() {
-  const productosDestacados = productosMock.filter(p => p.destacado).slice(0, 6);
+  const productosDestacados = productosMock.filter(p => p.destacado);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-primary-100 via-primary-100 to-white">
+    <section className="py-16 bg-primary-100">
       <div className="container mx-auto px-4">
         <ScrollReveal direction="up" className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
@@ -45,7 +48,7 @@ export default function FeaturedProductsSection() {
                 href="/creaciones-vane"
                 className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105"
               >
-                Ver Detalles de Amor
+                Ver Anchetas y Desayunos
               </Link>
               <Link
                 href="/refrigerios"
@@ -63,6 +66,7 @@ export default function FeaturedProductsSection() {
           </div>
         </ScrollReveal>
       </div>
+      {/* ✅ Ya NO renderizamos el modal aquí - está en layout.tsx */}
     </section>
   );
 }

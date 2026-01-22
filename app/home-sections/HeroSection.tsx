@@ -30,22 +30,21 @@ export default function HeroSection() {
                         refrigerios deliciosos y decoraciones que inspiran
                     </p>
                 </ScrollReveal>
-
                 <ScrollReveal direction="up" delay={0.6}>
-                    <div className="grid-2 pd-3 gap-4 sm:flex sm:justify-center sm:gap-6">
+                    <div className="grid grid-cols-2 p-3 gap-3 sm:flex sm:justify-center sm:gap-6">
                         <a
                             href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios%20💝"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-white text-primary-600 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary-50 transition-all duration-300"
+                            className="flex items-center justify-center bg-white text-primary-600 px-4 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary-50 transition-all duration-300 text-center"
                         >
                             Contáctanos
                         </a>
-                        <a  
+                        <a
                             href="#location"
-                            className="inline-block bg-transparent border border-white text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-white hover:text-primary-600 hover:border-primary-600 transition-all duration-300"
+                            className="flex items-center justify-center bg-transparent border border-white text-white px-4 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-white hover:text-primary-600 hover:border-primary-600 transition-all duration-300 text-center"
                         >
-                            Como llegar
+                            Cómo llegar
                         </a>
                     </div>
                 </ScrollReveal>

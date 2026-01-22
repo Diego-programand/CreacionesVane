@@ -213,7 +213,7 @@ export default function DecoracionesPage() {
             className="object-cover object-center blur-[5px]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/50 via-[#FFD1DC]/100 via-[#B39DDB]/55 to-[#A0E7E5]/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/60 via-[#B39DDB]/75 to-[#A0E7E5]/60" />
 
           <div className="relative z-10 text-center px-4 max-w-4xl w-full">
             <ScrollReveal direction="down" delay={0.2}>

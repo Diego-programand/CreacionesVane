@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import PageTransition from "./components/PageTransition";
+import { ModalProvider } from './context/ModalContext';
+import ProductModal from './components/ProductModal';
 
 export const metadata: Metadata = {
   title: "Creaciones Vane - Detalles que enamoran",
@@ -22,7 +24,11 @@ export default function RootLayout({
       </head>
       <body className="antialiased font-[Poppins,sans-serif] bg-white">
         <PageTransition>
-          {children}
+          <ModalProvider>
+            {children}
+            {/* Modal global - se renderiza una sola vez */}
+            <ProductModal />
+          </ModalProvider>
         </PageTransition>
       </body>
     </html>
