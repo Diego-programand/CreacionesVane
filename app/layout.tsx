@@ -5,7 +5,10 @@ import { ModalProvider } from './context/ModalContext';
 import ProductModal from './components/ProductModal';
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://creacionesvane.com"), // Cambia por tu dominio real
+  metadataBase: new URL("https://creacionesvane.com"),
+  verification: {
+    google: "Lf_FaEq_n0Gvrisyp9c5ezFX91icY_xZUjitZ6ObYiI", // Google Search Console
+  },
   title: {
     default: "Creaciones Vane | Anchetas, Desayunos Sorpresa y Decoraciones en Medellin",
     template: "%s | Creaciones Vane"

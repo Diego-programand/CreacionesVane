@@ -230,12 +230,13 @@ export default function CreacionesVanePage() {
               "@context": "https://schema.org",
               "@type": "Store", // O Florist si te enfocas más en flores
               "name": "Creaciones Vane - Detalles de Amor",
-              "description": "Anchetas personalizadas, desayunos sorpresa y ramos de rosas en Medellín.",
+              "description": "Anchetas personalizadas, desayunos sorpresa, ramos de rosas y decoraciones en Medellín.",
               "url": "https://creacionesvane.com/creaciones-vane",
               "telephone": "+573128235654",
               "priceRange": "$$", // Formato estándar de Google
               "address": {
                 "@type": "PostalAddress",
+                "postalCode" : "050001",
                 "streetAddress": "Carrera 50 #120-13", // Dirección exacta
                 "addressLocality": "Medellín",
                 "addressRegion": "Antioquia",
