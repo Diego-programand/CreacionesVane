@@ -11,6 +11,7 @@ export default function HeroSection() {
                 fetchPriority="high"
                 loading="eager"
                 fill
+                sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover object-center blur-[5px]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-primary-600/80 via-primary-500/70 to-primary-700/80" />
