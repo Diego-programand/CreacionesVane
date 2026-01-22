@@ -162,7 +162,7 @@ export default function DecoracionesPage() {
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-decoraciones-pink-light/30 hover:border-decoraciones-pink-border disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-decoraciones-purple/30 hover:border-decoraciones-purple-border disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -176,8 +176,8 @@ export default function DecoracionesPage() {
               onClick={() => handlePageChange(page)}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 currentPage === page
-                  ? 'bg-decoraciones-pink text-white shadow-md'
-                  : 'border border-gray-300 text-gray-700 hover:bg-decoraciones-pink-light/30 hover:border-decoraciones-pink-border'
+                  ? 'bg-decoraciones-purple text-white shadow-md'
+                  : 'border border-gray-300 text-gray-700 hover:bg-decoraciones-purple-light/30 hover:border-decoraciones-purple-border'
               }`}
             >
               {page}
@@ -190,7 +190,7 @@ export default function DecoracionesPage() {
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === totalPages}
-          className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-decoraciones-pink-light/30 hover:border-decoraciones-pink-border disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+          className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-decoraciones-purple-light/30 hover:border-decoraciones-purple-border disabled:opacity-50 disabled:cursor-not-allowed transition-all"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -205,7 +205,7 @@ export default function DecoracionesPage() {
       <Header />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative h-[350px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[380px] flex items-center justify-center overflow-hidden">
           <Image
             src="/banner-decoraciones.png"
             alt="Banner Decoraciones Vane"
@@ -222,7 +222,7 @@ export default function DecoracionesPage() {
                 alt="Logo Decoraciones Vane"
                 width={120}
                 height={120}
-                className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
+                className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-1"
               />
             </ScrollReveal>
 
@@ -274,7 +274,7 @@ export default function DecoracionesPage() {
                   />
                   <button
                     onClick={() => setMobileFiltersOpen(false)}
-                    className="w-full mt-6 bg-decoraciones-pink hover:bg-decoraciones-pink/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
+                    className="w-full mt-6 bg-decoraciones-purple hover:bg-decoraciones-purple/90 text-white px-6 py-3 rounded-lg font-semibold transition-all"
                   >
                     Ver {productosFiltrados.length} productos
                   </button>
@@ -319,7 +319,7 @@ export default function DecoracionesPage() {
                 <div className="lg:hidden mb-6">
                   <button
                     onClick={() => setMobileFiltersOpen(!mobileFiltersOpen)}
-                    className="w-full bg-decoraciones-pink hover:bg-decoraciones-pink/90 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all shadow-md"
+                    className="w-full bg-decoraciones-purple hover:bg-decoraciones-purple/90 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 transition-all shadow-md"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
@@ -350,13 +350,13 @@ export default function DecoracionesPage() {
                       ¡Vaya! No encontramos coincidencias
                     </h3>
                     <p className="text-gray-500 max-w-md mx-auto mb-8 text-lg leading-relaxed">
-                      No te preocupes, podemos crear la <span className="text-decoraciones-pink font-semibold">decoración personalizada</span> perfecta para tu evento.
+                      No te preocupes, podemos crear la <span className="text-decoraciones-purple font-semibold">decoración personalizada</span> perfecta para tu evento.
                     </p>
                     <a
                       href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20cotizar%20una%20decoración%20para%20mi%20evento%20🎈"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-decoraciones-pink rounded-full hover:bg-decoraciones-pink/90 shadow-lg"
+                      className="group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 bg-decoraciones-purple rounded-full hover:bg-decoraciones-purple/90 shadow-lg"
                     >
                       <span className="mr-2">Contáctanos por WhatsApp</span>
                       <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
