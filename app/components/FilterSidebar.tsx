@@ -46,11 +46,11 @@ const THEME_CONFIGS: Record<FilterTheme, FilterConfig> = {
     placeholder: 'Ej: Boda, Grado...',
     itemLabel: 'Tipo de decoración',
     priceLabel: 'Rango de precio (miles COP)',
-    accentClass: 'text-decoraciones-pink',
-    borderClass: 'border-decoraciones-pink-border/30',
-    ringClass: 'focus:ring-decoraciones-pink',
-    buttonClass: 'bg-decoraciones-pink',
-    hoverTextClass: 'hover:text-decoraciones-pink/80',
+    accentClass: 'text-decoraciones-purple',
+    borderClass: 'border-decoraciones-purple-border/30',
+    ringClass: 'focus:ring-decoraciones-purple',
+    buttonClass: 'bg-decoraciones-purple',
+    hoverTextClass: 'hover:text-decoraciones-purple/80',
   },
 };
 

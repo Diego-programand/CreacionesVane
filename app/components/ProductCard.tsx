@@ -1,4 +1,3 @@
-// app/components/ProductCard.tsx
 'use client';
 
 import Image from 'next/image';
@@ -10,7 +9,6 @@ interface ProductCardProps {
   product: Product;
 }
 
-// Helper para construir URLs de Cloudinary con transformaciones
 const getCloudinaryUrl = (imagePath: string) => {
   if (!imagePath) return '/placeholder.jpg';
   const uploadIndex = imagePath.indexOf('/upload/');
@@ -18,12 +16,12 @@ const getCloudinaryUrl = (imagePath: string) => {
 
   const baseUrl = imagePath.substring(0, uploadIndex + 8);
   const imageSuffix = imagePath.substring(uploadIndex + 8);
-  const transformations = 'c_fit,ar_3:4,w_800,q_auto,f_auto,b_white';
+  // Ajustamos a 3:4 para mantener consistencia visual
+  const transformations = 'c_fill,ar_3:4,w_800,g_auto,q_auto,f_auto';
 
   return `${baseUrl}${transformations}/${imageSuffix}`;
 };
 
-// Helper para formatear precio en COP
 const formatPrice = (price: number): string => {
   return new Intl.NumberFormat('es-CO', {
     style: 'currency',
@@ -34,9 +32,8 @@ const formatPrice = (price: number): string => {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { openModal } = useModal(); // 🔥 AQUÍ ESTABA EL ERROR
+  const { openModal } = useModal();
 
-  // Determinar colores según la categoría
   const getColors = () => {
     switch (product.categoria) {
       case 'Detalles':
@@ -55,10 +52,10 @@ export default function ProductCard({ product }: ProductCardProps) {
         };
       case 'Decoraciones':
         return {
-          badge: 'bg-decoraciones-pink',
-          hoverText: 'group-hover:text-decoraciones-pink',
-          price: 'text-decoraciones-pink',
-          button: 'bg-decoraciones-pink hover:bg-decoraciones-pink-DEFAULT',
+          badge: 'bg-decoraciones-purple',
+          hoverText: 'group-hover:text-decoraciones-purple',
+          price: 'text-decoraciones-purple',
+          button: 'bg-decoraciones-purple hover:bg-decoraciones-purple',
         };
       default:
         return {
@@ -74,61 +71,65 @@ export default function ProductCard({ product }: ProductCardProps) {
   const optimizedImageUrl = getCloudinaryUrl(product.imagen);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 group border border-gray-100 max-w-full">
-      {/* Imagen */}
-      <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 overflow-hidden bg-gray-100">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full max-w-sm mx-auto w-full">
+      
+      {/* Contenedor de Imagen Optimizado para Desktop */}
+      <div className="relative overflow-hidden bg-gray-100 flex-shrink-0
+        h-64 sm:h-72 
+        md:h-60 lg:h-64 xl:h-72 2xl:h-80"> 
+        {/* ^ Reducimos la altura en pantallas grandes para que no "estire" la card verticalmente */}
+        
         {product.imagen ? (
           <Image
             src={optimizedImageUrl}
             alt={product.nombre}
             fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             priority={product.destacado}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-200">
-            <svg className="w-20 h-20 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
+             <Eye size={48} className="text-gray-300" />
           </div>
         )}
+
         {product.destacado && (
-          <div className={`absolute top-2 right-2 sm:top-3 sm:right-3 ${colors.badge} text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-semibold shadow-lg`}>
+          <div className={`absolute top-2 right-2 ${colors.badge} text-white px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-bold shadow-md z-10`}>
             ⭐ Destacado
           </div>
         )}
       </div>
 
-      {/* Contenido */}
-      <div className="p-3 sm:p-4 md:p-5">
-        <h3 className={`font-bold text-base sm:text-lg md:text-xl text-gray-800 mb-1.5 sm:mb-2 ${colors.hoverText} transition-colors line-clamp-2`}>
+      {/* Contenido con Flex-Grow para igualar alturas */}
+      <div className="p-4 flex flex-col flex-grow">
+        <h3 className={`font-bold text-base md:text-lg text-gray-800 mb-2 ${colors.hoverText} transition-colors line-clamp-1`}>
           {product.nombre}
         </h3>
-        <p className="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 line-clamp-3">
+        
+        <p className="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-2 flex-grow">
           {product.descripcion}
         </p>
 
-        {product.precio && (
-          <p className={`${colors.price} font-bold text-sm sm:text-base md:text-lg mb-3 sm:mb-4`}>
-            {formatPrice(product.precio)}
-            {product.categoria === 'Refrigerios' && (
-              <span className="text-xs sm:text-sm font-normal text-gray-500 ml-1.5">
-                /unidad
-              </span>
-            )}
-          </p>
-        )}
+        <div className="mt-auto">
+          {product.precio && (
+            <p className={`${colors.price} font-bold text-lg mb-3`}>
+              {formatPrice(product.precio)}
+              {product.categoria === 'Refrigerios' && (
+                <span className="text-xs font-normal text-gray-400 ml-1">/ud</span>
+              )}
+            </p>
+          )}
 
-        {/* 🔥 BOTÓN QUE ABRE EL MODAL */}
-        <button
-          onClick={() => openModal(product)}
-          className={`group/btn relative flex items-center justify-center gap-2 w-full ${colors.button} text-white py-2.5 sm:py-3 rounded-xl font-bold transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 overflow-hidden`}
-        >
-          <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-20deg] -translate-x-full group-hover/btn:animate-shine" />
-          <Eye size={18} className="transition-transform group-hover/btn:scale-110" />
-          <span className="text-sm md:text-base">Ver Detalles</span>
-        </button>
+          <button
+            onClick={() => openModal(product)}
+            className={`group/btn relative flex items-center justify-center gap-2 w-full ${colors.button} text-white py-2.5 rounded-lg font-bold transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 overflow-hidden`}
+          >
+            <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-20deg] -translate-x-full group-hover/btn:animate-shine" />
+            <Eye size={16} />
+            <span className="text-sm">Ver Detalles</span>
+          </button>
+        </div>
       </div>
     </div>
   );
