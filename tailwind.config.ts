@@ -75,14 +75,17 @@ export default {
             DEFAULT: '#B39DDB', // Globo lila
           },
           // Color de fondo para tarjetas de esta sección
-          surface: '#FFF9FB', 
+          surface: '#FFF9FB',
         },
 
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        script: ['Pacifico', 'cursive'],
+        // MODIFICACIÓN AQUÍ:
+        // Usamos las variables CSS que definiste en el layout.tsx
+        sans: ['var(--font-poppins)', 'sans-serif'],
+        script: ['var(--font-pacifico)', 'cursive'],
       },
     },
   },
