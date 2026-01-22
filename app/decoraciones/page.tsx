@@ -9,7 +9,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCard from '../components/ProductCard';
 import FilterSidebar from '../components/FilterSidebar';
-import { productosMock } from '../data/mockData';
+import { productosMock, getCldVideoUrl } from '../data/mockData';;
 import type { Product } from '../data/mockData';
 
 export default function DecoracionesPage() {
@@ -172,11 +172,10 @@ export default function DecoracionesPage() {
             <button
               key={index}
               onClick={() => handlePageChange(page)}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                currentPage === page
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${currentPage === page
                   ? 'bg-decoraciones-purple text-white shadow-md'
                   : 'border border-gray-300 text-gray-700 hover:bg-decoraciones-purple-light/30 hover:border-decoraciones-purple-border'
-              }`}
+                }`}
               aria-label={`Ir a página ${page}`}
               aria-current={currentPage === page ? 'page' : undefined}
             >
@@ -439,8 +438,8 @@ export default function DecoracionesPage() {
           <div className="container mx-auto px-3 sm:px-4 max-w-full">
             {/* Modal filtros móvil */}
             {mobileFiltersOpen && (
-              <aside 
-                className="lg:hidden fixed inset-0 bg-black/50 z-50 flex items-start" 
+              <aside
+                className="lg:hidden fixed inset-0 bg-black/50 z-50 flex items-start"
                 onClick={() => setMobileFiltersOpen(false)}
                 role="dialog"
                 aria-modal="true"
@@ -449,8 +448,8 @@ export default function DecoracionesPage() {
                 <div className="bg-white w-full rounded-b-2xl p-6 max-h-[85vh] overflow-y-auto shadow-2xl" onClick={(e) => e.stopPropagation()}>
                   <div className="flex items-center justify-between mb-6">
                     <h3 className="text-xl font-bold text-gray-800">Filtros</h3>
-                    <button 
-                      onClick={() => setMobileFiltersOpen(false)} 
+                    <button
+                      onClick={() => setMobileFiltersOpen(false)}
                       className="text-gray-500 hover:text-gray-700"
                       aria-label="Cerrar filtros"
                     >
@@ -533,7 +532,7 @@ export default function DecoracionesPage() {
 
                 {productosPaginados.length > 0 ? (
                   <>
-                    <div 
+                    <div
                       className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-full w-full"
                       role="list"
                       aria-label="Lista de decoraciones"
@@ -586,19 +585,19 @@ export default function DecoracionesPage() {
               loop
               muted
               playsInline
-              poster="/images/fallback-balloons.webp"
+              // Optimizamos también el poster desde Cloudinary para que no pese megas innecesarios
+              poster="https://res.cloudinary.com/dw7zhnbho/image/upload/f_auto,q_auto,w_1200/fallback-balloons_mqkzzp.webp"
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
             >
               <source
-                src="/videos/balloons-background.mp4"
+                src={getCldVideoUrl('balloons-background_bfmiuo')}
                 type="video/mp4"
               />
               Tu navegador no soporta videos.
             </video>
             <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/70 via-[#FF85A2]/60 to-[#B39DDB]/70"></div>
           </div>
-
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <ScrollReveal direction="down" delay={0.2}>

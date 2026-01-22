@@ -42,10 +42,15 @@ export const opcionesPersonalizablesPorCategoria = {
 
 // Configuración de Cloudinary
 const CLOUDINARY_BASE = 'https://res.cloudinary.com/dw7zhnbho/image/upload';
+const CLOUDINARY_BASE_VIDEO = 'https://res.cloudinary.com/dw7zhnbho/video/upload';
 
 // Helper para construir URLs de Cloudinary
 const getCldUrl = (filename: string) => {
   return `${CLOUDINARY_BASE}/${filename}.jpg`;
+};
+
+export const getCldVideoUrl = (filename: string) => {
+  return `${CLOUDINARY_BASE_VIDEO}/f_auto,q_auto,vc_auto/${filename}.mp4`;
 };
 
 export const productosMock: Product[] = [

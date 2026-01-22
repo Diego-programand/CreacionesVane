@@ -9,7 +9,7 @@ import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCard from '../components/ProductCard';
 import FilterSidebar from '../components/FilterSidebar';
-import { productosMock } from '../data/mockData';
+import { getCldVideoUrl, productosMock } from '../data/mockData';
 import type { Product } from '../data/mockData';
 
 export default function RefrigeriosPage() {
@@ -575,12 +575,13 @@ export default function RefrigeriosPage() {
               loop
               muted
               playsInline
-              poster="/images/fallback-food.webp"
+              // Optimizamos también el poster desde Cloudinary para que no pese megas innecesarios
+              poster="https://res.cloudinary.com/dw7zhnbho/image/upload/f_auto,q_auto,w_1200/fallback-food_rzbomn.webp"
               className="absolute inset-0 w-full h-full object-cover"
               aria-hidden="true"
             >
               <source
-                src="/videos/food-background.mp4"
+                src={getCldVideoUrl('food-background_hcaxdm')}
                 type="video/mp4"
               />
               Tu navegador no soporta videos.

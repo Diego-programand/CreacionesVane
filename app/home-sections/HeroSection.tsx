@@ -24,7 +24,7 @@ export default function HeroSection() {
                     />
                 </ScrollReveal>
 
-                <ScrollReveal direction="up" delay={0.4}>
+                <ScrollReveal direction="up" delay={0.2}>
                     <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
                         Creaciones Vane
                     </h1>
@@ -33,13 +33,13 @@ export default function HeroSection() {
                     </p>
                 </ScrollReveal>
 
-                <ScrollReveal direction="up" delay={0.4}>
+                <ScrollReveal direction="up" delay={0.2}>
                     <p className="text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
                         Desde 2019 creando momentos especiales con detalles de amor,
                         refrigerios deliciosos y decoraciones que inspiran
                     </p>
                 </ScrollReveal>
-                <ScrollReveal direction="up" delay={0.6}>
+                <ScrollReveal direction="up" delay={0.2}>
                     <div className="grid grid-cols-2 p-3 gap-3 sm:flex sm:justify-center sm:gap-6">
                         <a
                             href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios%20💝"

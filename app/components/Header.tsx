@@ -5,10 +5,15 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+// Importamos la función de optimización
+import { getCldVideoUrl } from '@/app/data/mockData';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  // URL optimizada del video del gato
+  const catVideoUrl = getCldVideoUrl('cat-kiss_tgrypj');
 
   const isActive = (path: string) => pathname === path;
 
@@ -21,23 +26,26 @@ export default function Header() {
     >
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          {/* GIF en móvil (izquierda) */}
+
+          {/* VIDEO en móvil (sustituye al GIF) */}
           <motion.div
             initial={{ x: -20, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.4 }}
-            className="lg:hidden"
+            className="lg:hidden w-[45px] h-[45px]"
           >
-            <Image
-              src="/videos/cat-kiss.gif"
-              alt="Cat kiss"
-              width={45}
-              height={45}
-              className=""
-              unoptimized
-            />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-contain"
+            >
+              <source src={catVideoUrl} />
+            </video>
           </motion.div>
-          {/* Logo (centro en móvil, izquierda en desktop) */}
+
+          {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group lg:flex-1 relative z-10">
             <motion.div
               initial={{ scale: 0 }}
@@ -52,20 +60,17 @@ export default function Header() {
                 height={55}
                 className="rounded-full transition-all duration-300 group-hover:scale-105"
               />
-
-              {/* Corazón: Eliminamos el 'href' que no hace nada y agregamos 'pointer-events-none' */}
               <div className="absolute -top-1 -right-1 text-lg opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity pointer-events-none select-none">
                 💗
               </div>
             </motion.div>
 
-            {/* Nombre de la marca: Ajustado para que en móvil sea visible o al menos el área sea clickeable */}
             <div className="flex items-center gap-3">
               <motion.div
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.4 }}
-                className="hidden xs:block" // Opcional: 'xs:block' para que se vea en móviles no tan pequeños
+                className="hidden xs:block"
               >
                 <h1 className="font-script text-2xl text-primary-600 group-hover:text-primary-700 transition-colors leading-tight">
                   Creaciones Vane
@@ -73,7 +78,7 @@ export default function Header() {
                 <p className="text-[10px] text-primary-800 font-script leading-none">Cómplice que endulza</p>
               </motion.div>
 
-              {/* Separador y GIF en Desktop */}
+              {/* Separador y VIDEO en Desktop */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -81,13 +86,17 @@ export default function Header() {
                 className="hidden lg:flex items-center gap-3"
               >
                 <div className="h-10 w-px bg-primary-300"></div>
-                <Image
-                  src="/videos/cat-kiss.gif"
-                  alt="Cat kiss"
-                  width={40}
-                  height={40}
-                  unoptimized
-                />
+                <div className="w-[40px] h-[40px]">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-contain"
+                  >
+                    <source src={catVideoUrl} />
+                  </video>
+                </div>
               </motion.div>
             </div>
           </Link>

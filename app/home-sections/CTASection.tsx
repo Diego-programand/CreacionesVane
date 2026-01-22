@@ -1,6 +1,16 @@
+'use client';
+
 import ScrollReveal from '../components/ScrollReveal';
+import { getCldVideoUrl } from '@/app/data/mockData';
 
 export default function CTASection() {
+  // Generamos las URLs optimizadas
+  const videoDesktop = getCldVideoUrl('hearts-background_kuk3a9');
+  const videoMobile = getCldVideoUrl('hearts-background-mobile_z1xlou');
+  
+  // Para el poster, usa la URL base de imágenes (ajusta según tu constante)
+  const posterUrl = `https://res.cloudinary.com/dw7zhnbho/image/upload/f_auto,q_auto,w_1200/fallback-hearts_d3grvx.webp`;
+
   return (
     <section className="relative py-20 md:py-24 overflow-hidden">
       <div className="absolute inset-0">
@@ -9,21 +19,25 @@ export default function CTASection() {
           loop
           muted
           playsInline
-          poster="/images/fallback-hearts.webp"
+          poster={posterUrl}
           className="absolute inset-0 w-full h-full object-cover"
         >
+          {/* Fuente para Móvil */}
           <source
-            src="/videos/hearts-background-mobile.mp4"
+            src={videoMobile}
             type="video/mp4"
             media="(max-width: 767px)"
           />
+          {/* Fuente para Desktop */}
           <source
-            src="/videos/hearts-background.mp4"
+            src={videoDesktop}
             type="video/mp4"
             media="(min-width: 768px)"
           />
           Tu navegador no soporta videos.
         </video>
+        
+        {/* Overlay con gradiente para legibilidad */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-600/70 via-primary-500/60 to-primary-700/70"></div>
       </div>
 
