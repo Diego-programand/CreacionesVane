@@ -84,12 +84,12 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${poppins.variable} ${pacifico.variable}`}>
       <body className={`${poppins.className} antialiased bg-white`}>
-        <PageTransition>
+        {/* <PageTransition> */}
           <ModalProvider>
             {children}
             <ProductModal />
           </ModalProvider>
-        </PageTransition>
+        {/* </PageTransition> */}
       </body>
     </html>
   );
