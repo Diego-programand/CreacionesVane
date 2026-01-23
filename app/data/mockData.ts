@@ -19,7 +19,8 @@ export const opcionesPersonalizablesPorCategoria = {
     'Adición de globos o peluches extra',
     'Elección de frutas o snacks preferidos',
     'Selección de flores según preferencia',
-    'Empaque especial para regalo'
+    'Selección para los colores de las flores',
+    'Empaque especial para regalo',
   ],
   Refrigerios: [
     'Opciones vegetarianas disponibles',
@@ -27,15 +28,17 @@ export const opcionesPersonalizablesPorCategoria = {
     'Personalización del empaque con logo',
     'Bebidas alternativas (jugos, té, café)',
     'Cantidad ajustable según evento',
-    'Etiquetas con nombres personalizados'
+    'Transporte hasta el lugar del evento',
   ],
   Decoraciones: [
     'Adaptación a colores corporativos o temática',
     'Tamaño del montaje según espacio',
     'Inclusión de elementos personalizados',
     'Ajuste de cantidad de globos y flores',
-    'Diseño de backdrop personalizado',
-    'Iluminación decorativa adicional'
+    'Diseño de backing personalizado',
+    'Iluminación decorativa adicional',
+    'Transporte y montaje en sitio',
+
   ]
 };
 
@@ -435,17 +438,17 @@ export const productosMock: Product[] = [
   // ==================== DECORACIONES ====================
   {
     id: 'dec-001',
-    nombre: 'Decoración Cumpleaños Infantil',
-    descripcion: 'Decoración para fiestas infantiles en Medellín completamente personalizada. Incluye montaje profesional con globos de helio premium, centros de mesa temáticos artesanales, piñata rellena y ambientación total del salón. Adaptable a cualquier temática: superhéroes, princesas, dinosaurios, unicornios. Ideal para fiestas en salones de eventos de Medellín, Envigado, Sabaneta. Montaje y desmontaje incluidos. Asesoría de diseño gratuita. ¡Convierte el cumpleaños en experiencia mágica inolvidable para niños y padres!',
-    precio: 500000,
+    nombre: 'Capibara Party Premium - Medellín',
+    descripcion: '¡Celebra con la tendencia más tierna del momento! Esta decoración integral en Medellín es perfecta para los amantes de los capibaras. El set incluye un aro principal decorado con un arco orgánico de globos en 4 tonos pastel, 3 cilindros temáticos, un elegante letrero luminoso y un número gigante con luces para destacar la edad del cumpleañero. La escena se completa con un tapete de grama sintética, una figura de capibara a escala, follaje natural y bases de lujo para tortas y dulces. \n\nEl precio base de $450.000 incluye el mobiliario completo (rejilla, escalera decorativa y transporte de entrega/recogida). Por solo $50.000 adicionales ($500.000 total), incluimos 20 bolsas de regalo medianas totalmente personalizadas para tus invitados.',
+    precio: 450000,
     imagen: getCldUrl('decoracion1_rp0efz'),
     categoria: 'Decoraciones',
     destacado: true,
   },
   {
     id: 'dec-002',
-    nombre: 'Decoración Princesas Disney',
-    descripcion: 'Decoración temática de Princesas Disney en Medellín. Montaje mágico inspirado en princesas favoritas: Elsa, Bella, Cenicienta, Rapunzel, Ariel. Incluye backdrop fotográfico profesional, arco de globos en colores pasteles, centros de mesa con castillos, globos de helio personalizados. Perfecta para cumpleaños de niñas soñadoras de 3 a 10 años. Disponible para salones en toda Medellín. Montaje profesional incluido. ¡Haz realidad el sueño de convertirse en princesa por un día especial!',
+    nombre: 'Paw Patrol Girls Adventure - Medellín',
+    descripcion: '¡Llamando a todas las pequeñas heroínas de Medellín! Transforma tu evento en una misión de rescate llena de color con nuestra decoración temática de Paw Patrol (Skye y Everest). Este set profesional incluye un aro central personalizado, tres cilindros temáticos con diseños vibrantes y un imponente arco de globos orgánico en cuatro tonalidades que capturan toda la energía de la serie. \n\nEl montaje viene equipado con un tapete rosado suave, una escalera decorativa blanca para tus recordatorios, figuras a escala de los personajes favoritos y bases de lujo para la torta. Nos encargamos de todo: el precio de $300.000 ya incluye el transporte (llevar y recoger el mobiliario) en el área de Medellín, garantizando un evento impecable y sin preocupaciones para que tu única misión sea disfrutar.',
     precio: 300000,
     imagen: getCldUrl('decoracion2_g4lqtm'),
     categoria: 'Decoraciones',
@@ -453,44 +456,44 @@ export const productosMock: Product[] = [
   },
   {
     id: 'dec-003',
-    nombre: 'Decoración Baby Shower',
-    descripcion: 'Decoración completa para Baby Shower en Medellín. Montaje profesional con globos orgánicos premium, mesa dulce temática decorada, backdrop elegante para fotos y detalles personalizados. Disponible en tonos: rosa, azul, neutro, arcoíris. Incluye letras gigantes, centros de mesa, ambientación total. Ideal para celebraciones en casas, salones, quintas de Medellín. Asesoría de decoradora profesional incluida. Montaje y desmontaje. ¡Celebra la llegada del bebé con elegancia y alegría desbordante!',
+    nombre: 'Toy Story Adventure Premium - Medellín',
+    descripcion: '¡Hay un amigo en mí y en tu próxima fiesta! Vive una aventura espacial y vaquera con nuestra decoración de Toy Story de gran formato en Medellín. Este montaje de lujo destaca por su fondo Shimmer dorado que brilla con cada movimiento, acompañado de un trío de backings temáticos y un espectacular arco de puerta que da la bienvenida a tus invitados al mundo de Woody y Buzz. \n\nEl set incluye una tarima con tapete, tres cilindros personalizados, bases para torta y dulces, y un imponente despliegue de globos con dos arcos orgánicos y cuatro bouquets estratégicamente ubicados. Para un toque único, incluimos un caballete para la foto del cumpleañero, un número "1" y una letra inicial gigante, ambos luminosos, junto a figuras realistas de los personajes y una base especial para regalos. El precio de $650.000 incluye el servicio completo de transporte (llevar y recoger mobiliario) en Medellín, asegurando que tu única preocupación sea disfrutar de un día de película.',
     precio: 650000,
     imagen: getCldUrl('decoracion3_saclrf'),
     categoria: 'Decoraciones',
     destacado: true,
   },
-  {
+{
     id: 'dec-004',
-    nombre: 'Decoración Boda Elegante',
-    descripcion: 'Decoración sofisticada para bodas en Medellín. Montaje profesional completo para ceremonia y recepción. Incluye arco nupcial con flores naturales, camino del altar decorado, centros de mesa elegantes, iluminación ambiental, backdrop romántico para fotos. Adaptable a estilos: clásico, rústico, moderno, campestre. Ideal para matrimonios en salones, fincas, hoteles de Medellín. Coordinación el día del evento incluida. ¡Convierte tu boda en celebración de ensueño con detalles que enamoran!',
+    nombre: 'Bosque Mágico Masha y el Oso - Medellín',
+    descripcion: '¡Vive una aventura encantada en el bosque con nuestra decoración premium de Masha y el Oso en Medellín! Este montaje cautivador incluye un aro central temático enmarcado por un arco de globos orgánico en tres tonalidades tierra y rosa, complementado con tres cilindros decorativos y bases de lujo para torta y dulces. \n\nPara un impacto visual inolvidable, el set cuenta con dos impresionantes alas de mariposa gigantes, una escalera decorativa para recordatorios, rejilla de ambientación y un tapete tipo malla que recrea la atmósfera del bosque. La personalización es clave: incluimos el nombre de la cumpleañera en letrero luminoso, un número gigante con luces y figuras realistas junto a tiernos peluches originales de los personajes. El precio de $480.000 ya incluye el transporte (llevar y recoger mobiliario) en Medellín, brindándote una solución completa, profesional y llena de magia para tu evento.',
     precio: 480000,
     imagen: getCldUrl('decoracion4_vbr48z'),
     categoria: 'Decoraciones',
     destacado: true,
   },
-  {
+{
     id: 'dec-005',
-    nombre: 'Decoración Quinceañera',
-    descripcion: 'Decoración para fiesta de 15 años en Medellín. Montaje elegante y sofisticado que convierte quinceañera en princesa. Incluye mesa principal decorada, backdrop exclusivo para fotos, arco de globos, centros de mesa, iluminación especial. Colores personalizados según preferencia. Ideal para salones de eventos en Medellín, Envigado, Sabaneta. Coordinación completa el día de la fiesta. ¡Celebra los 15 años con elegancia que merece este momento único e irrepetible!',
+    nombre: 'CR7 Soccer Star - Medellín',
+    descripcion: '¡Lleva la emoción del estadio a tu fiesta con nuestra exclusiva decoración de Cristiano Ronaldo en Medellín! Este montaje de alto impacto está diseñado para verdaderos campeones. Incluye un aro central con la imagen del astro del fútbol, enmarcado por un espectacular arco de globos que combina una tonalidad fashion con dos acabados reflex (dorado y azul metalizado) para un brillo profesional. \n\nEl set se compone de dos cilindros temáticos, bases para torta y dulces, un tapete de grama sintética que simula la cancha y figuras decorativas de balones. Para que el cumpleañero se sienta como una estrella, incluimos su nombre en letras de luz, un número gigante luminoso y el icónico "CR7". Por solo $320.000, te ofrecemos una experiencia completa que incluye el transporte (llevar y recoger mobiliario) en Medellín, asegurando que tu evento sea un golazo inolvidable.',
     precio: 320000,
     imagen: getCldUrl('decoracion5_pkxkrg'),
     categoria: 'Decoraciones',
     destacado: false,
   },
-  {
+{
     id: 'dec-006',
-    nombre: 'Decoración Quinceañera',
-    descripcion: 'Decoración premium para celebración de 15 años en Medellín. Montaje completo elegante y romántico. Incluye mesa de honor decorada con flores, backdrop profesional para sesión de fotos, arco de globos orgánico, centros de mesa personalizados, iluminación LED ambiental. Temática y colores a elección. Perfecta para salones y fincas de Medellín. Montaje profesional y coordinación incluidos. ¡Haz que su fiesta de quince sea tan especial como ella lo soñó!',
+    nombre: 'Sonic Super Speed Adventure - Medellín',
+    descripcion: '¡Lleva la fiesta a la velocidad de la luz con nuestra decoración premium de Sonic en Medellín! Este montaje de alto impacto visual incluye una base cuadrada y un backing profesional que sumergen a los invitados en el universo de SEGA. La escena se complementa con tres cilindros temáticos, bases de lujo para torta y dulces, y una escalera decorativa perfecta para organizar tus recordatorios. \n\nEl diseño destaca por sus dos imponentes arcos orgánicos de globos que enmarcan el escenario con elegancia, junto a una figura a escala de Sonic y un tapete que unifica todo el espacio. Para que el protagonista se sienta como un verdadero héroe, incluimos un número gigante luminoso y el nombre del cumpleañero en letras de luz personalizadas. El precio de $400.000 incluye el servicio completo de transporte (llevar y recoger mobiliario) en Medellín, garantizando una celebración épica y sin estrés.',
     precio: 400000,
     imagen: getCldUrl('decoracion6_h89sqb'),
     categoria: 'Decoraciones',
     destacado: false,
   },
-  {
+{
     id: 'dec-007',
-    nombre: 'Decoración Quinceañera',
-    descripcion: 'Decoración sofisticada para quince años en Medellín. Paquete completo con ambientación profesional. Incluye decoración de mesa principal, backdrop fotográfico de lujo, arco de globos premium, centros de mesa elegantes, iluminación decorativa. Adaptable a cualquier color y estilo: clásico, moderno, romántico. Ideal para celebraciones en Medellín y municipios cercanos. Asesoría personalizada incluida. ¡Convierte su celebración de 15 años en recuerdo perfecto que durará toda la vida!',
+    nombre: 'Paw Patrol Rescue Mission - Medellín',
+    descripcion: '¡Llamando a toda la patrulla en Medellín para una celebración inolvidable! Nuestro set temático de Paw Patrol ofrece un despliegue de color y aventura que encantará a los más pequeños. Este montaje profesional cuenta con un backing circular de gran impacto y tres cilindros decorativos con ilustraciones de alta calidad, incluyendo la icónica torre de control. \n\nLa decoración se destaca por su arco de globos orgánico en tres tonalidades vibrantes (azul, rojo y amarillo), complementado con una escalera blanca para recordatorios, un número gigante luminoso que resalta la edad del cumpleañero y elementos auténticos como conos de tráfico y figuras de los personajes. Incluye además bases elegantes para la torta y dulces sobre un tapete de grama sintética. Por solo $310.000, disfruta de un servicio integral que incluye el transporte de entrega y recogida en Medellín, ¡listos para entrar en acción!',
     precio: 310000,
     imagen: getCldUrl('decoracion7_wkggsl'),
     categoria: 'Decoraciones',

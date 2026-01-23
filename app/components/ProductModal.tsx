@@ -262,7 +262,7 @@ export default function ProductModal() {
                                                 {opcionesPersonalizables.length > 0 && (
                                                     <section>
                                                         <h4 className="flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">
-                                                            <CheckCircle size={14} /> Personalización
+                                                            <CheckCircle size={14} /> Tener en cuenta
                                                         </h4>
                                                         <ul className="grid grid-cols-1 gap-2">
                                                             {opcionesPersonalizables.map((item, i) => (
