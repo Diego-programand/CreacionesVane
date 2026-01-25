@@ -34,11 +34,17 @@ export default function InfiniteCarousel({ products }: InfiniteCarouselProps) {
 
   const handleTransitionEnd = () => {
     setIsTransitioning(false);
-    // Reset silencioso de posición
+    
+    // Reset silencioso de posición sin transición
     if (currentIndex >= startIndex + products.length) {
-      setCurrentIndex(currentIndex - products.length);
+      // Usamos un pequeño delay para asegurar que la transición terminó
+      setTimeout(() => {
+        setCurrentIndex(currentIndex - products.length);
+      }, 0);
     } else if (currentIndex < startIndex) {
-      setCurrentIndex(currentIndex + products.length);
+      setTimeout(() => {
+        setCurrentIndex(currentIndex + products.length);
+      }, 0);
     }
   };
 
@@ -75,18 +81,24 @@ export default function InfiniteCarousel({ products }: InfiniteCarouselProps) {
   return (
     <div className="relative w-full overflow-visible group">
       
-      {/* BOTONES DE NAVEGACIÓN - Visibles en móvil y desktop */}
+      {/* BOTONES DE NAVEGACIÓN - Se deshabilitan durante transición */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 flex justify-between px-2 md:-mx-8 z-40 pointer-events-none">
         <button
           onClick={movePrev}
-          className="pointer-events-auto bg-white/90 p-2 md:p-3 rounded-full shadow-lg border border-primary-200 text-primary-600 hover:bg-primary-600 hover:text-white transition-all active:scale-90"
+          disabled={isTransitioning}
+          className={`pointer-events-auto bg-white/90 p-2 md:p-3 rounded-full shadow-lg border border-primary-200 text-primary-600 hover:bg-primary-600 hover:text-white transition-all active:scale-90 ${
+            isTransitioning ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
           aria-label="Anterior"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
         <button
           onClick={moveNext}
-          className="pointer-events-auto bg-white/90 p-2 md:p-3 rounded-full shadow-lg border border-primary-200 text-primary-600 hover:bg-primary-600 hover:text-white transition-all active:scale-90"
+          disabled={isTransitioning}
+          className={`pointer-events-auto bg-white/90 p-2 md:p-3 rounded-full shadow-lg border border-primary-200 text-primary-600 hover:bg-primary-600 hover:text-white transition-all active:scale-90 ${
+            isTransitioning ? 'opacity-50 cursor-not-allowed' : ''
+          }`}
           aria-label="Siguiente"
         >
           <ChevronRight className="w-6 h-6" />
@@ -101,18 +113,19 @@ export default function InfiniteCarousel({ products }: InfiniteCarouselProps) {
           style={{
             gap: `${gap}px`,
             transform: `translateX(${offset})`,
-            // Transición más elástica y menos "pesada"
+            // Transición más suave y natural
             transition: isTransitioning 
               ? 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)' 
               : 'none',
           }}
           onTransitionEnd={handleTransitionEnd}
           onTouchStart={(e) => {
+            if (isTransitioning) return;
             startX.current = e.touches[0].clientX;
             isDragging.current = true;
           }}
           onTouchMove={(e) => {
-            if (!isDragging.current) return;
+            if (!isDragging.current || isTransitioning) return;
             const currentX = e.touches[0].clientX;
             const diff = startX.current - currentX;
             // Sensibilidad del swipe mejorada
@@ -141,26 +154,22 @@ export default function InfiniteCarousel({ products }: InfiniteCarouselProps) {
       </div>
 
       {/* INDICADOR DE AYUDA VISUAL (Solo móvil) */}
-      <div className="flex md:hidden items-center justify-center gap-2 mt-2 text-primary-400 text-s font-medium animate-pulse">
+      <div className="flex md:hidden items-center justify-center gap-2 mt-2 text-primary-400 text-sm font-medium animate-pulse">
         <MoveHorizontalIcon size={18} />
         Desliza para explorar
       </div>
 
-      {/* PAGINACIÓN MEJORADA */}
+      {/* INDICADORES DE POSICIÓN (Solo visuales, no clickeables) */}
       <div className="flex justify-center items-center gap-3 mt-8">
         {products.map((_, index) => {
           const isActive = (currentIndex % products.length) === index;
           return (
-            <button
+            <div
               key={index}
-              onClick={() => {
-                setIsTransitioning(true);
-                setCurrentIndex(startIndex + index);
-              }}
               className={`transition-all duration-500 rounded-full ${
                 isActive 
                 ? 'w-10 h-2 bg-primary-600 shadow-[0_0_8px_rgba(219,39,119,0.4)]' 
-                : 'w-2 h-2 bg-gray-300 hover:bg-primary-300'
+                : 'w-2 h-2 bg-gray-300'
               }`}
             />
           );

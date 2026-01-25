@@ -73,21 +73,31 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full max-w-sm mx-auto w-full">
       
-      {/* Contenedor de Imagen Optimizado para Desktop */}
+      {/* Contenedor de Imagen Optimizado con PROTECCIÓN ANTI-PIRATEO */}
       <div className="relative overflow-hidden bg-gray-100 flex-shrink-0
         h-64 sm:h-72 
-        md:h-60 lg:h-64 xl:h-72 2xl:h-80"> 
-        {/* ^ Reducimos la altura en pantallas grandes para que no "estire" la card verticalmente */}
+        md:h-60 lg:h-64 xl:h-72 2xl:h-80
+        select-none">  {/* ← Previene selección de texto/imagen */}
         
         {product.imagen ? (
-          <Image
-            src={optimizedImageUrl}
-            alt={`${product.nombre} en Medellín - Creaciones Vane Complice que endulza`}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            priority={product.destacado}
-          />
+          <>
+            <Image
+              src={optimizedImageUrl}
+              alt={`${product.nombre} en Medellín - Creaciones Vane Complice que endulza`}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              priority={product.destacado}
+              draggable={false}
+              onContextMenu={(e) => e.preventDefault()}
+            />
+            {/* Capa invisible de protección sobre la imagen */}
+            <div 
+              className="absolute inset-0 z-10"
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+            />
+          </>
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gray-200">
              <Eye size={48} className="text-gray-300" />

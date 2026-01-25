@@ -132,14 +132,14 @@ export default function ProductModal() {
 
     return (
         <>
-            {/* 🖼️ VISOR DE IMAGEN FULLSCREEN (SOLO MÓVIL) */}
+            {/* 🖼️ VISOR DE IMAGEN FULLSCREEN (SOLO MÓVIL) CON PROTECCIÓN */}
             <AnimatePresence>
                 {imageFullscreen && selectedProduct && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[200] bg-black flex items-center justify-center"
+                        className="fixed inset-0 z-[200] bg-black flex items-center justify-center select-none"
                         onClick={() => setImageFullscreen(false)}
                     >
                         <button
@@ -154,8 +154,16 @@ export default function ProductModal() {
                                 src={selectedProduct.imagen}
                                 alt={selectedProduct.nombre}
                                 fill
-                                className="object-contain"
+                                className="object-contain pointer-events-none"
                                 priority
+                                draggable={false}
+                                onContextMenu={(e) => e.preventDefault()}
+                            />
+                            {/* Capa de protección invisible */}
+                            <div 
+                                className="absolute inset-0 z-[205]"
+                                onContextMenu={(e) => e.preventDefault()}
+                                onDragStart={(e) => e.preventDefault()}
                             />
                             <Watermark text="CreacionesVane" showCenter={true} />
                         </div>
@@ -196,20 +204,28 @@ export default function ProductModal() {
                                 <X size={20} strokeWidth={2.5} />
                             </button>
 
-                            {/* COLUMNA IZQUIERDA: Imagen */}
+                            {/* COLUMNA IZQUIERDA: Imagen CON PROTECCIÓN ANTI-PIRATEO */}
                             <div
-                                className="w-full md:w-1/2 h-72 md:h-full relative flex-shrink-0 bg-gray-100 overflow-hidden cursor-pointer"
+                                className="w-full md:w-1/2 h-72 md:h-full relative flex-shrink-0 bg-gray-100 overflow-hidden cursor-pointer select-none"
                                 onClick={handleImageClick}
                             >
                                 <Image
                                     src={selectedProduct.imagen}
                                     alt={selectedProduct.nombre}
                                     fill
-                                    className="object-cover md:object-contain xl:object-cover"
+                                    className="object-cover md:object-contain xl:object-cover pointer-events-none"
                                     priority
+                                    draggable={false}
+                                    onContextMenu={(e) => e.preventDefault()}
+                                />
+                                {/* Capa de protección invisible sobre la imagen */}
+                                <div 
+                                    className="absolute inset-0 z-[5]"
+                                    onContextMenu={(e) => e.preventDefault()}
+                                    onDragStart={(e) => e.preventDefault()}
                                 />
                                 <Watermark />
-                                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md p-2 rounded-full text-white md:hidden flex items-center gap-2">
+                                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md p-2 rounded-full text-white md:hidden flex items-center gap-2 z-10">
                                     <ZoomIn size={14} />
                                     <span className="text-[10px] font-bold">VER IMAGEN AMPLIADA</span>
                                 </div>
