@@ -7,8 +7,8 @@ export default function CTASection() {
   // Generamos las URLs optimizadas
   const videoDesktop = getCldVideoUrl('hearts-background_kuk3a9');
   const videoMobile = getCldVideoUrl('hearts-background-mobile_z1xlou');
-  
-  // Para el poster, usa la URL base de imágenes (ajusta según tu constante)
+
+  // Para el poster, usa la URL base de imágenes
   const posterUrl = `https://res.cloudinary.com/dw7zhnbho/image/upload/f_auto,q_auto,w_1200/fallback-hearts_d3grvx.webp`;
 
   return (
@@ -36,7 +36,7 @@ export default function CTASection() {
           />
           Tu navegador no soporta videos.
         </video>
-        
+
         {/* Overlay con gradiente para legibilidad */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-600/70 via-primary-500/60 to-primary-700/70"></div>
       </div>

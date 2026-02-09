@@ -1,0 +1,24 @@
+# robots.txt optimizado para Creaciones Vane
+User-agent: *
+Allow: /
+
+# Bloquear archivos internos
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Archivos importantes
+Sitemap: https://creacionesvane.com/sitemap.xml
+
+# Configuración específica para bots principales
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Crawl-delay para proteger servidor (opcional)
+Crawl-delay: 1

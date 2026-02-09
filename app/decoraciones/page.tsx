@@ -1,6 +1,4 @@
-'use client';
-
-import Head from 'next/head';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,143 +7,456 @@ import ScrollReveal from '../components/ScrollReveal';
 import ProductCatalog from '../components/ProductCatalog';
 import { getCldVideoUrl } from '../data/mockData';
 
+// METADATA ESTÁTICA ULTRA OPTIMIZADA
+export const metadata: Metadata = {
+  title: 'Decoración de Eventos en Medellín | Decoraciones Vane - Bodas, Cumpleaños, Baby Shower desde $300.000',
+  description: 'Decoración profesional para bodas, cumpleaños infantiles, quinceañeras y Baby Shower en Medellín. Montaje completo con globos, flores, backdrop y arcos. Servicio en El Poblado, Laureles, Envigado. Montaje y desmontaje incluido. WhatsApp 312 823 5654',
+  keywords: [
+    // Keywords primarias - Alto volumen
+    'decoración eventos medellín',
+    'decoración bodas medellín',
+    'decoración cumpleaños medellín',
+    'baby shower medellín',
+    'decoración con globos medellín',
+
+    // Keywords por tipo de evento
+    'decoración cumpleaños infantiles medellín',
+    'decoración quinceañeras medellín',
+    'decoración bodas campestres medellín',
+    'decoración baby shower niña medellín',
+    'decoración baby shower niño medellín',
+    'decoración primer añito medellín',
+    'decoración bautizo medellín',
+    'decoración eventos corporativos medellín',
+
+    // Keywords por zona - SEO Local
+    'decoración eventos el poblado',
+    'montaje decoración laureles',
+    'decoración fiestas envigado',
+    'decoración eventos sabaneta',
+    'backdrop medellín el poblado',
+
+    // Keywords long-tail - Alta conversión
+    'decoración temática paw patrol medellín',
+    'arcos de globos orgánicos medellín',
+    'montaje completo decoración eventos medellín',
+    'decoración elegante bodas medellín',
+    'decoración económica cumpleaños medellín',
+
+    // Keywords por servicio específico
+    'backdrop medellín',
+    'arcos de globos medellín',
+    'globos orgánicos medellín',
+    'centros de mesa medellín',
+    'montaje decoración medellín',
+    'alquiler decoración eventos medellín',
+
+    // Keywords por estilo
+    'decoración minimalista medellín',
+    'decoración vintage medellín',
+    'decoración moderna medellín',
+    'decoración rústica medellín',
+    'decoración temática medellín',
+
+    // Keywords comparativas
+    'mejor decoración eventos medellín',
+    'decoración profesional medellín',
+    'decoración económica y bonita medellín'
+  ],
+  alternates: {
+    canonical: 'https://creacionesvane.com/decoraciones',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://creacionesvane.com/decoraciones',
+    title: 'Decoración de Eventos en Medellín | Decoraciones Vane',
+    description: 'Espacios que inspiran. Decoración profesional para bodas, cumpleaños, quinceañeras y Baby Shower en Medellín con montaje completo.',
+    images: [
+      {
+        url: 'https://creacionesvane.com/banner-decoraciones.png',
+        width: 1200,
+        height: 630,
+        alt: 'Decoración profesional de eventos en Medellín - Bodas, cumpleaños y Baby Shower'
+      }
+    ],
+    locale: 'es_CO',
+    siteName: 'Creaciones Vane',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Decoración de Eventos en Medellín | Decoraciones Vane',
+    description: 'Transformamos tu evento en un momento inolvidable. Decoración profesional con montaje completo. WhatsApp 312 823 5654',
+    images: ['https://creacionesvane.com/banner-decoraciones.png'],
+  },
+  other: {
+    'geo.region': 'CO-ANT',
+    'geo.placename': 'Medellín',
+    'geo.position': '6.297486;-75.553924',
+    'ICBM': '6.297486, -75.553924',
+  },
+};
+
 export default function DecoracionesPage() {
+  //  JSON-LD LOCAL BUSINESS CON SERVICIOS DETALLADOS
+  const jsonLdLocalBusiness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://creacionesvane.com/decoraciones",
+    "name": "Decoraciones Vane - Decoración Profesional de Eventos",
+    "alternateName": "Decoraciones Vane Medellín",
+    "description": "Servicio profesional de decoración para bodas, cumpleaños infantiles, quinceañeras, Baby Shower y eventos corporativos en Medellín. Montaje completo con globos orgánicos, flores, backdrop y mobiliario.",
+    "url": "https://creacionesvane.com/decoraciones",
+    "telephone": "+573128235654",
+    "priceRange": "$$-$$$",
+    "image": [
+      "https://creacionesvane.com/banner-decoraciones.png",
+      "https://creacionesvane.com/logo-decoraciones.jpeg"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carrera 50 #120-13",
+      "addressLocality": "Medellín",
+      "addressRegion": "Antioquia",
+      "addressCountry": "CO",
+      "postalCode": "050001"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 6.297486,
+      "longitude": -75.553924
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    ],
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Medellín",
+        "description": "Decoración de eventos en toda Medellín"
+      },
+      {
+        "@type": "Place",
+        "name": "El Poblado",
+        "description": "Montaje de decoraciones en salones y fincas de El Poblado"
+      },
+      {
+        "@type": "Place",
+        "name": "Laureles",
+        "description": "Servicio de decoración zona Laureles"
+      },
+      { "@type": "City", "name": "Envigado" },
+      { "@type": "City", "name": "Sabaneta" },
+      { "@type": "City", "name": "Itagüí" },
+      { "@type": "City", "name": "Bello" },
+      { "@type": "City", "name": "La Estrella" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Decoración Profesional",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Decoración de Bodas",
+            "description": "Decoración completa para bodas con arco nupcial, centros de mesa, iluminación decorativa y backdrop personalizado. Incluye montaje y desmontaje.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Decoraciones Vane"
+            },
+            "areaServed": "Medellín, Antioquia",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "COP",
+              "price": "480000",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Decoración Cumpleaños Infantil",
+            "description": "Decoración temática personalizada con globos orgánicos, aro central, cilindros decorativos, backdrop y figuras del personaje favorito. Incluye transporte, montaje y desmontaje.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Decoraciones Vane"
+            },
+            "areaServed": "Medellín, Antioquia",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "COP",
+              "price": "300000",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Decoración Baby Shower",
+            "description": "Montaje profesional con globos orgánicos en tonos pastel, mesa dulce decorada, backdrop elegante y mobiliario completo. Diseños para niña o niño.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Decoraciones Vane"
+            },
+            "areaServed": "Medellín, Antioquia",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "COP",
+              "price": "400000",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Decoración Quinceañeras",
+            "description": "Decoración elegante y sofisticada con arcos de globos, iluminación especial, backdrop para fotos y ambientación completa según temática elegida.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Decoraciones Vane"
+            },
+            "areaServed": "Medellín, Antioquia",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "COP",
+              "price": "450000",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Decoración Temática Premium",
+            "description": "Montaje de lujo con fondo Shimmer, múltiples backings, arcos de puerta, números luminosos y figuras a escala. Ideal para eventos especiales de gran formato.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Decoraciones Vane"
+            },
+            "areaServed": "Medellín, Antioquia",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "COP",
+              "price": "650000",
+              "priceValidUntil": "2026-12-31",
+              "availability": "https://schema.org/InStock"
+            }
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Montaje y Desmontaje Incluido",
+        "description": "Servicio completo con instalación profesional y retiro del mobiliario"
+      },
+      {
+        "@type": "Offer",
+        "name": "Diseños Personalizados",
+        "description": "Adaptamos cada decoración a tus colores, temática y preferencias"
+      },
+      {
+        "@type": "Offer",
+        "name": "Transporte Incluido",
+        "description": "Llevamos todo el material a tu evento sin costo adicional en el área metropolitana"
+      }
+    ]
+  };
+
+  //  BREADCRUMB SCHEMA
+  const jsonLdBreadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "https://creacionesvane.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Decoración de Eventos",
+        "item": "https://creacionesvane.com/decoraciones"
+      }
+    ]
+  };
+
+  //  FAQ SCHEMA ESPECÍFICO PARA DECORACIONES
+  const jsonLdFAQ = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿El precio incluye montaje y desmontaje?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todos nuestros paquetes incluyen el servicio completo de transporte, montaje profesional y desmontaje al finalizar el evento en el área metropolitana de Medellín (El Poblado, Laureles, Envigado, Sabaneta)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Puedo personalizar los colores y la temática?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "¡Por supuesto! Adaptamos cada decoración a tus preferencias de colores, temática del evento y estilo. Trabajamos con temas infantiles (Paw Patrol, Toy Story, Stitch), elegantes (bodas, quinceañeras) y personalizados según tu visión."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Con cuánto tiempo de anticipación debo reservar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Recomendamos reservar con al menos 1 semana de anticipación para garantizar disponibilidad. Para eventos en fechas especiales (diciembre, día de la madre, etc.) sugerimos reservar con 2-3 semanas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen decoraciones para eventos al aire libre?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, decoramos eventos tanto en espacios cerrados como al aire libre (fincas, jardines, terrazas). Tomamos precauciones especiales para eventos outdoor considerando condiciones climáticas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué incluye el servicio de decoración?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada paquete incluye: diseño personalizado, globos orgánicos o temáticos, mobiliario decorativo (cilindros, bases, tarimas según paquete), backdrop, transporte, montaje profesional y desmontaje. Los detalles específicos varían según el paquete elegido."
+        }
+      }
+    ]
+  };
+
+  //  SERVICE SCHEMA (Para aparecer en Google Services)
+  const jsonLdService = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Decoración de Eventos",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Decoraciones Vane",
+      "telephone": "+573128235654",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Medellín",
+        "addressRegion": "Antioquia",
+        "addressCountry": "CO"
+      }
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Medellín"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de Decoración",
+      "itemListElement": [
+        {
+          "@type": "OfferCatalog",
+          "name": "Bodas",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Decoración Bodas Completa"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Cumpleaños Infantiles",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Decoración Temática Infantil"
+              }
+            }
+          ]
+        },
+        {
+          "@type": "OfferCatalog",
+          "name": "Baby Shower",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Decoración Baby Shower"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  };
+
   return (
     <>
-      <Head>
-        <title>Decoración de Eventos en Medellín | Decoraciones Vane - Bodas, Cumpleaños, Baby Shower</title>
-        <meta
-          name="description"
-          content="Decoración profesional para bodas, cumpleaños infantiles, quinceañeras y Baby Shower en Medellín. Montaje completo con globos, flores y backdrop. ¡Desde $300.000!"
-        />
-        <meta
-          name="keywords"
-          content="decoración bodas medellín, decoración cumpleaños infantiles medellín, decoración quinceañeras medellín, baby shower medellín, decoración eventos medellín, globos medellín, backdrop medellín, montaje decoración medellín, decoración fiestas el poblado"
-        />
-        <link rel="canonical" href="https://creacionesvane.com/decoraciones" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://creacionesvane.com/decoraciones" />
-        <meta property="og:title" content="Decoración de Eventos en Medellín | Decoraciones Vane" />
-        <meta property="og:description" content="Espacios que inspiran. Decoración profesional para bodas, cumpleaños, quinceañeras y Baby Shower en Medellín con montaje completo." />
-        <meta property="og:image" content="https://creacionesvane.com/banner-decoraciones.png" />
-        <meta property="og:locale" content="es_CO" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://creacionesvane.com/decoraciones" />
-        <meta property="twitter:title" content="Decoración de Eventos en Medellín | Decoraciones Vane" />
-        <meta property="twitter:description" content="Transformamos tu evento en un momento inolvidable. Decoración profesional en Medellín." />
-        <meta property="twitter:image" content="https://creacionesvane.com/banner-decoraciones.png" />
-
-        {/* Geo tags */}
-        <meta name="geo.region" content="CO-ANT" />
-        <meta name="geo.placename" content="Medellín" />
-        <meta name="geo.position" content="6.297486;-75.553924" />
-        <meta name="ICBM" content="6.297486, -75.553924" />
-
-        {/* Structured Data JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "LocalBusiness",
-              "@id": "https://creacionesvane.com/decoraciones",
-              "name": "Decoraciones Vane - Decoración de Eventos",
-              "description": "Decoración profesional para bodas, cumpleaños infantiles, quinceañeras y Baby Shower en Medellín con montaje completo",
-              "url": "https://creacionesvane.com/decoraciones",
-              "telephone": "+573128235654",
-              "priceRange": "$$-$$$",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Carrera 50 #120-13",
-                "addressLocality": "Medellín",
-                "addressRegion": "Antioquia",
-                "addressCountry": "CO",
-                "postalCode": "050034"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 6.297486,
-                "longitude": -75.553924
-              },
-              "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "09:00",
-                "closes": "18:00"
-              },
-              "areaServed": [
-                { "@type": "City", "name": "Medellín" },
-                { "@type": "City", "name": "Envigado" },
-                { "@type": "City", "name": "Sabaneta" },
-                { "@type": "City", "name": "Itagüí" },
-                { "@type": "City", "name": "Bello" }
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Servicios de Decoración",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Decoración Bodas",
-                      "description": "Decoración completa para bodas con arco nupcial, centros de mesa, iluminación y backdrop",
-                      "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "480000", "availability": "https://schema.org/InStock" }
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Decoración Cumpleaños Infantil",
-                      "description": "Decoración temática personalizada con globos, piñata y ambientación completa",
-                      "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "500000", "availability": "https://schema.org/InStock" }
-                    }
-                  },
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "Decoración Baby Shower",
-                      "description": "Montaje profesional con globos orgánicos, mesa dulce y backdrop elegante",
-                      "offers": { "@type": "Offer", "priceCurrency": "COP", "price": "650000", "availability": "https://schema.org/InStock" }
-                    }
-                  }
-                ]
-              },
-              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "127" }
-            })
-          }}
-        />
-
-        {/* Breadcrumb Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://creacionesvane.com" },
-                { "@type": "ListItem", "position": 2, "name": "Decoraciones", "item": "https://creacionesvane.com/decoraciones" }
-              ]
-            })
-          }}
-        />
-      </Head>
+      {/*  SCHEMAS JSON-LD MÚLTIPLES */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
+      />
 
       <Header />
-      
+
       <main className="min-h-screen">
         {/* Hero Section */}
         <header className="relative h-[380px] flex items-center justify-center overflow-hidden">
           <Image
             src="/banner-decoraciones.webp"
-            alt="Decoración de eventos en Medellín - Bodas, cumpleaños y Baby Shower"
+            alt="Decoración profesional de eventos en Medellín - Bodas, cumpleaños y Baby Shower"
             fill
             className="object-cover object-center blur-[5px]"
             priority

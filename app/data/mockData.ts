@@ -8,7 +8,7 @@ export interface Product {
   imagen: string;
   categoria: 'Detalles' | 'Refrigerios' | 'Decoraciones';
   destacado: boolean;
-  opcionesPersonalizables?: string[]; // 🔥 NUEVO
+  opcionesPersonalizables?: string[];
 }
 
 // 🎨 Opciones personalizables por categoría
@@ -58,7 +58,7 @@ export const getCldVideoUrl = (filename: string) => {
 
 export const productosMock: Product[] = [
   // ==================== ANCHETAS ====================
-{
+  {
     id: 'det-anc-001',
     nombre: 'Celebración Radiante: Magia en Rosa',
     descripcion: 'Un detalle vibrante diseñado para cautivar corazones en Medellín y sus alrededores. Esta ancheta destaca por su imponente globo burbuja personalizado y números metalizados, acompañados de una deliciosa selección de snacks, yogurt Alpina y chocolates. Presentada con una delicada mariposa artesanal y tarjeta de dedicatoria, es la sorpresa ideal para envíos a domicilio en Itagüí, La Estrella y todo el Valle de Aburrá.',
@@ -76,7 +76,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-003',
     nombre: 'Dulce Amanecer: Encanto y Rosas',
     descripcion: 'Un detalle delicado y lleno de luz para sorprender en la capital antioqueña. Esta ancheta incluye un globo burbuja personalizado con destellos dorados, una selección de snacks dulces y salados, jugo natural y frutas frescas. Decorada con una mariposa troquelada y globos en tonos oro rosa, es el regalo perfecto para enviar un mensaje de cariño a cualquier rincón del área metropolitana, desde Bello hasta Sabaneta. ¡Haz que su día comience con una sonrisa!',
@@ -85,7 +85,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-004',
     nombre: 'Festín de Colores: Desayuno VIP',
     descripcion: 'Una explosión de alegría y sabor para celebrar fechas especiales en el Valle de Aburrá. Este desayuno sorpresa incluye una variada selección de frutas frescas, Alpinetta, jugos naturales, sándwich gourmet y snacks premium. Se distingue por su imponente arco de globos cromados en tonos violeta y oro, rosas naturales y un globo burbuja temático. Ideal para entregas a domicilio en Medellín, Envigado y Sabaneta, llevando una experiencia de lujo directamente a la puerta de esa persona especial.',
@@ -112,7 +112,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-007',
     nombre: 'Azul Infinito: Sorpresa Caballero',
     descripcion: 'Un detalle con estilo y distinción para celebrar a los hombres más especiales en la ciudad de la eterna primavera. Esta ancheta incluye un globo burbuja personalizado con mensaje de felicitación, snacks salados, galletas Tosh, jugos y una selección de dulces premium. Decorada con elegantes moños y globos en tonos azul eléctrico y negro, es la opción perfecta para sorprender en cumpleaños o logros alcanzados. Realizamos entregas con amor en Bello, Copacabana y toda el área metropolitana.',
@@ -140,7 +140,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-010',
     nombre: 'Mundo Kawaii: Especial Hello Kitty',
     descripcion: 'El regalo soñado para las fanáticas de la ternura en la capital antioqueña. Esta ancheta temática de Hello Kitty incluye globos metalizados de números en tono oro rosa, un globo burbuja personalizado y una decoración integral con stickers y detalles del icónico personaje. Viene cargada con una deliciosa bebida, snacks seleccionados y golosinas presentadas en una base decorativa única. Un detalle mágico y lleno de color con entrega disponible en todo Medellín, Envigado y el área metropolitana para celebrar un cumpleaños inolvidable.',
@@ -176,7 +176,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-014',
     nombre: 'Dulce Encanto: Gala de Rosas y Peluche',
     descripcion: 'Una composición de lujo diseñada para cautivar en Medellín y sus alrededores. Esta espectacular ancheta incluye un tierno peluche premium, un ramo de rosas bicolores frescas, sándwich gourmet, fruta seleccionada y una variedad de yogures Alpina. Coronada con un globo burbuja personalizado en tonos oro rosa y un elegante arco de globos, es el regalo definitivo para entregas especiales en El Poblado, Envigado y todo el Valle de Aburrá.',
@@ -230,7 +230,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-020',
     nombre: 'Mis Dulces 15: Edición Angel',
     descripcion: 'Un detalle mágico y tierno diseñado especialmente para celebrar el quinceañero soñado en el Valle de Aburrá. Esta ancheta destaca por un adorable peluche de Angel (Stitch rosa), acompañado de un elegante globo burbuja personalizado y globos satinados en tonos oro rosa. El festín incluye Alpinette, frutas frescas, snacks y jugos, todo presentado en una base decorativa con tarjeta de dedicatoria. Es la sorpresa ideal para hacer sentir única a la quinceañera con entrega a domicilio en Medellín, Envigado y Sabaneta.',
@@ -257,7 +257,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-023',
     nombre: 'Destello Lila: Especial Sofi',
     descripcion: 'Un detalle delicado y lleno de luz para celebrar momentos especiales en el Valle de Aburrá. Esta ancheta destaca por su globo burbuja personalizado con caligrafía artística, acompañado de un ramillete de globos en tonos lila y dorado cromado. Incluye yogurt Alpina original, una selección de fresas frescas, snacks y una decoración detallada con mariposas troqueladas y cintas satinadas. Es la opción ideal para un regalo tierno y sofisticado con entrega garantizada en Medellín, Envigado y Sabaneta.',
@@ -293,7 +293,7 @@ export const productosMock: Product[] = [
     categoria: 'Detalles',
     destacado: false,
   },
-{
+  {
     id: 'det-anc-027',
     nombre: 'Grado de Honor: Edición Púrpura',
     descripcion: 'Un reconocimiento elegante y lleno de color para celebrar los logros académicos en el Valle de Aburrá. Esta ancheta de graduación destaca por su globo burbuja personalizado con birrete y el nombre del graduado, acompañado de un ramillete de globos en tonos lavanda y violeta satinado. Incluye yogurt Alpina original, una selección de fresas frescas, snacks saludables y jugos, todo decorado con una gran mariposa troquelada y lazos de seda. Perfecta para entregas en Medellín, Envigado y Sabaneta para felicitar por este nuevo paso.',
