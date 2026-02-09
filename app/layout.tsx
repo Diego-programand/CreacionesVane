@@ -23,7 +23,7 @@ const pacifico = Pacifico({
 
 // METADATA GLOBAL
 export const metadata: Metadata = {
-  metadataBase: new URL("https://creacionesvane.com"),
+  metadataBase: new URL("https://www.creacionesvane.com"),
 
   // Google Search Console Verification
   verification: {
