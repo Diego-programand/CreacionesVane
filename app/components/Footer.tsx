@@ -18,7 +18,7 @@ export default function Footer() {
 
       <div className="container mx-auto px-6 py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          
+
           {/* Logo y Branding */}
           <div className="space-y-6 col-span-1 lg:col-span-1">
             <div className="flex items-center gap-4 group">
@@ -47,8 +47,8 @@ export default function Footer() {
             <ul className="space-y-4">
               {['Detalles de Amor', 'Refrigerios', 'Decoraciones'].map((item) => (
                 <li key={item}>
-                  <Link 
-                    href={`/${item.toLowerCase().replace(' ', '-')}`} 
+                  <Link
+                    href={`/${item.toLowerCase().replace(' ', '-')}`}
                     className="group flex items-center text-white/80 hover:text-white transition-all"
                   >
                     <span className="h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-4 group-hover:mr-2"></span>
@@ -65,7 +65,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <div className="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
                 <div>
                   <p className="text-xs text-primary-200">WhatsApp</p>
@@ -74,11 +74,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 group">
                 <div className="bg-white/10 p-2 rounded-lg group-hover:bg-white/20 transition-colors">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
                   <p className="text-xs text-primary-200">Ubicación</p>
-                  <span className="text-sm text-white/90">Cra. 50 #120-13<br/>Medellín, Colombia</span>
+                  <span className="text-sm text-white/90">Cra. 50 #120-13<br />Medellín, Colombia</span>
                 </div>
               </li>
             </ul>
@@ -88,7 +88,7 @@ export default function Footer() {
           <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
             <h4 className="font-bold text-lg mb-2">¿Quieres algo especial?</h4>
             <p className="text-sm text-white/70 mb-4">Escríbenos y personalizamos tu regalo hoy mismo.</p>
-            <a 
+            <a
               href="https://wa.me/573128235654"
               className="block text-center bg-white text-primary-600 font-bold py-2 px-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg"
             >
@@ -108,8 +108,16 @@ export default function Footer() {
                 Hecho con <span className="text-red-400">❤</span> en Colombia
               </p>
             </div>
-            
+
+
             <div className="flex flex-wrap justify-center gap-6 text-xs text-white/50">
+              <Link href="/terminos-y-condiciones" className="hover:text-white transition-colors">
+                Términos y Condiciones
+              </Link>
+              <Link href="/politica-de-privacidad" className="hover:text-white transition-colors">
+                Política de Privacidad
+              </Link>
+              <span className="hidden md:inline text-white/20">|</span>
               <a href="https://tiktok.com/@owlydev" className="hover:text-white transition-colors flex items-center gap-1">
                 Web por <span className="font-bold text-white/80">OwlyDev</span>
               </a>
