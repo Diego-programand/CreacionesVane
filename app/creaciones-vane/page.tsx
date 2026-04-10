@@ -201,7 +201,7 @@ export default function CreacionesVanePage() {
 
       <main className="min-h-screen">
         {/* Hero Section */}
-        <header className="relative h-[350px] flex items-center justify-center overflow-hidden">
+        <header className="relative h-[380px] flex items-center justify-center overflow-hidden">
           {/* Imagen banner con ALT geo-localizado para SEO de imágenes */}
           <Image
             src="/banner-detalles.webp"

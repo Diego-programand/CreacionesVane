@@ -453,13 +453,13 @@ export default function DecoracionesPage() {
 
       <main className="min-h-screen">
         {/* Hero Section */}
-        <header className="relative h-[380px] flex items-center justify-center overflow-hidden">
+        <header className="relative h-[400px] flex items-center justify-center overflow-hidden">
           {/* Imagen banner con ALT geo-localizado */}
           <Image
             src="/banner-decoraciones.webp"
             alt="Decoración profesional de bodas, cumpleaños y baby shower a domicilio en Medellín - Decoraciones Vane"
             fill
-            className="object-cover object-center blur-[5px]"
+            className="object-cover object-center blur-[7px]"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/60 via-[#B39DDB]/75 to-[#A0E7E5]/60" />

@@ -14,7 +14,7 @@ export default function HeroSection() {
     return (
         /* role="banner" semántico para el hero principal */
         <section
-            className="relative h-[450px] flex items-center justify-center overflow-hidden"
+            className="relative h-[500px] flex items-center justify-center overflow-hidden"
             aria-label="Sección principal de Creaciones Vane - Regalos en Medellín"
         >
             {/* Imagen de fondo con ALT geo-localizado */}

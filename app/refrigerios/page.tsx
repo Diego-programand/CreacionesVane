@@ -359,7 +359,7 @@ export default function RefrigeriosPage() {
 
       <main className="min-h-screen">
         {/* Hero Section */}
-        <header className="relative h-[350px] flex items-center justify-center overflow-hidden">
+        <header className="relative h-[400px] flex items-center justify-center overflow-hidden">
           {/* Imagen banner con ALT geo-localizado para SEO de imágenes */}
           <Image
             src="/banner-refrigerios.webp"
