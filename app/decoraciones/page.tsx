@@ -454,9 +454,10 @@ export default function DecoracionesPage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <header className="relative h-[380px] flex items-center justify-center overflow-hidden">
+          {/* Imagen banner con ALT geo-localizado */}
           <Image
             src="/banner-decoraciones.webp"
-            alt="Decoración profesional de eventos en Medellín - Bodas, cumpleaños y Baby Shower"
+            alt="Decoración profesional de bodas, cumpleaños y baby shower a domicilio en Medellín - Decoraciones Vane"
             fill
             className="object-cover object-center blur-[5px]"
             priority
@@ -467,7 +468,7 @@ export default function DecoracionesPage() {
             <ScrollReveal direction="down" delay={0.2}>
               <Image
                 src="/logo-decoraciones.jpeg"
-                alt="Logo Decoraciones Vane"
+                alt="Logo Decoraciones Vane - Decoración de eventos y fiestas en Medellín, Envigado e Itagüí"
                 width={120}
                 height={120}
                 className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-1"
@@ -475,17 +476,19 @@ export default function DecoracionesPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
+              {/* H1 con keyword transaccional + geo para SEO local */}
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
-                Decoraciones Vane
+                Decoración de Eventos en Medellín a Domicilio
               </h1>
               <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                Espacios que inspiran
+                Decoraciones Vane — Espacios que Inspiran
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
+              {/* Descripción con keywords long-tail geo-localizadas */}
               <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
-                Decoración profesional para toda ocasión en Medellín. Hacemos realidad la celebración que imaginas.
+                Montaje profesional para bodas, cumpleaños, quinceañeras y baby shower en Medellín, El Poblado, Envigado y Sabaneta. Hacemos realidad tu celebración soñada.
               </p>
             </ScrollReveal>
           </div>

@@ -360,9 +360,10 @@ export default function RefrigeriosPage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <header className="relative h-[350px] flex items-center justify-center overflow-hidden">
+          {/* Imagen banner con ALT geo-localizado para SEO de imágenes */}
           <Image
             src="/banner-refrigerios.webp"
-            alt="Refrigerios para eventos corporativos e infantiles en Medellín - Box lunch y catering"
+            alt="Refrigerios frescos para eventos corporativos, fiestas infantiles y reuniones a domicilio en Medellín - Refrigerios Vane"
             fill
             className="object-cover object-center blur-[5px]"
             priority
@@ -373,7 +374,7 @@ export default function RefrigeriosPage() {
             <ScrollReveal direction="down" delay={0.2}>
               <Image
                 src="/logo-refrigerios.jpeg"
-                alt="Logo Refrigerios Vane"
+                alt="Logo Refrigerios Vane - Catering y box lunch para eventos corporativos en Medellín"
                 width={120}
                 height={120}
                 className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
@@ -381,17 +382,19 @@ export default function RefrigeriosPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
+              {/* H1 con keyword transaccional + geo para SEO local */}
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
-                Refrigerios Vane
+                Refrigerios para Eventos en Medellín — Entrega a Domicilio
               </h1>
               <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                Sabor en cada evento
+                Refrigerios Vane — Sabor en Cada Evento
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
+              {/* Descripción con keywords long-tail geo-localizadas */}
               <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
-                Refrigerios deliciosos para fiestas, eventos corporativos y reuniones en Medellín. Calidad garantizada.
+                Box lunch, sándwiches gourmet y refrigerios corporativos con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Calidad garantizada desde $5.000.
               </p>
             </ScrollReveal>
           </div>

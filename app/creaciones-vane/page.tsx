@@ -8,8 +8,10 @@ import ProductCatalog from '../components/ProductCatalog';
 
 // METADATA ESTÁTICA - NO 'use client'
 export const metadata: Metadata = {
-  title: 'Anchetas y Desayunos Sorpresa en Medellín | Creaciones Vane - Entrega en El Poblado y Envigado',
-  description: 'Anchetas personalizadas, desayunos sorpresa y ramos de rosas en Medellín. Entrega el mismo día en El Poblado, Laureles, Envigado y Sabaneta. Globos, peluches y chocolates desde $50.000. WhatsApp 312 823 5654',
+  /* Title con keyword transaccional "a domicilio" + geo */
+  title: 'Anchetas y Desayunos Sorpresa a Domicilio en Medellín | Creaciones Vane - Peluches, Ramos y Regalos',
+  /* Description con CTA, precio, zonas y WhatsApp */
+  description: 'Anchetas personalizadas, desayunos sorpresa, peluches y ramos de rosas a domicilio en Medellín. Entrega el mismo día en El Poblado, Laureles, Envigado, Sabaneta e Itagüí. Regalos desde $50.000. WhatsApp 312 823 5654',
   keywords: [
     'anchetas medellín',
     'desayunos sorpresa medellín',
@@ -200,9 +202,10 @@ export default function CreacionesVanePage() {
       <main className="min-h-screen">
         {/* Hero Section */}
         <header className="relative h-[350px] flex items-center justify-center overflow-hidden">
+          {/* Imagen banner con ALT geo-localizado para SEO de imágenes */}
           <Image
             src="/banner-detalles.webp"
-            alt="Anchetas y desayunos sorpresa en Medellín - Creaciones Vane"
+            alt="Anchetas personalizadas y desayunos sorpresa a domicilio en Medellín - Creaciones Vane detalles de amor"
             fill
             className="object-cover object-center blur-[2px]"
             priority
@@ -213,7 +216,7 @@ export default function CreacionesVanePage() {
             <ScrollReveal direction="down" delay={0.2}>
               <Image
                 src="/logo.png"
-                alt="Logo Creaciones Vane"
+                alt="Logo Creaciones Vane - Tienda de anchetas y regalos en Medellín"
                 width={120}
                 height={120}
                 className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
@@ -221,17 +224,19 @@ export default function CreacionesVanePage() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
+              {/* H1 con keyword transaccional + geo para SEO local */}
               <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
-                Creaciones Vane
+                Anchetas y Desayunos Sorpresa a Domicilio en Medellín
               </h1>
               <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                Cómplice que endulza
+                Creaciones Vane — Cómplice que Endulza
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
+              {/* Descripción con keywords long-tail para Medellín */}
               <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
-                Detalles de amor que alegran el corazón. Anchetas, desayunos, ramos y más en Medellín.
+                Regalos personalizados, peluches, ramos de rosas y detalles de amor con entrega el mismo día en Medellín, Envigado, Sabaneta e Itagüí.
               </p>
             </ScrollReveal>
           </div>
