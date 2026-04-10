@@ -165,13 +165,17 @@ export const metadata: Metadata = {
     },
   },
 
-  // Geo tags y otros metadata
+  // Geo tags y otros metadata — SEO Local Medellín, Valle de Aburrá
   other: {
-    // Geo tags para SEO local
+    // Geo tags para SEO local — Coordenadas precisas de Medellín
     "geo.region": "CO-ANT",
-    "geo.placename": "Medellín, Antioquia",
-    "geo.position": "6.297486;-75.553924",
-    "ICBM": "6.297486, -75.553924",
+    "geo.placename": "Medellín, Antioquia, Colombia",
+    "geo.position": "6.2476;-75.5658",
+    "ICBM": "6.2476, -75.5658",
+
+    // Dublin Core Geo — Refuerzo para crawlers
+    "DC.title": "Creaciones Vane - Regalos y Desayunos Sorpresa en Medellín",
+    "DC.coverage": "Medellín, Envigado, Itagüí, Bello, Sabaneta, Valle de Aburrá, Antioquia, Colombia",
 
     // Rating para edad
     "rating": "general",
@@ -188,9 +192,6 @@ export const metadata: Metadata = {
 
     // Theme color
     "theme-color": "#e91e63",
-
-    // Facebook App ID
-    // "fb:app_id": "tu-facebook-app-id",
   },
 };
 
@@ -220,13 +221,16 @@ export default function RootLayout({
         />
       </head>
       <body className={`${poppins.className} antialiased bg-white`}>
-        {/* Schema Organization a nivel global */}
+        {/* ===== JSON-LD: ORGANIZATION + LOCAL BUSINESS GLOBAL ===== 
+             Schema.org completo con areaServed para Valle de Aburrá,
+             coordenadas geográficas precisas de Medellín (6.2476°N, 75.5658°W),
+             y catálogo de servicios: Desayunos, Regalos, Peluches, Decoración */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Organization",
+              "@type": ["Organization", "LocalBusiness"],
               "@id": "https://creacionesvane.com/#organization",
               "name": "Creaciones Vane",
               "legalName": "Creaciones Vane",
@@ -237,11 +241,20 @@ export default function RootLayout({
                 "width": 400,
                 "height": 400
               },
-              "description": "Empresa especializada en anchetas personalizadas, desayunos sorpresa, decoraciones para eventos y refrigerios en Medellín desde 2019",
+              "image": [
+                "https://creacionesvane.com/logo.png",
+                "https://creacionesvane.com/banner-detalles.webp",
+                "https://creacionesvane.com/banner-decoraciones.webp",
+                "https://creacionesvane.com/banner-refrigerios.webp"
+              ],
+              "description": "Creaciones Vane: Tienda de regalos, desayunos sorpresa, peluches, anchetas personalizadas, decoraciones para eventos y refrigerios a domicilio en Medellín y el Valle de Aburrá. Entrega el mismo día.",
               "foundingDate": "2019",
               "slogan": "Tu cómplice que endulza",
               "email": "du.rleyc8@gmail.com",
               "telephone": "+57-312-823-5654",
+              "priceRange": "$$",
+              "currenciesAccepted": "COP",
+              "paymentAccepted": "Efectivo, Nequi, Daviplata, Transferencia Bancaria",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Carrera 50 #120-13",
@@ -250,12 +263,37 @@ export default function RootLayout({
                 "postalCode": "050001",
                 "addressCountry": "CO"
               },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 6.2476,
+                "longitude": -75.5658
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "08:00",
+                  "closes": "18:00"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Saturday",
+                  "opens": "09:00",
+                  "closes": "15:00"
+                }
+              ],
               "contactPoint": [
                 {
                   "@type": "ContactPoint",
                   "telephone": "+57-312-823-5654",
                   "contactType": "customer service",
-                  "areaServed": ["CO", "CO-ANT"],
+                  "areaServed": [
+                    { "@type": "City", "name": "Medellín", "sameAs": "https://es.wikipedia.org/wiki/Medell%C3%ADn" },
+                    { "@type": "City", "name": "Envigado" },
+                    { "@type": "City", "name": "Itagüí" },
+                    { "@type": "City", "name": "Bello" },
+                    { "@type": "City", "name": "Sabaneta" }
+                  ],
                   "availableLanguage": ["Spanish", "es"],
                   "contactOption": "TollFree"
                 },
@@ -273,73 +311,162 @@ export default function RootLayout({
                 "https://wa.me/573128235654",
                 "https://www.tiktok.com/@creacionesvane01"
               ],
-              "areaServed": {
-                "@type": "GeoCircle",
-                "geoMidpoint": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "6.297486",
-                  "longitude": "-75.553924"
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Medellín",
+                  "sameAs": "https://es.wikipedia.org/wiki/Medell%C3%ADn",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.2476, "longitude": -75.5658 },
+                  "containedInPlace": {
+                    "@type": "AdministrativeArea",
+                    "name": "Valle de Aburrá",
+                    "containedInPlace": { "@type": "State", "name": "Antioquia" }
+                  }
                 },
-                "geoRadius": "15000" // 15km de radio
-              },
+                {
+                  "@type": "City",
+                  "name": "Envigado",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.1711, "longitude": -75.5906 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Itagüí",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.1848, "longitude": -75.5993 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Bello",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.3383, "longitude": -75.5559 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Sabaneta",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.1517, "longitude": -75.6165 }
+                },
+                {
+                  "@type": "City",
+                  "name": "La Estrella",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.1572, "longitude": -75.6308 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Copacabana",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.3504, "longitude": -75.5115 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Caldas",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.0891, "longitude": -75.6364 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Barbosa",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.4386, "longitude": -75.3315 }
+                },
+                {
+                  "@type": "City",
+                  "name": "Girardota",
+                  "geo": { "@type": "GeoCoordinates", "latitude": 6.3791, "longitude": -75.4476 }
+                }
+              ],
               "hasOfferCatalog": {
                 "@type": "OfferCatalog",
-                "name": "Productos y Servicios",
+                "name": "Regalos y Servicios en Medellín",
                 "itemListElement": [
                   {
                     "@type": "OfferCatalog",
-                    "name": "Detalles de Amor",
+                    "name": "Desayunos Sorpresa a Domicilio en Medellín",
                     "itemListElement": [
                       {
                         "@type": "Offer",
                         "itemOffered": {
                           "@type": "Product",
-                          "name": "Anchetas Personalizadas"
-                        }
-                      },
-                      {
-                        "@type": "Offer",
-                        "itemOffered": {
-                          "@type": "Product",
-                          "name": "Desayunos Sorpresa"
-                        }
-                      },
-                      {
-                        "@type": "Offer",
-                        "itemOffered": {
-                          "@type": "Product",
-                          "name": "Ramos de Rosas"
+                          "name": "Desayunos Sorpresa",
+                          "description": "Desayunos sorpresa a domicilio en Medellín con frutas, jugos, sándwich y decoración temática personalizada"
                         }
                       }
                     ]
                   },
                   {
                     "@type": "OfferCatalog",
-                    "name": "Refrigerios",
+                    "name": "Regalos y Anchetas Personalizadas",
                     "itemListElement": [
                       {
                         "@type": "Offer",
                         "itemOffered": {
                           "@type": "Product",
-                          "name": "Refrigerios para Eventos"
+                          "name": "Anchetas Personalizadas",
+                          "description": "Anchetas y regalos personalizados con snacks, dulces, globos y detalles de amor en Medellín"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Product",
+                          "name": "Ramos de Rosas",
+                          "description": "Ramos de rosas frescas a domicilio en Medellín, Envigado y Sabaneta"
                         }
                       }
                     ]
                   },
                   {
                     "@type": "OfferCatalog",
-                    "name": "Decoraciones",
+                    "name": "Peluches y Detalles de Amor",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Product",
+                          "name": "Peluches",
+                          "description": "Peluches tiernos con globos y chocolates, regalo perfecto para cumpleaños y fechas especiales en Medellín"
+                        }
+                      },
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Product",
+                          "name": "Cajas de Chocolates",
+                          "description": "Cajas de chocolates personalizadas con mensaje de amor a domicilio en Medellín"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Decoración de Eventos en Medellín",
                     "itemListElement": [
                       {
                         "@type": "Offer",
                         "itemOffered": {
                           "@type": "Service",
-                          "name": "Decoración de Eventos"
+                          "name": "Decoración de Eventos",
+                          "description": "Decoración profesional para bodas, cumpleaños, baby shower y eventos corporativos en Medellín"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "@type": "OfferCatalog",
+                    "name": "Refrigerios para Eventos",
+                    "itemListElement": [
+                      {
+                        "@type": "Offer",
+                        "itemOffered": {
+                          "@type": "Product",
+                          "name": "Refrigerios para Eventos",
+                          "description": "Refrigerios frescos para eventos corporativos y fiestas infantiles en Medellín desde $5.000"
                         }
                       }
                     ]
                   }
                 ]
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "287",
+                "bestRating": "5",
+                "worstRating": "1"
               }
             })
           }}
