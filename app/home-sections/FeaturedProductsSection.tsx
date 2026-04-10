@@ -15,8 +15,9 @@ export default function FeaturedProductsSection() {
       <div className="container mx-auto px-4">
         
         <ScrollReveal direction="up" className="text-center mb-10 md:mb-16">
+          {/* H2 con keyword geo-localizada */}
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 tracking-tight">
-            Productos <span className="text-primary-600">Destacados</span>
+            Lo Más Pedido en <span className="text-primary-600">Medellín</span>
           </h2>
           <div className="w-20 h-1.5 bg-primary-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
@@ -51,8 +52,9 @@ export default function FeaturedProductsSection() {
         {/* CTA Ver Más - Diseño más limpio */}
         <ScrollReveal direction="up" delay={0.5}>
           <div className="text-center bg-white/40 backdrop-blur-sm border border-white/60 p-8 rounded-3xl max-w-5xl mx-auto shadow-sm">
+            {/* H3 con keyword de conversión */}
             <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">
-              ¿Buscas algo más específico?
+              Explora Nuestras Categorías de Regalos en Medellín
             </h3>
             <p className="text-gray-600 mb-8 text-sm md:text-base">
               Explora nuestras categorías completas y encuentra el detalle perfecto.

@@ -29,10 +29,10 @@ export default function ServicesSection() {
             Cómplices de tus sorpresas
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight">
-            Momentos para <span className="text-primary-600 italic">Recordar</span>
+            Detalles y Regalos en <span className="text-primary-600 italic">Medellín</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl font-light">
-            Desde detalles que endulzan el alma hasta eventos que roban suspiros.
+            Desayunos sorpresa, anchetas personalizadas, decoraciones y refrigerios a domicilio en Medellín.
           </p>
         </ScrollReveal>
 
@@ -91,7 +91,7 @@ function ServiceCard({ categoria, img, icon, delay, isMain = false }: { categori
         <div className="absolute inset-0 z-0">
           <Image
             src={img}
-            alt={categoria.nombre}
+            alt={`${categoria.nombre} a domicilio en Medellín - Creaciones Vane`}
             fill
             className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
