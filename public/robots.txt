@@ -1,24 +1,72 @@
-# robots.txt optimizado para Creaciones Vane
+# =============================================
+# robots.txt — Creaciones Vane (creacionesvane.com)
+# Optimizado para SEO Local Medellín
+# Última actualización: 2026-04-10
+# =============================================
+
+# ===== REGLA GLOBAL — Permitir crawling de contenido público =====
 User-agent: *
 Allow: /
 
-# Bloquear archivos internos
+# Bloquear rutas internas y de sistema
 Disallow: /api/
-Disallow: /_next/
+Disallow: /_next/static/
+Disallow: /_next/image/
 Disallow: /admin/
+Disallow: /*.json$
 
-# Archivos importantes
-Sitemap: https://creacionesvane.com/sitemap.xml
-
-# Configuración específica para bots principales
+# ===== GOOGLEBOT — Prioridad máxima =====
+# Googlebot es el crawler principal para posicionamiento
 User-agent: Googlebot
 Allow: /
+Allow: /creaciones-vane
+Allow: /decoraciones
+Allow: /refrigerios
+Disallow: /api/
+Disallow: /_next/static/
 
+# ===== GOOGLEBOT-IMAGE — SEO de imágenes =====
+# Permitir indexación de todas las imágenes del catálogo
 User-agent: Googlebot-Image
 Allow: /
+Allow: /images/
+Allow: /categorias/
+Allow: /banner-*.webp
+Allow: /banner-*.png
+Allow: /logo.png
+Allow: /logo-*.jpeg
 
+# ===== BINGBOT — Segundo buscador =====
 User-agent: Bingbot
 Allow: /
+Disallow: /api/
+Disallow: /_next/static/
 
-# Crawl-delay para proteger servidor (opcional)
-Crawl-delay: 1
+# ===== BOTS DE REDES SOCIALES — OpenGraph previews =====
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# ===== BLOQUEAR BOTS NO DESEADOS (scraping) =====
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# ===== SITEMAP — Archivo de mapa del sitio =====
+Sitemap: https://creacionesvane.com/sitemap.xml
+
+# ===== HOST CANÓNICO — Sin www =====
+Host: creacionesvane.com
