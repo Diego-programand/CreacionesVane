@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import type { Product } from '@/app/data/mockData';
-import { useModal } from '@/app/context/ModalContext';
+import Link from 'next/link';
+import type { Product } from '@/app/lib/sanity.types';
 import { Eye } from 'lucide-react';
 
 interface ProductCardProps {
@@ -32,8 +32,6 @@ const formatPrice = (price: number): string => {
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { openModal } = useModal();
-
   const getColors = () => {
     switch (product.categoria) {
       case 'Detalles':
@@ -71,7 +69,10 @@ export default function ProductCard({ product }: ProductCardProps) {
   const optimizedImageUrl = getCloudinaryUrl(product.imagen);
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full max-w-sm mx-auto w-full">
+    <Link
+      href={`/producto/${product.slug}`}
+      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full max-w-sm mx-auto w-full"
+    >
       
       {/* Contenedor de Imagen Optimizado con PROTECCIÓN ANTI-PIRATEO */}
       <div className="relative overflow-hidden bg-gray-100 flex-shrink-0
@@ -131,16 +132,15 @@ export default function ProductCard({ product }: ProductCardProps) {
             </p>
           )}
 
-          <button
-            onClick={() => openModal(product)}
+          <span
             className={`group/btn relative flex items-center justify-center gap-2 w-full ${colors.button} text-white py-2.5 rounded-lg font-bold transition-all duration-300 shadow-sm hover:shadow-md active:scale-95 overflow-hidden`}
           >
             <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-20deg] -translate-x-full group-hover/btn:animate-shine" />
             <Eye size={16} />
             <span className="text-sm">Ver Detalles</span>
-          </button>
+          </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
