@@ -19,7 +19,7 @@ import {
     Sparkles,
 } from 'lucide-react';
 import { useModal } from '@/app/context/ModalContext';
-import { opcionesPersonalizablesPorCategoria } from '@/app/data/mockData';
+import { opcionesPersonalizablesPorCategoria } from '@/app/data/constants';
 
 export default function ProductModal() {
     const { selectedProduct, closeModal } = useModal();

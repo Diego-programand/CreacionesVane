@@ -2,7 +2,7 @@
 'use client';
 
 import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
-import type { Product } from '@/app/data/mockData';
+import type { Product } from '@/app/lib/sanity.types';
 
 interface ModalContextType {
   selectedProduct: Product | null;

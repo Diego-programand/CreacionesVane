@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 // Importamos la función de optimización
-import { getCldVideoUrl } from '@/app/data/mockData';
+import { getCldVideoUrl } from '@/app/data/constants';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

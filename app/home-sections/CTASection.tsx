@@ -1,7 +1,7 @@
 'use client';
 
 import ScrollReveal from '../components/ScrollReveal';
-import { getCldVideoUrl } from '@/app/data/mockData';
+import { getCldVideoUrl } from '@/app/data/constants';
 
 export default function CTASection() {
   // Generamos las URLs optimizadas

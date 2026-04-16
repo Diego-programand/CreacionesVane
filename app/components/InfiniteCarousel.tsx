@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import ProductCard from './ProductCard';
-import type { Product } from '@/app/data/mockData';
+import type { Product } from '@/app/lib/sanity.types';
 import { ChevronLeft, ChevronRight, MoveHorizontalIcon } from 'lucide-react';
 
 interface InfiniteCarouselProps {

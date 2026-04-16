@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
-import type { Product } from '../data/mockData';
+import type { Product } from '@/app/lib/sanity.types';
 
 // ============================================
 // TIPOS
