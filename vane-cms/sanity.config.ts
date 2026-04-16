@@ -1,7 +1,9 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+import { defineConfig } from 'sanity'
+import { structureTool } from 'sanity/structure'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemaTypes'
+
+import { cloudinarySchemaPlugin } from 'sanity-plugin-cloudinary'
 
 export default defineConfig({
   name: 'default',
@@ -10,7 +12,15 @@ export default defineConfig({
   projectId: 'nh1i4g00',
   dataset: 'production',
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool(),
+    visionTool(),
+    cloudinarySchemaPlugin(),
+  ],
+
+  deployment: {
+    appId: 'rdzne3823c86kuh0wmpja0vn',
+  },
 
   schema: {
     types: schemaTypes,
