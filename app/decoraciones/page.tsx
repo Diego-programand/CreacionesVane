@@ -5,7 +5,10 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCatalog from '../components/ProductCatalog';
-import { getCldVideoUrl } from '../data/mockData';
+import { getCldVideoUrl } from '../data/constants';
+import { sanityClient } from '../lib/sanity.client';
+import { PRODUCTS_BY_CATEGORY_QUERY } from '../lib/sanity.queries';
+import { toProduct, type SanityProduct } from '../lib/sanity.types';
 
 // METADATA ESTÁTICA ULTRA OPTIMIZADA
 export const metadata: Metadata = {
@@ -96,7 +99,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DecoracionesPage() {
+export default async function DecoracionesPage() {
+  // Fetch productos de la categoría "Decoraciones" desde Sanity
+  const sanityProducts = await sanityClient.fetch<SanityProduct[]>(
+    PRODUCTS_BY_CATEGORY_QUERY,
+    { valor: 'Decoraciones' },
+    { next: { tags: ['product'] } }
+  );
+  const products = sanityProducts.map(toProduct);
+
   //  JSON-LD LOCAL BUSINESS CON SERVICIOS DETALLADOS
   const jsonLdLocalBusiness = {
     "@context": "https://schema.org",
@@ -498,6 +509,7 @@ export default function DecoracionesPage() {
         <ProductCatalog
           theme="decoraciones"
           title="Nuestras Decoraciones"
+          products={products}
           shuffleOnLoad={true}
         />
 

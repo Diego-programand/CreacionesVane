@@ -8,6 +8,9 @@ import FeaturedProductsSection from './home-sections/FeaturedProductsSection';
 import CTASection from './home-sections/CTASection';
 import LocationSection from './home-sections/LocationSection';
 import ExperienceSection from './home-sections/ExperienceSection';
+import { sanityClient } from './lib/sanity.client';
+import { FEATURED_PRODUCTS_QUERY, ALL_CATEGORIES_QUERY } from './lib/sanity.queries';
+import { toProduct, type SanityProduct, type SanityCategory } from './lib/sanity.types';
 
 /**
  * ========================================
@@ -116,7 +119,38 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home() {
+  // Fetch data from Sanity (server-side)
+  const [sanityFeatured, sanityCategories] = await Promise.all([
+    sanityClient.fetch<SanityProduct[]>(
+      FEATURED_PRODUCTS_QUERY,
+      {},
+      { next: { tags: ['product'] } }
+    ),
+    sanityClient.fetch<SanityCategory[]>(
+      ALL_CATEGORIES_QUERY,
+      {},
+      { next: { tags: ['category'] } }
+    ),
+  ]);
+
+  const featuredProducts = sanityFeatured.map(toProduct);
+
+  // Mapear categorías de Sanity al formato esperado por ServicesSection
+  const categoriasMap: Record<string, { id: string; nombre: string; subtitulo?: string; descripcion?: string; icono?: string; ruta?: string }> = {
+    Detalles: { id: 'detalles', nombre: '', ruta: '/creaciones-vane' },
+    Refrigerios: { id: 'refrigerios', nombre: '', ruta: '/refrigerios' },
+    Decoraciones: { id: 'decoraciones', nombre: '', ruta: '/decoraciones' },
+  };
+
+  const categorias = sanityCategories.map(c => ({
+    ...categoriasMap[c.valor],
+    nombre: c.nombre,
+    subtitulo: c.subtitulo,
+    descripcion: c.descripcion,
+    icono: c.icono,
+    ruta: c.ruta ?? categoriasMap[c.valor]?.ruta,
+  }));
   // ===== JSON-LD: LOCAL BUSINESS COMPLETO =====
   // Tipo: LocalBusiness con areaServed para todo el Valle de Aburrá
   const jsonLdLocalBusiness = {
@@ -406,10 +440,10 @@ export default function Home() {
         <HeroSection />
         
         {/* H2: "Momentos para Recordar" — Categorías de servicios */}
-        <ServicesSection />
+        <ServicesSection categorias={categorias} />
         
         {/* H2: "Productos Destacados" — Carrusel de productos */}
-        <FeaturedProductsSection />
+        <FeaturedProductsSection products={featuredProducts} />
         
         {/* H2: "Nuestra Tienda en Medellín" — Mapa + ubicación */}
         <LocationSection />

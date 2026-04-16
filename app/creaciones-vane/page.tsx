@@ -5,6 +5,9 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCatalog from '../components/ProductCatalog';
+import { sanityClient } from '../lib/sanity.client';
+import { PRODUCTS_BY_CATEGORY_QUERY } from '../lib/sanity.queries';
+import { toProduct, type SanityProduct } from '../lib/sanity.types';
 
 // METADATA ESTÁTICA - NO 'use client'
 export const metadata: Metadata = {
@@ -62,7 +65,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CreacionesVanePage() {
+export default async function CreacionesVanePage() {
+  // Fetch productos de la categoría "Detalles" desde Sanity
+  const sanityProducts = await sanityClient.fetch<SanityProduct[]>(
+    PRODUCTS_BY_CATEGORY_QUERY,
+    { valor: 'Detalles' },
+    { next: { tags: ['product'] } }
+  );
+  const products = sanityProducts.map(toProduct);
+
   // JSON-LD OPTIMIZADO
   const jsonLdStore = {
     "@context": "https://schema.org",
@@ -246,6 +257,7 @@ export default function CreacionesVanePage() {
         <ProductCatalog
           theme="detalles"
           title="Nuestros Detalles de Amor"
+          products={products}
           shuffleOnLoad={true}
         />
       </main>

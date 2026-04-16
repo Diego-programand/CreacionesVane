@@ -5,7 +5,10 @@ import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ScrollReveal from '../components/ScrollReveal';
 import ProductCatalog from '../components/ProductCatalog';
-import { getCldVideoUrl } from '../data/mockData';
+import { getCldVideoUrl } from '../data/constants';
+import { sanityClient } from '../lib/sanity.client';
+import { PRODUCTS_BY_CATEGORY_QUERY } from '../lib/sanity.queries';
+import { toProduct, type SanityProduct } from '../lib/sanity.types';
 
 //  METADATA ESTÁTICA
 export const metadata: Metadata = {
@@ -85,7 +88,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RefrigeriosPage() {
+export default async function RefrigeriosPage() {
+  // Fetch productos de la categoría "Refrigerios" desde Sanity
+  const sanityProducts = await sanityClient.fetch<SanityProduct[]>(
+    PRODUCTS_BY_CATEGORY_QUERY,
+    { valor: 'Refrigerios' },
+    { next: { tags: ['product'] } }
+  );
+  const products = sanityProducts.map(toProduct);
+
   //  JSON-LD FOOD ESTABLISHMENT CON MENÚ COMPLETO
   const jsonLdFoodEstablishment = {
     "@context": "https://schema.org",
@@ -404,6 +415,7 @@ export default function RefrigeriosPage() {
         <ProductCatalog
           theme="refrigerios"
           title="Nuestros Refrigerios"
+          products={products}
           shuffleOnLoad={true}
         />
 
