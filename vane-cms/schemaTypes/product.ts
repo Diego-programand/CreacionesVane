@@ -33,7 +33,7 @@ export const productType = defineType({
         }),
         defineField({
             name: 'imagen',
-            title: 'Imagen (subir desde aqui)',
+            title: 'Foto del producto',
             type: 'cloudinary.asset',
             description: 'Sube la foto directamente desde tu celular',
         }),
@@ -42,6 +42,7 @@ export const productType = defineType({
             title: 'Imagen (Cloudinary Public ID)',
             type: 'string',
             description: 'Solo para productos antiguos migrados. Nuevos productos usan el campo Imagen de arriba.',
+            hidden: true,
         }),
         defineField({
             name: 'categoria',
@@ -62,6 +63,7 @@ export const productType = defineType({
             type: 'string',
             description: 'ID original del mockData.ts — solo referencia, no modificar',
             readOnly: true,
+            hidden: true,
         }),
     ],
     preview: {
