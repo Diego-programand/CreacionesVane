@@ -4,26 +4,45 @@ import { Box, Button, Card, Flex, Stack, Text } from '@sanity/ui'
 
 export function CloudinaryUpload(props: any) {
   const { value, onChange } = props
-  const cloudinaryRef = useRef<any>()
-  const widgetRef = useRef<any>()
+  const cloudinaryRef = useRef<any>(null)
+  const widgetRef = useRef<any>(null)
+  const onChangeRef = useRef(onChange)
+
+  // Mantener la referencia actualizada de onChange sin recrear dependencias
+  useEffect(() => {
+    onChangeRef.current = onChange
+  }, [onChange])
 
   useEffect(() => {
+    let script = document.getElementById('cloudinary-widget-script') as HTMLScriptElement
+
+    const handleLoad = () => {
+      initWidget()
+    }
+
     // Cargar el script de Cloudinary si no existe
-    if (!document.getElementById('cloudinary-widget-script')) {
-      const script = document.createElement('script')
+    if (!script) {
+      script = document.createElement('script')
       script.id = 'cloudinary-widget-script'
       script.src = 'https://upload-widget.cloudinary.com/global/all.js'
       script.async = true
-      script.onload = () => {
-        initWidget()
-      }
       document.body.appendChild(script)
+      script.addEventListener('load', handleLoad)
     } else {
-      initWidget()
+      // Si el script ya existe pero no ha terminado de cargar
+      if ((window as any).cloudinary) {
+        initWidget()
+      } else {
+        script.addEventListener('load', handleLoad)
+      }
     }
 
     function initWidget() {
       if (!(window as any).cloudinary) return
+
+      // Si el widget ya está instanciado, no hacerlo de nuevo
+      if (widgetRef.current) return
+
       cloudinaryRef.current = (window as any).cloudinary
       widgetRef.current = cloudinaryRef.current.createUploadWidget(
         {
@@ -36,12 +55,16 @@ export function CloudinaryUpload(props: any) {
         (error: any, result: any) => {
           if (!error && result && result.event === 'success') {
             const { secure_url, public_id } = result.info
-            onChange(set({ secure_url, public_id, _type: 'cloudinaryUpload' }))
+            onChangeRef.current(set({ secure_url, public_id, _type: 'cloudinaryUpload' }))
           }
         }
       )
     }
-  }, [onChange])
+
+    return () => {
+      if (script) script.removeEventListener('load', handleLoad)
+    }
+  }, []) // Solo se ejecuta una vez al montar
 
   return (
     <Stack space={3}>
@@ -68,7 +91,7 @@ export function CloudinaryUpload(props: any) {
           </Flex>
         </Card>
       ) : null}
-      
+
       <Button
         mode="default"
         tone="primary"
