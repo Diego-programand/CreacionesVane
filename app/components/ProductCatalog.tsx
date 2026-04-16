@@ -8,7 +8,7 @@ import Pagination from './Pagination';
 import EmptyState from './EmptyState';
 import MobileFiltersModal from './MobileFiltersModal';
 import { useProductCatalog, catalogConfigs, type CatalogTheme } from '../hooks/useProductCatalog';
-import { productosMock } from '../data/mockData';
+import type { Product } from '@/app/lib/sanity.types';
 
 // ============================================
 // TIPOS
@@ -17,6 +17,7 @@ import { productosMock } from '../data/mockData';
 interface ProductCatalogProps {
   theme: CatalogTheme;
   title: string;
+  products: Product[];
   shuffleOnLoad?: boolean;
 }
 
@@ -53,6 +54,7 @@ const themeStyles: Record<CatalogTheme, {
 export default function ProductCatalog({
   theme,
   title,
+  products,
   shuffleOnLoad = true,
 }: ProductCatalogProps) {
   // Obtener configuración del catálogo
@@ -84,7 +86,7 @@ export default function ProductCatalog({
     setMobileFiltersOpen,
     clearAllFilters,
     activeFiltersCount,
-  } = useProductCatalog(productosMock, config);
+  } = useProductCatalog(products, config);
 
   const styles = themeStyles[theme];
 

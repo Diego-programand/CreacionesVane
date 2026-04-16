@@ -3,11 +3,14 @@
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
 import InfiniteCarousel from '../components/InfiniteCarousel';
-import { productosMock } from '../data/mockData';
+import type { Product } from '@/app/lib/sanity.types';
 import { ArrowRight } from 'lucide-react'; // Añadimos un toque visual
 
-export default function FeaturedProductsSection() {
-  const productosDestacados = productosMock.filter(p => p.destacado);
+interface FeaturedProductsSectionProps {
+  products: Product[];
+}
+
+export default function FeaturedProductsSection({ products }: FeaturedProductsSectionProps) {
 
   return (
     // Reducimos un poco el padding vertical (py-16 -> py-12) para laptops
@@ -32,7 +35,7 @@ export default function FeaturedProductsSection() {
              {/* Nota: Asegúrate de que dentro de InfiniteCarousel 
                 estés configurando para ver 3 o 4 productos en desktop (lg:grid-cols-3 o similar)
              */}
-             <InfiniteCarousel products={productosDestacados} />
+             <InfiniteCarousel products={products} />
            </ScrollReveal>
         </div>
 

@@ -3,10 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
-import { categorias } from '../data/mockData';
 import { ArrowRight, Heart, Star, Cake } from 'lucide-react';
 
-export default function ServicesSection() {
+interface ServicesSectionProps {
+  categorias: { id: string; nombre: string; subtitulo?: string; descripcion?: string; icono?: string; ruta?: string }[];
+}
+
+export default function ServicesSection({ categorias }: ServicesSectionProps) {
   const imagenes: Record<string, string> = {
     'detalles': '/categorias/anchetas.webp',
     'decoraciones': '/categorias/decoracion.webp',
