@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/client": "^7.21.0",
+    "@sanity/webhook": "^4.0.4",
     "dotenv": "^17.4.2",
     "framer-motion": "^12.26.2",
     "lucide-react": "^0.562.0",
