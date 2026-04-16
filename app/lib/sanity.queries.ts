@@ -9,6 +9,13 @@ const productFields = `
   descripcion,
   precio,
   cloudinaryPublicId,
+  imagen {
+    secure_url,
+    public_id,
+    format,
+    width,
+    height
+  },
   destacado,
   legacyId,
   categoria->{nombre, valor, slug, ruta}

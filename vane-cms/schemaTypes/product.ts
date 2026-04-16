@@ -32,11 +32,16 @@ export const productType = defineType({
             validation: Rule => Rule.required().positive(),
         }),
         defineField({
+            name: 'imagen',
+            title: 'Imagen (subir desde aqui)',
+            type: 'cloudinary.asset',
+            description: 'Sube la foto directamente desde tu celular',
+        }),
+        defineField({
             name: 'cloudinaryPublicId',
             title: 'Imagen (Cloudinary Public ID)',
             type: 'string',
-            description: 'Ej: ancheta1_sya5pl — sin extensión ni ruta base',
-            validation: Rule => Rule.required(),
+            description: 'Solo para productos antiguos migrados. Nuevos productos usan el campo Imagen de arriba.',
         }),
         defineField({
             name: 'categoria',

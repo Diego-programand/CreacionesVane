@@ -18,6 +18,15 @@ export interface SanityCategory {
   ruta?: string;
 }
 
+// Interfaz para el asset que devuelve el plugin sanity-plugin-cloudinary
+export interface CloudinaryAsset {
+  secure_url: string;
+  public_id: string;
+  format?: string;
+  width?: number;
+  height?: number;
+}
+
 // Producto tal como viene de Sanity (con categoría dereferenciada)
 export interface SanityProduct {
   _id: string;
@@ -26,6 +35,7 @@ export interface SanityProduct {
   descripcion: string;
   precio: number;
   cloudinaryPublicId: string;
+  imagen?: CloudinaryAsset;
   destacado: boolean;
   legacyId?: string;
   categoria: SanityCategory;
@@ -55,7 +65,8 @@ export function toProduct(p: SanityProduct): Product {
     nombre: p.nombre,
     descripcion: p.descripcion,
     precio: p.precio,
-    imagen: `https://res.cloudinary.com/dw7zhnbho/image/upload/${p.cloudinaryPublicId}.jpg`,
+    imagen: p.imagen?.secure_url
+      ?? `https://res.cloudinary.com/dw7zhnbho/image/upload/${p.cloudinaryPublicId}.jpg`,
     categoria: p.categoria.valor,
     destacado: p.destacado,
   };
