@@ -5,11 +5,16 @@ import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
 import { ArrowRight, Heart, Star, Cake } from 'lucide-react';
 
-interface ServicesSectionProps {
-  categorias: { id: string; nombre: string; subtitulo?: string; descripcion?: string; icono?: string; ruta?: string }[];
+interface ServiceCategoryProps {
+  id: string;
+  nombre: string;
+  subtitulo?: string;
+  descripcion?: string;
+  icono?: string;
+  ruta?: string;
 }
 
-export default function ServicesSection({ categorias }: ServicesSectionProps) {
+export default function ServicesSection({ categorias }: { categorias: ServiceCategoryProps[] }) {
   const imagenes: Record<string, string> = {
     'detalles': '/categorias/anchetas.webp',
     'decoraciones': '/categorias/decoracion.webp',
@@ -26,7 +31,7 @@ export default function ServicesSection({ categorias }: ServicesSectionProps) {
   return (
     <section className="py-24 bg-[#FFF5F7] overflow-hidden"> {/* Fondo rosado ultra sutil */}
       <div className="container mx-auto px-4">
-        
+
         <ScrollReveal direction="up" className="text-center mb-16">
           <span className="bg-primary-100 text-primary-700 px-4 py-1.5 rounded-full font-bold tracking-wider uppercase text-xs mb-4 inline-block border border-primary-200">
             Cómplices de tus sorpresas
@@ -41,11 +46,11 @@ export default function ServicesSection({ categorias }: ServicesSectionProps) {
 
         {/* Layout Dinámico: Prioridad Visual 100% a Detalles */}
         <div className="flex flex-col lg:grid lg:grid-cols-12 gap-6 h-auto">
-          
+
           {/* PRODUCTO ESTRELLA: DETALLES (Ocupa el 60% del ancho y toda la altura) */}
           <div className="lg:col-span-7 h-[500px] md:h-[650px]">
-            <ServiceCard 
-              categoria={categorias.find(c => c.id === 'detalles')!} 
+            <ServiceCard
+              categoria={categorias.find(c => c.id === 'detalles')!}
               img={imagenes['detalles']}
               icon={icons['detalles']}
               isMain={true}
@@ -55,11 +60,11 @@ export default function ServicesSection({ categorias }: ServicesSectionProps) {
 
           {/* COLUMNA SECUNDARIA: Decoraciones y Refrigerios apilados */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            
+
             {/* DECORACIONES (Importancia media) */}
             <div className="h-[350px] md:h-[310px]">
-              <ServiceCard 
-                categoria={categorias.find(c => c.id === 'decoraciones')!} 
+              <ServiceCard
+                categoria={categorias.find(c => c.id === 'decoraciones')!}
                 img={imagenes['decoraciones']}
                 icon={icons['decoraciones']}
                 delay={0.2}
@@ -68,8 +73,8 @@ export default function ServicesSection({ categorias }: ServicesSectionProps) {
 
             {/* REFRIGERIOS (Importancia baja) */}
             <div className="h-[300px] md:h-[310px]">
-              <ServiceCard 
-                categoria={categorias.find(c => c.id === 'refrigerios')!} 
+              <ServiceCard
+                categoria={categorias.find(c => c.id === 'refrigerios')!}
                 img={imagenes['refrigerios']}
                 icon={icons['refrigerios']}
                 delay={0.3}
@@ -83,11 +88,11 @@ export default function ServicesSection({ categorias }: ServicesSectionProps) {
   );
 }
 
-function ServiceCard({ categoria, img, icon, delay, isMain = false }: { categoria: any, img: string, icon: any, delay: number, isMain?: boolean }) {
+function ServiceCard({ categoria, img, icon, delay, isMain = false }: { categoria: ServiceCategoryProps, img: string, icon: any, delay: number, isMain?: boolean }) {
   return (
     <ScrollReveal direction="fade" delay={delay} className="w-full h-full">
-      <Link 
-        href={categoria.ruta}
+      <Link
+        href={categoria.ruta || '/'}
         className="group relative w-full h-full flex flex-col overflow-hidden rounded-[3rem] shadow-xl hover:shadow-primary-200/40 transition-all duration-700 bg-white"
       >
         {/* Imagen con Overlay de alto contraste */}
@@ -115,11 +120,11 @@ function ServiceCard({ categoria, img, icon, delay, isMain = false }: { categori
           <h3 className={`${isMain ? 'text-4xl md:text-5xl' : 'text-2xl md:text-3xl'} font-black text-white mb-3 drop-shadow-md`}>
             {categoria.nombre}
           </h3>
-          
+
           <p className={`text-white/90 font-medium leading-relaxed mb-6 max-w-md ${isMain ? 'text-base md:text-lg' : 'text-sm'} transform translate-y-4 group-hover:translate-y-0 transition-all duration-500`}>
             {categoria.descripcion}
           </p>
-          
+
           <div className="flex items-center gap-3">
             <span className="bg-white text-primary-600 px-6 py-2.5 rounded-full font-bold text-sm shadow-md group-hover:bg-primary-500 group-hover:text-white transition-colors duration-300 flex items-center gap-2">
               Ver Catálogo <ArrowRight size={16} />
