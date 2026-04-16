@@ -18,13 +18,10 @@ export interface SanityCategory {
   ruta?: string;
 }
 
-// Interfaz para el asset que devuelve el plugin sanity-plugin-cloudinary
+// Interfaz para el asset de Cloudinary personalizado
 export interface CloudinaryAsset {
   secure_url: string;
   public_id: string;
-  format?: string;
-  width?: number;
-  height?: number;
 }
 
 // Producto tal como viene de Sanity (con categoría dereferenciada)

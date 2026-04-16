@@ -3,8 +3,6 @@ import { structureTool } from 'sanity/structure'
 import { visionTool } from '@sanity/vision'
 import { schemaTypes } from './schemaTypes'
 
-import { cloudinarySchemaPlugin } from 'sanity-plugin-cloudinary'
-
 export default defineConfig({
   name: 'default',
   title: 'Creaciones Vane',
@@ -15,7 +13,6 @@ export default defineConfig({
   plugins: [
     structureTool(),
     visionTool(),
-    cloudinarySchemaPlugin(),
   ],
 
   deployment: {

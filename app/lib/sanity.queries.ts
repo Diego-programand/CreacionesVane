@@ -11,10 +11,7 @@ const productFields = `
   cloudinaryPublicId,
   imagen {
     secure_url,
-    public_id,
-    format,
-    width,
-    height
+    public_id
   },
   destacado,
   legacyId,

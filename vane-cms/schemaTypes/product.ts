@@ -34,8 +34,8 @@ export const productType = defineType({
         defineField({
             name: 'imagen',
             title: 'Foto del producto',
-            type: 'cloudinary.asset',
-            description: 'Sube la foto directamente desde tu celular',
+            type: 'cloudinaryUpload',
+            description: 'Toca el botón para subir la foto desde tu celular',
         }),
         defineField({
             name: 'cloudinaryPublicId',
