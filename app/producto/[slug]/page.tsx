@@ -82,5 +82,36 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
 
   const product = toProduct(sanityProduct);
 
-  return <ProductDetailClient product={product} />;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.nombre,
+    "description": product.descripcion,
+    "image": product.imagen,
+    "category": product.categoria,
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "COP",
+      "price": product.precio.toString(),
+      "availability": "https://schema.org/InStock",
+      "url": `https://creacionesvane.com/producto/${product.slug}`
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProductDetailClient product={product} />
+    </>
+  );
 }

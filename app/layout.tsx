@@ -382,7 +382,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Product",
                           "name": "Desayunos Sorpresa",
-                          "description": "Desayunos sorpresa a domicilio en Medellín con frutas, jugos, sándwich y decoración temática personalizada"
+                          "description": "Desayunos sorpresa a domicilio en Medellín con frutas, jugos, sándwich y decoración temática personalizada",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "55000",
+                            "highPrice": "190000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       }
                     ]
@@ -396,7 +403,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Product",
                           "name": "Anchetas Personalizadas",
-                          "description": "Anchetas y regalos personalizados con snacks, dulces, globos y detalles de amor en Medellín"
+                          "description": "Anchetas y regalos personalizados con snacks, dulces, globos y detalles de amor en Medellín",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "50000",
+                            "highPrice": "200000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       },
                       {
@@ -404,7 +418,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Product",
                           "name": "Ramos de Rosas",
-                          "description": "Ramos de rosas frescas a domicilio en Medellín, Envigado y Sabaneta"
+                          "description": "Ramos de rosas frescas a domicilio en Medellín, Envigado y Sabaneta",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "50000",
+                            "highPrice": "160000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       }
                     ]
@@ -418,7 +439,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Product",
                           "name": "Peluches",
-                          "description": "Peluches tiernos con globos y chocolates, regalo perfecto para cumpleaños y fechas especiales en Medellín"
+                          "description": "Peluches tiernos con globos y chocolates, regalo perfecto para cumpleaños y fechas especiales en Medellín",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "35000",
+                            "highPrice": "120000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       },
                       {
@@ -426,7 +454,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Product",
                           "name": "Cajas de Chocolates",
-                          "description": "Cajas de chocolates personalizadas con mensaje de amor a domicilio en Medellín"
+                          "description": "Cajas de chocolates personalizadas con mensaje de amor a domicilio en Medellín",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "25000",
+                            "highPrice": "80000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       }
                     ]
@@ -440,7 +475,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Service",
                           "name": "Decoración de Eventos",
-                          "description": "Decoración profesional para bodas, cumpleaños, baby shower y eventos corporativos en Medellín"
+                          "description": "Decoración profesional para bodas, cumpleaños, baby shower y eventos corporativos en Medellín",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "300000",
+                            "highPrice": "650000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       }
                     ]
@@ -454,7 +496,14 @@ export default function RootLayout({
                         "itemOffered": {
                           "@type": "Product",
                           "name": "Refrigerios para Eventos",
-                          "description": "Refrigerios frescos para eventos corporativos y fiestas infantiles en Medellín desde $5.000"
+                          "description": "Refrigerios frescos para eventos corporativos y fiestas infantiles en Medellín desde $5.000",
+                          "offers": {
+                            "@type": "AggregateOffer",
+                            "priceCurrency": "COP",
+                            "lowPrice": "5000",
+                            "highPrice": "15000",
+                            "availability": "https://schema.org/InStock"
+                          }
                         }
                       }
                     ]
