@@ -283,7 +283,7 @@ cp .env.local.example .env.local
 
 ```env
 # Sanity
-NEXT_PUBLIC_SANITY_PROJECT_ID=nh1i4g00
+NEXT_PUBLIC_SANITY_PROJECT_ID=<tu-project-id>
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_REVALIDATE_SECRET=<tu-secret-para-webhooks>
 
