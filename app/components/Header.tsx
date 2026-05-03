@@ -55,7 +55,7 @@ export default function Header() {
             >
               <Image
                 src="/logo.png"
-                alt="Creaciones Vane"
+                alt="Logo Creaciones Vane - Regalos y anchetas a domicilio en Medellín"
                 width={55}
                 height={55}
                 className="rounded-full transition-all duration-300 group-hover:scale-105"
@@ -72,9 +72,9 @@ export default function Header() {
                 transition={{ delay: 0.4, duration: 0.4 }}
                 className="hidden xs:block"
               >
-                <h1 className="font-script text-2xl text-primary-600 group-hover:text-primary-700 transition-colors leading-tight">
+                <p className="font-script text-2xl text-primary-600 group-hover:text-primary-700 transition-colors leading-tight">
                   Creaciones Vane
-                </h1>
+                </p>
                 <p className="text-[10px] text-primary-800 font-script leading-none">Cómplice que endulza</p>
               </motion.div>
 

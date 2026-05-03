@@ -84,7 +84,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <>
             <Image
               src={optimizedImageUrl}
-              alt={`${product.nombre} en Medellín - Creaciones Vane Complice que endulza`}
+              alt={`${product.nombre} en Medellín - Creaciones Vane`}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

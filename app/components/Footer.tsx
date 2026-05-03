@@ -25,7 +25,7 @@ export default function Footer() {
               <div className="relative">
                 <Image
                   src="/logo.png"
-                  alt="Creaciones Vane"
+                  alt="Logo Creaciones Vane - Tienda de anchetas, regalos y desayunos sorpresa en Medellín"
                   width={70}
                   height={70}
                   className="rounded-full bg-white p-1 shadow-xl transition-transform duration-500 group-hover:rotate-12"
@@ -45,14 +45,18 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-xl mb-6 border-b border-white/20 pb-2 inline-block">Servicios</h4>
             <ul className="space-y-4">
-              {['Detalles de Amor', 'Refrigerios', 'Decoraciones'].map((item) => (
-                <li key={item}>
+              {[
+                { label: 'Anchetas y Desayunos', href: '/creaciones-vane' },
+                { label: 'Refrigerios', href: '/refrigerios' },
+                { label: 'Decoraciones', href: '/decoraciones' },
+              ].map((item) => (
+                <li key={item.href}>
                   <Link
-                    href={`/${item.toLowerCase().replace(' ', '-')}`}
+                    href={item.href}
                     className="group flex items-center text-white/80 hover:text-white transition-all"
                   >
                     <span className="h-[1px] w-0 bg-white transition-all duration-300 group-hover:w-4 group-hover:mr-2"></span>
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -69,7 +73,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-xs text-primary-200">WhatsApp</p>
-                  <a href="https://wa.me/573128235654" className="text-white hover:underline">+57 312 823 5654</a>
+                  <a href="https://wa.me/573128235654" className="text-white hover:underline">+57 312 8235654</a>
                 </div>
               </li>
               <li className="flex items-start gap-3 group">
