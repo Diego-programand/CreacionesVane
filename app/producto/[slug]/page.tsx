@@ -89,19 +89,21 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     "description": product.descripcion,
     "image": product.imagen,
     "category": product.categoria,
+    "brand": {
+      "@type": "Brand",
+      "name": "Creaciones Vane"
+    },
     "offers": {
       "@type": "Offer",
       "priceCurrency": "COP",
       "price": product.precio.toString(),
       "availability": "https://schema.org/InStock",
-      "url": `https://creacionesvane.com/producto/${product.slug}`
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "1",
-      "bestRating": "5",
-      "worstRating": "1"
+      "url": `https://creacionesvane.com/producto/${product.slug}`,
+      "seller": {
+        "@type": "LocalBusiness",
+        "name": "Creaciones Vane",
+        "telephone": "+573128235654"
+      }
     }
   };
 

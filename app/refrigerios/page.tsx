@@ -12,8 +12,8 @@ import { toProduct, type SanityProduct } from '../lib/sanity.types';
 
 //  METADATA ESTÁTICA
 export const metadata: Metadata = {
-  title: 'Refrigerios para Eventos en Medellín | Refrigerios Vane - Corporativos e Infantiles desde $5.000',
-  description: 'Refrigerios frescos para eventos corporativos, fiestas infantiles y reuniones en Medellín. Box lunch, sándwiches gourmet, frutas y bebidas. Entrega puntual en El Poblado, Laureles, Envigado. Pedido mínimo 15 unidades. WhatsApp 312 823 5654',
+  title: 'Refrigerios para Eventos en Medellín | Creaciones Vane',
+  description: 'Refrigerios para eventos corporativos e infantiles en Medellín. Box lunch, sándwiches y frutas frescas. Entrega puntual en El Poblado y Envigado. Desde $5.000.',
   keywords: [
     // Keywords primarias - Alto volumen
     'refrigerios medellín',
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Refrigerios para Eventos en Medellín | Refrigerios Vane',
-    description: 'Refrigerios frescos con ingredientes de calidad. Entrega puntual garantizada. WhatsApp 312 823 5654',
+    description: 'Refrigerios frescos con ingredientes de calidad. Entrega puntual garantizada. WhatsApp 312 8235654',
     images: ['https://creacionesvane.com/banner-refrigerios.png'],
   },
   other: {
@@ -111,7 +111,7 @@ export default async function RefrigeriosPage() {
     "servesCuisine": ["Refrigerios", "Box Lunch", "Catering Eventos", "Lunch Corporativo"],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Carrera 50 #120-13",
+      "streetAddress": "Carrera 50 #120-13, Barrio Pablo VI",
       "addressLocality": "Medellín",
       "addressRegion": "Antioquia",
       "addressCountry": "CO",
@@ -336,7 +336,7 @@ export default async function RefrigeriosPage() {
         "name": "¿Tienen opciones vegetarianas o para dietas especiales?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, ofrecemos opciones vegetarianas y podemos adaptar los refrigerios a dietas especiales. Contáctanos por WhatsApp al 312 823 5654 para personalizar tu pedido."
+          "text": "Sí, ofrecemos opciones vegetarianas y podemos adaptar los refrigerios a dietas especiales. Contáctanos por WhatsApp al 312 8235654 para personalizar tu pedido."
         }
       },
       {

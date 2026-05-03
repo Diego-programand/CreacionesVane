@@ -12,8 +12,8 @@ import { toProduct, type SanityProduct } from '../lib/sanity.types';
 
 // METADATA ESTÁTICA ULTRA OPTIMIZADA
 export const metadata: Metadata = {
-  title: 'Decoración de Eventos en Medellín | Decoraciones Vane - Bodas, Cumpleaños, Baby Shower desde $300.000',
-  description: 'Decoración profesional para bodas, cumpleaños infantiles, quinceañeras y Baby Shower en Medellín. Montaje completo con globos, flores, backdrop y arcos. Servicio en El Poblado, Laureles, Envigado. Montaje y desmontaje incluido. WhatsApp 312 823 5654',
+  title: 'Decoración de Eventos en Medellín | Creaciones Vane',
+  description: 'Decoración para bodas, cumpleaños, quinceañeras y Baby Shower en Medellín. Globos, backdrop y arcos. Montaje y desmontaje incluido en El Poblado y Envigado. WhatsApp.',
   keywords: [
     // Keywords primarias - Alto volumen
     'decoración eventos medellín',
@@ -88,7 +88,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Decoración de Eventos en Medellín | Decoraciones Vane',
-    description: 'Transformamos tu evento en un momento inolvidable. Decoración profesional con montaje completo. WhatsApp 312 823 5654',
+    description: 'Transformamos tu evento en un momento inolvidable. Decoración profesional con montaje completo. WhatsApp 312 8235654',
     images: ['https://creacionesvane.com/banner-decoraciones.png'],
   },
   other: {
@@ -125,7 +125,7 @@ export default async function DecoracionesPage() {
     ],
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Carrera 50 #120-13",
+      "streetAddress": "Carrera 50 #120-13, Barrio Pablo VI",
       "addressLocality": "Medellín",
       "addressRegion": "Antioquia",
       "addressCountry": "CO",

@@ -12,9 +12,9 @@ import { toProduct, type SanityProduct } from '../lib/sanity.types';
 // METADATA ESTÁTICA - NO 'use client'
 export const metadata: Metadata = {
   /* Title con keyword transaccional "a domicilio" + geo */
-  title: 'Anchetas y Desayunos Sorpresa a Domicilio en Medellín | Creaciones Vane - Peluches, Ramos y Regalos',
-  /* Description con CTA, precio, zonas y WhatsApp */
-  description: 'Anchetas personalizadas, desayunos sorpresa, peluches y ramos de rosas a domicilio en Medellín. Entrega el mismo día en El Poblado, Laureles, Envigado, Sabaneta e Itagüí. Regalos desde $50.000. WhatsApp 312 823 5654',
+  title: 'Anchetas y Desayunos Sorpresa en Medellín | Creaciones Vane',
+  /* Description con CTA, precio y zonas — max 160 chars */
+  description: 'Anchetas y desayunos sorpresa en Medellín. Peluches, ramos de rosas y regalos personalizados. Entrega el mismo día en El Poblado y Envigado. Desde $50.000.',
   keywords: [
     'anchetas medellín',
     'desayunos sorpresa medellín',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Anchetas y Desayunos Sorpresa en Medellín | Creaciones Vane',
-    description: 'Detalles de amor con entrega el mismo día. WhatsApp 312 823 5654',
+    description: 'Detalles de amor con entrega el mismo día. WhatsApp 312 8235654',
     images: ['https://creacionesvane.com/banner-detalles.png'],
   },
   other: {
@@ -86,7 +86,7 @@ export default async function CreacionesVanePage() {
     "address": {
       "@type": "PostalAddress",
       "postalCode": "050001",
-      "streetAddress": "Carrera 50 #120-13",
+      "streetAddress": "Carrera 50 #120-13, Barrio Pablo VI",
       "addressLocality": "Medellín",
       "addressRegion": "Antioquia",
       "addressCountry": "CO"
@@ -240,7 +240,7 @@ export default async function CreacionesVanePage() {
                 Anchetas y Desayunos Sorpresa a Domicilio en Medellín
               </h1>
               <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                Creaciones Vane — Cómplice que Endulza
+                Creaciones Vane — Cómplice que endulza
               </p>
             </ScrollReveal>
 
