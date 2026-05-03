@@ -13,7 +13,6 @@ Disallow: /api/
 Disallow: /_next/static/
 Disallow: /_next/image/
 Disallow: /admin/
-Disallow: /*.json$
 
 # ===== GOOGLEBOT — Prioridad máxima =====
 # Googlebot es el crawler principal para posicionamiento

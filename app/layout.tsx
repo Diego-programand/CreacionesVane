@@ -35,12 +35,12 @@ export const metadata: Metadata = {
 
   // Title Template para todas las páginas
   title: {
-    default: "Creaciones Vane | Anchetas, Desayunos Sorpresa y Decoraciones en Medellín - Entrega el Mismo Día",
-    template: "%s | Creaciones Vane" // Usado en páginas secundarias
+    default: "Creaciones Vane | Anchetas y Regalos en Medellín",
+    template: "%s | Creaciones Vane"
   },
 
   // Description optimizada con CTA
-  description: "Tu cómplice que endulza momentos especiales en Medellín. Anchetas personalizadas, desayunos sorpresa, ramos de rosas, decoraciones para eventos y refrigerios desde $5.000. Entrega el mismo día en El Poblado, Laureles, Envigado y Sabaneta. ¡Más de 5 años endulzando corazones! WhatsApp 312 823 5654",
+  description: "Anchetas, desayunos sorpresa y decoraciones en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. Más de 6 años creando momentos especiales.",
 
   // Keywords estratégicas (solo las TOP)
   keywords: [
@@ -109,17 +109,17 @@ export const metadata: Metadata = {
     description: "Anchetas personalizadas, desayunos sorpresa, decoraciones y refrigerios con entrega el mismo día en Medellín. ¡Más de 5 años creando sonrisas!",
     images: [
       {
-        url: "/og-image-main.jpg", // PENDIENTE: Crear imagen 1200x630
+        url: "https://creacionesvane.com/og-image-main.jpg",
         width: 1200,
         height: 630,
         alt: "Creaciones Vane - Anchetas y Desayunos Sorpresa en Medellín",
-        type: "image/jpeg",
+        type: "image/jpg",
       },
       {
-        url: "/logo.png",
+        url: "https://creacionesvane.com/logo.png",
         width: 400,
         height: 400,
-        alt: "Logo Creaciones Vane",
+        alt: "Logo Creaciones Vane - Regalos a domicilio en Medellín",
         type: "image/png",
       }
     ],
@@ -131,8 +131,8 @@ export const metadata: Metadata = {
     site: "@creacionesvane", // PENDIENTE: Crear cuenta Twitter/X
     creator: "@creacionesvane",
     title: "Creaciones Vane - Anchetas y Desayunos Sorpresa en Medellín",
-    description: "Tu cómplice que endulza. Entrega el mismo día. WhatsApp 312 823 5654",
-    images: ["/og-image-main.jpg"],
+    description: "Cómplice que endulza. Entrega el mismo día en Medellín. WhatsApp 312 8235654",
+    images: ["https://creacionesvane.com/banner-detalles.webp"],
   },
 
   // Manifest PWA
@@ -248,16 +248,16 @@ export default function RootLayout({
                 "https://creacionesvane.com/banner-refrigerios.webp"
               ],
               "description": "Creaciones Vane: Tienda de regalos, desayunos sorpresa, peluches, anchetas personalizadas, decoraciones para eventos y refrigerios a domicilio en Medellín y el Valle de Aburrá. Entrega el mismo día.",
-              "foundingDate": "2019",
-              "slogan": "Tu cómplice que endulza",
+              "foundingDate": "2019-05",
+              "slogan": "Cómplice que endulza",
               "email": "du.rleyc8@gmail.com",
-              "telephone": "+57-312-823-5654",
+              "telephone": "+573128235654",
               "priceRange": "$$",
               "currenciesAccepted": "COP",
               "paymentAccepted": "Efectivo, Nequi, Daviplata, Transferencia Bancaria",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Carrera 50 #120-13",
+                "streetAddress": "Carrera 50 #120-13, Barrio Pablo VI",
                 "addressLocality": "Medellín",
                 "addressRegion": "Antioquia",
                 "postalCode": "050001",
@@ -285,7 +285,7 @@ export default function RootLayout({
               "contactPoint": [
                 {
                   "@type": "ContactPoint",
-                  "telephone": "+57-312-823-5654",
+                  "telephone": "+573128235654",
                   "contactType": "customer service",
                   "areaServed": [
                     { "@type": "City", "name": "Medellín", "sameAs": "https://es.wikipedia.org/wiki/Medell%C3%ADn" },
@@ -299,7 +299,7 @@ export default function RootLayout({
                 },
                 {
                   "@type": "ContactPoint",
-                  "telephone": "+57-312-823-5654",
+                  "telephone": "+573128235654",
                   "contactType": "sales",
                   "areaServed": "CO-ANT",
                   "availableLanguage": "es"
