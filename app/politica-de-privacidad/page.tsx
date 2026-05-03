@@ -1,15 +1,22 @@
 
 import React from 'react';
 import Link from 'next/link';
-export const metadata = {
+import { Metadata } from 'next';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
+export const metadata: Metadata = {
     title: 'Política de Privacidad | Creaciones Vane',
-    description: 'Política de privacidad y tratamiento de datos personales de Creaciones Vane.',
+    description: 'Política de privacidad y protección de datos personales de Creaciones Vane. Conoce cómo usamos y protegemos tu información en Medellín.',
+    alternates: { canonical: 'https://creacionesvane.com/politica-de-privacidad' },
+    robots: { index: false, follow: true },
 };
 
 export default function PrivacidadPage() {
     return (
+        <>
+        <Header />
         <main className="min-h-screen bg-neutral-50 pb-20">
-            {/* Header */}
             <div className="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 text-white py-20 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                     <svg width="100%" height="100%"><pattern id="pattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="currentColor" /></pattern><rect width="100%" height="100%" fill="url(#pattern)" /></svg>
@@ -25,23 +32,22 @@ export default function PrivacidadPage() {
                 </div>
             </div>
 
-            {/* Content */}
             <div className="container mx-auto px-6 -mt-10 relative z-20">
                 <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 max-w-4xl mx-auto prose prose-primary prose-lg">
                     <p className="lead text-gray-600">
                         En Creaciones Vane, nos comprometemos a proteger la privacidad y la seguridad de la información personal de nuestros clientes. Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos tu información cuando utilizas nuestros servicios.
                     </p>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>1. Responsable del Tratamiento</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>1. Responsable del Tratamiento</h2>
                     <p className='text-gray-600'>
                         <strong>Nombre:</strong> Creaciones Vane
                         <br />
                         <strong>Domicilio:</strong> Cra. 50 #120-13, Medellín, Colombia.
                         <br />
-                        <strong>Contacto:</strong> +57 312 823 5654
+                        <strong>Contacto:</strong> +57 312 8235654
                     </p>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>2. Información que Recopilamos</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>2. Información que Recopilamos</h2>
                     <p className='text-gray-600'>
                         Podemos recopilar la siguiente información personal necesaria para procesar tus pedidos y brindarte un mejor servicio:
                     </p>
@@ -52,7 +58,7 @@ export default function PrivacidadPage() {
                         <li><strong>Datos de Pago:</strong> No almacenamos datos completos de tarjetas de crédito. Los pagos se gestionan a través de plataformas seguras o transferencias directas.</li>
                     </ul>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>3. Uso de la Información</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>3. Uso de la Información</h2>
                     <p className='text-gray-600'>
                         Utilizamos tus datos personales para las siguientes finalidades:
                     </p>
@@ -63,17 +69,17 @@ export default function PrivacidadPage() {
                         <li>Mejorar nuestros servicios y experiencia en el sitio web.</li>
                     </ul>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>4. Protección de Datos</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>4. Protección de Datos</h2>
                     <p className='text-gray-600'>
                         Implementamos medidas de seguridad técnicas y organizativas para proteger tus datos personales contra acceso no autorizado, pérdida o alteración. Solo el personal autorizado tiene acceso a la información necesaria para cumplir con sus funciones.
                     </p>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>5. Compartir Información</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>5. Compartir Información</h2>
                     <p className='text-gray-600'>
                         Creaciones Vane no vende, alquila ni comparte tus datos personales con terceros para fines comerciales. Solo compartimos información estrictamente necesaria con proveedores de servicios de logística (mensajeros) para realizar la entrega de tu pedido.
                     </p>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>6. Tus Derechos</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>6. Tus Derechos</h2>
                     <p className='text-gray-600'>
                         De acuerdo con la legislación colombiana (Ley 1581 de 2012) y regulaciones aplicables, tienes derecho a:
                     </p>
@@ -86,7 +92,7 @@ export default function PrivacidadPage() {
                         Para ejercer estos derechos, puedes contactarnos a través de nuestro WhatsApp o correo electrónico.
                     </p>
 
-                    <h3 className='text-primary-700 font-bold mt-8 mb-4'>7. Cookies</h3>
+                    <h2 className='text-primary-700 font-bold mt-8 mb-4 text-xl'>7. Cookies</h2>
                     <p className='text-gray-600'>
                         Nuestro sitio web puede utilizar cookies para mejorar tu experiencia de navegación. Puedes configurar tu navegador para rechazar las cookies, aunque esto podría afectar algunas funcionalidades del sitio.
                     </p>
@@ -100,5 +106,7 @@ export default function PrivacidadPage() {
                 </div>
             </div>
         </main>
+        <Footer />
+        </>
     );
 }
