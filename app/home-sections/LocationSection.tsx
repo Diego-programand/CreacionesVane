@@ -68,7 +68,7 @@ export default function LocationSection() {
                 <div className="flex items-start gap-4">
                   {/* ... (icono igual) */}
                   <div className="flex-1">
-                    <h3 className="font-bold text-gray-800 text-lg mb-2">Creaciones Vane - Complice que endulza</h3>
+                    <h3 className="font-bold text-gray-800 text-lg mb-2">Creaciones Vane — Cómplice que endulza</h3>
                     <p className="text-gray-600 mb-4">
                       Carrera 50 #120-13<br />
                       Barrio Pablo VI, Medellín<br />
@@ -110,9 +110,9 @@ export default function LocationSection() {
           <ScrollReveal direction="right" className="order-2">
             <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 border border-primary-100">
               <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+                <h3 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
                   ¿Prefieres el online?
-                </h2>
+                </h3>
                 <div className="w-20 h-1 bg-primary-500 mx-auto mb-4 rounded-full"></div>
                 <p className="text-gray-600 text-base md:text-lg">
                   ¡Síguenos en nuestras redes sociales y mantente al día con nuestras novedades!

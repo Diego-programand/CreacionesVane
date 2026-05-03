@@ -12,7 +12,7 @@ export default function ExperienceSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
+
           {/* Lado Izquierdo: Imagen / Composición Visual */}
           <div className="flex-1 w-full max-w-xl">
             <ScrollReveal direction="left" delay={0.2}>
@@ -21,7 +21,7 @@ export default function ExperienceSection() {
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl aspect-[4/5] sm:aspect-square md:aspect-video lg:aspect-square">
                   <Image
                     src="/images/experienceSection.webp"
-                    alt="7 años de experiencia"
+                    alt="Más de 7 años creando anchetas, desayunos sorpresa y regalos personalizados en Medellín - Creaciones Vane"
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
@@ -29,7 +29,7 @@ export default function ExperienceSection() {
                 </div>
                 {/* Badge de Años */}
                 <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-2xl shadow-xl border-b-4 border-primary-500 animate-bounce-slow">
-                  <span className="block text-4xl md:text-5xl font-extrabold text-primary-600">+6</span>
+                  <span className="block text-4xl md:text-5xl font-extrabold text-primary-600">+7</span>
                   <span className="text-xs md:text-sm font-bold text-gray-600 uppercase tracking-wider">Años de Amor</span>
                 </div>
               </div>
@@ -40,7 +40,7 @@ export default function ExperienceSection() {
           <div className="flex-1 text-center lg:text-left">
             <ScrollReveal direction="up">
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Más de <span className="text-primary-600 italic">6 años</span> siendo cómplices de tus sonrisas
+                Más de <span className="text-primary-600 italic">7 años</span> siendo cómplices de tus sonrisas
               </h2>
               <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
                 Desde nuestro inicio, nuestra misión ha sido transformar un simple detalle en un recuerdo inolvidable. No solo entregamos productos, entregamos emociones que perduran en el corazón.

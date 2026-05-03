@@ -8,6 +8,7 @@ import FeaturedProductsSection from './home-sections/FeaturedProductsSection';
 import CTASection from './home-sections/CTASection';
 import LocationSection from './home-sections/LocationSection';
 import ExperienceSection from './home-sections/ExperienceSection';
+import OcasionesSection from './home-sections/OcasionesSection';
 import { sanityClient } from './lib/sanity.client';
 import { FEATURED_PRODUCTS_QUERY, ALL_CATEGORIES_QUERY } from './lib/sanity.queries';
 import { toProduct, type SanityProduct, type SanityCategory } from './lib/sanity.types';
@@ -27,11 +28,11 @@ import { toProduct, type SanityProduct, type SanityCategory } from './lib/sanity
 
 // ===== METADATA OPTIMIZADA CON KEYWORDS LOCALES TRANSACCIONALES =====
 export const metadata: Metadata = {
-  /* Title con keyword transaccional principal + diferenciador + CTA implícito */
-  title: 'Regalos y Desayunos Sorpresa a Domicilio en Medellín | Creaciones Vane - Entrega Hoy',
-  
-  /* Description con CTA, precio, zonas y WhatsApp — max 160 chars visibles */
-  description: 'Creaciones Vane: Regalos, anchetas, desayunos sorpresa, peluches y decoraciones a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado, Laureles, Sabaneta e Itagüí. Desde $50.000. WhatsApp 312 823 5654',
+  /* Title con keyword transaccional principal + diferenciador */
+  title: 'Desayunos Sorpresa y Regalos en Medellín | Creaciones Vane',
+
+  /* Description con CTA, precio y zonas — max 160 chars */
+  description: 'Regalos, anchetas y desayunos sorpresa a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. Desde $50.000. WhatsApp 312 8235654.',
   
   /* Keywords agrupadas por intención de búsqueda */
   keywords: [
@@ -104,7 +105,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Creaciones Vane - Regalos a Domicilio en Medellín | Entrega Hoy',
-    description: 'Desayunos sorpresa, anchetas, peluches y detalles de amor. Entrega el mismo día en Medellín. WhatsApp 312 823 5654',
+    description: 'Desayunos sorpresa, anchetas, peluches y detalles de amor. Entrega el mismo día en Medellín. WhatsApp 312 8235654',
     images: ['https://creacionesvane.com/banner-detalles.png'],
   },
 
@@ -172,7 +173,7 @@ export default async function Home() {
     "paymentAccepted": "Efectivo, Nequi, Daviplata, Transferencia Bancaria",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Carrera 50 #120-13",
+      "streetAddress": "Carrera 50 #120-13, Barrio Pablo VI",
       "addressLocality": "Medellín",
       "addressRegion": "Antioquia",
       "postalCode": "050001",
@@ -372,7 +373,7 @@ export default async function Home() {
         "name": "¿Hacen entregas de regalos a domicilio en Medellín el mismo día?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sí, en Creaciones Vane realizamos entregas el mismo día en todo Medellín y el área metropolitana: El Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello y La Estrella. Contáctanos por WhatsApp al 312 823 5654 antes de las 2:00 PM para garantizar entrega el mismo día."
+          "text": "Sí, en Creaciones Vane realizamos entregas el mismo día en todo Medellín y el área metropolitana: El Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello y La Estrella. Contáctanos por WhatsApp al 312 8235654 antes de las 2:00 PM para garantizar entrega el mismo día."
         }
       },
       {
@@ -396,7 +397,7 @@ export default async function Home() {
         "name": "¿Puedo personalizar las anchetas y regalos?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "¡Por supuesto! En Creaciones Vane cada ancheta y regalo es 100% personalizable. Puedes elegir los productos, colores, mensaje personalizado y acompañamientos como peluches, globos, chocolates o ramos de rosas. Escríbenos por WhatsApp al 312 823 5654 con tu idea y la hacemos realidad."
+          "text": "¡Por supuesto! En Creaciones Vane cada ancheta y regalo es 100% personalizable. Puedes elegir los productos, colores, mensaje personalizado y acompañamientos como peluches, globos, chocolates o ramos de rosas. Escríbenos por WhatsApp al 312 8235654 con tu idea y la hacemos realidad."
         }
       },
       {
@@ -445,6 +446,9 @@ export default async function Home() {
         {/* H2: "Productos Destacados" — Carrusel de productos */}
         <FeaturedProductsSection products={featuredProducts} />
         
+        {/* H2: Ocasiones especiales — Seasonal SEO */}
+        <OcasionesSection />
+
         {/* H2: "Nuestra Tienda en Medellín" — Mapa + ubicación */}
         <LocationSection />
         

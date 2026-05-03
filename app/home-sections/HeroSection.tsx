@@ -51,7 +51,7 @@ export default function HeroSection() {
 
                 {/* Subtítulo de marca — NO es H2 para no robar peso al H1 */}
                 <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                    Creaciones Vane — Tu Cómplice que Endulza
+                    Creaciones Vane — Cómplice que Endulza
                 </p>
 
                 {/* Descripción con keywords long-tail */}
