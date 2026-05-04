@@ -3,6 +3,7 @@ import "./globals.css";
 import { ModalProvider } from './context/ModalContext';
 import ProductModal from './components/ProductModal';
 import { Poppins, Pacifico } from 'next/font/google';
+import { WA_NUMBER } from './lib/whatsapp';
 
 // Configuración optimizada de fuentes
 const poppins = Poppins({
@@ -308,7 +309,7 @@ export default function RootLayout({
               "sameAs": [
                 "https://www.instagram.com/complice_que_endulza",
                 "https://www.facebook.com/creaciones2927",
-                "https://wa.me/573128235654",
+                `https://wa.me/${WA_NUMBER}`,
                 "https://www.tiktok.com/@creacionesvane01"
               ],
               "areaServed": [

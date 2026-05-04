@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { waUrl } from './lib/whatsapp';
 
 export const metadata = {
   title: 'Página no encontrada | Creaciones Vane',
@@ -41,7 +42,7 @@ export default function NotFound() {
               Volver al inicio
             </Link>
             <a
-              href="https://wa.me/573128235654?text=¡Hola!%20Necesito%20ayuda%20💝"
+              href={waUrl('¡Hola! Necesito ayuda 💝')}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2"

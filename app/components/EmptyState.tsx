@@ -1,6 +1,7 @@
 'use client';
 
 import type { CatalogTheme } from '../hooks/useProductCatalog';
+import { waUrl } from '../lib/whatsapp';
 
 interface EmptyStateProps {
   theme: CatalogTheme;
@@ -34,9 +35,9 @@ const themeConfig: Record<CatalogTheme, {
 };
 
 const defaultMessages: Record<CatalogTheme, string> = {
-  detalles: '¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios',
-  refrigerios: '¡Hola!%20Quiero%20cotizar%20refrigerios%20para%20mi%20evento%20🍱',
-  decoraciones: '¡Hola!%20Quiero%20cotizar%20una%20decoración%20para%20mi%20evento%20🎈',
+  detalles: '¡Hola! Quiero conocer más sobre sus servicios',
+  refrigerios: '¡Hola! Quiero cotizar refrigerios para mi evento 🍱',
+  decoraciones: '¡Hola! Quiero cotizar una decoración para mi evento 🎈',
 };
 
 export default function EmptyState({ theme, whatsappMessage }: EmptyStateProps) {
@@ -68,7 +69,7 @@ export default function EmptyState({ theme, whatsappMessage }: EmptyStateProps) 
       </p>
       
       <a
-        href={`https://wa.me/573128235654?text=${message}`}
+        href={waUrl(message)}
         target="_blank"
         rel="noopener noreferrer"
         className={`group relative inline-flex items-center justify-center px-10 py-4 font-bold text-white transition-all duration-200 ${config.buttonBg} rounded-full ${config.buttonHover} shadow-lg`}

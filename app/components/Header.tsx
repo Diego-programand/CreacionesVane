@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 // Importamos la función de optimización
 import { getCldVideoUrl } from '@/app/data/constants';
+import { waUrl } from '@/app/lib/whatsapp';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -153,7 +154,7 @@ export default function Header() {
             </Link>
 
             <a
-              href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios%20💝"
+              href={waUrl('¡Hola! Quiero conocer más sobre sus servicios 💝')}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105 group"
@@ -279,7 +280,7 @@ export default function Header() {
             </div>
             <br />
             <a
-              href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios%20💝"
+              href={waUrl('¡Hola! Quiero conocer más sobre sus servicios 💝')}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
