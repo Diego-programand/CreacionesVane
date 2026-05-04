@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ScrollReveal from '../components/ScrollReveal';
+import { waUrl } from '../lib/whatsapp';
 
 const ocasiones = [
   {
@@ -103,7 +104,7 @@ export default function OcasionesSection() {
             ¿Tienes una ocasión especial en mente?
           </p>
           <a
-            href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20un%20regalo%20personalizado%20para%20una%20ocasión%20especial%20💝"
+            href={waUrl('¡Hola! Quiero un regalo personalizado para una ocasión especial 💝')}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-full font-bold transition-all shadow-md hover:shadow-lg hover:scale-105"

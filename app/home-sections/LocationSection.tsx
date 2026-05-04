@@ -1,8 +1,6 @@
 import ScrollReveal from '../components/ScrollReveal';
-import {
-  MapPin as LocationIcon
-
-}from 'lucide-react'
+import { MapPin as LocationIcon } from 'lucide-react';
+import { waUrl } from '../lib/whatsapp';
 
 export default function LocationSection() {
   const socialLinks = [
@@ -169,7 +167,7 @@ export default function LocationSection() {
                   O escríbenos directamente
                 </p>
                 <a
-                  href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20conocer%20más%20sobre%20sus%20servicios%20💝"
+                  href={waUrl('¡Hola! Quiero conocer más sobre sus servicios 💝')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105"

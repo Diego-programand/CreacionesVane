@@ -2,6 +2,7 @@
 
 import ScrollReveal from '../components/ScrollReveal';
 import { getCldVideoUrl } from '@/app/data/constants';
+import { waUrl } from '@/app/lib/whatsapp';
 
 export default function CTASection() {
   // Generamos las URLs optimizadas
@@ -57,7 +58,7 @@ export default function CTASection() {
 
           <ScrollReveal direction="up" delay={0.6}>
             <a
-              href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20💝"
+              href={waUrl('¡Hola! Quiero hacer un pedido 💝')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-primary-600 px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg shadow-2xl hover:shadow-[0_20px_60px_rgba(226,28,101,0.4)] hover:scale-105 hover:bg-primary-50 transition-all duration-300 group"

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ScrollReveal from '../components/ScrollReveal';
+import { waUrl } from '../lib/whatsapp';
 
 /**
  * HERO SECTION — Página de Inicio
@@ -65,7 +66,7 @@ export default function HeroSection() {
                     <div className="grid grid-cols-2 p-3 gap-3 sm:flex sm:justify-center sm:gap-6">
                         {/* CTA WhatsApp — Mensaje predefinido geo-localizado */}
                         <a
-                            href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20pedir%20un%20regalo%20a%20domicilio%20en%20Medellín%20💝"
+                            href={waUrl('¡Hola! Quiero pedir un regalo a domicilio en Medellín 💝')}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center bg-white text-primary-600 px-4 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary-50 transition-all duration-300 text-center"
