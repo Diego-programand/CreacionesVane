@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { WA_NUMBER } from '@/app/lib/whatsapp';
 
 interface WhatsAppChatProps {
   isOpen: boolean;
@@ -56,7 +57,7 @@ export default function WhatsAppChat({ isOpen, onClose }: WhatsAppChatProps) {
   const [blockEndTime, setBlockEndTime] = useState<number | null>(null);
   const [lastStrikeTime, setLastStrikeTime] = useState<number | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const phoneNumber = '573128235654';
+  const phoneNumber = WA_NUMBER;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
