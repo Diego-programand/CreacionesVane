@@ -9,6 +9,7 @@ import { getCldVideoUrl } from '../data/constants';
 import { sanityClient } from '../lib/sanity.client';
 import { PRODUCTS_BY_CATEGORY_QUERY } from '../lib/sanity.queries';
 import { toProduct, type SanityProduct } from '../lib/sanity.types';
+import { waUrl } from '../lib/whatsapp';
 
 //  METADATA ESTÁTICA
 export const metadata: Metadata = {
@@ -453,7 +454,7 @@ export default async function RefrigeriosPage() {
 
               <ScrollReveal direction="up" delay={0.6}>
                 <a
-                  href="https://wa.me/573128235654?text=¡Hola!%20Quiero%20cotizar%20refrigerios%20para%20mi%20evento%20🍱"
+                  href={waUrl('¡Hola! Quiero cotizar refrigerios para mi evento 🍱')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 bg-white text-vane-600 px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-base md:text-lg shadow-2xl hover:shadow-[0_20px_60px_rgba(232,124,36,0.4)] hover:scale-105 hover:bg-vane-50 transition-all duration-300 group"

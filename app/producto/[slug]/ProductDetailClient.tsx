@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { Product } from '@/app/lib/sanity.types';
 import { opcionesPersonalizablesPorCategoria } from '@/app/data/constants';
+import { WA_NUMBER } from '@/app/lib/whatsapp';
 import Watermark from '@/app/components/WaterMark';
 import {
   CheckCircle,
@@ -32,8 +33,8 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
 
   const handleWhatsApp = (e: React.FormEvent) => {
     e.preventDefault();
-    const baseMessage = `¡Hola Creaciones Vane! 👋%0A%0AMe interesa este servicio:%0A*${product.nombre}*%0A%0A*Mis Datos:*%0A👤 Nombre: ${formData.nombre}%0A📅 Fecha deseada: ${formData.fecha}%0A🖼️ Ref: ${window.location.href}`;
-    window.open(`https://wa.me/573128235654?text=${baseMessage}`, '_blank');
+    const baseMessage = `¡Hola Creaciones Vane! 👋\n\nMe interesa este servicio:\n*${product.nombre}*\n\n*Mis Datos:*\n👤 Nombre: ${formData.nombre}\n📅 Fecha deseada: ${formData.fecha}\n🖼️ Ref: ${window.location.href}`;
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(baseMessage)}`, '_blank');
   };
 
   const handleImageClick = () => {
