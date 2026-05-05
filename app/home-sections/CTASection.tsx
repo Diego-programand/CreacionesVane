@@ -10,7 +10,7 @@ export default function CTASection() {
   const videoMobile = getCldVideoUrl('hearts-background-mobile_z1xlou');
 
   // Para el poster, usa la URL base de imágenes
-  const posterUrl = `https://res.cloudinary.com/dw7zhnbho/image/upload/f_auto,q_auto,w_1200/fallback-hearts_d3grvx.webp`;
+  const posterUrl = `https://res.cloudinary.com/dw7zhnbho/image/upload/f_auto,q_auto,w_750/fallback-hearts_d3grvx.webp`;
 
   return (
     <section className="relative py-20 md:py-24 overflow-hidden">
@@ -20,7 +20,9 @@ export default function CTASection() {
           loop
           muted
           playsInline
+          preload="none"
           poster={posterUrl}
+          aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover"
         >
           {/* Fuente para Móvil */}
