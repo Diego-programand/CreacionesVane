@@ -1,17 +1,27 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import HeroSection from './home-sections/HeroSection';
 import ServicesSection from './home-sections/ServicesSection';
-import FeaturedProductsSection from './home-sections/FeaturedProductsSection';
-import CTASection from './home-sections/CTASection';
-import LocationSection from './home-sections/LocationSection';
-import ExperienceSection from './home-sections/ExperienceSection';
 import OcasionesSection from './home-sections/OcasionesSection';
+import LocationSection from './home-sections/LocationSection';
 import { sanityClient } from './lib/sanity.client';
 import { FEATURED_PRODUCTS_QUERY, ALL_CATEGORIES_QUERY } from './lib/sanity.queries';
 import { toProduct, type SanityProduct, type SanityCategory } from './lib/sanity.types';
+
+const FeaturedProductsSection = dynamic(() => import('./home-sections/FeaturedProductsSection'), {
+  loading: () => <div className="py-12 md:py-20 bg-primary-100 min-h-[400px]" />,
+});
+
+const CTASection = dynamic(() => import('./home-sections/CTASection'), {
+  loading: () => <div className="py-20 md:py-24 bg-primary-600 min-h-[300px]" />,
+});
+
+const ExperienceSection = dynamic(() => import('./home-sections/ExperienceSection'), {
+  loading: () => <div className="py-20 bg-primary-50 min-h-[400px]" />,
+});
 
 /**
  * ========================================
