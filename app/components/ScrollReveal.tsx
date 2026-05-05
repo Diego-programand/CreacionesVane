@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
+import { LazyMotion, domAnimation, m, useInView } from 'framer-motion';
 import { useRef, ReactNode } from 'react';
 
 interface ScrollRevealProps {
@@ -35,19 +35,21 @@ export default function ScrollReveal({
   };
 
   return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={isInView ? 'visible' : 'hidden'}
-      variants={variants}
-      transition={{
-        duration,
-        delay,
-        ease: 'easeOut',
-      }}
-      className={className}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={domAnimation}>
+      <m.div
+        ref={ref}
+        initial="hidden"
+        animate={isInView ? 'visible' : 'hidden'}
+        variants={variants}
+        transition={{
+          duration,
+          delay,
+          ease: 'easeOut',
+        }}
+        className={className}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
   );
 }
