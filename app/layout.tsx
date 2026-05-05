@@ -210,8 +210,6 @@ export default function RootLayout({
         {/* Preconnect a recursos externos CRÍTICOS */}
         <link rel="preconnect" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Preload critical assets */}
         <link
