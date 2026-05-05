@@ -102,6 +102,7 @@ function ServiceCard({ categoria, img, icon, delay, isMain = false }: { categori
             alt={`${categoria.nombre} a domicilio en Medellín - Creaciones Vane`}
             fill
             loading="lazy"
+            sizes={isMain ? "(max-width: 1024px) 100vw, 58vw" : "(max-width: 1024px) 100vw, 42vw"}
             className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
           {/* Overlay gradiente: Más oscuro abajo para que el texto resalte, más suave arriba */}

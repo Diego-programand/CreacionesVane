@@ -26,6 +26,7 @@ export default function HeroSection() {
                 fetchPriority="high"
                 loading="eager"
                 fill
+                quality={30}
                 sizes="(max-width: 768px) 100vw, 1200px"
                 className="object-cover object-center blur-[5px]"
             />

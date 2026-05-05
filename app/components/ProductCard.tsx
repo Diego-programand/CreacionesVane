@@ -17,7 +17,7 @@ const getCloudinaryUrl = (imagePath: string) => {
   const baseUrl = imagePath.substring(0, uploadIndex + 8);
   const imageSuffix = imagePath.substring(uploadIndex + 8);
   // Ajustamos a 3:4 para mantener consistencia visual
-  const transformations = 'c_fill,ar_3:4,w_800,g_auto,q_auto,f_auto';
+  const transformations = 'c_fill,ar_3:4,w_540,g_auto,q_auto,f_auto';
 
   return `${baseUrl}${transformations}/${imageSuffix}`;
 };
@@ -87,7 +87,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               alt={`${product.nombre} en Medellín - Creaciones Vane`}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700 pointer-events-none"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              sizes="(max-width: 640px) 75vw, (max-width: 1024px) 300px, 320px"
               priority={product.destacado}
               draggable={false}
               onContextMenu={(e) => e.preventDefault()}
