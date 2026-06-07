@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.2.7",
     "@sanity/client": "^7.21.0",
     "@sanity/webhook": "^4.0.4",
     "dotenv": "^17.4.2",

@@ -3,9 +3,10 @@ import { notFound } from 'next/navigation';
 import { sanityClient } from '@/app/lib/sanity.client';
 import { PRODUCT_BY_SLUG_QUERY, ALL_PRODUCTS_SLUGS_QUERY } from '@/app/lib/sanity.queries';
 import { toProduct, type SanityProduct } from '@/app/lib/sanity.types';
+import { BUSINESS } from '@/app/lib/business';
+import { breadcrumbSchema, productSchema } from '@/app/lib/seo';
 import ProductDetailClient from './ProductDetailClient';
 
-// Generate static params for all products using their semantic slug
 export async function generateStaticParams() {
   const products = await sanityClient.fetch<{ slug: string }[]>(
     ALL_PRODUCTS_SLUGS_QUERY,
@@ -13,16 +14,13 @@ export async function generateStaticParams() {
     { next: { tags: ['product'] } }
   );
 
-  return products.map(p => ({
-    slug: p.slug,
-  }));
+  return products.map((p) => ({ slug: p.slug }));
 }
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
 
-// SEO: Generate dynamic metadata per product
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
   const { slug } = await params;
 
@@ -34,38 +32,39 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   if (!sanityProduct) return {};
 
-  const imageUrl = `https://res.cloudinary.com/dw7zhnbho/image/upload/${sanityProduct.cloudinaryPublicId}.jpg`;
-  const description = sanityProduct.descripcion.length > 155
-    ? sanityProduct.descripcion.substring(0, 152) + '...'
-    : sanityProduct.descripcion;
+  const product = toProduct(sanityProduct);
+  const url = `${BUSINESS.url}/producto/${product.slug}`;
+  const description =
+    product.descripcion.length > 155
+      ? product.descripcion.substring(0, 152) + '...'
+      : product.descripcion;
 
   return {
-    title: `${sanityProduct.nombre} | Creaciones Vane Medellín`,
+    title: `${product.nombre} | Creaciones Vane Medellín`,
     description,
     openGraph: {
-      title: `${sanityProduct.nombre} - Creaciones Vane`,
+      title: `${product.nombre} — Creaciones Vane`,
       description,
-      url: `https://creacionesvane.com/producto/${sanityProduct.slug.current}`,
+      url,
       images: [
         {
-          url: imageUrl,
+          url: product.imagen,
           width: 800,
           height: 800,
-          alt: `${sanityProduct.nombre} - Creaciones Vane Medellín`,
+          alt: `${product.nombre} — Creaciones Vane Medellín`,
         },
       ],
       locale: 'es_CO',
-      siteName: 'Creaciones Vane',
+      siteName: BUSINESS.name,
+      type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${sanityProduct.nombre} | Creaciones Vane`,
+      title: `${product.nombre} | Creaciones Vane`,
       description,
-      images: [imageUrl],
+      images: [product.imagen],
     },
-    alternates: {
-      canonical: `https://creacionesvane.com/producto/${sanityProduct.slug.current}`,
-    },
+    alternates: { canonical: url },
   };
 }
 
@@ -81,37 +80,46 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   if (!sanityProduct) notFound();
 
   const product = toProduct(sanityProduct);
+  const url = `${BUSINESS.url}/producto/${product.slug}`;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.nombre,
-    "description": product.descripcion,
-    "image": product.imagen,
-    "category": product.categoria,
-    "brand": {
-      "@type": "Brand",
-      "name": "Creaciones Vane"
-    },
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "COP",
-      "price": product.precio.toString(),
-      "availability": "https://schema.org/InStock",
-      "url": `https://creacionesvane.com/producto/${product.slug}`,
-      "seller": {
-        "@type": "LocalBusiness",
-        "name": "Creaciones Vane",
-        "telephone": "+573128235654"
-      }
-    }
+  /**
+   * Product schema enriquecido: shippingDetails + hasMerchantReturnPolicy son
+   * requeridos por Google para product rich results desde 2023. brand referencia
+   * la Organization canónica del sitio (declarada en layout.tsx) vía @id.
+   */
+  const jsonLdProduct = productSchema({
+    id: product.id,
+    name: product.nombre,
+    description: product.descripcion,
+    image: product.imagen,
+    priceCOP: product.precio,
+    category: product.categoria,
+    url,
+  });
+
+  /* Breadcrumb: Inicio > Categoría correspondiente > Producto */
+  const categoryRouteMap: Record<typeof product.categoria, { name: string; path: string }> = {
+    Detalles: { name: 'Catálogo de Anchetas y Desayunos', path: '/creaciones-vane' },
+    Refrigerios: { name: 'Refrigerios para Eventos', path: '/refrigerios' },
+    Decoraciones: { name: 'Decoración de Eventos', path: '/decoraciones' },
   };
+  const cat = categoryRouteMap[product.categoria];
+
+  const jsonLdBreadcrumb = breadcrumbSchema([
+    { name: 'Inicio', url: BUSINESS.url },
+    { name: cat.name, url: `${BUSINESS.url}${cat.path}` },
+    { name: product.nombre, url },
+  ]);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
       <ProductDetailClient product={product} />
     </>

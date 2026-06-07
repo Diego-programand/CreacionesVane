@@ -10,87 +10,43 @@ import { sanityClient } from '../lib/sanity.client';
 import { PRODUCTS_BY_CATEGORY_QUERY } from '../lib/sanity.queries';
 import { toProduct, type SanityProduct } from '../lib/sanity.types';
 import { waUrl } from '../lib/whatsapp';
+import { BUSINESS, postalAddress, geoCoordinates, openingHoursSpec } from '../lib/business';
+import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
 
-//  METADATA ESTÁTICA
-export const metadata: Metadata = {
-  title: 'Refrigerios para Eventos en Medellín | Creaciones Vane',
-  description: 'Refrigerios para eventos corporativos e infantiles en Medellín. Box lunch, sándwiches y frutas frescas. Entrega puntual en El Poblado y Envigado. Desde $5.000.',
+export const metadata: Metadata = pageMetadata({
+  title: 'Refrigerios para Eventos en Medellín — Box Lunch y Catering Corporativo',
+  description: `Refrigerios para eventos corporativos, fiestas infantiles y reuniones en Medellín. Box lunch, sándwich gourmet y frutas frescas. Entrega puntual. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  path: '/refrigerios',
+  ogImage: `${BUSINESS.url}/banner-refrigerios.webp`,
   keywords: [
-    // Keywords primarias - Alto volumen
     'refrigerios medellín',
     'refrigerios para eventos medellín',
     'refrigerios empresariales medellín',
     'box lunch medellín',
     'catering medellín',
-
-    // Keywords por tipo de evento
     'refrigerios fiestas infantiles medellín',
     'refrigerios corporativos medellín',
     'lunch empresarial medellín',
     'refrigerios para conferencias medellín',
     'refrigerios para capacitaciones medellín',
     'refrigerios reuniones medellín',
-
-    // Keywords por zona - SEO Local
     'refrigerios el poblado',
     'box lunch laureles',
     'catering envigado',
     'refrigerios sabaneta',
     'lunch empresarial el poblado',
-
-    // Keywords long-tail - Alta conversión
     'refrigerios económicos para eventos medellín',
     'refrigerios saludables empresariales medellín',
     'box lunch con frutas medellín',
     'refrigerios personalizados logo empresa medellín',
-    'catering eventos pequeños medellín',
-
-    // Keywords por producto
     'sándwich gourmet eventos medellín',
     'croissant eventos medellín',
     'refrigerios con fruta fresca medellín',
     'lunch individual medellín',
-
-    // Keywords comparativas
-    'mejor catering medellín',
-    'refrigerios económicos y buenos medellín',
-    'refrigerios entrega puntual medellín'
   ],
-  alternates: {
-    canonical: 'https://creacionesvane.com/refrigerios',
-  },
-  openGraph: {
-    type: 'website',
-    url: 'https://creacionesvane.com/refrigerios',
-    title: 'Refrigerios para Eventos en Medellín | Refrigerios Vane',
-    description: 'Sabor en cada evento. Refrigerios frescos y deliciosos para eventos corporativos, fiestas infantiles y reuniones en Medellín. Entrega puntual garantizada.',
-    images: [
-      {
-        url: 'https://creacionesvane.com/banner-refrigerios.png',
-        width: 1200,
-        height: 630,
-        alt: 'Refrigerios para eventos corporativos e infantiles en Medellín - Refrigerios Vane'
-      }
-    ],
-    locale: 'es_CO',
-    siteName: 'Creaciones Vane',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Refrigerios para Eventos en Medellín | Refrigerios Vane',
-    description: 'Refrigerios frescos con ingredientes de calidad. Entrega puntual garantizada. WhatsApp 312 8235654',
-    images: ['https://creacionesvane.com/banner-refrigerios.png'],
-  },
-  other: {
-    'geo.region': 'CO-ANT',
-    'geo.placename': 'Medellín',
-    'geo.position': '6.297486;-75.553924',
-    'ICBM': '6.297486, -75.553924',
-  },
-};
+});
 
 export default async function RefrigeriosPage() {
-  // Fetch productos de la categoría "Refrigerios" desde Sanity
   const sanityProducts = await sanityClient.fetch<SanityProduct[]>(
     PRODUCTS_BY_CATEGORY_QUERY,
     { valor: 'Refrigerios' },
@@ -98,284 +54,219 @@ export default async function RefrigeriosPage() {
   );
   const products = sanityProducts.map(toProduct);
 
-  //  JSON-LD FOOD ESTABLISHMENT CON MENÚ COMPLETO
+  /**
+   * FoodEstablishment con Menu completo. No duplica NAP del Organization global
+   * (declarado en layout.tsx) — usa @id para referenciar.
+   */
   const jsonLdFoodEstablishment = {
-    "@context": "https://schema.org",
-    "@type": "FoodEstablishment",
-    "@id": "https://creacionesvane.com/refrigerios",
-    "name": "Refrigerios Vane - Catering para Eventos",
-    "alternateName": "Refrigerios Vane Medellín",
-    "description": "Servicio profesional de refrigerios para eventos corporativos, fiestas infantiles, conferencias y reuniones en Medellín. Ingredientes frescos, entrega puntual y opciones personalizadas.",
-    "url": "https://creacionesvane.com/refrigerios",
-    "telephone": "+573128235654",
-    "priceRange": "$-$$",
-    "servesCuisine": ["Refrigerios", "Box Lunch", "Catering Eventos", "Lunch Corporativo"],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Carrera 50 #120-13, Barrio Pablo VI",
-      "addressLocality": "Medellín",
-      "addressRegion": "Antioquia",
-      "addressCountry": "CO",
-      "postalCode": "050001"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 6.297486,
-      "longitude": -75.553924
-    },
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "20:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": "Saturday",
-        "opens": "09:00",
-        "closes": "20:00"
-      }
+    '@context': 'https://schema.org',
+    '@type': 'FoodEstablishment',
+    '@id': `${BUSINESS.url}/refrigerios#foodestablishment`,
+    name: 'Refrigerios Vane — Catering y Box Lunch para Eventos en Medellín',
+    alternateName: 'Refrigerios Vane Medellín',
+    description:
+      'Servicio profesional de refrigerios para eventos corporativos, fiestas infantiles, conferencias y reuniones en Medellín. Ingredientes frescos, entrega puntual y opciones personalizadas.',
+    url: `${BUSINESS.url}/refrigerios`,
+    telephone: BUSINESS.phoneE164,
+    priceRange: '$-$$',
+    servesCuisine: ['Refrigerios', 'Box Lunch', 'Catering Eventos', 'Lunch Corporativo'],
+    address: postalAddress(),
+    geo: geoCoordinates(),
+    openingHoursSpecification: openingHoursSpec(),
+    parentOrganization: { '@id': `${BUSINESS.url}/#organization` },
+    areaServed: [
+      { '@type': 'City', name: 'Medellín' },
+      { '@type': 'Place', name: 'El Poblado' },
+      { '@type': 'Place', name: 'Laureles' },
+      { '@type': 'City', name: 'Envigado' },
+      { '@type': 'City', name: 'Sabaneta' },
+      { '@type': 'City', name: 'Itagüí' },
+      { '@type': 'City', name: 'Bello' },
     ],
-    "areaServed": [
-      {
-        "@type": "City",
-        "name": "Medellín",
-        "description": "Servicio de refrigerios en todo Medellín"
-      },
-      {
-        "@type": "Place",
-        "name": "El Poblado",
-        "description": "Refrigerios corporativos zona empresarial El Poblado"
-      },
-      {
-        "@type": "Place",
-        "name": "Laureles",
-        "description": "Catering para eventos en Laureles"
-      },
-      { "@type": "City", "name": "Envigado" },
-      { "@type": "City", "name": "Sabaneta" },
-      { "@type": "City", "name": "Itagüí" },
-      { "@type": "City", "name": "Bello" }
-    ],
-    "hasMenu": {
-      "@type": "Menu",
-      "name": "Menú de Refrigerios y Box Lunch",
-      "description": "Opciones variadas para eventos corporativos e infantiles",
-      "hasMenuSection": [
+    hasMenu: {
+      '@type': 'Menu',
+      name: 'Menú de Refrigerios y Box Lunch',
+      description: 'Opciones variadas para eventos corporativos e infantiles',
+      hasMenuSection: [
         {
-          "@type": "MenuSection",
-          "name": "Refrigerios Infantiles",
-          "description": "Refrigerios frescos y nutritivos para fiestas infantiles, cumpleaños y eventos escolares",
-          "hasMenuItem": [
+          '@type': 'MenuSection',
+          name: 'Refrigerios Infantiles',
+          description:
+            'Refrigerios frescos y nutritivos para fiestas infantiles, cumpleaños y eventos escolares',
+          hasMenuItem: [
             {
-              "@type": "MenuItem",
-              "name": "Refrigerio Chispas de Queso",
-              "description": "Sándwich de jamón premium, queso fresco, lechuga crocante y salsas de la casa. Empaque individual higiénico.",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "6000",
-                "availability": "https://schema.org/InStock"
+              '@type': 'MenuItem',
+              name: 'Refrigerio Chispas de Queso',
+              description:
+                'Sándwich de jamón premium, queso fresco, lechuga crocante y salsas de la casa. Empaque individual higiénico.',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '6000',
+                availability: 'https://schema.org/InStock',
               },
-              "suitableForDiet": "https://schema.org/VegetarianDiet"
+              suitableForDiet: 'https://schema.org/VegetarianDiet',
             },
             {
-              "@type": "MenuItem",
-              "name": "Sándwich Express Spider-Man",
-              "description": "Sándwich nutritivo con diseño temático Spider-Man, sellado higiénico",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "5000",
-                "availability": "https://schema.org/InStock"
-              }
-            }
-          ]
+              '@type': 'MenuItem',
+              name: 'Sándwich Express Spider-Man',
+              description: 'Sándwich nutritivo con diseño temático Spider-Man, sellado higiénico',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '5000',
+                availability: 'https://schema.org/InStock',
+              },
+            },
+          ],
         },
         {
-          "@type": "MenuSection",
-          "name": "Refrigerios Corporativos",
-          "description": "Box lunch y refrigerios profesionales para eventos empresariales, conferencias y capacitaciones",
-          "hasMenuItem": [
+          '@type': 'MenuSection',
+          name: 'Refrigerios Corporativos',
+          description:
+            'Box lunch y refrigerios profesionales para eventos empresariales, conferencias y capacitaciones',
+          hasMenuItem: [
             {
-              "@type": "MenuItem",
-              "name": "Lunch Corporativo Tradición & Calidad",
-              "description": "Sándwich artesanal gourmet, fruta entera seleccionada y acompañamiento premium. Presentación ejecutiva.",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "15000",
-                "availability": "https://schema.org/InStock"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Croissant Edición Especial",
-              "description": "Croissant artesanal relleno de jamón serrano y queso madurado, jugo natural 100%, fruta seleccionada. Cubiertos biodegradables.",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "15000",
-                "availability": "https://schema.org/InStock"
-              }
-            },
-            {
-              "@type": "MenuItem",
-              "name": "Refrigerio Vitalidad: Fruta & Néctar",
-              "description": "Frutas tropicales frescas, néctar artesanal y sándwich clásico. Opción saludable premium.",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "13000",
-                "availability": "https://schema.org/InStock"
+              '@type': 'MenuItem',
+              name: 'Lunch Corporativo Tradición & Calidad',
+              description:
+                'Sándwich artesanal gourmet, fruta entera seleccionada y acompañamiento premium. Presentación ejecutiva.',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '15000',
+                availability: 'https://schema.org/InStock',
               },
-              "suitableForDiet": "https://schema.org/LowCalorieDiet"
             },
             {
-              "@type": "MenuItem",
-              "name": "Lunch Picnic Tradicional",
-              "description": "Sándwich estilo picnic, ensalada de frutas frescas con kiwi y mango, dulce artesanal",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "12000",
-                "availability": "https://schema.org/InStock"
-              }
-            }
-          ]
+              '@type': 'MenuItem',
+              name: 'Croissant Edición Especial',
+              description:
+                'Croissant artesanal relleno de jamón serrano y queso madurado, jugo natural 100%, fruta seleccionada. Cubiertos biodegradables.',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '15000',
+                availability: 'https://schema.org/InStock',
+              },
+            },
+            {
+              '@type': 'MenuItem',
+              name: 'Refrigerio Vitalidad: Fruta & Néctar',
+              description:
+                'Frutas tropicales frescas, néctar artesanal y sándwich clásico. Opción saludable premium.',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '13000',
+                availability: 'https://schema.org/InStock',
+              },
+              suitableForDiet: 'https://schema.org/LowCalorieDiet',
+            },
+            {
+              '@type': 'MenuItem',
+              name: 'Lunch Picnic Tradicional',
+              description:
+                'Sándwich estilo picnic, ensalada de frutas frescas con kiwi y mango, dulce artesanal',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '12000',
+                availability: 'https://schema.org/InStock',
+              },
+            },
+          ],
         },
         {
-          "@type": "MenuSection",
-          "name": "Eventos Masivos",
-          "description": "Soluciones logísticas para eventos de alto volumen (50+ personas)",
-          "hasMenuItem": [
+          '@type': 'MenuSection',
+          name: 'Eventos Masivos',
+          description: 'Soluciones logísticas para eventos de alto volumen (50+ personas)',
+          hasMenuItem: [
             {
-              "@type": "MenuItem",
-              "name": "Máxima Eficiencia Corporativa",
-              "description": "Pack sellado higiénico: sándwich fresco, néctar con tapa de seguridad, postre individual. Ideal para convenciones y ferias.",
-              "offers": {
-                "@type": "Offer",
-                "priceCurrency": "COP",
-                "price": "10000",
-                "availability": "https://schema.org/InStock"
-              }
-            }
-          ]
-        }
-      ]
+              '@type': 'MenuItem',
+              name: 'Máxima Eficiencia Corporativa',
+              description:
+                'Pack sellado higiénico: sándwich fresco, néctar con tapa de seguridad, postre individual. Ideal para convenciones y ferias.',
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'COP',
+                price: '10000',
+                availability: 'https://schema.org/InStock',
+              },
+            },
+          ],
+        },
+      ],
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "93",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "makesOffer": [
+    makesOffer: [
       {
-        "@type": "Offer",
-        "name": "Entrega Puntual Garantizada",
-        "description": "Compromiso de puntualidad en entregas para eventos corporativos"
+        '@type': 'Offer',
+        name: 'Entrega Puntual Garantizada',
+        description: 'Compromiso de puntualidad en entregas para eventos corporativos',
       },
       {
-        "@type": "Offer",
-        "name": "Opciones Vegetarianas Disponibles",
-        "description": "Menú adaptable para dietas especiales"
+        '@type': 'Offer',
+        name: 'Opciones Vegetarianas Disponibles',
+        description: 'Menú adaptable para dietas especiales',
       },
       {
-        "@type": "Offer",
-        "name": "Pedido Mínimo 15 Unidades",
-        "description": "Servicio optimizado para grupos y eventos"
-      }
-    ]
+        '@type': 'Offer',
+        name: 'Pedido Mínimo 10 Unidades',
+        description: 'Servicio optimizado para grupos y eventos',
+      },
+    ],
   };
 
-  //  BREADCRUMB SCHEMA
-  const jsonLdBreadcrumb = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Inicio",
-        "item": "https://creacionesvane.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Refrigerios para Eventos",
-        "item": "https://creacionesvane.com/refrigerios"
-      }
-    ]
-  };
+  const breadcrumb = breadcrumbSchema([
+    { name: 'Inicio', url: BUSINESS.url },
+    { name: 'Refrigerios para Eventos', url: `${BUSINESS.url}/refrigerios` },
+  ]);
 
-  //  FAQ SCHEMA (Preguntas frecuentes - GOLD para SEO)
-  const jsonLdFAQ = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el pedido mínimo de refrigerios?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El pedido mínimo es de 10 unidades. Ofrecemos refrigerios desde $5.000 hasta $15.000 dependiendo del tipo de evento y opciones seleccionadas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hacen entregas en empresas de Medellín?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, realizamos entregas puntuales en toda el área metropolitana de Medellín, especialmente en zonas empresariales como El Poblado, Laureles, Envigado y Sabaneta. Garantizamos puntualidad para eventos corporativos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Tienen opciones vegetarianas o para dietas especiales?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, ofrecemos opciones vegetarianas y podemos adaptar los refrigerios a dietas especiales. Contáctanos por WhatsApp al 312 8235654 para personalizar tu pedido."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo de anticipación necesitan para un pedido?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Recomendamos hacer el pedido con al menos 24 horas de anticipación para garantizar disponibilidad. Para eventos grandes (50+ personas), sugerimos ordenar con 2-3 días de anticipación."
-        }
-      }
-    ]
-  };
+  const faq = faqSchema([
+    {
+      q: '¿Cuál es el pedido mínimo de refrigerios?',
+      a: 'El pedido mínimo es de 10 unidades. Manejamos refrigerios desde $5.000 hasta $15.000 según el tipo de evento y opciones seleccionadas.',
+    },
+    {
+      q: '¿Hacen entregas en empresas de Medellín?',
+      a: 'Sí, entregamos puntualmente en toda el área metropolitana de Medellín, especialmente en zonas empresariales como El Poblado, Laureles, Envigado y Sabaneta. Garantizamos puntualidad para eventos corporativos.',
+    },
+    {
+      q: '¿Tienen opciones vegetarianas o para dietas especiales?',
+      a: `Sí, ofrecemos opciones vegetarianas y podemos adaptar los refrigerios a dietas especiales. Contáctanos por WhatsApp al ${BUSINESS.phoneDisplay} para personalizar tu pedido.`,
+    },
+    {
+      q: '¿Cuánto tiempo de anticipación necesitan para un pedido?',
+      a: 'Recomendamos pedir con al menos 24 horas de anticipación. Para eventos grandes (50+ personas), sugerimos ordenar con 2–3 días de anticipación.',
+    },
+    {
+      q: '¿Tienen refrigerios para fiestas infantiles temáticas?',
+      a: 'Sí, manejamos sándwiches y refrigerios con empaque temático (Spider-Man, Princess, Toy Story, etc.) ideales para cumpleaños y eventos escolares.',
+    },
+  ]);
 
   return (
     <>
-      {/*  SCHEMAS JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFoodEstablishment) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFAQ) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
       />
 
       <Header />
 
       <main className="min-h-screen">
-        {/* Hero Section */}
         <header className="relative h-[400px] flex items-center justify-center overflow-hidden">
-          {/* Imagen banner con ALT geo-localizado para SEO de imágenes */}
           <Image
             src="/banner-refrigerios.webp"
-            alt="Refrigerios frescos para eventos corporativos, fiestas infantiles y reuniones a domicilio en Medellín - Refrigerios Vane"
+            alt="Refrigerios frescos para eventos corporativos, fiestas infantiles y reuniones a domicilio en Medellín — Refrigerios Vane"
             fill
             className="object-cover object-center blur-[5px]"
             priority
@@ -386,7 +277,7 @@ export default async function RefrigeriosPage() {
             <ScrollReveal direction="down" delay={0.2}>
               <Image
                 src="/logo-refrigerios.jpeg"
-                alt="Logo Refrigerios Vane - Catering y box lunch para eventos corporativos en Medellín"
+                alt="Logo Refrigerios Vane — Catering y box lunch para eventos corporativos en Medellín"
                 width={120}
                 height={120}
                 className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
@@ -394,25 +285,22 @@ export default async function RefrigeriosPage() {
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
-              {/* H1 con keyword transaccional + geo para SEO local */}
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
-                Refrigerios para Eventos en Medellín — Entrega a Domicilio
+                Refrigerios para Eventos en Medellín — Entrega Puntual a Domicilio
               </h1>
               <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                Refrigerios Vane — Sabor en Cada Evento
+                Refrigerios Vane — Sabor en cada evento
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
-              {/* Descripción con keywords long-tail geo-localizadas */}
               <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
-                Box lunch, sándwiches gourmet y refrigerios corporativos con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Calidad garantizada desde $5.000.
+                Box lunch, sándwiches gourmet y refrigerios corporativos con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Desde $5.000 por unidad.
               </p>
             </ScrollReveal>
           </div>
         </header>
 
-        {/* CATÁLOGO */}
         <ProductCatalog
           theme="refrigerios"
           title="Nuestros Refrigerios"
@@ -420,7 +308,6 @@ export default async function RefrigeriosPage() {
           shuffleOnLoad={true}
         />
 
-        {/* CTA Final */}
         <section className="relative py-16 md:py-18 overflow-hidden">
           <div className="absolute inset-0">
             <video
@@ -464,9 +351,6 @@ export default async function RefrigeriosPage() {
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
                   <span>Enviar mensaje por WhatsApp</span>
-                  <svg className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                  </svg>
                 </a>
               </ScrollReveal>
 
@@ -495,7 +379,7 @@ export default async function RefrigeriosPage() {
             </div>
           </div>
         </section>
-      </main >
+      </main>
 
       <Footer />
       <WhatsAppButton />

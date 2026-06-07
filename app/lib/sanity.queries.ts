@@ -67,9 +67,10 @@ export const ALL_CATEGORIES_QUERY = groq`
   }
 `;
 
-// Solo slugs de productos — para generateStaticParams (ligero)
+// Slugs + URL de imagen de productos — para generateStaticParams y sitemap con images
 export const ALL_PRODUCTS_SLUGS_QUERY = groq`
   *[_type == "product" && defined(slug.current)] {
-    "slug": slug.current
+    "slug": slug.current,
+    "image": coalesce(imagen.secure_url, "https://res.cloudinary.com/dw7zhnbho/image/upload/" + cloudinaryPublicId + ".jpg")
   }
 `;
