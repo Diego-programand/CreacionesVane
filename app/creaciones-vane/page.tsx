@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -145,7 +146,13 @@ export default async function CreacionesVanePage() {
       <Header />
 
       <main className="min-h-screen">
-        <header className="relative h-[380px] flex items-center justify-center overflow-hidden">
+        {/*
+          Hero responsive: usa min-h en vez de h fija para que el contenido
+          nunca quede cortado. Padding generoso arriba para no quedar tapado
+          por el navbar sticky (~70-80px). Logo y tipografía escalan
+          progresivamente para evitar overflow en mobile.
+        */}
+        <header className="relative min-h-[500px] sm:min-h-[520px] md:min-h-[560px] flex items-center justify-center overflow-hidden pt-24 sm:pt-20 pb-16 sm:pb-20">
           <Image
             src="/banner-detalles.webp"
             alt="Catálogo de anchetas personalizadas y desayunos sorpresa a domicilio en Medellín — Creaciones Vane"
@@ -162,7 +169,7 @@ export default async function CreacionesVanePage() {
                 alt="Logo Creaciones Vane — Tienda de anchetas y regalos en Medellín"
                 width={120}
                 height={120}
-                className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
+                className="mx-auto mb-3 sm:mb-4 rounded-full shadow-2xl bg-white p-2 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
               />
             </ScrollReveal>
 
@@ -172,21 +179,53 @@ export default async function CreacionesVanePage() {
                 de exploración del catálogo, no de marca. Evita canibalización con la home
                 que apunta a "Creaciones Vane" como marca.
               */}
-              <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-script text-white mb-3 drop-shadow-lg leading-tight">
                 Catálogo de Anchetas y Desayunos Sorpresa
               </h1>
-              <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+              <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                 Entrega a domicilio el mismo día en Medellín
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
-              <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
+              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
                 Anchetas personalizadas, desayunos sorpresa, peluches, ramos de rosas y detalles de amor con entrega el mismo día en El Poblado, Envigado, Sabaneta e Itagüí.
               </p>
             </ScrollReveal>
           </div>
         </header>
+
+        {/*
+          Cross-link al spoke transaccional de anchetas a domicilio. Aprovecha
+          la autoridad del hub para enrutar al usuario a una landing con
+          paquetes claros y cobertura el mismo día.
+        */}
+        <section
+          aria-label="Landing especializada"
+          className="bg-white border-y border-stone-200 py-10 px-4"
+        >
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs text-[#D81B60] font-semibold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
+              ¿Necesitas la ancheta hoy mismo?
+            </p>
+            <Link
+              href="/anchetas-medellin-domicilio"
+              className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+            >
+              <div>
+                <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                  Anchetas a domicilio en Medellín
+                </p>
+                <p className="text-stone-500 text-sm">
+                  Desde $50.000 — entrega el mismo día si confirmas antes de las 2:00 PM
+                </p>
+              </div>
+              <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        </section>
 
         <ProductCatalog
           theme="detalles"
