@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -263,10 +264,15 @@ export default async function RefrigeriosPage() {
       <Header />
 
       <main className="min-h-screen">
-        <header className="relative h-[400px] flex items-center justify-center overflow-hidden">
+        {/*
+          Hero responsive: min-h en vez de h fija para no cortar el contenido.
+          Padding superior generoso para que el navbar sticky no tape el
+          contenido. Logo y tipografía escalan en mobile.
+        */}
+        <header className="relative min-h-[500px] sm:min-h-[540px] md:min-h-[580px] flex items-center justify-center overflow-hidden pt-24 sm:pt-20 pb-16 sm:pb-20">
           <Image
             src="/banner-refrigerios.webp"
-            alt="Refrigerios frescos para eventos corporativos, fiestas infantiles y reuniones a domicilio en Medellín — Refrigerios Vane"
+            alt="Refrigerios frescos para eventos, fiestas infantiles y reuniones a domicilio en Medellín — Refrigerios Vane"
             fill
             className="object-cover object-center blur-[5px]"
             priority
@@ -277,29 +283,61 @@ export default async function RefrigeriosPage() {
             <ScrollReveal direction="down" delay={0.2}>
               <Image
                 src="/logo-refrigerios.jpeg"
-                alt="Logo Refrigerios Vane — Catering y box lunch para eventos corporativos en Medellín"
+                alt="Logo Refrigerios Vane — Refrigerios para empresas y eventos en Medellín"
                 width={120}
                 height={120}
-                className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
+                className="mx-auto mb-3 sm:mb-4 rounded-full shadow-2xl bg-white p-2 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
               />
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
+              <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg leading-tight">
                 Refrigerios para Eventos en Medellín — Entrega Puntual a Domicilio
               </h1>
-              <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+              <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                 Refrigerios Vane — Sabor en cada evento
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
-              <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
-                Box lunch, sándwiches gourmet y refrigerios corporativos con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Desde $5.000 por unidad.
+              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
+                Cajas de refrigerios para empresas, reuniones, capacitaciones y fiestas con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Desde $5.000 por persona.
               </p>
             </ScrollReveal>
           </div>
         </header>
+
+        {/*
+          Cross-link al spoke específico de refrigerios empresariales.
+          Refuerza la jerarquía hub-and-spoke a Google y enruta al usuario
+          que llega al hub buscando refrigerios para su empresa.
+        */}
+        <section
+          aria-label="Landings especializadas"
+          className="bg-white border-y border-stone-200 py-10 px-4"
+        >
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs text-[#D81B60] font-semibold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
+              ¿Necesitas refrigerios para tu empresa?
+            </p>
+            <Link
+              href="/refrigerios-empresariales-medellin"
+              className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+            >
+              <div>
+                <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                  Refrigerios empresariales en Medellín
+                </p>
+                <p className="text-stone-500 text-sm">
+                  Cajas desde $5.000 por persona — factura electrónica, opciones vegetarianas y logo de tu empresa
+                </p>
+              </div>
+              <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        </section>
 
         <ProductCatalog
           theme="refrigerios"
