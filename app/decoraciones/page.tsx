@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -301,7 +302,12 @@ export default async function DecoracionesPage() {
       <Header />
 
       <main className="min-h-screen">
-        <header className="relative h-[400px] flex items-center justify-center overflow-hidden">
+        {/*
+          Hero responsive: min-h en vez de h fija para no cortar el contenido.
+          Padding superior generoso para que el navbar sticky no tape el
+          contenido. Logo y tipografía escalan en mobile.
+        */}
+        <header className="relative min-h-[500px] sm:min-h-[540px] md:min-h-[580px] flex items-center justify-center overflow-hidden pt-24 sm:pt-20 pb-16 sm:pb-20">
           <Image
             src="/banner-decoraciones.webp"
             alt="Decoración profesional de bodas, cumpleaños y baby shower a domicilio en Medellín — Decoraciones Vane"
@@ -318,26 +324,76 @@ export default async function DecoracionesPage() {
                 alt="Logo Decoraciones Vane — Decoración de eventos y fiestas en Medellín, Envigado e Itagüí"
                 width={120}
                 height={120}
-                className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-1"
+                className="mx-auto mb-3 sm:mb-4 rounded-full shadow-2xl bg-white p-1 w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px]"
               />
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.4}>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg">
+              <h1 className="text-[1.75rem] sm:text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-lg leading-tight">
                 Decoración de Eventos en Medellín — Bodas, Cumpleaños y Baby Shower
               </h1>
-              <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+              <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                 Decoraciones Vane — Espacios que inspiran
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
-              <p className="text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md">
+              <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
                 Montaje profesional para bodas, cumpleaños, quinceañeras y baby shower en Medellín, El Poblado, Envigado y Sabaneta. Hacemos realidad tu celebración soñada.
               </p>
             </ScrollReveal>
           </div>
         </header>
+
+        {/*
+          Cross-links a las landings transaccionales específicas. Refuerzan la
+          jerarquía hub-and-spoke a Google y enrutan al usuario que llega a
+          /decoraciones buscando un evento concreto.
+        */}
+        <section
+          aria-label="Landings especializadas"
+          className="bg-white border-y border-stone-200 py-10 px-4"
+        >
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs text-[#D81B60] font-semibold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
+              ¿Estás organizando un evento específico?
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <Link
+                href="/decoracion-bodas-medellin"
+                className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+              >
+                <div>
+                  <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                    Decoración para bodas
+                  </p>
+                  <p className="text-stone-500 text-sm">
+                    Paquetes desde $480.000 con invitaciones
+                  </p>
+                </div>
+                <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/decoracion-primera-comunion-medellin"
+                className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+              >
+                <div>
+                  <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                    Decoración para primera comunión
+                  </p>
+                  <p className="text-stone-500 text-sm">
+                    Paquetes desde $320.000 con invitaciones
+                  </p>
+                </div>
+                <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         <ProductCatalog
           theme="decoraciones"
