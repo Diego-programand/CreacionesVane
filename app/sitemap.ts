@@ -28,16 +28,40 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/anchetas-medellin-domicilio`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/decoraciones`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/decoracion-bodas-medellin`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/decoracion-primera-comunion-medellin`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/refrigerios`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/refrigerios-empresariales-medellin`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.85,
     },
     {
       url: `${baseUrl}/politica-de-privacidad`,

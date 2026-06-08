@@ -4,37 +4,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
-// Importamos la función de optimización
 import { getCldVideoUrl } from '@/app/data/constants';
 import { waUrl } from '@/app/lib/whatsapp';
 
+/**
+ * Header sticky del sitio.
+ *
+ * Decisión de animaciones (junio 2026):
+ *  - SE ELIMINÓ la cascada de framer-motion al cargar la página. El cliente
+ *    pidió quitar ese "show" inicial que se repetía cada navegación.
+ *  - El dinamismo se conserva vía microinteracciones CSS en hover:
+ *    underlines que crecen, scale del logo, bounce del corazón en hover,
+ *    color transitions y scale del CTA de WhatsApp.
+ *  - El video del gatito y el menú mobile mantienen sus animaciones nativas
+ *    (autoplay / transición de altura del overlay) porque no son ruidosas
+ *    al cargar.
+ */
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // URL optimizada del video del gato
   const catVideoUrl = getCldVideoUrl('cat-kiss_tgrypj');
 
   const isActive = (path: string) => pathname === path;
 
   return (
-    <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-primary-100"
-    >
+    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-primary-100">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
 
-          {/* VIDEO en móvil (sustituye al GIF) */}
-          <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.4 }}
-            className="lg:hidden w-[45px] h-[45px]"
-          >
+          {/* Video del gatito en mobile */}
+          <div className="lg:hidden w-[45px] h-[45px]">
             <video
               autoPlay
               loop
@@ -44,48 +44,33 @@ export default function Header() {
             >
               <source src={catVideoUrl} />
             </video>
-          </motion.div>
+          </div>
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group lg:flex-1 relative z-10">
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
-              className="relative"
-            >
+            <div className="relative">
               <Image
                 src="/logo.png"
                 alt="Logo Creaciones Vane - Regalos y anchetas a domicilio en Medellín"
                 width={55}
                 height={55}
-                className="rounded-full transition-all duration-300 group-hover:scale-105"
+                className="rounded-full transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute -top-1 -right-1 text-lg opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity pointer-events-none select-none">
                 💗
               </div>
-            </motion.div>
+            </div>
 
             <div className="flex items-center gap-3">
-              <motion.div
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
-                className="hidden xs:block"
-              >
+              <div className="hidden xs:block">
                 <p className="font-script text-2xl text-primary-600 group-hover:text-primary-700 transition-colors leading-tight">
                   Creaciones Vane
                 </p>
                 <p className="text-[10px] text-primary-800 font-script leading-none">Cómplice que endulza</p>
-              </motion.div>
+              </div>
 
-              {/* Separador y VIDEO en Desktop */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.4 }}
-                className="hidden lg:flex items-center gap-3"
-              >
+              {/* Separador y video del gatito en desktop */}
+              <div className="hidden lg:flex items-center gap-3">
                 <div className="h-10 w-px bg-primary-300"></div>
                 <div className="w-[40px] h-[40px]">
                   <video
@@ -98,16 +83,12 @@ export default function Header() {
                     <source src={catVideoUrl} />
                   </video>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </Link>
-          {/* Desktop Navigation */}
-          <motion.div
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5 }}
-            className="hidden lg:flex items-center gap-8"
-          >
+
+          {/* Navegación desktop */}
+          <div className="hidden lg:flex items-center gap-8">
             <Link
               href="/"
               className={`relative transition-colors font-medium py-2 group ${isActive('/')
@@ -165,13 +146,10 @@ export default function Header() {
               <span className="hidden xl:inline">Contáctanos</span>
               <span className="xl:hidden">Chat</span>
             </a>
-          </motion.div>
+          </div>
 
-          {/* Mobile Menu Button (derecha) */}
-          <motion.button
-            initial={{ x: 20, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.4 }}
+          {/* Botón menú mobile */}
+          <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden relative text-primary-600 p-2 hover:bg-primary-50 rounded-lg transition-colors"
             aria-label="Menu"
@@ -188,10 +166,10 @@ export default function Header() {
                 <span className="text-xs">💕</span>
               </div>
             )}
-          </motion.button>
+          </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Menú mobile */}
         <div
           className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
             }`}
@@ -203,10 +181,9 @@ export default function Header() {
             ></div>
           </div>
 
-          {/* Floating Hearts Animation */}
           <div className="pb-4 pt-4 space-y-1">
             <div className="relative">
-              {/* Floating Hearts Animation Refinada */}
+              {/* Floating hearts cuando el menú está abierto */}
               {menuOpen && (
                 <div className="absolute inset-0 pointer-events-none overflow-hidden h-[400px]">
                   {[...Array(16)].map((_, i) => (
@@ -216,7 +193,6 @@ export default function Header() {
                       style={{
                         left: `${Math.random() * 100}%`,
                         animationDelay: `${Math.random() * 4}s`,
-                        // Emojis más pequeños y delicados
                         fontSize: `${8 + Math.random() * 10}px`,
                         filter: `blur(${Math.random() > 0.8 ? '0.5px' : '0px'})`,
                       }}
@@ -323,6 +299,6 @@ export default function Header() {
     animation: heart-fall 4s linear infinite;
   }
 `}</style>
-    </motion.header>
+    </header>
   );
 }
