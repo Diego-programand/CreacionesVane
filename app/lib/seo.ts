@@ -30,7 +30,7 @@ export function pageMetadata({
   title,
   description,
   path,
-  ogImage = `${BASE_URL}/banner-detalles.webp`,
+  ogImage = `${BASE_URL}/og-image-main.webp`,
   keywords,
 }: PageMetadataInput): Metadata {
   const url = `${BASE_URL}${path.startsWith('/') ? path : '/' + path}`;

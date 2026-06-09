@@ -39,7 +39,7 @@ export const metadata: Metadata = pageMetadata({
     'Creaciones Vane — Anchetas, Desayunos Sorpresa y Decoración en Medellín | Entrega Hoy',
   description: `Anchetas, desayunos sorpresa, decoración y refrigerios a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. Desde $50.000 — WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/',
-  ogImage: `${BUSINESS.url}/banner-detalles.webp`,
+  ogImage: `${BUSINESS.url}/og-image-main.webp`,
   keywords: [
     'creaciones vane',
     'creaciones vane medellín',

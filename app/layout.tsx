@@ -91,11 +91,11 @@ export const metadata: Metadata = {
       'Anchetas personalizadas, desayunos sorpresa, decoración y refrigerios con entrega el mismo día en Medellín, Envigado y Sabaneta.',
     images: [
       {
-        url: `${BUSINESS.url}/og-image-main.jpg`,
+        url: `${BUSINESS.url}/og-image-main.webp`,
         width: 1200,
         height: 630,
         alt: 'Creaciones Vane — Anchetas y Desayunos Sorpresa en Medellín',
-        type: 'image/jpeg',
+        type: 'image/webp',
       },
       {
         url: BUSINESS.logo,
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Creaciones Vane — Anchetas y Desayunos Sorpresa en Medellín',
     description: `Cómplice que endulza. Entrega el mismo día en Medellín. WhatsApp ${BUSINESS.phoneDisplay}.`,
-    images: [`${BUSINESS.url}/banner-detalles.webp`],
+    images: [`${BUSINESS.url}/og-image-main.webp`],
   },
 
   manifest: '/site.webmanifest',
