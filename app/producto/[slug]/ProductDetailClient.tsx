@@ -1,12 +1,15 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import type { Product } from '@/app/lib/sanity.types';
 import { opcionesPersonalizablesPorCategoria } from '@/app/data/constants';
 import { WA_NUMBER } from '@/app/lib/whatsapp';
 import Watermark from '@/app/components/WaterMark';
+import Header from '@/app/components/Header';
+import Footer from '@/app/components/Footer';
+import WhatsAppButton from '@/app/components/WhatsAppButton';
 import {
   CheckCircle,
   MessageCircle,
@@ -21,12 +24,18 @@ import {
   X,
 } from 'lucide-react';
 
-interface ProductDetailClientProps {
-  product: Product;
+interface CategoryRoute {
+  name: string;
+  path: string;
+  landing: { label: string; path: string; lead: string };
 }
 
-export default function ProductDetailClient({ product }: ProductDetailClientProps) {
-  const router = useRouter();
+interface ProductDetailClientProps {
+  product: Product;
+  categoryRoute: CategoryRoute;
+}
+
+export default function ProductDetailClient({ product, categoryRoute }: ProductDetailClientProps) {
   const [formData, setFormData] = useState({ nombre: '', fecha: '' });
   const [step, setStep] = useState<'details' | 'form'>('details');
   const [imageFullscreen, setImageFullscreen] = useState(false);
@@ -134,16 +143,53 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
         </div>
       )}
 
+      <Header />
+
       <main className="min-h-screen bg-white pb-20">
-        {/* Botón ← Volver */}
-        <div className="container mx-auto px-4 pt-24 pb-2">
-          <button
-            onClick={() => router.back()}
-            className={`flex items-center gap-2 ${colors.accent} font-bold text-sm group`}
+        {/*
+          Breadcrumb visible: Inicio › Categoría › Producto.
+          Replica la jerarquía del BreadcrumbList JSON-LD para que el
+          usuario que llega desde Google vea inmediatamente dónde está
+          parado y pueda subir un nivel sin depender del historial del
+          navegador.
+        */}
+        <nav
+          aria-label="Migas de pan"
+          className="container mx-auto px-4 pt-24 pb-1"
+        >
+          <ol className="flex flex-wrap items-center gap-2 text-xs text-gray-500">
+            <li>
+              <Link href="/" className="hover:text-primary-600 transition-colors">
+                Inicio
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-gray-300">/</li>
+            <li>
+              <Link href={categoryRoute.path} className="hover:text-primary-600 transition-colors">
+                {categoryRoute.name}
+              </Link>
+            </li>
+            <li aria-hidden="true" className="text-gray-300">/</li>
+            <li className="text-gray-700 font-medium truncate max-w-[60vw] sm:max-w-none">
+              {product.nombre}
+            </li>
+          </ol>
+        </nav>
+
+        {/*
+          Botón "Volver al catálogo" como <Link href> determinista (no
+          router.back). Antes usaba history.back, que sacaba al usuario
+          del sitio cuando entraba directo desde el SERP. Ahora siempre
+          enruta al hub correcto según la categoría del producto.
+        */}
+        <div className="container mx-auto px-4 pt-2 pb-2">
+          <Link
+            href={categoryRoute.path}
+            className={`inline-flex items-center gap-2 ${colors.accent} font-bold text-sm group`}
           >
             <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
             Volver al catálogo
-          </button>
+          </Link>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 pt-4">
@@ -318,7 +364,50 @@ export default function ProductDetailClient({ product }: ProductDetailClientProp
             </div>
           </div>
         </div>
+
+        {/*
+          Cross-link al final del detalle: empuja al usuario hacia la
+          landing transaccional de su categoría (anchetas-domicilio para
+          Detalles, refrigerios-empresariales para Refrigerios, bodas
+          para Decoraciones). Refuerza PageRank interno y captura al
+          visitante que llegó vía orgánico al detalle.
+        */}
+        <section
+          aria-label="Servicio relacionado"
+          className="bg-white border-t border-stone-200 mt-16 py-10 px-4"
+        >
+          <div className="max-w-5xl mx-auto">
+            <p className="text-xs text-[#D81B60] font-semibold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
+              También te puede interesar
+            </p>
+            <Link
+              href={categoryRoute.landing.path}
+              className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+            >
+              <div>
+                <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                  {categoryRoute.landing.label}
+                </p>
+                <p className="text-stone-500 text-sm">
+                  {categoryRoute.landing.lead}
+                </p>
+              </div>
+              <svg
+                className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
+          </div>
+        </section>
       </main>
+
+      <Footer />
+      <WhatsAppButton />
     </>
   );
 }

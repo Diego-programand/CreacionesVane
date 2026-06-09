@@ -97,11 +97,50 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
     url,
   });
 
-  /* Breadcrumb: Inicio > Categoría correspondiente > Producto */
-  const categoryRouteMap: Record<typeof product.categoria, { name: string; path: string }> = {
-    Detalles: { name: 'Catálogo de Anchetas y Desayunos', path: '/creaciones-vane' },
-    Refrigerios: { name: 'Refrigerios para Eventos', path: '/refrigerios' },
-    Decoraciones: { name: 'Decoración de Eventos', path: '/decoraciones' },
+  /*
+   * Breadcrumb: Inicio > Categoría correspondiente > Producto.
+   *
+   * categoryRouteMap también se pasa al cliente para construir el botón
+   * "Volver al catálogo" como <Link href> determinista. Antes se usaba
+   * router.back(), que fallaba cuando el usuario aterrizaba directamente
+   * desde Google (sin historial dentro del sitio).
+   *
+   * Una landing transaccional asociada a cada categoría sirve como
+   * cross-link al final del detalle del producto. Refuerza PageRank
+   * interno y mantiene al usuario dentro del sitio aunque entre por
+   * orgánico al detalle.
+   */
+  const categoryRouteMap: Record<
+    typeof product.categoria,
+    { name: string; path: string; landing: { label: string; path: string; lead: string } }
+  > = {
+    Detalles: {
+      name: 'Catálogo de Anchetas y Desayunos',
+      path: '/creaciones-vane',
+      landing: {
+        label: 'Anchetas a domicilio en Medellín',
+        path: '/anchetas-medellin-domicilio',
+        lead: 'Entrega el mismo día si confirmas antes de las 2:00 PM',
+      },
+    },
+    Refrigerios: {
+      name: 'Refrigerios para Eventos',
+      path: '/refrigerios',
+      landing: {
+        label: 'Refrigerios empresariales en Medellín',
+        path: '/refrigerios-empresariales-medellin',
+        lead: 'Desde $5.000 por persona — pedido mínimo 10 unidades',
+      },
+    },
+    Decoraciones: {
+      name: 'Decoración de Eventos',
+      path: '/decoraciones',
+      landing: {
+        label: 'Decoración de bodas en Medellín',
+        path: '/decoracion-bodas-medellin',
+        lead: 'Aros con forros, backings de madera y mesas reloj',
+      },
+    },
   };
   const cat = categoryRouteMap[product.categoria];
 
@@ -121,7 +160,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
       />
-      <ProductDetailClient product={product} />
+      <ProductDetailClient product={product} categoryRoute={cat} />
     </>
   );
 }
