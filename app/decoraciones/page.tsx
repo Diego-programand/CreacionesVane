@@ -312,10 +312,12 @@ export default async function DecoracionesPage() {
             src="/banner-decoraciones.webp"
             alt="Decoración profesional de bodas, cumpleaños y baby shower a domicilio en Medellín — Decoraciones Vane"
             fill
-            className="object-cover object-center blur-[7px]"
+            className="object-cover object-center blur-[2px]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/60 via-[#B39DDB]/75 to-[#A0E7E5]/60" />
+          {/* Fondo negro semitransparente antes del gradiente para oscurecer y dar contraste al texto */}
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#D81B60]/40 via-[#B39DDB]/30 to-[#A0E7E5]/30" />
 
           <div className="relative z-10 text-center px-4 max-w-4xl w-full">
             <ScrollReveal direction="down" delay={0.2}>

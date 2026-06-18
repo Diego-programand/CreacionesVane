@@ -123,7 +123,7 @@ export default function Footer() {
                 Política de Privacidad
               </Link>
               <span className="hidden md:inline text-white/20">|</span>
-              <a href="https://tiktok.com/@owlydev" className="hover:text-white transition-colors flex items-center gap-1">
+              <a href="https://owlydev.com" className="hover:text-white transition-colors flex items-center gap-1">
                 Web por <span className="font-bold text-white/80">OwlyDev</span>
               </a>
               <a href="https://iconscout.com/" className="hover:text-white transition-colors">

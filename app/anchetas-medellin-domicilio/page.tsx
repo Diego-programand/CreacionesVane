@@ -152,7 +152,7 @@ const FAQS = [
   },
   {
     q: '¿Hacen entrega el mismo día?',
-    a: 'Sí. Si confirmas tu pedido por WhatsApp antes de las 2:00 PM y estás en zona cercana (Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí, Bello), tu ancheta llega el mismo día. Para pedidos después de las 2:00 PM coordinamos entrega temprana al día siguiente.',
+    a: 'Sí. Si confirmas tu pedido por WhatsApp antes de las 12:00 PM y estás en zona cercana (Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí, Bello), tu ancheta llega el mismo día. Para pedidos después de las 2:00 PM coordinamos entrega temprana al día siguiente.',
   },
   {
     q: '¿Qué necesito para hacer el pedido?',
@@ -180,7 +180,7 @@ const FAQS = [
   },
   {
     q: '¿Cómo se paga y se reserva el pedido?',
-    a: 'Confirmamos con un abono del 50% del valor total. El saldo se cancela contra entrega. Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo. Si necesitas factura, también la emitimos.',
+    a: 'Confirmamos con la cancelación total del pedido, puedes tener confianza gracias a nuestra amplia trayectoria en el mercado. Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo. Si necesitas factura, también la emitimos.',
   },
 ];
 
@@ -287,7 +287,7 @@ const INCLUYE_GENERAL = [
   {
     Icon: ICONS.reloj,
     title: 'Entrega el mismo día',
-    body: 'Si confirmas antes de las 2:00 PM y estás en zona cercana, tu ancheta llega el mismo día.',
+    body: 'Si confirmas antes de las 12:00 PM y estás en zona cercana, tu ancheta llega el mismo día.',
   },
   {
     Icon: ICONS.camara,
@@ -302,7 +302,7 @@ const INCLUYE_GENERAL = [
   {
     Icon: ICONS.check,
     title: 'Pago fácil',
-    body: 'Aceptamos Nequi, Daviplata, transferencia y efectivo. Abono del 50% al confirmar, saldo contra entrega.',
+    body: 'Aceptamos Nequi, Daviplata, transferencia y efectivo. Puedes pagar con toda confianza.',
   },
 ];
 
@@ -344,7 +344,7 @@ export default function AnchetasMedellinDomicilioPage() {
     serviceType: 'Anchetas a Domicilio',
     name: 'Anchetas a Domicilio en Medellín',
     description:
-      'Anchetas personalizadas con entrega el mismo día en Medellín. Tres paquetes: Detalle ($50.000), Clásica ($110.000) y Sorpresa Completa ($180.000). Incluyen snacks, chocolates, peluche o ramo, globos, caja decorada y tarjeta personalizada.',
+      'Anchetas personalizadas con entrega el mismo día en Medellín. Tres paquetes: Detalle ($80.000), Clásica ($130.000) y Sorpresa Completa ($180.000). Incluyen snacks, chocolates, peluche o ramo, globos, caja decorada y tarjeta personalizada.',
     provider: { '@id': `${BUSINESS.url}/#organization` },
     areaServed: { '@type': 'City', name: 'Medellín' },
     category: 'Gift Delivery',
@@ -411,7 +411,7 @@ export default function AnchetasMedellinDomicilioPage() {
             no rompe.
           */}
           <Image
-            src="/images/anchetasMedellinDomicilio.webp"
+            src="/banner-anchetas.webp"
             alt="Ancheta personalizada con peluche, chocolates y globos entregada a domicilio en Medellín"
             fill
             sizes="100vw"
@@ -436,7 +436,7 @@ export default function AnchetasMedellinDomicilioPage() {
 
               <ScrollReveal direction="up" delay={0.3}>
                 <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-7 sm:mb-9">
-                  Sorprende a quien quieres con una ancheta personalizada. Confirmas antes de las 2:00 PM y llega el mismo día.
+                  Sorprende a quien quieres con una ancheta personalizada. Confirmas antes de las 12:00 PM y llega el mismo día.
                 </p>
               </ScrollReveal>
 
@@ -739,8 +739,6 @@ export default function AnchetasMedellinDomicilioPage() {
                       'Laureles',
                       'Belén',
                       'Envigado',
-                      'Sabaneta',
-                      'Itagüí',
                       'Bello',
                     ].map((zona) => (
                       <li key={zona} className="flex items-center gap-2">
@@ -773,6 +771,8 @@ export default function AnchetasMedellinDomicilioPage() {
                       'Copacabana',
                       'Girardota',
                       'Barbosa',
+                      'Sabaneta',
+                      'Itagüí',
                       'Sitios fuera del Valle',
                     ].map((zona) => (
                       <li key={zona} className="flex items-center gap-2">
@@ -821,8 +821,8 @@ export default function AnchetasMedellinDomicilioPage() {
                 },
                 {
                   step: '03',
-                  title: 'Reservas con 50%',
-                  body: 'Confirmamos el pedido con un abono del 50%. Aceptamos Nequi, Daviplata, transferencia y efectivo.',
+                  title: 'Cancelas el pedido',
+                  body: 'Confirma el pedido y realiza el pago en los medios de pago disponibles. Aceptamos Nequi, Daviplata, transferencia y efectivo.',
                 },
                 {
                   step: '04',

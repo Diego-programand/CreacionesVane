@@ -154,7 +154,7 @@ export default async function CreacionesVanePage() {
         */}
         <header className="relative min-h-[500px] sm:min-h-[520px] md:min-h-[560px] flex items-center justify-center overflow-hidden pt-24 sm:pt-20 pb-16 sm:pb-20">
           <Image
-            src="/banner-detalles.webp"
+            src="/banner-anchetas.webp"
             alt="Catálogo de anchetas personalizadas y desayunos sorpresa a domicilio en Medellín — Creaciones Vane"
             fill
             className="object-cover object-center blur-[2px]"
@@ -217,7 +217,7 @@ export default async function CreacionesVanePage() {
                   Anchetas a domicilio en Medellín
                 </p>
                 <p className="text-stone-500 text-sm">
-                  Desde $50.000 — entrega el mismo día si confirmas antes de las 2:00 PM
+                  Desde $80.000 — entrega el mismo día si confirmas antes de las 12:00 PM
                 </p>
               </div>
               <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

@@ -20,15 +20,15 @@ export default function HeroSection() {
         >
             {/* Imagen de fondo con ALT geo-localizado */}
             <Image
-                src="/banner-detalles.webp"
+                src="/banner-anchetas.webp"
                 alt="Anchetas, desayunos sorpresa y regalos personalizados a domicilio en Medellín - Creaciones Vane"
                 priority={true}
                 fetchPriority="high"
                 loading="eager"
                 fill
-                quality={30}
+                quality={75}
                 sizes="(max-width: 768px) 100vw, 1200px"
-                className="object-cover object-center blur-[5px]"
+                className="object-cover object-center blur-[3px]"
             />
             {/* Overlay gradiente de marca */}
             <div className="absolute inset-0 bg-gradient-to-b from-primary-600/80 via-primary-500/70 to-primary-700/80" />
