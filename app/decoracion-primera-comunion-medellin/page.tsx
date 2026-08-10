@@ -31,8 +31,7 @@ const PAGE_PATH = '/decoracion-primera-comunion-medellin';
 const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Decoración para Primera Comunión en Medellín | Aros, Backings y Mesas Reloj',
+  title: 'Decoración de Primera Comunión en Medellín',
   description: `Decoración para primera comunión en Medellín y el Valle de Aburrá. Aros con forros, backings de madera con el nombre del niño, cilindros y mesa de bienvenida. Desde $320.000. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   ogImage: `${BUSINESS.url}/images/decoracionesPrimeraComunion.webp`,

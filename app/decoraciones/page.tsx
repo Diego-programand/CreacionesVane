@@ -15,9 +15,12 @@ import { BUSINESS, postalAddress, geoCoordinates, openingHoursSpec } from '../li
 import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
 
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Decoración de Eventos en Medellín — Bodas, Cumpleaños, Quinceañeras y Baby Shower',
-  description: `Decoración profesional para bodas, cumpleaños, quinceañeras y Baby Shower en Medellín. Globos, backdrop y arcos con montaje incluido. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  /*
+    Sin "backdrop": el canon del proyecto usa el vocabulario real del negocio
+    (aros con forros, backings de madera, cilindros, mesas reloj).
+  */
+  title: 'Decoración de Eventos en Medellín',
+  description: `Decoración para bodas, cumpleaños, quinceañeras y baby shower en Medellín. Aros con forros, backings de madera y cilindros con montaje y desmontaje incluidos. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/decoraciones',
   ogImage: `${BUSINESS.url}/banner-decoraciones.webp`,
   keywords: [

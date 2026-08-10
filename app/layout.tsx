@@ -31,13 +31,18 @@ export const metadata: Metadata = {
     google: 'XTvk3yuFvCppM_D7PfCLFrTk_3p4VnI93O6GKY7CxVs',
   },
 
+  /*
+    Title recortado a 58 caracteres: el anterior (70) se truncaba en el SERP y
+    la home rendía 3,97% de CTR en posición 5,95 según GSC, cuando lo esperado
+    en esa posición es 6–9%.
+  */
   title: {
-    default: 'Creaciones Vane | Anchetas, Desayunos Sorpresa y Decoración en Medellín',
+    default: 'Creaciones Vane | Anchetas y Desayunos Sorpresa en Medellín',
     template: '%s | Creaciones Vane',
   },
 
   description:
-    'Anchetas, desayunos sorpresa y decoración a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. Pide por WhatsApp 312 8235654.',
+    'Anchetas, desayunos sorpresa y decoración a domicilio en Medellín con entrega el mismo día en El Poblado, Laureles y Envigado. Desde 2019. WhatsApp 312 8235654.',
 
   keywords: [
     'creaciones vane',

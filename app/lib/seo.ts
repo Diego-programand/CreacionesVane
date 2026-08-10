@@ -20,11 +20,22 @@ interface PageMetadataInput {
   path: string;
   ogImage?: string;
   keywords?: string[];
+  /**
+   * Omite el template `%s | Creaciones Vane` del layout. Úsalo cuando el title
+   * ya contiene la marca (home) o cuando el sufijo empujaría el title más allá
+   * de los ~60 caracteres que Google muestra antes de truncar.
+   */
+  titleAbsolute?: boolean;
 }
 
 /**
  * Genera Metadata consistente para una página. Aplica canonical, openGraph,
  * twitter, geo tags y locale es_CO.
+ *
+ * Presupuesto de title: el template del layout añade " | Creaciones Vane"
+ * (18 caracteres), así que un title propio debe quedar en ≤42 caracteres para
+ * no truncarse en el SERP. Los ganchos de CTR (precio, "entrega el mismo día")
+ * van en la description, que dispone de ~155.
  */
 export function pageMetadata({
   title,
@@ -32,10 +43,11 @@ export function pageMetadata({
   path,
   ogImage = `${BASE_URL}/og-image-main.webp`,
   keywords,
+  titleAbsolute = false,
 }: PageMetadataInput): Metadata {
   const url = `${BASE_URL}${path.startsWith('/') ? path : '/' + path}`;
   return {
-    title,
+    title: titleAbsolute ? { absolute: title } : title,
     description,
     keywords,
     alternates: { canonical: url },
@@ -88,7 +100,7 @@ export function organizationSchema() {
     logo: { '@type': 'ImageObject', url: BUSINESS.logo, width: 400, height: 400 },
     image: [
       BUSINESS.logo,
-      `${BASE_URL}/banner-detalles.webp`,
+      `${BASE_URL}/banner-anchetas.webp`,
       `${BASE_URL}/banner-decoraciones.webp`,
       `${BASE_URL}/banner-refrigerios.webp`,
     ],

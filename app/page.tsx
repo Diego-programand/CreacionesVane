@@ -35,9 +35,15 @@ const ExperienceSection = dynamic(() => import('./home-sections/ExperienceSectio
  *           Solo emite BreadcrumbList y FAQPage específicos de la home.
  */
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Creaciones Vane — Anchetas, Desayunos Sorpresa y Decoración en Medellín | Entrega Hoy',
-  description: `Anchetas, desayunos sorpresa, decoración y refrigerios a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. Desde $50.000 — WhatsApp ${BUSINESS.phoneDisplay}.`,
+  /*
+    58 caracteres y marca al inicio. El anterior (85) se truncaba en el SERP y
+    la home rendía 3,97% de CTR en posición 5,95 (GSC 2026-08-09), cuando lo
+    esperado en esa posición es 6–9%. absolute evita duplicar la marca que ya
+    añadiría el template del layout.
+  */
+  title: 'Creaciones Vane | Anchetas y Desayunos Sorpresa en Medellín',
+  titleAbsolute: true,
+  description: `Anchetas, desayunos sorpresa, decoración y refrigerios a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/',
   ogImage: `${BUSINESS.url}/og-image-main.webp`,
   keywords: [

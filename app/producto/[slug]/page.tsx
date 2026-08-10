@@ -34,13 +34,55 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 
   const product = toProduct(sanityProduct);
   const url = `${BUSINESS.url}/producto/${product.slug}`;
-  const description =
-    product.descripcion.length > 155
-      ? product.descripcion.substring(0, 152) + '...'
+
+  /*
+    Los nombres del catálogo son creativos ("Jardín de Gala Explosión de
+    Girasoles") y no contienen ninguna keyword buscable, por eso las 76 fichas
+    sumaban 0 clics con 47 impresiones en GSC pese a rankear en posición 6–8.
+    El sufijo por categoría añade tipo + ciudad al title, y la description
+    ancla precio y entrega — que es lo que decide el clic en el SERP.
+  */
+  const seoPorCategoria = {
+    Detalles: {
+      sufijoTitle: 'Detalle en Medellín',
+      fraseDescription: 'Ancheta a domicilio con entrega el mismo día en Medellín',
+    },
+    Refrigerios: {
+      sufijoTitle: 'Refrigerio en Medellín',
+      fraseDescription: 'Caja de refrigerio para eventos y empresas en Medellín',
+    },
+    Decoraciones: {
+      sufijoTitle: 'Decoración en Medellín',
+      fraseDescription: 'Decoración con montaje y desmontaje en Medellín',
+    },
+  }[product.categoria];
+
+  /*
+    absolute: los nombres del catálogo ya son largos; añadir el sufijo de marca
+    del layout empujaría el title muy por encima de los ~60 caracteres que
+    Google muestra, dejando la keyword fuera de la vista.
+  */
+
+  const precioFormateado = `$${product.precio.toLocaleString('es-CO')}`;
+
+  /*
+    Google muestra ~160 caracteres de description. El resumen se recorta para
+    que la parte que decide el clic — tipo de producto, ciudad y precio —
+    sobreviva al truncado en lugar de quedar fuera.
+  */
+  const resumen =
+    product.descripcion.length > 62
+      ? product.descripcion.substring(0, 59).trimEnd() + '...'
       : product.descripcion;
 
+  const description =
+    `${resumen} ${seoPorCategoria.fraseDescription} desde ${precioFormateado} COP.`.substring(
+      0,
+      160
+    );
+
   return {
-    title: `${product.nombre} | Creaciones Vane Medellín`,
+    title: { absolute: `${product.nombre} — ${seoPorCategoria.sufijoTitle}` },
     description,
     openGraph: {
       title: `${product.nombre} — Creaciones Vane`,

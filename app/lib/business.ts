@@ -108,7 +108,7 @@ export const BUSINESS = {
 
   /** Rangos de precio por categoría (COP) */
   priceRanges: {
-    detalles: { low: 50_000, high: 200_000 },
+    detalles: { low: 80_000, high: 200_000 },
     desayunos: { low: 55_000, high: 190_000 },
     peluches: { low: 35_000, high: 120_000 },
     ramos: { low: 50_000, high: 160_000 },

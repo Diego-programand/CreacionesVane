@@ -35,11 +35,9 @@ const PAGE_PATH = '/anchetas-medellin-domicilio';
 const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Anchetas a Domicilio en Medellín | Entrega el Mismo Día desde $50.000',
-  description: `Anchetas personalizadas con entrega a domicilio el mismo día en Medellín. Desayunos sorpresa, peluches, ramos y chocolates desde $50.000. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  title: 'Anchetas a Domicilio en Medellín',
+  description: `Anchetas personalizadas con entrega a domicilio el mismo día en Medellín. Peluches, ramos de rosas, globos y chocolates. Confirma antes de las 12:00 PM y llega hoy. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
-  ogImage: `${BUSINESS.url}/images/anchetasMedellinDomicilio.webp`,
   keywords: [
     'anchetas medellín',
     'anchetas medellín domicilio',
@@ -78,7 +76,7 @@ const PAQUETES = [
   {
     id: 'detalle',
     nombre: 'Detalle',
-    precio: 50_000,
+    precio: 80_000,
     precioLabel: '$80.000',
     descripcion:
       'Perfecto para sorprender con un gesto bonito sin gastar mucho. Ideal para amigos, compañeros o detalles del día a día.',
@@ -95,7 +93,7 @@ const PAQUETES = [
   {
     id: 'clasica',
     nombre: 'Clásica',
-    precio: 110_000,
+    precio: 130_000,
     precioLabel: '$130.000',
     destacado: true,
     descripcion:
@@ -313,14 +311,11 @@ export default function AnchetasMedellinDomicilioPage() {
     '@id': `${PAGE_URL}#localbusiness`,
     name: 'Creaciones Vane — Anchetas a Domicilio en Medellín',
     description:
-      'Servicio de anchetas personalizadas con entrega a domicilio el mismo día en Medellín y el Valle de Aburrá. Anchetas para mamá, pareja, amigos, cumpleaños y aniversarios. Desde $50.000 COP.',
+      'Servicio de anchetas personalizadas con entrega a domicilio el mismo día en Medellín y el Valle de Aburrá. Anchetas para mamá, pareja, amigos, cumpleaños y aniversarios. Desde $80.000 COP.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,
-    image: [
-      `${BUSINESS.url}/images/anchetasMedellinDomicilio.webp`,
-      `${BUSINESS.url}/banner-detalles.webp`,
-    ],
+    image: [`${BUSINESS.url}/banner-anchetas.webp`, BUSINESS.logo],
     address: postalAddress(),
     geo: geoCoordinates(),
     openingHoursSpecification: openingHoursSpec(),
@@ -931,9 +926,13 @@ export default function AnchetasMedellinDomicilioPage() {
 
             <ScrollReveal direction="fade" delay={0.4}>
               <p className="mt-8 text-sm text-white/75">
-                También puedes ver{' '}
+                ¿Prefieres un{' '}
+                <Link href="/desayunos-sorpresa-medellin" className="text-white underline decoration-white/40 hover:decoration-white">
+                  desayuno sorpresa a domicilio
+                </Link>
+                ? También puedes ver{' '}
                 <Link href="/creaciones-vane" className="text-white underline decoration-white/40 hover:decoration-white">
-                  todo el catálogo de anchetas y desayunos
+                  todo el catálogo de detalles
                 </Link>
                 .
               </p>

@@ -15,8 +15,14 @@ import { BUSINESS, postalAddress, geoCoordinates, openingHoursSpec } from '../li
 import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
 
 export const metadata: Metadata = pageMetadata({
-  title: 'Refrigerios para Eventos en Medellín — Box Lunch y Catering Corporativo',
-  description: `Refrigerios para eventos corporativos, fiestas infantiles y reuniones en Medellín. Box lunch, sándwich gourmet y frutas frescas. Entrega puntual. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  /*
+    Sin "box lunch" ni "catering": el canon del proyecto usa el lenguaje del
+    cliente ("refrigerios", "cajas"), y GSC confirma que las consultas reales
+    son "refrigerios para eventos", "cajas de refrigerio", "refrigerios para
+    capacitaciones" — ninguna en jerga anglo.
+  */
+  title: 'Refrigerios para Eventos en Medellín',
+  description: `Refrigerios para eventos, reuniones y fiestas infantiles en Medellín. Cajas con sándwich gourmet, fruta fresca y jugo natural desde $5.000 por persona. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/refrigerios',
   ogImage: `${BUSINESS.url}/banner-refrigerios.webp`,
   keywords: [
