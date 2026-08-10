@@ -51,6 +51,40 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
+# ===== CRAWLERS DE IA — Visibilidad en ChatGPT, Claude, Perplexity, Gemini =====
+# GSC confirma citaciones en Google AI Mode ("dame valores", "necesito telefono",
+# "cual es el contacto"). Se declaran explícitos para no depender del User-agent: *.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 # ===== BLOQUEAR BOTS NO DESEADOS (scraping) =====
 User-agent: AhrefsBot
 Crawl-delay: 10
