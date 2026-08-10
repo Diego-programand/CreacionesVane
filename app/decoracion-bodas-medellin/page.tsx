@@ -35,12 +35,15 @@ const PAGE_PATH = '/decoracion-bodas-medellin';
 const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Decoración para Bodas en Medellín | Aros con Forros, Backings y Cilindros',
-  description: `Decoración para bodas en Medellín y el Valle de Aburrá: aros con forros, backings de madera, cilindros y mesas reloj. Invitaciones personalizadas opcionales. Desde $480.000. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  title: 'Arreglos y Decoración de Bodas en Medellín',
+  description: `Arreglos y decoración para bodas en Medellín, Envigado y el Valle de Aburrá: aros con forros, backings de madera, cilindros y mesas reloj. Montaje y desmontaje incluidos. Paquetes desde $480.000. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   ogImage: `${BUSINESS.url}/images/decoracionesBoda.webp`,
   keywords: [
+    'arreglos para bodas medellín',
+    'arreglos para bodas envigado',
+    'arreglos de boda medellín',
+    'arreglos matrimonio medellín',
     'decoración bodas medellín',
     'decoración boda medellín',
     'decoración matrimonio medellín',
@@ -54,14 +57,57 @@ export const metadata: Metadata = pageMetadata({
     'decoración bodas campestres medellín',
     'decoración bodas pequeñas medellín',
     'decoración bodas civiles medellín',
+    'decoradores de bodas medellín',
     'invitaciones bodas medellín',
     'paquetes decoración bodas medellín',
     'cotización decoración boda medellín',
     'montaje boda medellín',
     'decoración boda económica medellín',
     'precio decoración boda medellín',
+    'cuánto cuestan los arreglos de una boda medellín',
   ],
 });
+
+/**
+ * Arreglos organizados por ZONA del evento (no por elemento) — cubre la
+ * consulta "arreglos para bodas medellín" (204 impresiones / 0 clics en GSC,
+ * posición 20) sin duplicar la sección "Qué incluye", que va por elemento.
+ * Vocabulario del canon: aros con forros, backings, cilindros, mesas reloj.
+ */
+const ARREGLOS_POR_ZONA = [
+  {
+    id: 'ceremonia',
+    icon: 'aro' as const,
+    zona: 'Ceremonia y altar',
+    body: 'El arreglo principal donde ocurre el "sí, acepto". Montamos un aro con forro en tu paleta como punto focal detrás de los novios, acompañado de cilindros a los costados del pasillo.',
+    elementos: ['1 o 2 aros con forros', 'Cilindros laterales', 'Iluminación cálida opcional'],
+    desde: 'Incluido desde el paquete Esencial',
+  },
+  {
+    id: 'recepcion',
+    icon: 'cilindro' as const,
+    zona: 'Recepción y mesas',
+    body: 'Arreglos de altura para la mesa principal y las mesas de invitados. Combinamos cilindros decorativos y cilindros de madera para dar volumen sin tapar la vista entre los invitados.',
+    elementos: ['Cilindros decorativos', 'Cilindros de madera', 'Juegos de altura en tu paleta'],
+    desde: 'Desde 4 cilindros en el paquete Esencial',
+  },
+  {
+    id: 'fotos',
+    icon: 'backing' as const,
+    zona: 'Zona de fotos',
+    body: 'El arreglo que más se comparte después de la boda. Backing de madera con forro temático y los nombres de los novios, pensado para que las fotos se vean bien con luz de día y de noche.',
+    elementos: ['Backing de madera con forro', 'Nombres o iniciales', 'Iluminación LED opcional'],
+    desde: 'Incluido desde el paquete Esencial',
+  },
+  {
+    id: 'bienvenida',
+    icon: 'mesaReloj' as const,
+    zona: 'Bienvenida y libro de firmas',
+    body: 'La primera impresión de tus invitados. Mesa reloj para el libro de firmas y estación de bienvenida decorada con el mismo lenguaje visual del resto del montaje.',
+    elementos: ['Mesa reloj', 'Estación de bienvenida', 'Cartel o señalización decorativa'],
+    desde: 'Incluido desde el paquete Esencial',
+  },
+];
 
 const PAQUETES = [
   {
@@ -127,6 +173,18 @@ const PAQUETES = [
 ] as const;
 
 const FAQS = [
+  {
+    q: '¿Cuánto cuestan los arreglos para una boda en Medellín?',
+    a: 'Los arreglos completos para una boda en Medellín cuestan desde $480.000 COP con el paquete Esencial, que cubre ceremonia, zona de fotos y mesa de bienvenida. El paquete Premium cuesta $650.000 COP e incluye además arreglos de recepción, iluminación e invitaciones digitales. Todos incluyen transporte, montaje y desmontaje en zona cercana del Valle de Aburrá.',
+  },
+  {
+    q: '¿Hacen solo los arreglos o toda la decoración de la boda?',
+    a: 'Puedes contratar el montaje completo o solo los arreglos de una zona específica. Hay parejas que ya tienen resuelto el salón y solo nos piden el arreglo de la ceremonia y la zona de fotos. Escríbenos con lo que necesitas y cotizamos únicamente esa parte, sin obligarte a tomar un paquete completo.',
+  },
+  {
+    q: '¿Hacen arreglos para bodas en Envigado y el sur del Valle de Aburrá?',
+    a: 'Sí. Envigado, Sabaneta e Itagüí entran en zona cercana, así que el transporte, montaje y desmontaje van incluidos en el precio del paquete sin costo adicional. Para La Estrella, Caldas y fincas fuera del Valle cotizamos un adicional según la distancia y el tiempo de montaje.',
+  },
   {
     q: '¿Cuánto cuesta decorar una boda en Medellín?',
     a: 'Nuestros paquetes van desde $480.000 COP (Esencial, para bodas íntimas) hasta $650.000 COP (Premium, el más solicitado). El paquete Lujo se cotiza a medida según locación, cantidad de invitados y montaje requerido. Los precios incluyen aros con forros, backings de madera, cilindros y mesas reloj. El transporte está incluido en zona cercana del Valle de Aburrá; locaciones lejanas se cotizan aparte.',
@@ -302,9 +360,9 @@ export default function DecoracionBodasMedellinPage() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     '@id': `${PAGE_URL}#localbusiness`,
-    name: 'Creaciones Vane — Decoración para Bodas en Medellín',
+    name: 'Creaciones Vane — Arreglos y Decoración para Bodas en Medellín',
     description:
-      'Servicio de decoración para bodas en Medellín y el Valle de Aburrá: aros con forros, backings de madera, cilindros y mesas reloj. Invitaciones personalizadas como valor adicional. Desde $480.000 COP.',
+      'Arreglos y decoración para bodas en Medellín, Envigado y el Valle de Aburrá: arreglos de ceremonia, recepción, zona de fotos y bienvenida con aros con forros, backings de madera, cilindros y mesas reloj. Invitaciones personalizadas como valor adicional. Desde $480.000 COP.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: '$$-$$$',
@@ -332,12 +390,17 @@ export default function DecoracionBodasMedellinPage() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${PAGE_URL}#service`,
-    serviceType: 'Decoración para Bodas',
-    name: 'Decoración para Bodas en Medellín',
+    serviceType: 'Arreglos y Decoración para Bodas',
+    name: 'Arreglos y Decoración para Bodas en Medellín',
     description:
-      'Decoración para bodas con aros con forros, backings de madera, cilindros, cilindros de madera y mesas reloj. Invitaciones personalizadas opcionales. Montaje y desmontaje en el Valle de Aburrá.',
+      'Arreglos para bodas por zona del evento (ceremonia, recepción, zona de fotos y bienvenida) con aros con forros, backings de madera, cilindros, cilindros de madera y mesas reloj. Invitaciones personalizadas opcionales. Montaje y desmontaje en el Valle de Aburrá.',
     provider: { '@id': `${BUSINESS.url}/#organization` },
-    areaServed: { '@type': 'City', name: 'Medellín' },
+    areaServed: [
+      { '@type': 'City', name: 'Medellín' },
+      { '@type': 'City', name: 'Envigado' },
+      { '@type': 'City', name: 'Sabaneta' },
+      { '@type': 'City', name: 'Itagüí' },
+    ],
     category: 'Wedding Decoration',
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -422,13 +485,13 @@ export default function DecoracionBodasMedellinPage() {
 
               <ScrollReveal direction="up" delay={0.2}>
                 <h1 className="text-white text-[2.25rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight max-w-3xl mb-5 sm:mb-7">
-                  Decoración para bodas en Medellín
+                  Arreglos y decoración para bodas en Medellín
                 </h1>
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.3}>
                 <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-7 sm:mb-9">
-                  Aros con forros, backings de madera, cilindros y mesas reloj. Diseñamos tu boda con tu paleta y la montamos en el Valle de Aburrá.
+                  Aros con forros, backings de madera, cilindros y mesas reloj. Diseñamos tu boda con tu paleta y la montamos en Medellín, Envigado y todo el Valle de Aburrá.
                 </p>
               </ScrollReveal>
 
@@ -668,11 +731,90 @@ export default function DecoracionBodasMedellinPage() {
         </section>
 
         {/* ============================================================== */}
+        {/* ARREGLOS POR ZONA                                               */}
+        {/* ============================================================== */}
+        <section
+          id="arreglos"
+          data-section="bodas-arreglos"
+          className="px-5 sm:px-8 py-16 sm:py-24 bg-[#FBF7F4]"
+        >
+          <div className="max-w-6xl mx-auto">
+            <ScrollReveal direction="up">
+              <p className="text-[#D81B60] font-medium text-xs sm:text-sm uppercase tracking-[0.2em] mb-3">
+                Arreglos
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 tracking-tight mb-4 max-w-3xl">
+                Arreglos para bodas en Medellín
+              </h2>
+              <p className="text-stone-600 text-base sm:text-lg max-w-2xl leading-relaxed mb-10 sm:mb-14">
+                Una boda necesita arreglos en cuatro zonas distintas, y cada una cumple una función diferente. Así los organizamos nosotras, para que sepas exactamente qué vas a ver montado el día del evento.
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+              {ARREGLOS_POR_ZONA.map((a, idx) => {
+                const Icon = ICONS[a.icon];
+                return (
+                  <ScrollReveal key={a.id} direction="up" delay={0.1 * idx}>
+                    <article className="h-full bg-white border border-stone-200 rounded-2xl p-6 sm:p-8 flex flex-col">
+                      <Icon className="w-8 h-8 text-[#D81B60] mb-5" />
+                      <h3 className="text-xl sm:text-2xl font-semibold text-stone-900 mb-3 leading-snug">
+                        {a.zona}
+                      </h3>
+                      <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-6">
+                        {a.body}
+                      </p>
+                      <ul className="space-y-2.5 mb-6 flex-1">
+                        {a.elementos.map((el) => (
+                          <li
+                            key={el}
+                            className="flex items-start gap-3 text-sm text-stone-700 leading-relaxed"
+                          >
+                            <ICONS.check className="w-4 h-4 mt-0.5 text-[#D81B60] flex-shrink-0" />
+                            <span>{el}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-xs text-stone-500 border-t border-stone-200 pt-4">
+                        {a.desde}
+                      </p>
+                    </article>
+                  </ScrollReveal>
+                );
+              })}
+            </div>
+
+            <ScrollReveal direction="fade" delay={0.2}>
+              <div className="mt-10 sm:mt-12 bg-white border border-stone-200 rounded-2xl p-6 sm:p-8 max-w-3xl">
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900 mb-3">
+                  ¿Solo necesitas los arreglos de una zona?
+                </h3>
+                <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-5">
+                  No tienes que tomar un paquete completo. Si ya resolviste el salón y solo te falta el arreglo de la ceremonia o la zona de fotos, cotizamos únicamente esa parte. Los arreglos florales con flor natural se cotizan aparte según disponibilidad del proveedor.
+                </p>
+                <a
+                  id="bodas-arreglos-cta"
+                  href={waUrl(
+                    'Hola Vane, quiero cotizar solo los arreglos de una zona de mi boda (ceremonia / recepción / zona de fotos / bienvenida). ¿Me ayudan?'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#D81B60] hover:text-[#AD1457] transition-colors"
+                >
+                  Cotizar arreglos por zona
+                  <ICONS.arrow className="w-4 h-4" />
+                </a>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ============================================================== */}
         {/* COBERTURA Y TRANSPORTE                                          */}
         {/* ============================================================== */}
         <section
           data-section="bodas-cobertura"
-          className="px-5 sm:px-8 py-16 sm:py-24 bg-[#FBF7F4]"
+          className="px-5 sm:px-8 py-16 sm:py-24 bg-white border-y border-stone-200"
         >
           <div className="max-w-6xl mx-auto">
             <ScrollReveal direction="up">
@@ -686,7 +828,7 @@ export default function DecoracionBodasMedellinPage() {
 
             <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mt-8 sm:mt-12">
               <ScrollReveal direction="up" delay={0.1}>
-                <div className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8">
+                <div className="bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <ICONS.mapa className="w-6 h-6 text-[#D81B60]" />
                     <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
@@ -717,7 +859,7 @@ export default function DecoracionBodasMedellinPage() {
               </ScrollReveal>
 
               <ScrollReveal direction="up" delay={0.2}>
-                <div className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8">
+                <div className="bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8">
                   <div className="flex items-center gap-3 mb-5">
                     <ICONS.mapa className="w-6 h-6 text-stone-500" />
                     <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
@@ -756,7 +898,7 @@ export default function DecoracionBodasMedellinPage() {
         {/* ============================================================== */}
         <section
           data-section="bodas-proceso"
-          className="px-5 sm:px-8 py-16 sm:py-24 bg-white border-y border-stone-200"
+          className="px-5 sm:px-8 py-16 sm:py-24 bg-[#FBF7F4]"
         >
           <div className="max-w-6xl mx-auto">
             <ScrollReveal direction="up">
@@ -812,7 +954,7 @@ export default function DecoracionBodasMedellinPage() {
         {/* ============================================================== */}
         <section
           data-section="bodas-faq"
-          className="px-5 sm:px-8 py-16 sm:py-24 bg-[#FBF7F4]"
+          className="px-5 sm:px-8 py-16 sm:py-24 bg-white border-y border-stone-200"
         >
           <div className="max-w-3xl mx-auto">
             <ScrollReveal direction="up">
