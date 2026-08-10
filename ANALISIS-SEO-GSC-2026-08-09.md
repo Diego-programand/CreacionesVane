@@ -25,6 +25,9 @@
 | Imágenes 404 corregidas en schemas y OG | `app/lib/seo.ts`, `app/anchetas-medellin-domicilio/page.tsx`, `app/creaciones-vane/page.tsx` | Hecho |
 | Jerga anglo eliminada de metadatos ("box lunch", "catering corporativo", "backdrop") | `app/refrigerios/page.tsx`, `app/decoraciones/page.tsx` | Hecho |
 | Verificación redirect http→https | — | Ya correcto: devuelve 308 (permanente, equivalente a 301 para Google) |
+| Precios de anchetas alineados entre JSON-LD, UI, llms.txt y `priceRanges` ($80.000 / $130.000 / $180.000, confirmados por el negocio) | `app/anchetas-medellin-domicilio/page.tsx`, `app/lib/business.ts`, `public/llms.txt` | Hecho |
+| Bloque y FAQ para compradores desde el exterior (Fase 3.1) | `app/anchetas-medellin-domicilio/page.tsx`, `app/desayunos-sorpresa-medellin/page.tsx` | Hecho |
+| Blog en `/blog` con los dos primeros artículos, schema Article + FAQPage + Blog/ItemList, conectado a sitemap, llms.txt, footer y landings (Fase 3) | `app/blog/`, `app/lib/blog.ts` | Hecho |
 
 ### Hallazgos nuevos, no visibles en los CSV
 
@@ -417,9 +420,9 @@ Ataca P10. El sitio captura 84% de sus clics de long-tail anonimizada **sin tene
 
 Artículos priorizados por evidencia en los CSV (no por intuición):
 
-1. **"¿Cuánto cuestan los refrigerios para eventos en Medellín? Guía de precios 2026"** — evidencia: "refrigerios para eventos precios", "refrigerios economicos para eventos", y el clúster C entero. Tabla de precios por tipo de caja (extraíble por IA), mínimos, anticipación.
-2. **"Refrigerios para capacitaciones y reuniones empresariales: qué incluir"** — evidencia: 4 consultas en posición 1–2,25 con 0 clics por falta de superficie.
-3. **"Ideas de desayuno sorpresa en Medellín: 15 opciones según la ocasión"** — apoya la nueva landing (1.2) con enlazado interno.
+1. ~~**"¿Cuánto cuestan los refrigerios para eventos en Medellín? Guía de precios 2026"**~~ — **publicado**. Evidencia: "refrigerios para eventos" (116 impresiones, pos. 4,45), "refrigerios para eventos precios", "refrigerios economicos para eventos". Incluye dos tablas de datos (precio por tipo de caja y presupuesto para 30/50/100 personas) diseñadas para extracción por IA.
+2. ~~**"Refrigerios para capacitaciones y reuniones empresariales: qué incluir"**~~ — **publicado**. Evidencia: "refrigerios para capacitaciones", "refrigerio para reuniones" y "refrigerios para eventos empresariales", las tres en posición 1–2,25 con 0 clics por falta de superficie.
+3. **"Ideas de desayuno sorpresa en Medellín: 15 opciones según la ocasión"** — apoya la nueva landing (1.2) con enlazado interno. Siguiente en la cola.
 4. **"Decoración de primera comunión: guía completa + checklist"** — publicar en enero–febrero 2027, antes de temporada (evidencia: clúster F estacional).
 5. **"Arreglos para bodas: precios y tendencias en Medellín 2026"** — apoya el rescate de bodas (1.1).
 6. **"Catering para fiestas infantiles en Medellín"** — evidencia: "catering para fiestas infantiles", "fun food catering", "catering for kids", "refrigerios para fiestas infantiles" (20% CTR).
