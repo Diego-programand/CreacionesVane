@@ -60,6 +60,7 @@ export default function Footer() {
                 { label: 'Catálogo de detalles', href: '/creaciones-vane' },
                 { label: 'Refrigerios', href: '/refrigerios' },
                 { label: 'Decoraciones', href: '/decoraciones' },
+                { label: 'Guías y precios', href: '/blog' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link

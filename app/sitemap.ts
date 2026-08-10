@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next';
 import { sanityClient } from './lib/sanity.client';
 import { ALL_PRODUCTS_SLUGS_QUERY } from './lib/sanity.queries';
 import { BUSINESS } from './lib/business';
+import { getPostsOrdenados } from './lib/blog';
 
 /**
  * Sitemap dinámico.
@@ -70,6 +71,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/politica-de-privacidad`,
       lastModified,
       changeFrequency: 'monthly',
@@ -105,23 +112,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   /*
-    TODO blog — descomentar cuando exista la colección blogPost en Sanity:
-
-    let blogRoutes: MetadataRoute.Sitemap = [];
-    try {
-      const posts = await sanityClient.fetch<{ slug: string; categoria: string; updatedAt: string }[]>(
-        ALL_BLOG_POSTS_QUERY,
-        {},
-        { next: { tags: ['blogPost'] } }
-      );
-      blogRoutes = posts.map((p) => ({
-        url: `${baseUrl}/blog/${p.categoria}/${p.slug}`,
-        lastModified: new Date(p.updatedAt),
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-      }));
-    } catch {}
+    Artículos del blog. El contenido vive en app/lib/blog.ts (no en Sanity),
+    así que no hay fetch que pueda fallar durante el build. lastModified usa la
+    fecha de actualización real del artículo, no la del build: así Google no
+    reprocesa artículos que no han cambiado.
   */
+  const blogRoutes: MetadataRoute.Sitemap = getPostsOrdenados().map((p) => ({
+    url: `${baseUrl}/blog/${p.slug}`,
+    lastModified: new Date(`${p.actualizado}T12:00:00`),
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }));
 
-  return [...staticRoutes, ...productRoutes];
+  return [...staticRoutes, ...blogRoutes, ...productRoutes];
 }

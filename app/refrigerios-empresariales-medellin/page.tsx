@@ -964,13 +964,19 @@ export default function RefrigeriosEmpresarialesMedellinPage() {
 
             <ScrollReveal direction="fade" delay={0.4}>
               <p className="mt-8 text-sm text-white/75">
-                También puedes ver{' '}
-                <Link href="/refrigerios" className="text-white underline decoration-white/40 hover:decoration-white">
-                  todos los refrigerios del catálogo
+                ¿Estás armando el presupuesto? Lee{' '}
+                <Link
+                  href="/blog/cuanto-cuestan-los-refrigerios-para-eventos-en-medellin"
+                  className="text-white underline decoration-white/40 hover:decoration-white"
+                >
+                  cuánto cuestan los refrigerios para eventos en Medellín
                 </Link>
                 {' '}o{' '}
-                <Link href="/decoraciones" className="text-white underline decoration-white/40 hover:decoration-white">
-                  decoración para eventos
+                <Link
+                  href="/blog/refrigerios-para-capacitaciones-y-reuniones-que-incluir"
+                  className="text-white underline decoration-white/40 hover:decoration-white"
+                >
+                  qué incluir según la duración de la jornada
                 </Link>
                 .
               </p>
