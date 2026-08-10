@@ -35,8 +35,7 @@ const PAGE_PATH = '/refrigerios-empresariales-medellin';
 const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Refrigerios Empresariales en Medellín | Cajas para Reuniones y Eventos',
+  title: 'Refrigerios Empresariales en Medellín',
   description: `Refrigerios para empresas en Medellín y el Valle de Aburrá. Cajas desde $5.000 por persona, pedido mínimo 10 unidades. Entrega puntual, factura electrónica y opciones vegetarianas. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   ogImage: `${BUSINESS.url}/images/refrigeriosEmpresariales.webp`,
