@@ -209,6 +209,10 @@ const FAQS = [
     a: 'Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo. Para desayunos con entrega programada confirmamos el pedido con el pago previo. Si necesitas factura electrónica para tu empresa, también la emitimos.',
   },
   {
+    q: '¿Puedo pedir desde otro país para alguien que vive en Medellín?',
+    a: 'Sí. Nos escribes por WhatsApp desde donde estés, coordinamos el desayuno, la dirección y la hora de entrega, y pagas por transferencia bancaria. Te enviamos la foto del momento de la entrega. Es lo que hacen muchos colombianos en Estados Unidos y España para sorprender a su familia en Medellín en cumpleaños y días especiales.',
+  },
+  {
     q: '¿Hacen desayunos sorpresa para empresas?',
     a: 'Sí. Entregamos varios desayunos el mismo día en distintas direcciones para reconocer colaboradores, celebrar cierres de negocio o sorprender clientes. Emitimos factura electrónica y podemos incluir el logo de tu empresa en la presentación. Escríbenos con la cantidad y las direcciones para cotizar.',
   },

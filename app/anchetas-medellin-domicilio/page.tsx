@@ -177,6 +177,10 @@ const FAQS = [
     a: 'Sí. Puedes hacer el pedido con anticipación y nosotros coordinamos la entrega exacta para la fecha y hora que necesites (cumpleaños, aniversario, fecha especial). Te recomendamos confirmar con al menos 2 días de anticipación para fechas marcadas (San Valentín, Día de las Madres, Amor y Amistad).',
   },
   {
+    q: '¿Puedo pedir desde otro país para alguien que vive en Medellín?',
+    a: 'Sí, lo hacemos con frecuencia para colombianos que viven en Estados Unidos, España y otros países. Nos escribes por WhatsApp desde donde estés, coordinamos la ancheta, la dirección y la hora de entrega, y pagas por transferencia bancaria. Te enviamos la foto del momento de la entrega para que veas la reacción de la persona.',
+  },
+  {
     q: '¿Cómo se paga y se reserva el pedido?',
     a: 'Confirmamos con la cancelación total del pedido, puedes tener confianza gracias a nuestra amplia trayectoria en el mercado. Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo. Si necesitas factura, también la emitimos.',
   },
@@ -782,6 +786,42 @@ export default function AnchetasMedellinDomicilioPage() {
                 </div>
               </ScrollReveal>
             </div>
+
+            {/*
+              Compradores desde el exterior. GSC 2026-08-09: Estados Unidos
+              genera 351 impresiones con 11 clics y España tiene el mejor CTR
+              de todo el reporte (9,64%) — es la diáspora comprando regalos
+              para familia en Medellín, un segmento que el sitio no mencionaba
+              en ninguna parte.
+            */}
+            <ScrollReveal direction="up" delay={0.3}>
+              <div className="mt-8 sm:mt-12 bg-stone-900 text-white rounded-2xl p-7 sm:p-10">
+                <div className="max-w-3xl">
+                  <p className="text-white/60 text-xs uppercase tracking-[0.2em] mb-3">
+                    Desde el exterior
+                  </p>
+                  <h3 className="text-2xl sm:text-3xl font-semibold mb-4 leading-snug">
+                    ¿Estás fuera de Colombia y quieres sorprender a alguien en Medellín?
+                  </h3>
+                  <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6">
+                    Lo hacemos seguido. Nos escribes por WhatsApp desde donde estés, coordinamos la ancheta y la dirección, y nosotras entregamos en Medellín. Te enviamos la foto del momento de la entrega para que veas la reacción aunque estés a miles de kilómetros. El pago se hace por transferencia y te confirmamos todo antes de salir a entregar.
+                  </p>
+                  <a
+                    id="anchetas-exterior-cta"
+                    href={waUrl(
+                      'Hola Vane, estoy fuera de Colombia y quiero enviar una ancheta a alguien en Medellín. ¿Cómo hacemos el pago y la coordinación?'
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2.5 bg-white text-stone-900 hover:bg-stone-100 px-6 py-3.5 rounded-full font-semibold text-sm transition-colors duration-200"
+                    aria-label="Escribir por WhatsApp para enviar desde el exterior"
+                  >
+                    <ICONS.whatsapp className="w-4 h-4 text-[#25D366]" />
+                    Escribir desde el exterior
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </section>
 
