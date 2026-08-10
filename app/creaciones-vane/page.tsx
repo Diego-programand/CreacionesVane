@@ -17,34 +17,33 @@ import { breadcrumbSchema, pageMetadata } from '../lib/seo';
  *
  * Decisión estratégica: esta página NO compite con el home en query "creaciones vane"
  * (eso lo gana la home). Aquí el foco es la query transaccional con catálogo:
- * "anchetas medellín domicilio" (pos 1.0 en GSC), "desayunos sorpresa domicilio".
+ * "anchetas medellín domicilio" (pos 1.0 en GSC) y "catálogo de detalles".
+ *
+ * Desde el análisis GSC 2026-08-09 esta página ya NO compite por "desayunos
+ * sorpresa": esa intención la hereda /desayunos-sorpresa-medellin. Aquí solo
+ * queda el enlace contextual para no canibalizar la landing dedicada.
  *
  * Diferenciador clave vs home: H1 y title se enfocan en "Catálogo / Tienda",
  * no en la marca.
  */
 export const metadata: Metadata = pageMetadata({
-  title:
-    'Catálogo de Anchetas y Desayunos Sorpresa a Domicilio en Medellín',
-  description: `Mira nuestro catálogo completo de anchetas, desayunos sorpresa, peluches y ramos de rosas con entrega el mismo día en Medellín. Pide ahora por WhatsApp ${BUSINESS.phoneDisplay}.`,
+  title: 'Catálogo de Anchetas y Detalles en Medellín',
+  description: `Mira nuestro catálogo completo de anchetas, peluches, ramos de rosas y cajas de chocolates con entrega el mismo día en Medellín. Pide ahora por WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/creaciones-vane',
-  ogImage: `${BUSINESS.url}/banner-detalles.webp`,
   keywords: [
     'anchetas medellín',
     'anchetas medellin domicilio',
     'catálogo anchetas medellín',
-    'desayunos sorpresa medellín',
-    'desayunos sorpresa a domicilio medellín',
     'peluches con flores medellín',
     'ramos de rosas a domicilio medellín',
     'cajas de chocolates medellín',
     'detalles de amor medellín',
     'regalos personalizados medellín',
     'anchetas el poblado',
-    'desayunos sorpresa laureles',
     'regalos envigado',
     'anchetas con globos medellín',
-    'desayunos románticos medellín',
     'anchetas cumpleaños medellín',
+    'tienda de detalles medellín',
   ],
 });
 
@@ -180,7 +179,7 @@ export default async function CreacionesVanePage() {
                 que apunta a "Creaciones Vane" como marca.
               */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-script text-white mb-3 drop-shadow-lg leading-tight">
-                Catálogo de Anchetas y Desayunos Sorpresa
+                Catálogo de Anchetas y Detalles de Amor
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                 Entrega a domicilio el mismo día en Medellín
@@ -196,34 +195,54 @@ export default async function CreacionesVanePage() {
         </header>
 
         {/*
-          Cross-link al spoke transaccional de anchetas a domicilio. Aprovecha
-          la autoridad del hub para enrutar al usuario a una landing con
-          paquetes claros y cobertura el mismo día.
+          Cross-links a los spokes transaccionales. Aprovechan la autoridad del
+          hub para enrutar al usuario a landings con paquetes claros y cobertura
+          el mismo día. Desayunos tiene landing propia desde el análisis GSC
+          2026-08-09 (rankeaba #1 sin URL dedicada).
         */}
         <section
-          aria-label="Landing especializada"
+          aria-label="Landings especializadas"
           className="bg-white border-y border-stone-200 py-10 px-4"
         >
           <div className="max-w-5xl mx-auto">
             <p className="text-xs text-[#D81B60] font-semibold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
-              ¿Necesitas la ancheta hoy mismo?
+              ¿Lo necesitas hoy mismo?
             </p>
-            <Link
-              href="/anchetas-medellin-domicilio"
-              className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
-            >
-              <div>
-                <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
-                  Anchetas a domicilio en Medellín
-                </p>
-                <p className="text-stone-500 text-sm">
-                  Desde $80.000 — entrega el mismo día si confirmas antes de las 12:00 PM
-                </p>
-              </div>
-              <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </Link>
+            <div className="grid gap-4 md:grid-cols-2">
+              <Link
+                href="/anchetas-medellin-domicilio"
+                className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+              >
+                <div>
+                  <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                    Anchetas a domicilio en Medellín
+                  </p>
+                  <p className="text-stone-500 text-sm">
+                    Desde $80.000 — entrega el mismo día si confirmas antes de las 12:00 PM
+                  </p>
+                </div>
+                <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+
+              <Link
+                href="/desayunos-sorpresa-medellin"
+                className="group flex items-center justify-between gap-4 border border-stone-200 hover:border-stone-900 rounded-2xl p-5 transition-colors"
+              >
+                <div>
+                  <p className="text-stone-900 font-semibold text-base md:text-lg mb-1">
+                    Desayunos sorpresa a domicilio en Medellín
+                  </p>
+                  <p className="text-stone-500 text-sm">
+                    Desde $55.000 — fruta fresca, jugo natural y sándwich gourmet
+                  </p>
+                </div>
+                <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </section>
 

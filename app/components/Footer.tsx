@@ -46,8 +46,18 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-xl mb-6 border-b border-white/20 pb-2 inline-block">Servicios</h4>
             <ul className="space-y-4">
+              {/*
+                Enlaces sitewide a las landings transaccionales: distribuyen
+                autoridad interna y garantizan que cada landing esté a un clic
+                desde cualquier página. Anchor text descriptivo con la ciudad.
+              */}
               {[
-                { label: 'Anchetas y Desayunos', href: '/creaciones-vane' },
+                { label: 'Anchetas a domicilio en Medellín', href: '/anchetas-medellin-domicilio' },
+                { label: 'Desayunos sorpresa en Medellín', href: '/desayunos-sorpresa-medellin' },
+                { label: 'Refrigerios empresariales', href: '/refrigerios-empresariales-medellin' },
+                { label: 'Arreglos y decoración para bodas', href: '/decoracion-bodas-medellin' },
+                { label: 'Decoración de primera comunión', href: '/decoracion-primera-comunion-medellin' },
+                { label: 'Catálogo de detalles', href: '/creaciones-vane' },
                 { label: 'Refrigerios', href: '/refrigerios' },
                 { label: 'Decoraciones', href: '/decoraciones' },
               ].map((item) => (
