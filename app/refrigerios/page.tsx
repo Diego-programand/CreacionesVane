@@ -25,31 +25,40 @@ export const metadata: Metadata = pageMetadata({
   description: `Refrigerios para eventos, reuniones y fiestas infantiles en Medellín. Cajas con sándwich gourmet, fruta fresca y jugo natural desde $5.000 por persona. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/refrigerios',
   ogImage: `${BUSINESS.url}/banner-refrigerios.webp`,
+  /*
+    Keywords tomadas del export de GSC del 2026-08-09, no de suposiciones. Se
+    retiraron "box lunch", "catering" y "lunch empresarial": en 12 meses no
+    generaron ni una impresión, mientras "cajas de refrigerio", "refrigerios
+    para capacitaciones" y "refrigerios para eventos precios" sí aparecen con
+    posiciones entre 1 y 8.
+  */
   keywords: [
     'refrigerios medellín',
     'refrigerios para eventos medellín',
     'refrigerios empresariales medellín',
-    'box lunch medellín',
-    'catering medellín',
+    'cajas de refrigerio medellín',
+    'cajas para refrigerios',
+    'caja de refrigerio',
+    'refrigerios para fiestas infantiles',
     'refrigerios fiestas infantiles medellín',
     'refrigerios corporativos medellín',
-    'lunch empresarial medellín',
     'refrigerios para conferencias medellín',
     'refrigerios para capacitaciones medellín',
-    'refrigerios reuniones medellín',
+    'refrigerios para reuniones medellín',
+    'refrigerios para empresas',
+    'refrigerios para eventos precios',
+    'refrigerios en medellín',
     'refrigerios el poblado',
-    'box lunch laureles',
-    'catering envigado',
+    'refrigerios laureles',
+    'refrigerios envigado',
     'refrigerios sabaneta',
-    'lunch empresarial el poblado',
     'refrigerios económicos para eventos medellín',
     'refrigerios saludables empresariales medellín',
-    'box lunch con frutas medellín',
     'refrigerios personalizados logo empresa medellín',
     'sándwich gourmet eventos medellín',
     'croissant eventos medellín',
     'refrigerios con fruta fresca medellín',
-    'lunch individual medellín',
+    'refrigerios escolares medellín',
   ],
 });
 
@@ -69,14 +78,19 @@ export default async function RefrigeriosPage() {
     '@context': 'https://schema.org',
     '@type': 'FoodEstablishment',
     '@id': `${BUSINESS.url}/refrigerios#foodestablishment`,
-    name: 'Refrigerios Vane — Catering y Box Lunch para Eventos en Medellín',
+    name: 'Refrigerios Vane — Refrigerios para Eventos en Medellín',
     alternateName: 'Refrigerios Vane Medellín',
     description:
-      'Servicio profesional de refrigerios para eventos corporativos, fiestas infantiles, conferencias y reuniones en Medellín. Ingredientes frescos, entrega puntual y opciones personalizadas.',
+      'Servicio de refrigerios en caja individual para eventos empresariales, fiestas infantiles, conferencias, capacitaciones y reuniones en Medellín. Ingredientes frescos, entrega puntual y opciones personalizadas.',
     url: `${BUSINESS.url}/refrigerios`,
     telephone: BUSINESS.phoneE164,
     priceRange: '$-$$',
-    servesCuisine: ['Refrigerios', 'Box Lunch', 'Catering Eventos', 'Lunch Corporativo'],
+    servesCuisine: [
+      'Refrigerios para eventos',
+      'Cajas de refrigerio',
+      'Refrigerios empresariales',
+      'Refrigerios infantiles',
+    ],
     address: postalAddress(),
     geo: geoCoordinates(),
     openingHoursSpecification: openingHoursSpec(),
@@ -92,8 +106,8 @@ export default async function RefrigeriosPage() {
     ],
     hasMenu: {
       '@type': 'Menu',
-      name: 'Menú de Refrigerios y Box Lunch',
-      description: 'Opciones variadas para eventos corporativos e infantiles',
+      name: 'Menú de refrigerios para eventos',
+      description: 'Opciones variadas para eventos empresariales e infantiles',
       hasMenuSection: [
         {
           '@type': 'MenuSection',
@@ -129,9 +143,9 @@ export default async function RefrigeriosPage() {
         },
         {
           '@type': 'MenuSection',
-          name: 'Refrigerios Corporativos',
+          name: 'Refrigerios Empresariales',
           description:
-            'Box lunch y refrigerios profesionales para eventos empresariales, conferencias y capacitaciones',
+            'Cajas de refrigerio para eventos empresariales, conferencias, capacitaciones y reuniones de trabajo',
           hasMenuItem: [
             {
               '@type': 'MenuItem',

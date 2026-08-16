@@ -31,7 +31,7 @@ const THEME_CONFIGS: Record<FilterTheme, FilterConfig> = {
   refrigerios: {
     title: 'Filtros',
     searchLabel: 'Buscar refrigerio',
-    placeholder: 'Ej: Box lunch, infantil...',
+    placeholder: 'Ej: sándwich, infantil...',
     itemLabel: 'Tipo de refrigerio',
     priceLabel: 'Rango de precio (miles COP)',
     accentClass: 'text-vane-600',

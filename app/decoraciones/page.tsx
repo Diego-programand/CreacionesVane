@@ -41,7 +41,7 @@ export const metadata: Metadata = pageMetadata({
     'montaje decoración laureles',
     'decoración fiestas envigado',
     'decoración eventos sabaneta',
-    'backdrop medellín el poblado',
+    'backings de madera medellín',
     'decoración temática paw patrol medellín',
     'arcos de globos orgánicos medellín',
     'montaje completo decoración eventos medellín',
@@ -49,7 +49,10 @@ export const metadata: Metadata = pageMetadata({
     'decoración económica cumpleaños medellín',
     'arcos de globos medellín',
     'globos orgánicos medellín',
-    'centros de mesa medellín',
+    'cilindros decorativos medellín',
+    'arreglos para bodas medellín',
+    'decoradores de fiestas medellín',
+    'decoración fiestas medellín',
     'montaje decoración medellín',
     'alquiler decoración eventos medellín',
     'decoración minimalista medellín',
@@ -79,7 +82,7 @@ export default async function DecoracionesPage() {
     name: 'Decoraciones Vane — Decoración Profesional de Eventos en Medellín',
     alternateName: 'Decoraciones Vane Medellín',
     description:
-      'Decoración para bodas, cumpleaños infantiles, quinceañeras, Baby Shower y eventos corporativos en Medellín. Montaje completo con globos orgánicos, flores, backdrop y mobiliario.',
+      'Decoración para bodas, cumpleaños infantiles, quinceañeras, baby shower y eventos empresariales en Medellín. Montaje completo con aros con forros, backings de madera, cilindros decorativos, globos orgánicos y mobiliario.',
     url: `${BUSINESS.url}/decoraciones`,
     telephone: BUSINESS.phoneE164,
     priceRange: '$$-$$$',
@@ -111,7 +114,7 @@ export default async function DecoracionesPage() {
             '@type': 'Service',
             name: 'Decoración de Bodas',
             description:
-              'Decoración completa para bodas con arco nupcial, centros de mesa, iluminación decorativa y backdrop personalizado. Incluye montaje y desmontaje.',
+              'Decoración completa para bodas con aros con forros, cilindros decorativos, mesas reloj, iluminación decorativa y backings de madera personalizados. Incluye montaje y desmontaje.',
             provider: { '@id': `${BUSINESS.url}/#organization` },
             areaServed: 'Medellín, Antioquia',
             offers: {
@@ -130,7 +133,7 @@ export default async function DecoracionesPage() {
             '@type': 'Service',
             name: 'Decoración Cumpleaños Infantil',
             description:
-              'Decoración temática personalizada con globos orgánicos, aro central, cilindros decorativos, backdrop y figuras del personaje favorito. Incluye transporte, montaje y desmontaje.',
+              'Decoración temática personalizada con globos orgánicos, aro central, cilindros decorativos, backing de madera y figuras del personaje favorito. Incluye transporte, montaje y desmontaje.',
             provider: { '@id': `${BUSINESS.url}/#organization` },
             areaServed: 'Medellín, Antioquia',
             offers: {
@@ -148,7 +151,7 @@ export default async function DecoracionesPage() {
             '@type': 'Service',
             name: 'Decoración Baby Shower',
             description:
-              'Montaje profesional con globos orgánicos en tonos pastel, mesa dulce decorada, backdrop elegante y mobiliario completo. Diseños para niña o niño.',
+              'Montaje profesional con globos orgánicos en tonos pastel, mesa de bienvenida decorada, backing de madera y mobiliario completo. Diseños para niña o niño.',
             provider: { '@id': `${BUSINESS.url}/#organization` },
             areaServed: 'Medellín, Antioquia',
             offers: {
@@ -166,7 +169,7 @@ export default async function DecoracionesPage() {
             '@type': 'Service',
             name: 'Decoración Quinceañeras',
             description:
-              'Decoración elegante y sofisticada con arcos de globos, iluminación especial, backdrop para fotos y ambientación completa según temática elegida.',
+              'Decoración elegante y sofisticada con arcos de globos, iluminación especial, backing de madera para la zona de fotos y ambientación completa según la temática elegida.',
             provider: { '@id': `${BUSINESS.url}/#organization` },
             areaServed: 'Medellín, Antioquia',
             offers: {
@@ -241,7 +244,7 @@ export default async function DecoracionesPage() {
     },
     {
       q: '¿Qué incluye el servicio de decoración?',
-      a: 'Cada paquete incluye diseño personalizado, globos orgánicos o temáticos, mobiliario decorativo (cilindros, bases, tarimas según paquete), backdrop, transporte, montaje profesional y desmontaje.',
+      a: 'Cada paquete incluye diseño personalizado, globos orgánicos o temáticos, mobiliario decorativo (cilindros, bases, tarimas según paquete), backing de madera con forro, transporte, montaje profesional y desmontaje.',
     },
   ]);
 
