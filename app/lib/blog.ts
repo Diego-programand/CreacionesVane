@@ -49,7 +49,7 @@ export interface BlogPost {
   cta: { titulo: string; texto: string; label: string; path: string };
 }
 
-export const BLOG_POSTS: BlogPost[] = [
+const POSTS_REFRIGERIOS: BlogPost[] = [
   {
     slug: 'cuanto-cuestan-los-refrigerios-para-eventos-en-medellin',
     titulo:
@@ -344,6 +344,116 @@ export const BLOG_POSTS: BlogPost[] = [
     },
   },
 ];
+
+const POST_DESAYUNOS: BlogPost = {
+  slug: 'ideas-de-desayuno-sorpresa-en-medellin-segun-la-ocasion',
+  titulo: 'Ideas de desayuno sorpresa en Medellín según la ocasión',
+  tituloSeo: 'Ideas de Desayuno Sorpresa en Medellín',
+  descripcion:
+    'Qué desayuno sorpresa elegir según la ocasión y a quién se lo envías: cumpleaños, aniversario, Día de la Madre o un gracias. Con precios reales y horarios de entrega en Medellín.',
+  respuestaDirecta:
+    'Un desayuno sorpresa se elige por la ocasión y por la hora en que la persona lo recibe. Para cumpleaños funciona la entrega a primera hora con decoración temática; para aniversarios, una presentación con rosas frescas; y para agradecer, algo neutro que se pueda recibir en la oficina. En Medellín cuestan entre $55.000 y $190.000.',
+  publicado: '2026-08-16',
+  actualizado: '2026-08-16',
+  categoria: 'Desayunos sorpresa',
+  lecturaMin: 6,
+  origenGsc:
+    '"desayunos sorpresa" (pos. 1,67, CTR 66,67%), "desayunos sorpresa medellin" (pos. 1), "desayuno sorpresa cerca de mi", "desayunos medellin domicilio" — todas con posición ganadora y volumen de impresiones mínimo por falta de superficie',
+  keywords: [
+    'ideas desayuno sorpresa medellín',
+    'qué incluir en un desayuno sorpresa',
+    'desayuno sorpresa cumpleaños',
+    'desayuno sorpresa aniversario',
+    'desayuno sorpresa para mamá',
+    'desayuno sorpresa para novio',
+    'desayuno sorpresa para novia',
+    'a qué hora entregar un desayuno sorpresa',
+    'cuánto cuesta un desayuno sorpresa medellín',
+  ],
+  bloques: [
+    { type: 'h2', text: '¿Qué lleva un desayuno sorpresa?' },
+    {
+      type: 'parrafo',
+      text: 'La base es siempre la misma: fruta fresca cortada el día de la entrega, jugo natural en botella, sándwich gourmet y una presentación decorada con tarjeta. Lo que cambia entre un desayuno de $55.000 y uno de $190.000 no es esa base, sino lo que se le suma alrededor: globos, peluche, ramo de rosas, chocolates o postre.',
+    },
+    {
+      type: 'parrafo',
+      text: 'Conviene tenerlo claro antes de pedir, porque a veces se paga más esperando más comida cuando en realidad lo que crece es el componente decorativo. Si lo que importa es que la persona desayune bien, el tramo bajo cumple; si lo que importa es la escena al abrir la puerta, ahí sí tiene sentido subir.',
+    },
+    { type: 'h2', text: '¿Cuál elegir según la ocasión?' },
+    {
+      type: 'tabla',
+      encabezados: ['Ocasión', 'Qué priorizar', 'Hora de entrega ideal'],
+      filas: [
+        ['Cumpleaños', 'Decoración temática, nombre en la presentación, vela', 'Primera hora de la mañana'],
+        ['Aniversario', 'Rosas frescas, presentación cuidada, tarjeta larga', 'Antes de salir a trabajar'],
+        ['Día de la Madre', 'Porción generosa, opción para dos personas', 'Media mañana'],
+        ['Agradecimiento', 'Presentación neutra, sin temática romántica', 'Media mañana, en la oficina'],
+        ['Reconciliación', 'Tarjeta manuscrita larga, sin exceso de decoración', 'Temprano, entre semana'],
+      ],
+    },
+    { type: 'h2', text: '¿A qué hora conviene que llegue?' },
+    {
+      type: 'parrafo',
+      text: 'Este es el detalle que más cambia el resultado y el que más gente pasa por alto. Un desayuno sorpresa que llega a las once de la mañana ya no es un desayuno: es un almuerzo temprano y pierde toda la gracia.',
+    },
+    {
+      type: 'lista',
+      items: [
+        'Entre 6:00 y 7:00 a. m. si la persona sale temprano a trabajar. Hay que confirmar que alguien pueda abrir la puerta.',
+        'Entre 7:00 y 9:00 a. m. es la franja más pedida y la que mejor funciona en general.',
+        'Media mañana si la entrega es en una oficina: llega cuando la persona ya está instalada y hay público para la sorpresa.',
+        'Fines de semana, más tarde: entregar a las 6:00 a. m. un domingo rara vez se agradece.',
+      ],
+    },
+    {
+      type: 'destacado',
+      titulo: 'El dato que hay que confirmar antes de pedir',
+      text: 'Que haya alguien que pueda recibir. Suena obvio, pero es la causa número uno de entregas fallidas en desayunos sorpresa: se coordina para las 6:30 a. m. y la persona ya salió, o vive sola y está dormida sin escuchar el timbre. Un número de contacto alterno resuelve el 90% de estos casos.',
+    },
+    { type: 'h2', text: '¿Cuánto hay que gastar para que se vea bien?' },
+    {
+      type: 'parrafo',
+      text: 'Con $55.000 se resuelve un desayuno completo y bien presentado. El salto que más se nota visualmente está alrededor de los $90.000, donde entran los globos y el peluche o el ramo, que es lo que hace que la foto se vea como la gente imagina un desayuno sorpresa. Por encima de $150.000 lo que crece es el tamaño del peluche, la cantidad de rosas y los chocolates.',
+    },
+    {
+      type: 'parrafo',
+      text: 'Una forma práctica de pedirlo: decir el presupuesto exacto desde el principio en lugar de preguntar qué opciones hay. Con la cifra sobre la mesa se puede armar la mejor combinación dentro de ella, en vez de mostrar opciones que se salen.',
+    },
+    { type: 'h2', text: '¿Y si la persona tiene alguna restricción?' },
+    {
+      type: 'parrafo',
+      text: 'El sándwich se cambia por versión vegetariana sin costo adicional, y se puede adaptar para personas sin lactosa, sin gluten o con alergia a frutos secos. Lo importante es avisarlo al hacer el pedido y no el día anterior, porque la preparación se organiza con antelación. Un desayuno sorpresa que la persona no puede comer es peor que no enviar nada.',
+    },
+  ],
+  faqs: [
+    {
+      q: '¿Cuánto cuesta un desayuno sorpresa en Medellín?',
+      a: 'Entre $55.000 y $190.000 COP según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con mensaje. Los globos, el peluche, el ramo de rosas y los chocolates son los que mueven el precio dentro de ese rango.',
+    },
+    {
+      q: '¿A qué hora entregan los desayunos sorpresa?',
+      a: 'La mayoría se entrega entre las 6:00 y las 9:00 de la mañana para que la persona lo reciba antes de empezar el día. También se hacen entregas a media mañana cuando la sorpresa es en la oficina. La hora exacta se coordina al confirmar el pedido.',
+    },
+    {
+      q: '¿Con cuánta anticipación hay que pedir un desayuno sorpresa?',
+      a: 'Confirmando antes de las 12:00 del mediodía se entrega al día siguiente sin problema. Para fechas marcadas como San Valentín, Día de la Madre, Amor y Amistad o diciembre conviene reservar con una semana porque la agenda de entregas tempranas se llena.',
+    },
+    {
+      q: '¿La persona se entera de que le van a llevar un desayuno?',
+      a: 'No. La coordinación se hace contigo por WhatsApp y la entrega es directa en la dirección que indiques, sin adelantar nada. Si quieres, se te envía una foto del momento de la entrega para que veas la reacción.',
+    },
+  ],
+  cta: {
+    titulo: '¿Ya sabes a quién quieres sorprender?',
+    texto:
+      'Cuéntanos la ocasión, tu presupuesto y la dirección. Armamos la mejor opción dentro de esa cifra y coordinamos la hora exacta de entrega.',
+    label: 'Ver desayunos sorpresa a domicilio',
+    path: '/desayunos-sorpresa-medellin',
+  },
+};
+
+export const BLOG_POSTS: BlogPost[] = [...POSTS_REFRIGERIOS, POST_DESAYUNOS];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);

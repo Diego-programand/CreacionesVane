@@ -94,8 +94,36 @@ export function organizationSchema() {
     '@id': `${BASE_URL}/#organization`,
     name: BUSINESS.name,
     legalName: BUSINESS.legalName,
+    /*
+      Desambiguación de marca. GSC muestra que "creaciones vane" rankea en
+      posición 4,45 con solo 15,66% de CTR: el SERP de marca lo comparten
+      homónimos y negocios de nombre parecido ("vane art", "vaneessences",
+      "ancheticas con amor"). alternateName, knowsAbout y foundingLocation le
+      dan a Google los atributos que necesita para separar esta entidad de las
+      demás. Solo variantes legítimas — nunca errores tipográficos.
+    */
+    alternateName: [
+      'Creaciones Vane Medellín',
+      'Creaciones Vane — Cómplice que endulza',
+      'Anchetas Creaciones Vane',
+    ],
     slogan: BUSINESS.slogan,
     foundingDate: BUSINESS.foundingDate,
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'Medellín, Antioquia, Colombia',
+      address: postalAddress(),
+    },
+    knowsAbout: [
+      'Anchetas personalizadas',
+      'Desayunos sorpresa a domicilio',
+      'Decoración de bodas',
+      'Decoración de primera comunión',
+      'Decoración de eventos infantiles',
+      'Refrigerios para eventos empresariales',
+      'Regalos a domicilio en Medellín',
+    ],
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${BASE_URL}/` },
     url: BUSINESS.url,
     logo: { '@type': 'ImageObject', url: BUSINESS.logo, width: 400, height: 400 },
     image: [
@@ -133,6 +161,38 @@ export function organizationSchema() {
     sameAs: sameAsLinks(),
     areaServed: areaServedCities(),
     hasMap: BUSINESS.mapsShortLink,
+    /*
+      Servicios que presta la marca, cada uno apuntando a su landing. Refuerza
+      la asociación entidad ↔ servicio ↔ ciudad, que es lo que los motores de
+      IA usan para decidir a quién citar en "¿dónde pido X en Medellín?".
+    */
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        name: 'Anchetas a domicilio en Medellín',
+        url: `${BASE_URL}/anchetas-medellin-domicilio`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Desayunos sorpresa a domicilio en Medellín',
+        url: `${BASE_URL}/desayunos-sorpresa-medellin`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Arreglos y decoración para bodas en Medellín',
+        url: `${BASE_URL}/decoracion-bodas-medellin`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Decoración de primera comunión en Medellín',
+        url: `${BASE_URL}/decoracion-primera-comunion-medellin`,
+      },
+      {
+        '@type': 'Offer',
+        name: 'Refrigerios empresariales en Medellín',
+        url: `${BASE_URL}/refrigerios-empresariales-medellin`,
+      },
+    ],
   };
 }
 

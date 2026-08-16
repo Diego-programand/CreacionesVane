@@ -54,6 +54,7 @@ export default function Footer() {
               {[
                 { label: 'Anchetas a domicilio en Medellín', href: '/anchetas-medellin-domicilio' },
                 { label: 'Desayunos sorpresa en Medellín', href: '/desayunos-sorpresa-medellin' },
+                { label: 'Regalos de Amor y Amistad', href: '/regalos-amor-y-amistad-medellin' },
                 { label: 'Refrigerios empresariales', href: '/refrigerios-empresariales-medellin' },
                 { label: 'Arreglos y decoración para bodas', href: '/decoracion-bodas-medellin' },
                 { label: 'Decoración de primera comunión', href: '/decoracion-primera-comunion-medellin' },

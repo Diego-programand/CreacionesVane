@@ -41,6 +41,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     },
     {
+      /*
+        Landing estacional de Amor y Amistad. Prioridad alta de forma
+        permanente: la página no se despublica fuera de temporada, mantiene
+        autoridad todo el año y se reactiva cada septiembre actualizando
+        FECHA_CELEBRACION.
+      */
+      url: `${baseUrl}/regalos-amor-y-amistad-medellin`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/decoraciones`,
       lastModified,
       changeFrequency: 'weekly',
