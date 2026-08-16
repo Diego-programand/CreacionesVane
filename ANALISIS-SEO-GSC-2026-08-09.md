@@ -10,7 +10,7 @@
 
 ## 0. Estado de ejecución — actualizado 2026-08-10
 
-### Implementado en código (build verificado, 91 páginas generadas)
+### Implementado en código (build verificado, 94 páginas generadas, 9 commits en `main` sin pushear)
 
 | Acción | Archivos | Estado |
 |---|---|---|
@@ -20,10 +20,10 @@
 | Descanibalización: `/creaciones-vane` cede la intención "desayunos sorpresa" a la landing nueva | `app/creaciones-vane/page.tsx` | Hecho |
 | Enlaces internos: footer sitewide con las 5 landings, cross-links recíprocos catálogo ↔ anchetas ↔ desayunos | `app/components/Footer.tsx`, landings | Hecho |
 | Sitemap + llms.txt actualizados con la landing nueva y la sección de arreglos | `app/sitemap.ts`, `public/llms.txt` | Hecho |
-| Titles acortados en las 10 páginas del sitio para no truncarse en el SERP | todas las `page.tsx`, `app/lib/seo.ts` | Hecho |
+| Titles acortados en las 12 páginas del sitio para no truncarse en el SERP (50–61 caracteres, verificado en HTML renderizado) | todas las `page.tsx`, `app/lib/seo.ts` | Hecho |
 | SEO de las 76 fichas de producto: tipo + ciudad en title, precio y entrega en description | `app/producto/[slug]/page.tsx` | Hecho |
 | Imágenes 404 corregidas en schemas y OG | `app/lib/seo.ts`, `app/anchetas-medellin-domicilio/page.tsx`, `app/creaciones-vane/page.tsx` | Hecho |
-| Jerga anglo eliminada de metadatos ("box lunch", "catering corporativo", "backdrop") | `app/refrigerios/page.tsx`, `app/decoraciones/page.tsx` | Hecho |
+| Jerga anglo eliminada del `<title>` y la `description` de refrigerios y decoraciones | `app/refrigerios/page.tsx`, `app/decoraciones/page.tsx` | **Parcial** — sigue en keywords, schema y cuerpo (ver H5) |
 | Verificación redirect http→https | — | Ya correcto: devuelve 308 (permanente, equivalente a 301 para Google) |
 | Precios de anchetas alineados entre JSON-LD, UI, llms.txt y `priceRanges` ($80.000 / $130.000 / $180.000, confirmados por el negocio) | `app/anchetas-medellin-domicilio/page.tsx`, `app/lib/business.ts`, `public/llms.txt` | Hecho |
 | Bloque y FAQ para compradores desde el exterior (Fase 3.1) | `app/anchetas-medellin-domicilio/page.tsx`, `app/desayunos-sorpresa-medellin/page.tsx` | Hecho |
@@ -37,9 +37,26 @@ Aparecieron al cruzar los datos con el código. Los tres primeros ya están corr
 
 **H2 — Todos los titles del sitio se truncaban en el SERP (corregido).** El template `%s | Creaciones Vane` del layout añade 18 caracteres a cada title de página. Con eso, los 10 titles del sitio medían entre 68 y 103 caracteres cuando Google muestra ~60. La home llegaba a 103 y el catálogo a 82: la keyword quedaba fuera de la parte visible. Esto explica buena parte del déficit de CTR documentado en P6 y P8 (home 3,97% en posición 5,95; catálogo 3,61%). Todos los titles quedaron entre 50 y 61 caracteres, con los ganchos de CTR (precio, "entrega el mismo día") movidos a la description, que dispone de ~155. Se añadió `titleAbsolute` a `pageMetadata()` para la home y las fichas de producto, donde el sufijo de marca sobraba.
 
-**H3 — Metadatos con jerga que el propio canon del proyecto prohíbe (corregido).** El title de `/refrigerios` decía "Box Lunch y Catering Corporativo" y el de `/decoraciones` usaba "backdrop", pese a que los comentarios de las landings establecen explícitamente usar el lenguaje del cliente ("refrigerios", "cajas", "backings de madera"). Los CSV confirman que el canon tenía razón: las consultas reales son "refrigerios para eventos", "cajas de refrigerio", "refrigerios para capacitaciones" — ninguna en jerga anglo. Reescritos con el vocabulario real.
+**H3 — Metadatos con jerga que el propio canon del proyecto prohíbe (corregido solo en title y description).** El title de `/refrigerios` decía "Box Lunch y Catering Corporativo" y el de `/decoraciones` usaba "backdrop", pese a que los comentarios de las landings establecen explícitamente usar el lenguaje del cliente ("refrigerios", "cajas", "backings de madera"). Los CSV confirman que el canon tenía razón: las consultas reales son "refrigerios para eventos", "cajas de refrigerio", "refrigerios para capacitaciones". El title y la description de ambas páginas quedaron reescritos con el vocabulario real, **pero la jerga sigue en las keywords, el JSON-LD y el cuerpo de esas dos páginas** — ver H5.
 
 **H4 — Precios de anchetas inconsistentes entre la página y el schema (corregido).** En `app/anchetas-medellin-domicilio/page.tsx` los paquetes declaraban `precio: 50_000` con `precioLabel: '$80.000'`, y `precio: 110_000` con `precioLabel: '$130.000'`. El campo `precio` alimenta el JSON-LD que lee Google; el `precioLabel` es lo que ve el usuario. Es decir, **el sitio le declaraba a Google $50.000 mientras mostraba $80.000 en pantalla**, y Google penaliza los rich results de producto cuyo precio no coincide con el visible. La contradicción estaba repartida: `llms.txt` y `BUSINESS.priceRanges.detalles` usaban las cifras bajas, el cross-link del catálogo y las FAQ usaban las altas. El negocio confirmó que los precios reales son **$80.000 (Detalle) y $130.000 (Clásica)**; se alinearon `precio`, `llms.txt`, `BUSINESS.priceRanges.detalles` y la descripción del LocalBusiness schema. Verificado en el HTML renderizado: el JSON-LD emite 80000 / 130000 / 180000 y la página muestra $80.000 / $130.000 / $180.000.
+
+**H5 — La jerga anglo sigue viva fuera de los metadatos (detectado en la revisión del 2026-08-10, sin corregir).** Al auditar lo implementado apareció que la corrección de H3 se quedó corta: solo alcanzó el `<title>` y la `description`. En `/refrigerios` persisten `'box lunch medellín'`, `'catering medellín'`, `'box lunch laureles'` y `'box lunch con frutas medellín'` en el array de keywords; el `name` del schema FoodEstablishment dice "Refrigerios Vane — Catering y Box Lunch para Eventos en Medellín"; `servesCuisine` declara `['Refrigerios', 'Box Lunch', 'Catering Eventos', 'Lunch Corporativo']`; y el cuerpo abre con "Box lunch y refrigerios profesionales". En `/decoraciones` queda `'backdrop medellín el poblado'` en keywords y "backdrop" en cinco descripciones de paquetes y en una FAQ.
+
+Hay además una inconsistencia de vocabulario entre landings que el canon prohíbe explícitamente: `/decoraciones` usa "arco nupcial", "centros de mesa" y "mesa dulce", mientras `/decoracion-bodas-medellin` establece "aros con forros", "cilindros"/"mesas reloj" y prohíbe mencionar comida en bodas. Las dos páginas describen el mismo servicio con dos vocabularios distintos, lo que diluye la señal semántica hacia Google.
+
+Los datos respaldan limpiarlo: en 12 meses **"box lunch" y "backdrop" no generaron ni una sola impresión**, y "catering" solo aparece en cuatro consultas de 1 impresión cada una, tres de ellas en inglés ("fun food catering", "catering for kids", "catering sandwich"). No es vocabulario que esté trayendo tráfico. La corrección es una reescritura de contenido de esas dos páginas, no un cambio de metadatos, por eso queda como tarea pendiente en lugar de haberse hecho sobre la marcha.
+
+### Estado por fase del plan
+
+| Fase | Estado | Qué falta exactamente |
+|---|---|---|
+| **0 — Quick wins técnicos** | 4 de 5 | Falta **0.3**: alta en Bing Webmaster Tools + IndexNow. 0.1 verificado (308 correcto), 0.2, 0.4 y 0.5 hechos. |
+| **1 — Bodas + desayunos** | 2 de 3 | Falta **1.3**: decisión sobre el clúster matrimonio (recordatorios/detalles, 46 impresiones/mes sin capturar). |
+| **2 — Autoridad local** | 0 de 4 | Todo: GBP (2.1), sistema de reseñas (2.2), citaciones NAP (2.3), enlaces locales (2.4). Es la fase que desbloquea las posiciones 7–10 y ninguna parte es ejecutable desde el código. |
+| **3 — Contenido** | 2 de 6 artículos + 3.1 | Publicados los dos de refrigerios y la sección diáspora. Faltan 4 artículos: desayunos sorpresa, primera comunión (publicar en enero), arreglos para bodas y catering infantil. |
+| **4 — GEO / IA** | Base puesta, sin medición | robots.txt, llms.txt, schema y bloques citables ya están (4.1). Faltan 4.2 (Bing → ChatGPT/Copilot), 4.3 (Reddit → Perplexity), 4.4 (YouTube Shorts + unificar bios sociales), 4.5 (contenido con datos propios) y el baseline mensual de pruebas en IA. |
+| **5 — Temporadas** | 0 de 5 | Amor y Amistad es la urgente: las búsquedas pican en septiembre y hoy es 16 de agosto. |
 
 ### Pendiente — requiere acceso o decisión del negocio
 
@@ -50,6 +67,15 @@ Aparecieron al cruzar los datos con el código. Los tres primeros ya están corr
 | Fase 2 completa: GBP, reseñas, Bing Places, Apple Business Connect, citaciones | Requieren credenciales y gestión externa |
 | Decisión sobre ofrecer recordatorios/detalles de matrimonio (P5, 46 impresiones/mes) | Decisión de catálogo; no añadí el servicio al sitio sin confirmación |
 | Colección Amor y Amistad (septiembre) | Productos en Sanity |
+| Push de los 9 commits a `origin/main` | No se ha pedido; el trabajo está commiteado localmente |
+
+### Pendiente — ejecutable en código cuando se pida
+
+| Pendiente | Origen |
+|---|---|
+| Limpiar jerga anglo de keywords, schema y cuerpo en `/refrigerios` y `/decoraciones`, y unificar vocabulario con la landing de bodas | H5 |
+| Artículo 3: "Ideas de desayuno sorpresa en Medellín según la ocasión" | Fase 3, refuerza la landing nueva |
+| Artículos 4–6: primera comunión, arreglos para bodas, catering infantil | Fase 3 |
 
 ---
 
