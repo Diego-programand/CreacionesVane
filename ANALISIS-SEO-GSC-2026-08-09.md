@@ -23,7 +23,10 @@
 | Titles acortados en las 12 páginas del sitio para no truncarse en el SERP (50–61 caracteres, verificado en HTML renderizado) | todas las `page.tsx`, `app/lib/seo.ts` | Hecho |
 | SEO de las 76 fichas de producto: tipo + ciudad en title, precio y entrega en description | `app/producto/[slug]/page.tsx` | Hecho |
 | Imágenes 404 corregidas en schemas y OG | `app/lib/seo.ts`, `app/anchetas-medellin-domicilio/page.tsx`, `app/creaciones-vane/page.tsx` | Hecho |
-| Jerga anglo eliminada del `<title>` y la `description` de refrigerios y decoraciones | `app/refrigerios/page.tsx`, `app/decoraciones/page.tsx` | **Parcial** — sigue en keywords, schema y cuerpo (ver H5) |
+| Jerga anglo eliminada de title, description, keywords, schema y cuerpo; vocabulario unificado con la landing de bodas (H5 cerrado) | `app/refrigerios/page.tsx`, `app/decoraciones/page.tsx`, `app/components/FilterSidebar.tsx` | Hecho |
+| Landing estacional `/regalos-amor-y-amistad-medellin` con schema Event para la fecha de la celebración | `app/regalos-amor-y-amistad-medellin/page.tsx` | Hecho |
+| Tercer artículo del blog: ideas de desayuno sorpresa según la ocasión | `app/lib/blog.ts` | Hecho |
+| Entidad de marca reforzada: `alternateName`, `knowsAbout`, `foundingLocation`, `makesOffer` con las 5 landings (ataca P3) | `app/lib/seo.ts` | Hecho |
 | Verificación redirect http→https | — | Ya correcto: devuelve 308 (permanente, equivalente a 301 para Google) |
 | Precios de anchetas alineados entre JSON-LD, UI, llms.txt y `priceRanges` ($80.000 / $130.000 / $180.000, confirmados por el negocio) | `app/anchetas-medellin-domicilio/page.tsx`, `app/lib/business.ts`, `public/llms.txt` | Hecho |
 | Bloque y FAQ para compradores desde el exterior (Fase 3.1) | `app/anchetas-medellin-domicilio/page.tsx`, `app/desayunos-sorpresa-medellin/page.tsx` | Hecho |
@@ -54,9 +57,9 @@ Los datos respaldan limpiarlo: en 12 meses **"box lunch" y "backdrop" no generar
 | **0 — Quick wins técnicos** | 4 de 5 | Falta **0.3**: alta en Bing Webmaster Tools + IndexNow. 0.1 verificado (308 correcto), 0.2, 0.4 y 0.5 hechos. |
 | **1 — Bodas + desayunos** | 2 de 3 | Falta **1.3**: decisión sobre el clúster matrimonio (recordatorios/detalles, 46 impresiones/mes sin capturar). |
 | **2 — Autoridad local** | 0 de 4 | Todo: GBP (2.1), sistema de reseñas (2.2), citaciones NAP (2.3), enlaces locales (2.4). Es la fase que desbloquea las posiciones 7–10 y ninguna parte es ejecutable desde el código. |
-| **3 — Contenido** | 2 de 6 artículos + 3.1 | Publicados los dos de refrigerios y la sección diáspora. Faltan 4 artículos: desayunos sorpresa, primera comunión (publicar en enero), arreglos para bodas y catering infantil. |
-| **4 — GEO / IA** | Base puesta, sin medición | robots.txt, llms.txt, schema y bloques citables ya están (4.1). Faltan 4.2 (Bing → ChatGPT/Copilot), 4.3 (Reddit → Perplexity), 4.4 (YouTube Shorts + unificar bios sociales), 4.5 (contenido con datos propios) y el baseline mensual de pruebas en IA. |
-| **5 — Temporadas** | 0 de 5 | Amor y Amistad es la urgente: las búsquedas pican en septiembre y hoy es 16 de agosto. |
+| **3 — Contenido** | 3 de 6 artículos + 3.1 | Publicados los dos de refrigerios, el de desayunos sorpresa y la sección diáspora. Faltan 3: primera comunión (publicar en enero, antes de temporada), arreglos para bodas y refrigerios para fiestas infantiles. |
+| **4 — GEO / IA** | Base ampliada, sin medición | robots.txt, llms.txt, schema, bloques citables y entidad de marca reforzada ya están (4.1). Faltan 4.2 (Bing → ChatGPT/Copilot), 4.3 (Reddit → Perplexity), 4.4 (YouTube Shorts + unificar bios sociales), 4.5 (contenido con datos propios) y el baseline mensual de pruebas en IA. |
+| **5 — Temporadas** | 1 de 5 | **Amor y Amistad tiene landing publicada** con schema Event. Falta la colección de productos temáticos en Sanity y activar publicaciones de GBP. Siguientes: Navidad (preparar en septiembre), Día de la Madre, primera comunión 2027. |
 
 ### Pendiente — requiere acceso o decisión del negocio
 
@@ -73,9 +76,9 @@ Los datos respaldan limpiarlo: en 12 meses **"box lunch" y "backdrop" no generar
 
 | Pendiente | Origen |
 |---|---|
-| Limpiar jerga anglo de keywords, schema y cuerpo en `/refrigerios` y `/decoraciones`, y unificar vocabulario con la landing de bodas | H5 |
-| Artículo 3: "Ideas de desayuno sorpresa en Medellín según la ocasión" | Fase 3, refuerza la landing nueva |
-| Artículos 4–6: primera comunión, arreglos para bodas, catering infantil | Fase 3 |
+| Artículos 4–6: primera comunión (enero), arreglos para bodas, refrigerios para fiestas infantiles | Fase 3 |
+| Renombrar en Sanity los productos `lunch-corporativo-tradicion-calidad` y `lunch-picnic-tradicional` | H5 — son nombres comerciales reales, así que el cambio es decisión del negocio y no se tocó desde el código |
+| Actualizar `FECHA_CELEBRACION` en la landing de Amor y Amistad cada septiembre | Fase 5 — está marcado en el código |
 
 ---
 
