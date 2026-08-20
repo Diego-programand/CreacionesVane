@@ -104,7 +104,7 @@ export default async function Home() {
     },
     {
       q: '¿Cuánto cuesta un desayuno sorpresa en Medellín?',
-      a: 'Nuestros desayunos sorpresa van desde $55.000 hasta $190.000 COP. Incluyen frutas frescas, jugos naturales, sándwich gourmet y decoración temática personalizada. El precio varía según el tamaño y acompañamientos como peluches, globos o ramos de rosas.',
+      a: 'Nuestros desayunos sorpresa van desde $90.000 hasta $190.000 COP. Incluyen frutas frescas, jugos naturales, sándwich gourmet y decoración temática personalizada. El precio varía según el tamaño y acompañamientos como peluches, globos o ramos de rosas.',
     },
     {
       q: '¿Qué zonas de Medellín cubren para entregas?',

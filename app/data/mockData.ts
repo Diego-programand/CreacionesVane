@@ -557,7 +557,7 @@ export const productosMock: Product[] = [
     id: 'det-des-007',
     nombre: 'Mi Primera Gran Sorpresa: Pocoyó',
     descripcion: 'Desayuno infantil de Pocoyó en Medellín para los más pequeñitos. Diseñado especialmente para primeros cumpleaños y edades tempranas. Cargado de colores primarios estimulantes, globos juguetones seguros y selección de alimentos nutritivos y deliciosos. Personalizado con nombre del cumpleañero para que se sienta protagonista de su día. Ideal para celebraciones en casa o jardines infantiles de Medellín. ¡Transforma el despertar en fiesta de alegría y diversión!',
-    precio: 55000,
+    precio: 90000,
     imagen: getCldUrl('desayuno7_olop8r'),
     categoria: 'Detalles',
     destacado: false,

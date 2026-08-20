@@ -352,7 +352,7 @@ const POST_DESAYUNOS: BlogPost = {
   descripcion:
     'Qué desayuno sorpresa elegir según la ocasión y a quién se lo envías: cumpleaños, aniversario, Día de la Madre o un gracias. Con precios reales y horarios de entrega en Medellín.',
   respuestaDirecta:
-    'Un desayuno sorpresa se elige por la ocasión y por la hora en que la persona lo recibe. Para cumpleaños funciona la entrega a primera hora con decoración temática; para aniversarios, una presentación con rosas frescas; y para agradecer, algo neutro que se pueda recibir en la oficina. En Medellín cuestan entre $55.000 y $190.000.',
+    'Un desayuno sorpresa se elige por la ocasión y por la hora en que la persona lo recibe. Para cumpleaños funciona la entrega a primera hora con decoración temática; para aniversarios, una presentación con rosas frescas; y para agradecer, algo neutro que se pueda recibir en la oficina. En Medellín cuestan entre $90.000 y $190.000.',
   publicado: '2026-08-16',
   actualizado: '2026-08-16',
   categoria: 'Desayunos sorpresa',
@@ -374,7 +374,7 @@ const POST_DESAYUNOS: BlogPost = {
     { type: 'h2', text: '¿Qué lleva un desayuno sorpresa?' },
     {
       type: 'parrafo',
-      text: 'La base es siempre la misma: fruta fresca cortada el día de la entrega, jugo natural en botella, sándwich gourmet y una presentación decorada con tarjeta. Lo que cambia entre un desayuno de $55.000 y uno de $190.000 no es esa base, sino lo que se le suma alrededor: globos, peluche, ramo de rosas, chocolates o postre.',
+      text: 'La base es siempre la misma: fruta fresca cortada el día de la entrega, jugo natural en botella, sándwich gourmet y una presentación decorada con tarjeta. Lo que cambia entre un desayuno de $90.000 y uno de $190.000 no es esa base, sino lo que se le suma alrededor: globos, peluche, ramo de rosas, chocolates o postre.',
     },
     {
       type: 'parrafo',
@@ -414,7 +414,7 @@ const POST_DESAYUNOS: BlogPost = {
     { type: 'h2', text: '¿Cuánto hay que gastar para que se vea bien?' },
     {
       type: 'parrafo',
-      text: 'Con $55.000 se resuelve un desayuno completo y bien presentado. El salto que más se nota visualmente está alrededor de los $90.000, donde entran los globos y el peluche o el ramo, que es lo que hace que la foto se vea como la gente imagina un desayuno sorpresa. Por encima de $150.000 lo que crece es el tamaño del peluche, la cantidad de rosas y los chocolates.',
+      text: 'Con $90.000 se resuelve un desayuno completo, bien presentado y con globos: es el punto donde la foto ya se ve como la gente imagina un desayuno sorpresa. El siguiente salto que más se nota está alrededor de los $120.000, cuando entra el peluche o el ramo de rosas. Por encima de $150.000 lo que crece es el tamaño del peluche, la cantidad de rosas y los chocolates.',
     },
     {
       type: 'parrafo',
@@ -429,7 +429,7 @@ const POST_DESAYUNOS: BlogPost = {
   faqs: [
     {
       q: '¿Cuánto cuesta un desayuno sorpresa en Medellín?',
-      a: 'Entre $55.000 y $190.000 COP según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con mensaje. Los globos, el peluche, el ramo de rosas y los chocolates son los que mueven el precio dentro de ese rango.',
+      a: 'Entre $90.000 y $190.000 COP según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con mensaje. Los globos, el peluche, el ramo de rosas y los chocolates son los que mueven el precio dentro de ese rango.',
     },
     {
       q: '¿A qué hora entregan los desayunos sorpresa?',

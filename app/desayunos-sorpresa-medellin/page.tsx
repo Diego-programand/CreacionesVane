@@ -32,7 +32,7 @@ import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
  *  - Mobile-first agresivo (67% del tráfico del sitio es móvil).
  *
  * PRECIOS: solo se publican los extremos confirmados del negocio
- * ($55.000–$190.000, fuente: llms.txt y BUSINESS.priceRanges.desayunos). Los
+ * ($90.000–$190.000, fuente: llms.txt y BUSINESS.priceRanges.desayunos). Los
  * tramos intermedios NO se inventan — cuando el negocio confirme los precios
  * exactos por tamaño, convertir TIPOS en paquetes con precio fijo y cambiar
  * AggregateOffer por OfferCatalog, igual que en las otras landings.
@@ -41,12 +41,12 @@ import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
 const PAGE_PATH = '/desayunos-sorpresa-medellin';
 const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
-const PRECIO_MIN = BUSINESS.priceRanges.desayunos.low; // 55.000
+const PRECIO_MIN = BUSINESS.priceRanges.desayunos.low; // 90.000
 const PRECIO_MAX = BUSINESS.priceRanges.desayunos.high; // 190.000
 
 export const metadata: Metadata = pageMetadata({
   title: 'Desayunos Sorpresa a Domicilio en Medellín',
-  description: `Desayunos sorpresa a domicilio en Medellín desde $55.000. Fruta fresca, jugo natural, sándwich gourmet y decoración temática. Pide antes de las 12:00 PM y llega hoy. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Desayunos sorpresa a domicilio en Medellín desde $90.000. Fruta fresca, jugo natural, sándwich gourmet y decoración temática. Confirma con 24 horas y llega a la hora que elijas. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   keywords: [
     'desayunos sorpresa medellín',
@@ -174,7 +174,7 @@ const OCASIONES = [
 const FAQS = [
   {
     q: '¿Cuánto cuesta un desayuno sorpresa en Medellín?',
-    a: 'Los desayunos sorpresa van desde $55.000 COP hasta $190.000 COP según el tamaño, los acompañamientos y los extras que elijas (peluche, ramo de rosas, globos). Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Escríbenos con tu presupuesto y te armamos la mejor opción dentro de ese rango.',
+    a: 'Los desayunos sorpresa van desde $90.000 COP hasta $190.000 COP según el tamaño, los acompañamientos y los extras que elijas (peluche, ramo de rosas, globos). Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Escríbenos con tu presupuesto y te armamos la mejor opción dentro de ese rango.',
   },
   {
     q: '¿Entregan desayunos sorpresa el mismo día en Medellín?',
@@ -309,7 +309,7 @@ export default function DesayunosSorpresaMedellinPage() {
     '@id': `${PAGE_URL}#localbusiness`,
     name: 'Creaciones Vane — Desayunos Sorpresa a Domicilio en Medellín',
     description:
-      'Desayunos sorpresa a domicilio en Medellín y el Valle de Aburrá con fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta personalizada. Entrega el mismo día confirmando antes de las 12:00 PM. Desde $55.000 COP.',
+      'Desayunos sorpresa a domicilio en Medellín y el Valle de Aburrá con fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta personalizada. Se confirma con 24 horas de anticipación para reservar la hora exacta de la entrega. Desde $90.000 COP.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,
@@ -468,7 +468,7 @@ export default function DesayunosSorpresaMedellinPage() {
                 <div className="mt-10 sm:mt-14 flex flex-wrap items-center gap-x-6 gap-y-3 text-white/80 text-sm">
                   <span className="flex items-center gap-2">
                     <ICONS.check className="w-4 h-4" />
-                    Desde $55.000
+                    Desde $90.000
                   </span>
                   <span className="hidden sm:inline w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-2">
@@ -501,7 +501,7 @@ export default function DesayunosSorpresaMedellinPage() {
         >
           <div className="max-w-3xl mx-auto">
             <p className="text-base sm:text-lg text-stone-700 leading-relaxed">
-              <strong className="text-stone-900">Un desayuno sorpresa en Medellín cuesta entre $55.000 y $190.000 COP</strong> según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Creaciones Vane entrega el mismo día en Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí y Bello confirmando el pedido por WhatsApp al {BUSINESS.phoneDisplay} antes de las 12:00 PM.
+              <strong className="text-stone-900">Un desayuno sorpresa en Medellín cuesta entre $90.000 y $190.000 COP</strong> según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Creaciones Vane entrega en Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí y Bello confirmando el pedido por WhatsApp al {BUSINESS.phoneDisplay} con 24 horas de anticipación.
             </p>
           </div>
         </section>
@@ -560,7 +560,7 @@ export default function DesayunosSorpresaMedellinPage() {
                 Desayunos según a quién sorprendes
               </h2>
               <p className="text-stone-600 text-base sm:text-lg max-w-2xl leading-relaxed mb-10 sm:mb-14">
-                Cada desayuno se arma contigo. Nos cuentas para quién es y la ocasión, y ajustamos tamaño, decoración y extras dentro del rango de $55.000 a $190.000.
+                Cada desayuno se arma contigo. Nos cuentas para quién es y la ocasión, y ajustamos tamaño, decoración y extras dentro del rango de $90.000 a $190.000.
               </p>
             </ScrollReveal>
 
@@ -609,7 +609,7 @@ export default function DesayunosSorpresaMedellinPage() {
                   Rango de precios
                 </p>
                 <p className="text-3xl sm:text-4xl font-bold mb-4">
-                  $55.000
+                  $90.000
                   <span className="text-lg font-normal text-white/70 mx-2">a</span>
                   $190.000
                   <span className="text-sm font-normal text-white/60 ml-2">COP</span>

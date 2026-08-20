@@ -235,7 +235,7 @@ export default async function CreacionesVanePage() {
                     Desayunos sorpresa a domicilio en Medellín
                   </p>
                   <p className="text-stone-500 text-sm">
-                    Desde $55.000 — fruta fresca, jugo natural y sándwich gourmet
+                    Desde $90.000 — fruta fresca, jugo natural y sándwich gourmet
                   </p>
                 </div>
                 <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

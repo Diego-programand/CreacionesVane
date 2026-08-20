@@ -125,7 +125,7 @@ const FAQS = [
   },
   {
     q: '¿Cuánto cuesta un regalo de Amor y Amistad en Medellín?',
-    a: 'Los detalles arrancan en $80.000 COP y llegan hasta $200.000 según el tamaño y lo que incluyan. Los desayunos sorpresa van de $55.000 a $190.000. Si tienes un presupuesto definido, escríbenos con esa cifra y armamos la mejor opción dentro de él en lugar de ofrecerte algo que se pase.',
+    a: 'Los detalles arrancan en $80.000 COP y llegan hasta $200.000 según el tamaño y lo que incluyan. Los desayunos sorpresa van de $90.000 a $190.000. Si tienes un presupuesto definido, escríbenos con esa cifra y armamos la mejor opción dentro de él en lugar de ofrecerte algo que se pase.',
   },
   {
     q: '¿Hasta cuándo puedo pedir para que llegue el día de Amor y Amistad?',
@@ -210,7 +210,10 @@ export default function AmorYAmistadMedellinPage() {
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'COP',
-      lowPrice: BUSINESS.priceRanges.desayunos.low,
+      // El mínimo visible en esta landing es el de los detalles ($80.000): las
+      // tarjetas de IDEAS lo muestran así. Los desayunos arrancan más arriba,
+      // por lo que usarlos como lowPrice contradiría lo que se ve en pantalla.
+      lowPrice: BUSINESS.priceRanges.detalles.low,
       highPrice: BUSINESS.priceRanges.detalles.high,
       offerCount: IDEAS.length,
       availability: 'https://schema.org/InStock',
@@ -391,7 +394,7 @@ export default function AmorYAmistadMedellinPage() {
               <strong className="text-stone-900">
                 En Colombia, Amor y Amistad se celebra el tercer sábado de septiembre: en 2026 cae el {FECHA_LEGIBLE}.
               </strong>{' '}
-              Un detalle para esa fecha en Medellín cuesta entre $80.000 y $200.000 COP según el tamaño, y los desayunos sorpresa entre $55.000 y $190.000. Creaciones Vane entrega a domicilio el mismo día en Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí y Bello confirmando por WhatsApp al {BUSINESS.phoneDisplay} antes de las 12:00 PM.
+              Un detalle para esa fecha en Medellín cuesta entre $80.000 y $200.000 COP según el tamaño, y los desayunos sorpresa entre $90.000 y $190.000. Creaciones Vane entrega a domicilio en Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí y Bello confirmando por WhatsApp al {BUSINESS.phoneDisplay} con 24 horas de anticipación.
             </p>
           </div>
         </section>
@@ -506,7 +509,7 @@ export default function AmorYAmistadMedellinPage() {
                 },
                 {
                   titulo: 'Desayunos sorpresa',
-                  texto: 'Fruta fresca, jugo natural y sándwich gourmet entregados temprano. Desde $55.000.',
+                  texto: 'Fruta fresca, jugo natural y sándwich gourmet entregados temprano. Desde $90.000.',
                   path: '/desayunos-sorpresa-medellin',
                 },
                 {
