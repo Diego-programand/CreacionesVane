@@ -8,6 +8,44 @@
 
 ---
 
+## 0-bis. Medición del sprint — export `…2026-08-20` (corte de datos 2026-08-18)
+
+Segundo export de GSC, 11 días después del primero. Sprint 1 desplegado el 2026-08-10, sprint 2 el 2026-08-16. Para evitar el sesgo de las ventanas deslizantes de 3 meses, la comparación se hace por bloques de 9 días sobre la serie diaria:
+
+| Bloque de 9 días | Clics | Impresiones | CTR | Pos. media |
+|---|---|---|---|---|
+| 23–31 jul (antes) | 44 | 679 | 6,48% | 8,31 |
+| 1–9 ago (antes) | 46 | 891 | 5,16% | 10,13 |
+| **10–18 ago (post-sprint 1)** | **57** | **1.278** | 4,46% | 9,62 |
+
+**Impresiones +43%, clics +24%.** Récord absoluto de la serie el 18-ago: 18 clics / 262 impresiones / pos. 6,1 (el máximo previo en 3 meses eran 11 clics). El día 17 marcó 11 clics. El CTR agregado baja porque el crecimiento entra en posiciones 10–20, no por deterioro: la posición media empeora en paralelo al aumento de superficie. Nota: el último día de un export suele venir incompleto por la latencia de GSC.
+
+Por página (export anterior → actual): anchetas 73 → 94 clics; decoraciones 24 → 33; catálogo 15 → 23; refrigerios empresariales 49 → 55; bodas 32 → 35 (pero +395 impresiones y la posición **empeora** de 12,66 a 13,99); home 31 → 24 clics y −197 impresiones (canibalización esperada: las landings absorben lo que antes caía en la home). La versión `http://` desapareció del informe: el 308 quedó consolidado. España rinde a 10,75% de CTR (la sección para el exterior funciona) y siguen entrando consultas de Google AI Mode, ahora con clics ("sitio donde comprar", "cual es el contacto").
+
+### Corrección de rumbo que imponen los datos
+
+| Clúster | Impresiones/3 meses | Situación |
+|---|---|---|
+| **Bodas / matrimonio** | **~711 (40% del sitio)** | El peor convertido. "arreglos para bodas medellín" 204 → 268 impresiones, mejora de pos. 20,08 a 18,29 pero sigue en página 2 |
+| Anchetas / detalles | ~303 | Sano: la landing es la #1 del sitio en clics |
+| Refrigerios | ~274 | "refrigerios para eventos" mejora a pos. 4,02 pero el CTR **cae** de 4,31% a 3,40% (P8 sigue abierto) |
+| Marca | ~179 | Pos. 4,24 (antes 4,45). El refuerzo de entidad es del 16-ago: solo 2 días de datos, no evaluable aún |
+| **Desayunos** | **~10** | Rankea pos. 1–1,67 y aun así casi no hay impresiones: **la demanda de búsqueda del término es marginal en Medellín**. La landing no fue un error, pero no es donde está el volumen |
+
+Sub-clúster matrimonio no atendido: "listas de boda medellín" 54 → 127 impresiones (pos. 7,17), "recordatorios matrimonio medellín" 46 → 105, "invitaciones matrimonio medellín" 27 → 47. Se duplicó en 11 días. **Conclusión: el siguiente sprint es bodas, no contenido nuevo de otras verticales.**
+
+### Ejecutado el 2026-08-20 sobre esta lectura
+
+| Acción | Archivos | Motivo |
+|---|---|---|
+| Precio mínimo de desayunos $55.000 → **$90.000** en las 6 superficies de texto, JSON-LD y llms.txt | `app/lib/business.ts` + 6 archivos | Cifra real confirmada por el negocio |
+| `lowPrice` del AggregateOffer de Amor y Amistad pasa a `detalles.low` | `app/regalos-amor-y-amistad-medellin/page.tsx` | Con desayunos en $90.000, el schema declaraba un mínimo mayor que el "Desde $80.000" visible (misma clase de error que H4) |
+| **Schema `Event` eliminado** | `app/regalos-amor-y-amistad-medellin/page.tsx` | GSC reportó 3 campos faltantes (image, offers, performer). Además `Event` está reservado para eventos programados a los que se asiste, no para fechas de calendario: el marcado era incorrecto de origen. La fecha sigue en hero, bloque citable y FAQ |
+| `robots.txt` deja de bloquear `/_next/static/` y `/_next/image/` | `public/robots.txt` | Bloqueaba el CSS, el JS y las imágenes que Google necesita para renderizar |
+| Sección **"Invitaciones de matrimonio en Medellín"** + 2 FAQ + keywords + schema + llms.txt | `app/decoracion-bodas-medellin/page.tsx`, `public/llms.txt` | La landing decía "boda" 83 veces y "matrimonio" 2. Déficit léxico, no de servicio: las invitaciones ya iban en Premium y Lujo. Tras el cambio, 42 menciones de "matrimonio" en el HTML renderizado |
+
+---
+
 ## 0. Estado de ejecución — actualizado 2026-08-10
 
 ### Implementado en código (build verificado, 94 páginas generadas, 9 commits en `main` sin pushear)
@@ -66,7 +104,7 @@ Los datos respaldan limpiarlo: en 12 meses **"box lunch" y "backdrop" no generar
 | Pendiente | Por qué no puedo hacerlo yo |
 |---|---|
 | Foto propia de desayunos → `/images/desayunosSorpresaMedellin.webp` | La landing usa `banner-anchetas.webp` como provisional |
-| Precios exactos por tramo de desayuno | Hoy la landing publica solo el rango real ($55.000–$190.000) para no inventar cifras |
+| Precios exactos por tramo de desayuno | Hoy la landing publica solo el rango real ($90.000–$190.000, confirmado por el negocio el 2026-08-20) para no inventar cifras |
 | Fase 2 completa: GBP, reseñas, Bing Places, Apple Business Connect, citaciones | Requieren credenciales y gestión externa |
 | Decisión sobre ofrecer recordatorios/detalles de matrimonio (P5, 46 impresiones/mes) | Decisión de catálogo; no añadí el servicio al sitio sin confirmación |
 | Colección Amor y Amistad (septiembre) | Productos en Sanity |
@@ -402,7 +440,7 @@ Allow: /
 - Éxito: "arreglos para bodas medellín" de pos. 20 a <10 en 8 semanas; página de pos. 12,66 a <9.
 
 **1.2. Crear `/desayunos-sorpresa-medellin` (P2).**
-- Replicar la estructura de la landing de anchetas (la plantilla ganadora): paquetes con precios (COP 55.000–190.000 según llms.txt), zonas de entrega el mismo día, proceso por WhatsApp, galería, FAQ, BreadcrumbList + Service schema + FAQPage.
+- Replicar la estructura de la landing de anchetas (la plantilla ganadora): paquetes con precios (COP 90.000–190.000 según llms.txt), zonas de entrega el mismo día, proceso por WhatsApp, galería, FAQ, BreadcrumbList + Service schema + FAQPage.
 - Variantes semánticas a cubrir en H2/contenido: desayuno sorpresa para novia/novio, cumpleaños, aniversario, día de la madre, a domicilio, empresarial.
 - Añadir al sitemap con priority 0.85, a llms.txt, y enlazar desde home (sección hero/categorías), desde `/creaciones-vane` y desde la landing de anchetas ("¿Prefieres un desayuno sorpresa?").
 - **Canonicalización de intención:** en `/creaciones-vane`, el título debe dejar de competir por "desayunos sorpresa" como término principal para que la nueva landing lo herede sin canibalización.
