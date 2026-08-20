@@ -34,10 +34,10 @@ const PAGE_PATH = '/regalos-amor-y-amistad-medellin';
 const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 /**
- * Tercer sábado de septiembre. Actualizar cada año — también en el schema
- * Event y en el copy del hero.
+ * Tercer sábado de septiembre. Actualizar cada año: alimenta el hero, el bloque
+ * citable y la primera FAQ, que son las tres superficies desde las que Google y
+ * los motores de IA responden "¿cuándo es Amor y Amistad?".
  */
-const FECHA_CELEBRACION = '2026-09-19';
 const FECHA_LEGIBLE = 'sábado 19 de septiembre de 2026';
 
 export const metadata: Metadata = pageMetadata({
@@ -223,30 +223,14 @@ export default function AmorYAmistadMedellinPage() {
   };
 
   /*
-    Event marca la fecha de la celebración para que Google y los motores de IA
-    puedan responder "¿cuándo es Amor y Amistad?" citando esta página. Actualizar
-    FECHA_CELEBRACION cada año.
+    Aquí vivía un schema Event que marcaba el Día de Amor y Amistad. Se retiró el
+    2026-08-20: Search Console reportaba tres campos faltantes (image, offers,
+    performer) y, sobre todo, Event está reservado para eventos programados a los
+    que se asiste — no para fechas del calendario ni promociones. La celebración
+    no es un evento que ocurra en nuestra dirección, así que el marcado era
+    incorrecto de origen. La fecha se sigue publicando en el hero, en el bloque
+    citable y en la primera FAQ, que es de donde la extraen Google y las IA.
   */
-  const jsonLdEvent = {
-    '@context': 'https://schema.org',
-    '@type': 'Event',
-    '@id': `${PAGE_URL}#evento`,
-    name: 'Día de Amor y Amistad en Colombia 2026',
-    description:
-      'Amor y Amistad se celebra en Colombia el tercer sábado de septiembre. Creaciones Vane entrega anchetas, desayunos sorpresa y detalles a domicilio en Medellín durante toda la semana de la celebración.',
-    startDate: FECHA_CELEBRACION,
-    endDate: FECHA_CELEBRACION,
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    location: {
-      '@type': 'Place',
-      name: 'Medellín y Valle de Aburrá',
-      address: postalAddress(),
-      geo: geoCoordinates(),
-    },
-    organizer: { '@id': `${BUSINESS.url}/#organization` },
-  };
-
   const jsonLdLocalBusiness = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -281,10 +265,6 @@ export default function AmorYAmistadMedellinPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdService) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdEvent) }}
       />
       <script
         type="application/ld+json"
