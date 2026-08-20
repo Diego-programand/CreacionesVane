@@ -26,8 +26,8 @@ import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
  * vende todo el año (anchetas, desayunos sorpresa, peluches, ramos,
  * chocolates) con los precios ya confirmados en BUSINESS.priceRanges.
  *
- * Es una landing permanente, no de un solo año: FECHA_CELEBRACION se actualiza
- * cada temporada y el contenido sigue sirviendo. Por eso el title no lleva año.
+ * Es una landing permanente, no de un solo año: FECHA_LEGIBLE se actualiza cada
+ * temporada y el contenido sigue sirviendo. Por eso el title no lleva año.
  */
 
 const PAGE_PATH = '/regalos-amor-y-amistad-medellin';
