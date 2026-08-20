@@ -58,7 +58,18 @@ export const metadata: Metadata = pageMetadata({
     'decoración bodas pequeñas medellín',
     'decoración bodas civiles medellín',
     'decoradores de bodas medellín',
+    /*
+      GSC 2026-08-18: "invitaciones matrimonio medellín" acumula 47 impresiones
+      en posición 16,98 con 0 clics. La landing decía "boda" 83 veces y
+      "matrimonio" 2; el déficit es léxico, no de servicio (las invitaciones ya
+      van en Premium y Lujo). La sección "bodas-invitaciones" cubre el vocabulario
+      real de la consulta.
+    */
     'invitaciones bodas medellín',
+    'invitaciones matrimonio medellín',
+    'invitaciones de matrimonio medellín',
+    'invitaciones digitales matrimonio medellín',
+    'tarjetas de matrimonio medellín',
     'paquetes decoración bodas medellín',
     'cotización decoración boda medellín',
     'montaje boda medellín',
@@ -172,6 +183,48 @@ const PAQUETES = [
   },
 ] as const;
 
+/**
+ * Formatos de invitación. Solo se describe lo que ya está comprometido en los
+ * paquetes (regla 2 del canon: las invitaciones son el único valor agregado
+ * fuera de la decoración). No se publican precios porque el negocio no los ha
+ * confirmado por separado: la invitación se cotiza dentro del paquete.
+ */
+const INVITACIONES = [
+  {
+    id: 'digital',
+    formato: 'Invitación digital personalizada',
+    body: 'El formato que más se pide. Se diseña sobre la misma paleta de la decoración, así que la invitación y el montaje del día se ven como parte de lo mismo.',
+    detalles: [
+      'Nombres, fecha, hora y direcciones de ceremonia y recepción',
+      'Diseño sobre tu paleta y tu estilo',
+      'Lista para enviar por WhatsApp a la lista de invitados',
+    ],
+    nota: 'Incluida en el paquete Premium',
+  },
+  {
+    id: 'digital-adicional',
+    formato: 'Invitación digital como adicional',
+    body: 'Si tomas el paquete Esencial y quieres las invitaciones, se suman como valor adicional sobre el paquete. Te confirmamos el valor exacto antes de reservar.',
+    detalles: [
+      'Mismo diseño personalizado del Premium',
+      'Se cotiza sobre el paquete Esencial',
+      'Apruebas el diseño antes de la entrega final',
+    ],
+    nota: 'Opcional en el paquete Esencial',
+  },
+  {
+    id: 'impresa',
+    formato: 'Invitación impresa premium',
+    body: 'Para matrimonios que quieren entregar la invitación en físico a los invitados más cercanos, con acabado de mayor gramaje y presentación cuidada.',
+    detalles: [
+      'Impresión premium sobre el diseño aprobado',
+      'Se puede combinar con la versión digital',
+      'Cantidad definida según tu lista de invitados',
+    ],
+    nota: 'Disponible en el paquete Lujo',
+  },
+] as const;
+
 const FAQS = [
   {
     q: '¿Cuánto cuestan los arreglos para una boda en Medellín?',
@@ -200,6 +253,14 @@ const FAQS = [
   {
     q: '¿Hacen también las invitaciones de la boda?',
     a: 'Sí. Las invitaciones digitales personalizadas vienen incluidas en el paquete Premium y son opcionales en Esencial con un valor adicional. En el paquete Lujo puedes elegir entre invitaciones digitales o impresas premium.',
+  },
+  {
+    q: '¿Cómo son las invitaciones de matrimonio que diseñan?',
+    a: 'Diseñamos la invitación de matrimonio sobre tu paleta y tu estilo, con los nombres, la fecha, la hora y las direcciones de la ceremonia y la recepción. La versión digital se entrega lista para enviar por WhatsApp a la lista de invitados y la versión impresa premium está disponible en el paquete Lujo. Antes de la entrega final apruebas el diseño, igual que con el mood board de la decoración.',
+  },
+  {
+    q: '¿Con cuánta anticipación hay que tener listas las invitaciones de matrimonio?',
+    a: 'Conviene enviarlas entre 8 y 12 semanas antes del matrimonio para que los invitados confirmen a tiempo, y unas semanas más si esperas invitados desde otras ciudades o desde el exterior. Como el diseño se hace sobre la paleta del evento, lo práctico es definirlo junto con el paquete de decoración y no dejarlo para el final.',
   },
   {
     q: '¿Las flores naturales están incluidas?',
@@ -362,7 +423,7 @@ export default function DecoracionBodasMedellinPage() {
     '@id': `${PAGE_URL}#localbusiness`,
     name: 'Creaciones Vane — Arreglos y Decoración para Bodas en Medellín',
     description:
-      'Arreglos y decoración para bodas en Medellín, Envigado y el Valle de Aburrá: arreglos de ceremonia, recepción, zona de fotos y bienvenida con aros con forros, backings de madera, cilindros y mesas reloj. Invitaciones personalizadas como valor adicional. Desde $480.000 COP.',
+      'Arreglos y decoración para bodas en Medellín, Envigado y el Valle de Aburrá: arreglos de ceremonia, recepción, zona de fotos y bienvenida con aros con forros, backings de madera, cilindros y mesas reloj. Invitaciones de matrimonio personalizadas como valor adicional. Desde $480.000 COP.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: '$$-$$$',
@@ -393,7 +454,7 @@ export default function DecoracionBodasMedellinPage() {
     serviceType: 'Arreglos y Decoración para Bodas',
     name: 'Arreglos y Decoración para Bodas en Medellín',
     description:
-      'Arreglos para bodas por zona del evento (ceremonia, recepción, zona de fotos y bienvenida) con aros con forros, backings de madera, cilindros, cilindros de madera y mesas reloj. Invitaciones personalizadas opcionales. Montaje y desmontaje en el Valle de Aburrá.',
+      'Arreglos para bodas por zona del evento (ceremonia, recepción, zona de fotos y bienvenida) con aros con forros, backings de madera, cilindros, cilindros de madera y mesas reloj. Invitaciones de matrimonio digitales o impresas, diseñadas sobre la paleta del evento. Montaje y desmontaje en el Valle de Aburrá.',
     provider: { '@id': `${BUSINESS.url}/#organization` },
     areaServed: [
       { '@type': 'City', name: 'Medellín' },
@@ -802,6 +863,88 @@ export default function DecoracionBodasMedellinPage() {
                   className="inline-flex items-center gap-2 text-sm font-semibold text-[#D81B60] hover:text-[#AD1457] transition-colors"
                 >
                   Cotizar arreglos por zona
+                  <ICONS.arrow className="w-4 h-4" />
+                </a>
+              </div>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ============================================================== */}
+        {/* INVITACIONES DE MATRIMONIO                                      */}
+        {/* ============================================================== */}
+        {/*
+          Cubre "invitaciones matrimonio medellín" (47 impresiones en pos. 16,98,
+          0 clics — GSC 2026-08-18). El servicio ya existía dentro de los
+          paquetes; lo que faltaba era una superficie con el vocabulario de la
+          consulta. Sin precios: la invitación se cotiza dentro del paquete.
+        */}
+        <section
+          id="invitaciones"
+          data-section="bodas-invitaciones"
+          className="px-5 sm:px-8 py-16 sm:py-24 bg-white"
+        >
+          <div className="max-w-6xl mx-auto">
+            <ScrollReveal direction="up">
+              <p className="text-[#D81B60] font-medium text-xs sm:text-sm uppercase tracking-[0.2em] mb-3">
+                Invitaciones
+              </p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 tracking-tight mb-4 max-w-3xl">
+                Invitaciones de matrimonio en Medellín
+              </h2>
+              <p className="text-stone-600 text-base sm:text-lg max-w-2xl leading-relaxed mb-10 sm:mb-14">
+                La invitación es lo primero que ven los invitados de tu matrimonio, semanas antes de la decoración. Por eso la diseñamos sobre la misma paleta del evento: cuando llega el día, la invitación que recibieron y el montaje que ven son la misma idea.
+              </p>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+              {INVITACIONES.map((inv, idx) => (
+                <ScrollReveal key={inv.id} direction="up" delay={0.1 * idx}>
+                  <article className="h-full bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8 flex flex-col">
+                    <ICONS.invitacion className="w-8 h-8 text-[#D81B60] mb-5" />
+                    <h3 className="text-lg sm:text-xl font-semibold text-stone-900 mb-3 leading-snug">
+                      {inv.formato}
+                    </h3>
+                    <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-6">
+                      {inv.body}
+                    </p>
+                    <ul className="space-y-2.5 mb-6 flex-1">
+                      {inv.detalles.map((d) => (
+                        <li
+                          key={d}
+                          className="flex items-start gap-3 text-sm text-stone-700 leading-relaxed"
+                        >
+                          <ICONS.check className="w-4 h-4 mt-0.5 text-[#D81B60] flex-shrink-0" />
+                          <span>{d}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-xs text-stone-500 border-t border-stone-200 pt-4">
+                      {inv.nota}
+                    </p>
+                  </article>
+                </ScrollReveal>
+              ))}
+            </div>
+
+            <ScrollReveal direction="fade" delay={0.2}>
+              <div className="mt-10 sm:mt-12 bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8 max-w-3xl">
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900 mb-3">
+                  ¿Cuándo hay que tenerlas listas?
+                </h3>
+                <p className="text-sm sm:text-base text-stone-600 leading-relaxed mb-5">
+                  Lo habitual es enviarlas entre 8 y 12 semanas antes del matrimonio, y con algo más de margen si esperas invitados de otras ciudades o del exterior. Como el diseño sale de la paleta del evento, conviene definirlas junto con el paquete de decoración y no dejarlas para el final.
+                </p>
+                <a
+                  id="bodas-invitaciones-cta"
+                  href={waUrl(
+                    'Hola Vane, quiero cotizar las invitaciones de mi matrimonio. Te cuento la fecha y la paleta del evento.'
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#D81B60] hover:text-[#AD1457] transition-colors"
+                >
+                  Cotizar las invitaciones
                   <ICONS.arrow className="w-4 h-4" />
                 </a>
               </div>
