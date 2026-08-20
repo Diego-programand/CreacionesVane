@@ -1,17 +1,19 @@
 # =============================================
 # robots.txt — Creaciones Vane (creacionesvane.com)
 # Optimizado para SEO Local Medellín
-# Última actualización: 2026-04-10
+# Última actualización: 2026-08-20
 # =============================================
 
 # ===== REGLA GLOBAL — Permitir crawling de contenido público =====
 User-agent: *
 Allow: /
 
-# Bloquear rutas internas y de sistema
+# Bloquear rutas internas y de sistema.
+# /_next/static/ y /_next/image/ NO se bloquean: contienen el CSS, el JS y las
+# imágenes optimizadas que Google necesita para renderizar la página como la ve
+# un usuario. Bloquearlos degrada la evaluación de mobile-friendliness y saca
+# las imágenes de Google Images.
 Disallow: /api/
-Disallow: /_next/static/
-Disallow: /_next/image/
 Disallow: /admin/
 
 # ===== GOOGLEBOT — Prioridad máxima =====
@@ -22,7 +24,6 @@ Allow: /creaciones-vane
 Allow: /decoraciones
 Allow: /refrigerios
 Disallow: /api/
-Disallow: /_next/static/
 
 # ===== GOOGLEBOT-IMAGE — SEO de imágenes =====
 # Permitir indexación de todas las imágenes del catálogo
@@ -39,7 +40,6 @@ Allow: /logo-*.jpeg
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
-Disallow: /_next/static/
 
 # ===== BOTS DE REDES SOCIALES — OpenGraph previews =====
 User-agent: facebookexternalhit
