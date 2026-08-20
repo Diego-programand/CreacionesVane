@@ -28,7 +28,7 @@ import { breadcrumbSchema, pageMetadata } from '../lib/seo';
  */
 export const metadata: Metadata = pageMetadata({
   title: 'Catálogo de Anchetas y Detalles en Medellín',
-  description: `Mira nuestro catálogo completo de anchetas, peluches, ramos de rosas y cajas de chocolates con entrega el mismo día en Medellín. Pide ahora por WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Mira nuestro catálogo completo de anchetas, peluches, ramos de rosas y cajas de chocolates a domicilio en Medellín. Confirma con 24 horas y elegimos la hora. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/creaciones-vane',
   keywords: [
     'anchetas medellín',
@@ -65,7 +65,7 @@ export default async function CreacionesVanePage() {
     '@id': `${BUSINESS.url}/creaciones-vane#store`,
     name: 'Creaciones Vane — Catálogo de Detalles, Anchetas y Desayunos Sorpresa',
     description:
-      'Catálogo de anchetas personalizadas, desayunos sorpresa, peluches, ramos de rosas y cajas de chocolates a domicilio en Medellín. Entrega el mismo día.',
+      'Catálogo de anchetas personalizadas, desayunos sorpresa, peluches, ramos de rosas y cajas de chocolates a domicilio en Medellín. Pedidos confirmados con 24 horas de anticipación.',
     url: `${BUSINESS.url}/creaciones-vane`,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,
@@ -112,7 +112,7 @@ export default async function CreacionesVanePage() {
           itemOffered: {
             '@type': 'Product',
             name: 'Ramos de Rosas',
-            description: 'Ramos de rosas frescas con entrega el mismo día',
+            description: 'Ramos de rosas frescas a domicilio en Medellín',
             offers: {
               '@type': 'AggregateOffer',
               priceCurrency: 'COP',
@@ -182,13 +182,13 @@ export default async function CreacionesVanePage() {
                 Catálogo de Anchetas y Detalles de Amor
               </h1>
               <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
-                Entrega a domicilio el mismo día en Medellín
+                Entrega a domicilio en Medellín, a la hora que elijas
               </p>
             </ScrollReveal>
 
             <ScrollReveal direction="up" delay={0.6}>
               <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
-                Anchetas personalizadas, desayunos sorpresa, peluches, ramos de rosas y detalles de amor con entrega el mismo día en El Poblado, Envigado, Sabaneta e Itagüí.
+                Anchetas personalizadas, desayunos sorpresa, peluches, ramos de rosas y detalles de amor a domicilio en El Poblado, Envigado, Sabaneta e Itagüí, confirmando con 24 horas de anticipación.
               </p>
             </ScrollReveal>
           </div>
@@ -197,7 +197,7 @@ export default async function CreacionesVanePage() {
         {/*
           Cross-links a los spokes transaccionales. Aprovechan la autoridad del
           hub para enrutar al usuario a landings con paquetes claros y cobertura
-          el mismo día. Desayunos tiene landing propia desde el análisis GSC
+          del Valle de Aburrá. Desayunos tiene landing propia desde el análisis GSC
           2026-08-09 (rankeaba #1 sin URL dedicada).
         */}
         <section
@@ -206,7 +206,7 @@ export default async function CreacionesVanePage() {
         >
           <div className="max-w-5xl mx-auto">
             <p className="text-xs text-[#D81B60] font-semibold uppercase tracking-[0.2em] mb-5 text-center md:text-left">
-              ¿Lo necesitas hoy mismo?
+              ¿Ya sabes qué necesitas?
             </p>
             <div className="grid gap-4 md:grid-cols-2">
               <Link
@@ -218,7 +218,7 @@ export default async function CreacionesVanePage() {
                     Anchetas a domicilio en Medellín
                   </p>
                   <p className="text-stone-500 text-sm">
-                    Desde $80.000 — entrega el mismo día si confirmas antes de las 12:00 PM
+                    Desde $80.000 — confirma con 24 horas y elegimos el día y la hora
                   </p>
                 </div>
                 <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

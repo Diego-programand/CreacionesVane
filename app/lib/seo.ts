@@ -34,7 +34,7 @@ interface PageMetadataInput {
  *
  * Presupuesto de title: el template del layout añade " | Creaciones Vane"
  * (18 caracteres), así que un title propio debe quedar en ≤42 caracteres para
- * no truncarse en el SERP. Los ganchos de CTR (precio, "entrega el mismo día")
+ * no truncarse en el SERP. Los ganchos de CTR (precio, "confirma con 24 horas")
  * van en la description, que dispone de ~155.
  */
 export function pageMetadata({
@@ -133,7 +133,7 @@ export function organizationSchema() {
       `${BASE_URL}/banner-refrigerios.webp`,
     ],
     description:
-      'Creaciones Vane: anchetas, desayunos sorpresa, peluches, ramos, decoración de eventos y refrigerios a domicilio en Medellín y el Valle de Aburrá. Entrega el mismo día.',
+      'Creaciones Vane: anchetas, desayunos sorpresa, peluches, ramos, decoración de eventos y refrigerios a domicilio en Medellín y el Valle de Aburrá. Pedidos confirmados con 24 horas de anticipación.',
     email: BUSINESS.email,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,
@@ -340,6 +340,6 @@ export function geoLandingMetadata({
   slug,
 }: GeoLandingMetaInput): Metadata {
   const title = `${service} en ${neighborhood} | ${BUSINESS.name} Medellín`;
-  const description = `${service} a domicilio en ${neighborhood}, Medellín. Entrega el mismo día. WhatsApp ${BUSINESS.phoneDisplay}.`;
+  const description = `${service} a domicilio en ${neighborhood}, Medellín. Confirma con 24 horas y elegimos la hora. WhatsApp ${BUSINESS.phoneDisplay}.`;
   return pageMetadata({ title, description, path: slug });
 }

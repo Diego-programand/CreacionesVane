@@ -18,8 +18,11 @@ import { breadcrumbSchema, faqSchema, pageMetadata } from '../lib/seo';
  * Landing transaccional #4 (GSC pos 1, baja impresión → empujar volumen).
  *
  * Reglas heredadas del canon:
- *  - Lenguaje del cliente: "ancheta", "domicilio el mismo día", "detalle",
- *    "regalo sorpresa". Sin anglicismos ni jerga.
+ *  - Lenguaje del cliente: "ancheta", "domicilio", "detalle", "regalo
+ *    sorpresa". Sin anglicismos ni jerga.
+ *  - Entrega: se confirma con 24 horas de anticipación sobre la fecha y hora
+ *    que pide el cliente. NO se promete entrega el mismo día en ninguna
+ *    superficie (política del negocio desde 2026-08-20).
  *  - SVGs lineales propios. Sin emojis ni iconos genéricos.
  *  - Sin gradientes. Fucsia marca como destacado.
  *  - Mobile-first agresivo.
@@ -36,13 +39,13 @@ const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 export const metadata: Metadata = pageMetadata({
   title: 'Anchetas a Domicilio en Medellín',
-  description: `Anchetas personalizadas con entrega a domicilio el mismo día en Medellín. Peluches, ramos de rosas, globos y chocolates. Confirma antes de las 12:00 PM y llega hoy. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Anchetas personalizadas a domicilio en Medellín. Peluches, ramos de rosas, globos y chocolates. Confirma con 24 horas y elegimos el día y la hora exacta. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   keywords: [
     'anchetas medellín',
     'anchetas medellín domicilio',
     'anchetas domicilio medellín',
-    'anchetas a domicilio el mismo día medellín',
+    'anchetas a domicilio medellín valle de aburrá',
     'anchetas personalizadas medellín',
     'anchetas sorpresa medellín',
     'anchetas para mamá medellín',
@@ -84,11 +87,11 @@ const PAQUETES = [
       'Snacks y golosinas variadas',
       'Caja decorada en tu paleta',
       'Tarjeta con mensaje personalizado',
-      'Entrega el mismo día en zona cercana',
+      'Entrega en zona cercana el día y la hora que elijas',
     ],
     ctaId: 'anchetas-paquete-detalle',
     waMessage:
-      '¡Hola! Quiero cotizar una ancheta Detalle a domicilio en Medellín. ¿Para hoy mismo?',
+      '¡Hola! Quiero cotizar una ancheta Detalle a domicilio en Medellín. ¿Qué disponibilidad tienen?',
   },
   {
     id: 'clasica',
@@ -103,11 +106,11 @@ const PAQUETES = [
       '1 peluche pequeño o ramo de rosas (a elegir)',
       'Globos decorativos en tu paleta',
       'Caja decorada con tarjeta personalizada',
-      'Entrega el mismo día en zona cercana',
+      'Entrega en zona cercana el día y la hora que elijas',
     ],
     ctaId: 'anchetas-paquete-clasica',
     waMessage:
-      '¡Hola! Quiero cotizar una ancheta Clásica a domicilio en Medellín. ¿Para hoy mismo?',
+      '¡Hola! Quiero cotizar una ancheta Clásica a domicilio en Medellín. ¿Qué disponibilidad tienen?',
   },
   {
     id: 'sorpresa',
@@ -122,7 +125,7 @@ const PAQUETES = [
       'Globos personalizados y caja de lujo',
       'Tarjeta manuscrita con tu mensaje',
       'Foto de la entrega para confirmarte',
-      'Entrega el mismo día en zona cercana',
+      'Entrega en zona cercana el día y la hora que elijas',
     ],
     ctaId: 'anchetas-paquete-sorpresa',
     waMessage:
@@ -149,8 +152,8 @@ const FAQS = [
     a: 'Las anchetas van desde $80.000 COP (Detalle) hasta $180.000 COP (Sorpresa Completa). La más solicitada es la Clásica de $130.000. Si quieres algo distinto, personalizamos cualquier paquete con tu presupuesto y la persona a quien le vas a regalar.',
   },
   {
-    q: '¿Hacen entrega el mismo día?',
-    a: 'Sí. Si confirmas tu pedido por WhatsApp antes de las 12:00 PM y estás en zona cercana (Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí, Bello), tu ancheta llega el mismo día. Para pedidos después de las 2:00 PM coordinamos entrega temprana al día siguiente.',
+    q: '¿Con cuánta anticipación debo pedir la ancheta?',
+    a: 'Con 24 horas de anticipación sobre el momento en que quieres que llegue. Confirmas el pedido por WhatsApp indicando el día y la hora, y nosotras dejamos esa franja reservada para tu entrega en zona cercana (Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí, Bello). Ese margen es lo que nos permite comprometernos con una hora concreta en lugar de una aproximada.',
   },
   {
     q: '¿Qué necesito para hacer el pedido?',
@@ -288,8 +291,8 @@ const INCLUYE_GENERAL = [
   },
   {
     Icon: ICONS.reloj,
-    title: 'Entrega el mismo día',
-    body: 'Si confirmas antes de las 12:00 PM y estás en zona cercana, tu ancheta llega el mismo día.',
+    title: 'A la hora que elijas',
+    body: 'Confirmando con 24 horas de anticipación coordinamos el día y la hora exacta en que quieres que llegue.',
   },
   {
     Icon: ICONS.camara,
@@ -315,7 +318,7 @@ export default function AnchetasMedellinDomicilioPage() {
     '@id': `${PAGE_URL}#localbusiness`,
     name: 'Creaciones Vane — Anchetas a Domicilio en Medellín',
     description:
-      'Servicio de anchetas personalizadas con entrega a domicilio el mismo día en Medellín y el Valle de Aburrá. Anchetas para mamá, pareja, amigos, cumpleaños y aniversarios. Desde $80.000 COP.',
+      'Servicio de anchetas personalizadas con entrega a domicilio en Medellín y el Valle de Aburrá, confirmando el pedido con 24 horas de anticipación. Anchetas para mamá, pareja, amigos, cumpleaños y aniversarios. Desde $80.000 COP.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,
@@ -343,7 +346,7 @@ export default function AnchetasMedellinDomicilioPage() {
     serviceType: 'Anchetas a Domicilio',
     name: 'Anchetas a Domicilio en Medellín',
     description:
-      'Anchetas personalizadas con entrega el mismo día en Medellín. Tres paquetes: Detalle ($80.000), Clásica ($130.000) y Sorpresa Completa ($180.000). Incluyen snacks, chocolates, peluche o ramo, globos, caja decorada y tarjeta personalizada.',
+      'Anchetas personalizadas a domicilio en Medellín, confirmando con 24 horas de anticipación. Tres paquetes: Detalle ($80.000), Clásica ($130.000) y Sorpresa Completa ($180.000). Incluyen snacks, chocolates, peluche o ramo, globos, caja decorada y tarjeta personalizada.',
     provider: { '@id': `${BUSINESS.url}/#organization` },
     areaServed: { '@type': 'City', name: 'Medellín' },
     category: 'Gift Delivery',
@@ -435,7 +438,7 @@ export default function AnchetasMedellinDomicilioPage() {
 
               <ScrollReveal direction="up" delay={0.3}>
                 <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-7 sm:mb-9">
-                  Sorprende a quien quieres con una ancheta personalizada. Confirmas antes de las 12:00 PM y llega el mismo día.
+                  Sorprende a quien quieres con una ancheta personalizada. Confirmas con 24 horas y llega el día y la hora que elijas.
                 </p>
               </ScrollReveal>
 
@@ -467,7 +470,7 @@ export default function AnchetasMedellinDomicilioPage() {
                 <div className="mt-10 sm:mt-14 flex flex-wrap items-center gap-x-6 gap-y-3 text-white/80 text-sm">
                   <span className="flex items-center gap-2">
                     <ICONS.check className="w-4 h-4" />
-                    Entrega el mismo día
+                    A la hora que elijas
                   </span>
                   <span className="hidden sm:inline w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-2">
@@ -729,7 +732,7 @@ export default function AnchetasMedellinDomicilioPage() {
                     </h3>
                   </div>
                   <p className="text-sm text-stone-600 leading-relaxed mb-5">
-                    Entregamos sin costo adicional el mismo día en:
+                    Entregamos sin costo adicional en:
                   </p>
                   <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-stone-800">
                     {[
@@ -747,7 +750,7 @@ export default function AnchetasMedellinDomicilioPage() {
                     ))}
                   </ul>
                   <p className="mt-5 text-xs text-stone-500 leading-relaxed">
-                    Pedidos confirmados antes de las 12:00 PM llegan el mismo día.
+                    Confirmando con 24 horas de anticipación reservamos la hora exacta de la entrega.
                   </p>
                 </div>
               </ScrollReveal>
@@ -938,13 +941,13 @@ export default function AnchetasMedellinDomicilioPage() {
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal direction="down">
               <p className="font-script text-white/90 text-2xl sm:text-3xl mb-4">
-                ¿A quién quieres sorprender hoy?
+                ¿A quién quieres sorprender?
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mb-5">
                 Pide tu ancheta y la llevamos
               </h2>
               <p className="text-white/85 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10">
-                Escríbenos por WhatsApp con la dirección, la hora y el mensaje. Si confirmas antes de las 2:00 PM, llega el mismo día.
+                Escríbenos por WhatsApp con la dirección, el día, la hora y el mensaje. Confirmando con 24 horas dejamos esa franja reservada.
               </p>
             </ScrollReveal>
 

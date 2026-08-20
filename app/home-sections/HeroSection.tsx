@@ -59,7 +59,8 @@ export default function HeroSection() {
                 {/* Descripción con keywords long-tail */}
                 <p className="text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
                     Anchetas personalizadas, peluches, ramos de rosas, decoraciones para eventos
-                    y refrigerios con entrega el mismo día en Medellín, Envigado, Sabaneta e Itagüí.
+                    y refrigerios a domicilio en Medellín, Envigado, Sabaneta e Itagüí. Confirma
+                    con 24 horas y coordinamos la hora exacta de la entrega.
                 </p>
 
                 {/* CTAs principales */}

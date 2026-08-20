@@ -156,7 +156,7 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
       },
       {
         type: 'parrafo',
-        text: 'Para pedidos de hasta 30 unidades, 48 horas es suficiente. Por encima de 30 unidades conviene confirmar con 72 horas, porque la producción de sándwiches y el corte de fruta se hacen el mismo día de la entrega y hay un límite de capacidad diaria. Los pedidos urgentes a veces se resuelven el mismo día, pero depende de lo que ya esté agendado esa jornada.',
+        text: 'Para pedidos de hasta 30 unidades, 48 horas es suficiente. Por encima de 30 unidades conviene confirmar con 72 horas, porque la producción de sándwiches y el corte de fruta se hacen el mismo día de la entrega y hay un límite de capacidad diaria. El mínimo absoluto son 24 horas, y a esa altura la respuesta depende de lo que ya esté agendado para esa jornada.',
       },
       {
         type: 'parrafo',
@@ -437,7 +437,7 @@ const POST_DESAYUNOS: BlogPost = {
     },
     {
       q: '¿Con cuánta anticipación hay que pedir un desayuno sorpresa?',
-      a: 'Confirmando antes de las 12:00 del mediodía se entrega al día siguiente sin problema. Para fechas marcadas como San Valentín, Día de la Madre, Amor y Amistad o diciembre conviene reservar con una semana porque la agenda de entregas tempranas se llena.',
+      a: 'Con 24 horas de anticipación sobre la hora de entrega. Como los desayunos salen entre las 6:00 y las 9:00 de la mañana, en la práctica es confirmar el día anterior. Para fechas marcadas como San Valentín, Día de la Madre, Amor y Amistad o diciembre conviene reservar con una semana porque la agenda de entregas tempranas se llena.',
     },
     {
       q: '¿La persona se entera de que le van a llevar un desayuno?',

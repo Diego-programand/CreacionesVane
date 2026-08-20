@@ -42,7 +42,7 @@ const FECHA_LEGIBLE = 'sábado 19 de septiembre de 2026';
 
 export const metadata: Metadata = pageMetadata({
   title: 'Regalos de Amor y Amistad en Medellín',
-  description: `Regalos de Amor y Amistad a domicilio en Medellín: anchetas, desayunos sorpresa, peluches y ramos desde $80.000. Entrega el mismo día y sorpresa confidencial. Reserva antes de que se llene la agenda. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Regalos de Amor y Amistad a domicilio en Medellín: anchetas, desayunos sorpresa, peluches y ramos desde $80.000. Sorpresa confidencial a la hora que elijas. Reserva antes de que se llene la agenda. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   keywords: [
     'regalos amor y amistad medellín',
@@ -111,9 +111,9 @@ const IDEAS = [
   },
   {
     id: 'ultimo-momento',
-    titulo: 'Si se te hizo tarde',
-    body: 'Confirmando antes de las 12:00 del mediodía entregamos el mismo día en zona cercana. En la semana de Amor y Amistad la capacidad se agota antes, así que entre más temprano escribas, más opciones quedan disponibles.',
-    incluye: ['Entrega el mismo día', 'Sujeto a disponibilidad', 'Zona cercana'],
+    titulo: 'Si vas sobre la hora',
+    body: 'El pedido se confirma con 24 horas de anticipación sobre el momento de la entrega, así que la víspera todavía alcanza. En la semana de Amor y Amistad la capacidad se agota antes, así que entre más temprano escribas, más opciones quedan disponibles.',
+    incluye: ['Confirmación con 24 horas', 'Sujeto a disponibilidad', 'Zona cercana'],
     desde: 'Desde $80.000',
   },
 ];
@@ -197,7 +197,7 @@ export default function AmorYAmistadMedellinPage() {
     serviceType: 'Regalos de Amor y Amistad a domicilio',
     name: 'Regalos de Amor y Amistad a Domicilio en Medellín',
     description:
-      'Anchetas, desayunos sorpresa, peluches, ramos de rosas y cajas de chocolates para Amor y Amistad con entrega a domicilio el mismo día en Medellín y el Valle de Aburrá. Entrega confidencial y opción de remitente anónimo para intercambios de amigo secreto.',
+      'Anchetas, desayunos sorpresa, peluches, ramos de rosas y cajas de chocolates para Amor y Amistad con entrega a domicilio en Medellín y el Valle de Aburrá, confirmando con 24 horas de anticipación. Entrega confidencial y opción de remitente anónimo para intercambios de amigo secreto.',
     provider: { '@id': `${BUSINESS.url}/#organization` },
     areaServed: [
       { '@type': 'City', name: 'Medellín' },
@@ -237,7 +237,7 @@ export default function AmorYAmistadMedellinPage() {
     '@id': `${PAGE_URL}#localbusiness`,
     name: 'Creaciones Vane — Regalos de Amor y Amistad en Medellín',
     description:
-      'Detalles y regalos de Amor y Amistad con entrega a domicilio el mismo día en Medellín. Anchetas, desayunos sorpresa, peluches, ramos y chocolates desde $80.000 COP.',
+      'Detalles y regalos de Amor y Amistad con entrega a domicilio en Medellín, confirmando con 24 horas de anticipación. Anchetas, desayunos sorpresa, peluches, ramos y chocolates desde $80.000 COP.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,
@@ -349,7 +349,7 @@ export default function AmorYAmistadMedellinPage() {
                   <span className="hidden sm:inline w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-2">
                     <ICONS.check className="w-4 h-4" />
-                    Entrega el mismo día
+                    A la hora que elijas
                   </span>
                   <span className="hidden sm:inline w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-2">
@@ -605,7 +605,7 @@ export default function AmorYAmistadMedellinPage() {
             <ScrollReveal direction="fade" delay={0.4}>
               <p className="mt-8 text-sm text-white/75 flex items-center justify-center gap-2">
                 <ICONS.reloj className="w-4 h-4" />
-                Confirmando antes de las 12:00 PM entregamos el mismo día
+                Confirmando con 24 horas reservamos la hora de tu entrega
               </p>
             </ScrollReveal>
           </div>

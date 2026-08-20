@@ -43,7 +43,7 @@ export const metadata: Metadata = pageMetadata({
   */
   title: 'Creaciones Vane | Anchetas y Desayunos Sorpresa en Medellín',
   titleAbsolute: true,
-  description: `Anchetas, desayunos sorpresa, decoración y refrigerios a domicilio en Medellín. Entrega el mismo día en El Poblado, Envigado y Sabaneta. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Anchetas, desayunos sorpresa, decoración y refrigerios a domicilio en Medellín, El Poblado, Envigado y Sabaneta. Confirma con 24 horas y elegimos la hora. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/',
   ogImage: `${BUSINESS.url}/og-image-main.webp`,
   keywords: [
@@ -62,7 +62,7 @@ export const metadata: Metadata = pageMetadata({
     'detalles san valentín medellín',
     'anchetas día de la madre medellín',
     'desayunos románticos medellín',
-    'anchetas entrega el mismo día medellín',
+    'anchetas a domicilio medellín',
     'mejor tienda de regalos en medellín',
   ],
 });
@@ -99,8 +99,8 @@ export default async function Home() {
   /* FAQ con preguntas alineadas a queries reales detectadas en GSC */
   const faq = faqSchema([
     {
-      q: '¿Hacen entregas de regalos a domicilio en Medellín el mismo día?',
-      a: `Sí. En Creaciones Vane realizamos entregas el mismo día en todo Medellín y el área metropolitana: El Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello y La Estrella. Contáctanos por WhatsApp al ${BUSINESS.phoneDisplay} antes de las 2:00 PM para garantizar entrega el mismo día.`,
+      q: '¿Con cuánta anticipación debo pedir un regalo a domicilio en Medellín?',
+      a: `Con 24 horas de anticipación sobre la fecha y la hora en que quieres que llegue. Entregamos en todo Medellín y el área metropolitana: El Poblado, Laureles, Envigado, Sabaneta, Itagüí, Bello y La Estrella. Escríbenos por WhatsApp al ${BUSINESS.phoneDisplay} indicando el día y la hora, y dejamos esa franja reservada para tu entrega.`,
     },
     {
       q: '¿Cuánto cuesta un desayuno sorpresa en Medellín?',

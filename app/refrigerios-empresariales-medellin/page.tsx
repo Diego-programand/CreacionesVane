@@ -156,7 +156,7 @@ const FAQS = [
   },
   {
     q: '¿Con cuánta anticipación debo hacer el pedido?',
-    a: 'Recomendamos confirmar con 48 horas de anticipación para pedidos hasta 30 unidades. Para más de 30 unidades pedimos mínimo 72 horas. Algunos pedidos urgentes los podemos resolver el mismo día si tenemos capacidad — escríbenos por WhatsApp para confirmar.',
+    a: 'Recomendamos confirmar con 48 horas de anticipación para pedidos hasta 30 unidades. Para más de 30 unidades pedimos mínimo 72 horas. El mínimo absoluto son 24 horas y queda sujeto a la capacidad ya agendada para esa jornada — escríbenos por WhatsApp para confirmar disponibilidad.',
   },
   {
     q: '¿Entregan en mi oficina o en el sitio del evento?',
@@ -314,7 +314,7 @@ const INCLUYE_GENERAL = [
   {
     Icon: ICONS.calendario,
     title: 'Confirmas con tiempo',
-    body: 'Recomendamos confirmar con 48–72 horas. Pedidos urgentes los resolvemos el mismo día si tenemos capacidad.',
+    body: 'Recomendamos confirmar con 48–72 horas. El mínimo son 24 horas, sujeto a la capacidad de esa jornada.',
   },
 ];
 

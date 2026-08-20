@@ -103,7 +103,7 @@ export const BUSINESS = {
     { name: 'Girardota', lat: 6.3791, lng: -75.4476 },
   ] as const,
 
-  /** Para text-display: zonas principales con domicilio garantizado el mismo día */
+  /** Para text-display: zonas principales de cobertura del domicilio */
   primaryDeliveryZones: ['El Poblado', 'Laureles', 'Envigado', 'Sabaneta', 'Itagüí', 'Bello'],
 
   /** Rangos de precio por categoría (COP) */

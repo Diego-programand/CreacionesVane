@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    'Anchetas, desayunos sorpresa y decoración a domicilio en Medellín con entrega el mismo día en El Poblado, Laureles y Envigado. Desde 2019. WhatsApp 312 8235654.',
+    'Anchetas, desayunos sorpresa y decoración a domicilio en Medellín, El Poblado, Laureles y Envigado. Confirma con 24 horas y elegimos la hora exacta. Desde 2019. WhatsApp 312 8235654.',
 
   keywords: [
     'creaciones vane',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     'desayunos sorpresa laureles',
     'regalos envigado',
     'decoración sabaneta',
-    'anchetas entrega el mismo día medellín',
+    'anchetas a domicilio medellín',
     'desayunos sorpresa whatsapp medellín',
     'regalos personalizados medellín',
   ],
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
     siteName: BUSINESS.name,
     title: 'Creaciones Vane — Anchetas, Desayunos Sorpresa y Decoración en Medellín',
     description:
-      'Anchetas personalizadas, desayunos sorpresa, decoración y refrigerios con entrega el mismo día en Medellín, Envigado y Sabaneta.',
+      'Anchetas personalizadas, desayunos sorpresa, decoración y refrigerios a domicilio en Medellín, Envigado y Sabaneta. Confirma con 24 horas y coordinamos la hora exacta.',
     images: [
       {
         url: `${BUSINESS.url}/og-image-main.webp`,
@@ -120,7 +120,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Creaciones Vane — Anchetas y Desayunos Sorpresa en Medellín',
-    description: `Cómplice que endulza. Entrega el mismo día en Medellín. WhatsApp ${BUSINESS.phoneDisplay}.`,
+    description: `Cómplice que endulza. Regalos a domicilio en Medellín con 24 horas de anticipación. WhatsApp ${BUSINESS.phoneDisplay}.`,
     images: [`${BUSINESS.url}/og-image-main.webp`],
   },
 

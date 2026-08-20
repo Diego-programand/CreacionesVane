@@ -335,7 +335,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-ram-002',
     nombre: 'Pasión Clásica: Ramillete de 24 Rosas',
-    descripcion: 'Ramillete de 24 rosas rojas en Medellín, el símbolo universal del amor verdadero. Diseño minimalista y elegante con follaje fresco y envoltura sofisticada en blanco y negro. Ideal para San Valentín, aniversarios o simplemente para decir "te amo" de la forma más romántica. Cada rosa es seleccionada por su frescura y belleza. Envío express disponible en Medellín, Envigado, Itagüí y Sabaneta. El regalo perfecto para enamorar en cualquier ocasión especial.',
+    descripcion: 'Ramillete de 24 rosas rojas en Medellín, el símbolo universal del amor verdadero. Diseño minimalista y elegante con follaje fresco y envoltura sofisticada en blanco y negro. Ideal para San Valentín, aniversarios o simplemente para decir "te amo" de la forma más romántica. Cada rosa es seleccionada por su frescura y belleza. Entrega a domicilio en Medellín, Envigado, Itagüí y Sabaneta. El regalo perfecto para enamorar en cualquier ocasión especial.',
     precio: 100000,
     imagen: getCldUrl('ramillete3_ot9lnt'),
     categoria: 'Detalles',
@@ -482,7 +482,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-df-009',
     nombre: 'Abrazo de Rosas: Arreglo Amor con Peluche y Chocolates',
-    descripcion: 'Arreglo de rosas con chocolates Ferrero en Medellín. Diseño vertical único donde rosas rojas de tallo largo abrazan oso de peluche suave que sostiene caja corazón de Ferrero Rocher. Decorado con follaje helecho y flores blancas de relleno. El detalle "destronador" para conquistar, reconquistar o reafirmar amor puro. Ideal para San Valentín, aniversarios o sorpresas románticas. Entrega express disponible en Medellín. ¡Más que un ramo, es una experiencia de ternura inolvidable!',
+    descripcion: 'Arreglo de rosas con chocolates Ferrero en Medellín. Diseño vertical único donde rosas rojas de tallo largo abrazan oso de peluche suave que sostiene caja corazón de Ferrero Rocher. Decorado con follaje helecho y flores blancas de relleno. El detalle "destronador" para conquistar, reconquistar o reafirmar amor puro. Ideal para San Valentín, aniversarios o sorpresas románticas. Entrega a domicilio en Medellín. ¡Más que un ramo, es una experiencia de ternura inolvidable!',
     precio: 118000,
     imagen: getCldUrl('desayunoflorez9_falawe'),
     categoria: 'Detalles',
@@ -529,7 +529,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-004',
     nombre: 'Noche Mágica: Kuromi Style',
-    descripcion: 'desayuno de Kuromi en Medellín para personalidades con estilo único. Estética rebelde en tonos morados y negros que causa impacto. Incluye peluche Kuromi de alta calidad, dulces importados gourmet y globo metalizado gigante del número personalizado. La combinación perfecta entre tierno y cool para cumpleaños inolvidables. Ideal para adolescentes, jóvenes y fans de Sanrio. Entrega express en Medellín. ¡El detalle que refleja personalidad auténtica y estilo inconfundible!',
+    descripcion: 'desayuno de Kuromi en Medellín para personalidades con estilo único. Estética rebelde en tonos morados y negros que causa impacto. Incluye peluche Kuromi de alta calidad, dulces importados gourmet y globo metalizado gigante del número personalizado. La combinación perfecta entre tierno y cool para cumpleaños inolvidables. Ideal para adolescentes, jóvenes y fans de Sanrio. Entrega a domicilio en Medellín. ¡El detalle que refleja personalidad auténtica y estilo inconfundible!',
     precio: 160000,
     imagen: getCldUrl('desayuno4_t8zxke'),
     categoria: 'Detalles',
@@ -583,7 +583,7 @@ export const productosMock: Product[] = [
   {
     id: 'det-des-010',
     nombre: 'Desayuno "Te Adoro" con Rosas & Pasión',
-    descripcion: 'Desayuno romántico con rosas en Medellín para declaraciones de amor. Diseñado para quienes no temen decir lo que sienten con intensidad. Incluye bouquet de rosas rojas frescas, chocolates Ferrero Rocher y globo metalizado de gran formato con frase "Te Adoro". Personalizado con mensaje que llega al alma y detalles en rojo vibrante. La sorpresa definitiva para reconquistar, enamorar o celebrar amor intenso. Entrega express en Medellín. ¡Di "Te Adoro" de la forma más imponente!',
+    descripcion: 'Desayuno romántico con rosas en Medellín para declaraciones de amor. Diseñado para quienes no temen decir lo que sienten con intensidad. Incluye bouquet de rosas rojas frescas, chocolates Ferrero Rocher y globo metalizado de gran formato con frase "Te Adoro". Personalizado con mensaje que llega al alma y detalles en rojo vibrante. La sorpresa definitiva para reconquistar, enamorar o celebrar amor intenso. Entrega a domicilio en Medellín. ¡Di "Te Adoro" de la forma más imponente!',
     precio: 190000,
     imagen: getCldUrl('desayuno10_dhwqwg'),
     categoria: 'Detalles',

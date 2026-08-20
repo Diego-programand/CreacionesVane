@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
   const seoPorCategoria = {
     Detalles: {
       sufijoTitle: 'Detalle en Medellín',
-      fraseDescription: 'Ancheta a domicilio con entrega el mismo día en Medellín',
+      fraseDescription: 'Ancheta a domicilio en Medellín, confirmando con 24 horas',
     },
     Refrigerios: {
       sufijoTitle: 'Refrigerio en Medellín',
@@ -162,7 +162,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       landing: {
         label: 'Anchetas a domicilio en Medellín',
         path: '/anchetas-medellin-domicilio',
-        lead: 'Entrega el mismo día si confirmas antes de las 2:00 PM',
+        lead: 'Confirma con 24 horas y elegimos el día y la hora de entrega',
       },
     },
     Refrigerios: {

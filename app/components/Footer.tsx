@@ -104,7 +104,7 @@ export default function Footer() {
           {/* Newsletter o CTA pequeño */}
           <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/10">
             <h4 className="font-bold text-lg mb-2">¿Quieres algo especial?</h4>
-            <p className="text-sm text-white/70 mb-4">Escríbenos y personalizamos tu regalo hoy mismo.</p>
+            <p className="text-sm text-white/70 mb-4">Escríbenos y personalizamos tu regalo para la fecha que necesites.</p>
             <a
               href={waUrl()}
               className="block text-center bg-white text-primary-600 font-bold py-2 px-4 rounded-xl hover:bg-primary-50 transition-colors shadow-lg"

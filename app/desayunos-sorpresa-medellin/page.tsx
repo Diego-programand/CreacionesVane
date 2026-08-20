@@ -122,8 +122,8 @@ const INCLUYE_SIEMPRE = [
   },
   {
     icon: 'reloj' as const,
-    title: 'Entrega el mismo día',
-    body: 'Confirmando antes de las 12:00 PM llega hoy mismo en zona cercana del Valle de Aburrá.',
+    title: 'A primera hora',
+    body: 'Confirmando con 24 horas de anticipación llega a la hora que elijas en zona cercana del Valle de Aburrá.',
   },
 ];
 
@@ -177,8 +177,8 @@ const FAQS = [
     a: 'Los desayunos sorpresa van desde $90.000 COP hasta $190.000 COP según el tamaño, los acompañamientos y los extras que elijas (peluche, ramo de rosas, globos). Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Escríbenos con tu presupuesto y te armamos la mejor opción dentro de ese rango.',
   },
   {
-    q: '¿Entregan desayunos sorpresa el mismo día en Medellín?',
-    a: 'Sí. Si confirmas el pedido por WhatsApp antes de las 12:00 PM, entregamos el mismo día en zona cercana: Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí y Bello. Para entregas de madrugada o a primera hora de la mañana, coordina el pedido el día anterior.',
+    q: '¿Con cuánta anticipación debo pedir el desayuno sorpresa?',
+    a: 'Con 24 horas de anticipación sobre la hora en que quieres que llegue. Como la mayoría de los desayunos se entregan entre las 6:00 y las 9:00 de la mañana, en la práctica significa confirmar el día anterior: así la fruta se corta la madrugada de la entrega y tu franja queda reservada. Entregamos en zona cercana: Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí y Bello.',
   },
   {
     q: '¿A qué hora entregan los desayunos sorpresa?',
@@ -338,7 +338,7 @@ export default function DesayunosSorpresaMedellinPage() {
     serviceType: 'Desayunos Sorpresa a Domicilio',
     name: 'Desayunos Sorpresa a Domicilio en Medellín',
     description:
-      'Servicio de desayunos sorpresa a domicilio en Medellín: fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con mensaje personalizado. Entrega confidencial el mismo día.',
+      'Servicio de desayunos sorpresa a domicilio en Medellín: fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con mensaje personalizado. Entrega confidencial en el día y la hora acordados.',
     provider: { '@id': `${BUSINESS.url}/#organization` },
     areaServed: [
       { '@type': 'City', name: 'Medellín' },
@@ -436,7 +436,7 @@ export default function DesayunosSorpresaMedellinPage() {
 
               <ScrollReveal direction="up" delay={0.3}>
                 <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-7 sm:mb-9">
-                  Fruta fresca, jugo natural, sándwich gourmet y decoración en la paleta que elijas. Confirmas antes de las 12:00 PM y llega hoy mismo, sin que la persona sospeche nada.
+                  Fruta fresca, jugo natural, sándwich gourmet y decoración en la paleta que elijas. Confirmas con 24 horas y llega a la hora que elijas, sin que la persona sospeche nada.
                 </p>
               </ScrollReveal>
 
@@ -473,7 +473,7 @@ export default function DesayunosSorpresaMedellinPage() {
                   <span className="hidden sm:inline w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-2">
                     <ICONS.check className="w-4 h-4" />
-                    Entrega el mismo día
+                    A la hora que elijas
                   </span>
                   <span className="hidden sm:inline w-1 h-1 rounded-full bg-white/40" />
                   <span className="flex items-center gap-2">
@@ -635,7 +635,7 @@ export default function DesayunosSorpresaMedellinPage() {
                 Cobertura
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 tracking-tight mb-4 max-w-3xl">
-                Dónde entregamos el mismo día
+                Dónde entregamos
               </h2>
             </ScrollReveal>
 
@@ -645,11 +645,11 @@ export default function DesayunosSorpresaMedellinPage() {
                   <div className="flex items-center gap-3 mb-5">
                     <ICONS.mapa className="w-6 h-6 text-[#D81B60]" />
                     <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
-                      Entrega el mismo día, sin costo extra
+                      Zona cercana, sin costo extra
                     </h3>
                   </div>
                   <p className="text-sm text-stone-600 leading-relaxed mb-5">
-                    Confirmando el pedido antes de las 12:00 PM entregamos hoy en:
+                    Confirmando el pedido con 24 horas de anticipación entregamos en:
                   </p>
                   <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-stone-800">
                     {[
@@ -825,7 +825,7 @@ export default function DesayunosSorpresaMedellinPage() {
                 Pide tu desayuno sorpresa hoy
               </h2>
               <p className="text-white/85 text-base sm:text-lg max-w-xl mx-auto leading-relaxed mb-10">
-                Escríbenos antes de las 12:00 PM y lo entregamos hoy mismo. Nos cuentas la ocasión y nosotras nos encargamos del resto.
+                Escríbenos con 24 horas de anticipación y lo entregamos a la hora que elijas. Nos cuentas la ocasión y nosotras nos encargamos del resto.
               </p>
             </ScrollReveal>
 
