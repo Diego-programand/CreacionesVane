@@ -206,7 +206,7 @@ const FAQS = [
   },
   {
     q: '¿Cómo se paga el pedido?',
-    a: 'Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo. Para desayunos con entrega programada confirmamos el pedido con el pago previo. Si necesitas factura electrónica para tu empresa, también la emitimos.',
+    a: 'Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia bancaria y efectivo. Para desayunos con entrega programada confirmamos el pedido con el pago previo. Si necesitas factura electrónica para tu empresa, también la emitimos.',
   },
   {
     q: '¿Puedo pedir desde otro país para alguien que vive en Medellín?',
@@ -712,7 +712,7 @@ export default function DesayunosSorpresaMedellinPage() {
                 {
                   step: '03',
                   title: 'Confirmas el pedido',
-                  body: 'Aceptamos Nequi, Daviplata, transferencia y efectivo. Coordinamos la hora exacta.',
+                  body: 'Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia y efectivo. Coordinamos la hora exacta.',
                 },
                 {
                   step: '04',

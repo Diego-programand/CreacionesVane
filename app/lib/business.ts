@@ -30,7 +30,7 @@ export const BUSINESS = {
 
   priceRange: '$$',
   currenciesAccepted: 'COP',
-  paymentAccepted: 'Efectivo, Nequi, Daviplata, Transferencia Bancaria',
+  paymentAccepted: 'Efectivo, Nequi, Bancolombia, Llave Bre-B, Transferencia Bancaria',
 
   address: {
     /** Para schema PostalAddress.streetAddress */

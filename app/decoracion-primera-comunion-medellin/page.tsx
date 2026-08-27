@@ -159,7 +159,7 @@ const FAQS = [
   },
   {
     q: '¿Cómo se reserva la fecha?',
-    a: 'Confirmamos la fecha con un abono del 50% del valor del paquete. El saldo se cancela el día del montaje. Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo.',
+    a: 'Confirmamos la fecha con un abono del 50% del valor del paquete. El saldo se cancela el día del montaje. Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia bancaria y efectivo.',
   },
 ];
 
@@ -758,7 +758,7 @@ export default function DecoracionPrimeraComunionMedellinPage() {
                 Proceso
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-stone-900 tracking-tight mb-4 max-w-3xl">
-                Así reservamos tu primera comunión
+                Así reservamos tu decoración
               </h2>
             </ScrollReveal>
 
@@ -777,7 +777,7 @@ export default function DecoracionPrimeraComunionMedellinPage() {
                 {
                   step: '03',
                   title: 'Reserva con 50%',
-                  body: 'Aseguramos tu fecha. Aceptamos Nequi, Daviplata, transferencia y efectivo.',
+                  body: 'Aseguramos tu fecha. Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia y efectivo.',
                 },
                 {
                   step: '04',

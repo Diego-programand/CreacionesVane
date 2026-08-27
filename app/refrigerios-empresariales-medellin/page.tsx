@@ -181,7 +181,7 @@ const FAQS = [
   },
   {
     q: '¿Cómo se reserva el pedido?',
-    a: 'Confirmamos el pedido con un abono del 50% del valor total. El saldo se cancela contra entrega o con factura electrónica si prefieres. Aceptamos Nequi, Daviplata, transferencia bancaria, efectivo y factura empresarial.',
+    a: 'Confirmamos el pedido con un abono del 50% del valor total. El saldo se cancela contra entrega o con factura electrónica si prefieres. Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia bancaria, efectivo y factura empresarial.',
   },
 ];
 
@@ -822,7 +822,7 @@ export default function RefrigeriosEmpresarialesMedellinPage() {
                 {
                   step: '03',
                   title: 'Reserva con 50%',
-                  body: 'Confirmamos el pedido con un abono del 50%. Aceptamos Nequi, Daviplata, transferencia y factura.',
+                  body: 'Confirmamos el pedido con un abono del 50%. Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia y factura.',
                 },
                 {
                   step: '04',

@@ -116,7 +116,7 @@ export default async function Home() {
     },
     {
       q: '¿Qué métodos de pago aceptan?',
-      a: 'Aceptamos efectivo contra entrega, transferencia bancaria, Nequi y Daviplata. Para garantizar tu pedido solicitamos un anticipo del 50% al confirmar.',
+      a: 'Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia bancaria y efectivo contra entrega. Para garantizar tu pedido solicitamos un anticipo del 50% al confirmar.',
     },
     {
       q: '¿Tienen refrigerios para fiestas infantiles?',

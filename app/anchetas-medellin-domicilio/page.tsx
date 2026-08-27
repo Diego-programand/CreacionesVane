@@ -185,7 +185,7 @@ const FAQS = [
   },
   {
     q: '¿Cómo se paga y se reserva el pedido?',
-    a: 'Confirmamos con la cancelación total del pedido, puedes tener confianza gracias a nuestra amplia trayectoria en el mercado. Aceptamos Nequi, Daviplata, transferencia bancaria y efectivo. Si necesitas factura, también la emitimos.',
+    a: 'Confirmamos con la cancelación total del pedido, puedes tener confianza gracias a nuestra amplia trayectoria en el mercado. Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia bancaria y efectivo. Si necesitas factura, también la emitimos.',
   },
 ];
 
@@ -307,7 +307,7 @@ const INCLUYE_GENERAL = [
   {
     Icon: ICONS.check,
     title: 'Pago fácil',
-    body: 'Aceptamos Nequi, Daviplata, transferencia y efectivo. Puedes pagar con toda confianza.',
+    body: 'Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia y efectivo. Puedes pagar con toda confianza.',
   },
 ];
 
@@ -831,11 +831,11 @@ export default function AnchetasMedellinDomicilioPage() {
                 {
                   step: '03',
                   title: 'Cancelas el pedido',
-                  body: 'Confirma el pedido y realiza el pago en los medios de pago disponibles. Aceptamos Nequi, Daviplata, transferencia y efectivo.',
+                  body: 'Confirma el pedido y realiza el pago en los medios de pago disponibles. Aceptamos Nequi, Bancolombia, Llave Bre-B, transferencia y efectivo.',
                 },
                 {
                   step: '04',
-                  title: 'Entregamos en la sorpresa',
+                  title: 'Entregamos la sorpresa',
                   body: 'Llegamos a la dirección con la ancheta y, si lo pides, te enviamos foto del momento.',
                 },
               ].map((s) => (
