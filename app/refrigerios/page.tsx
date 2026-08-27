@@ -22,7 +22,7 @@ export const metadata: Metadata = pageMetadata({
     capacitaciones" — ninguna en jerga anglo.
   */
   title: 'Refrigerios para Eventos en Medellín',
-  description: `Refrigerios para eventos, reuniones y fiestas infantiles en Medellín. Cajas con sándwich gourmet, fruta fresca y jugo natural desde $5.000 por persona. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Refrigerios para eventos, reuniones y fiestas infantiles en Medellín. Cajas con sándwich gourmet, fruta fresca y jugo natural desde $7.000 por persona. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: '/refrigerios',
   ogImage: `${BUSINESS.url}/banner-refrigerios.webp`,
   /*
@@ -246,7 +246,7 @@ export default async function RefrigeriosPage() {
   const faq = faqSchema([
     {
       q: '¿Cuál es el pedido mínimo de refrigerios?',
-      a: 'El pedido mínimo es de 10 unidades. Manejamos refrigerios desde $5.000 hasta $15.000 según el tipo de evento y opciones seleccionadas.',
+      a: 'El pedido mínimo es de 10 unidades. Manejamos refrigerios desde $7.000 hasta $13.000 según el tipo de evento y opciones seleccionadas.',
     },
     {
       q: '¿Hacen entregas en empresas de Medellín?',
@@ -321,7 +321,7 @@ export default async function RefrigeriosPage() {
 
             <ScrollReveal direction="up" delay={0.6}>
               <p className="text-sm sm:text-base md:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-md leading-relaxed">
-                Cajas de refrigerios para empresas, reuniones, capacitaciones y fiestas con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Desde $5.000 por persona.
+                Cajas de refrigerios para empresas, reuniones, capacitaciones y fiestas con entrega puntual en El Poblado, Laureles, Envigado y Sabaneta. Desde $7.000 por persona.
               </p>
             </ScrollReveal>
           </div>
@@ -349,7 +349,7 @@ export default async function RefrigeriosPage() {
                   Refrigerios empresariales en Medellín
                 </p>
                 <p className="text-stone-500 text-sm">
-                  Cajas desde $5.000 por persona — factura electrónica, opciones vegetarianas y logo de tu empresa
+                  Cajas desde $7.000 por persona — factura electrónica, opciones vegetarianas y logo de tu empresa
                 </p>
               </div>
               <svg className="w-5 h-5 text-stone-400 group-hover:text-stone-900 group-hover:translate-x-1 transition-all flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

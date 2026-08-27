@@ -36,7 +36,7 @@ const PAGE_URL = `${BUSINESS.url}${PAGE_PATH}`;
 
 export const metadata: Metadata = pageMetadata({
   title: 'Refrigerios Empresariales en Medellín',
-  description: `Refrigerios para empresas en Medellín y el Valle de Aburrá. Cajas desde $5.000 por persona, pedido mínimo 10 unidades. Entrega puntual, factura electrónica y opciones vegetarianas. WhatsApp ${BUSINESS.phoneDisplay}.`,
+  description: `Refrigerios para empresas en Medellín y el Valle de Aburrá. Cajas desde $7.000 por persona, pedido mínimo 10 unidades. Entrega puntual, factura electrónica y opciones vegetarianas. WhatsApp ${BUSINESS.phoneDisplay}.`,
   path: PAGE_PATH,
   ogImage: `${BUSINESS.url}/images/refrigeriosEmpresariales.webp`,
   keywords: [
@@ -73,17 +73,15 @@ const PAQUETES = [
   {
     id: 'basica',
     nombre: 'Básica',
-    precio: 5_000,
-    precioLabel: '$5.000',
+    precio: 7_000,
+    precioLabel: '$7.000',
     sufijoPrecio: '/ persona',
     descripcion:
-      'La opción más sencilla para refrigerios de reunión, capacitación o jornada corta.',
+      'La opción práctica y económica para refrigerios de reunión, capacitación o jornadas cortas.',
     incluye: [
-      '1 sándwich del día',
-      '1 unidad de fruta de temporada',
+      '1 sándwich artesanal fresco del día',
       '1 jugo en caja',
-      '1 postre pequeño',
-      'Caja blanca lista para entregar',
+      'Empaque individual en caja',
     ],
     ctaId: 'refrigerios-paquete-basica',
     waMessage:
@@ -97,15 +95,12 @@ const PAQUETES = [
     sufijoPrecio: '/ persona',
     destacado: true,
     descripcion:
-      'Nuestra caja más solicitada por empresas. Variedad, presentación cuidada y opción de imprimir el logo.',
+      'Nuestra caja más solicitada por empresas. Excelente equilibrio con sándwich, jugo, fruta entera y presentación en caja.',
     incluye: [
-      '1 sándwich gourmet (opciones de pollo, jamón o vegetariano)',
-      '1 unidad de fruta + 1 snack salado',
-      '1 jugo natural en botella',
-      '1 postre artesanal',
-      '1 agua o té',
-      'Caja con etiqueta personalizable',
-      'Logo de tu empresa en la caja (opcional)',
+      '1 sándwich gourmet (jamón, queso, pollo o vegetariano)',
+      '1 jugo refrescante',
+      '1 fruta entera seleccionada',
+      'Empaque individual en caja con opción de etiqueta o logo',
     ],
     ctaId: 'refrigerios-paquete-empresarial',
     waMessage:
@@ -114,19 +109,17 @@ const PAQUETES = [
   {
     id: 'premium',
     nombre: 'Premium',
-    precio: 15_000,
-    precioLabel: '$15.000',
+    precio: 13_000,
+    precioLabel: '$13.000',
     sufijoPrecio: '/ persona',
     descripcion:
-      'Para eventos importantes, conferencias y juntas con clientes. Caja completa con presentación tipo regalo.',
+      'La experiencia completa para eventos especiales y juntas directivas. Caja con sándwich, jugo en envase, fruta picada y postre.',
     incluye: [
-      '1 sándwich gourmet premium o wrap',
-      '1 ensalada de fruta fresca',
-      '1 snack salado + 1 dulce artesanal',
-      '1 jugo natural en botella + 1 agua',
-      '1 postre de la casa',
-      'Caja con etiqueta y tarjeta de saludo',
-      'Logo o mensaje personalizado de tu empresa',
+      '1 sándwich gourmet especial o wrap',
+      '1 jugo natural en envase / botella',
+      '1 porción de fruta fresca picada',
+      '1 postre o dulce artesanal de la casa',
+      'Empaque individual en caja premium',
     ],
     ctaId: 'refrigerios-paquete-premium',
     waMessage:
@@ -176,7 +169,7 @@ const FAQS = [
   },
   {
     q: '¿Qué incluye exactamente cada caja?',
-    a: 'La Básica trae sándwich, una fruta, jugo en caja y un postre pequeño. La Empresarial añade snack salado, jugo natural en botella, agua y opción de etiqueta personalizada. La Premium incluye ensalada de fruta, dos snacks, dos bebidas, postre de la casa y tarjeta de saludo. En todas, los sabores y opciones se confirman al cotizar.',
+    a: 'La Básica trae sándwich, jugo y empaque en caja. La Empresarial incluye sándwich, jugo, fruta entera y empaque en caja con opción de etiqueta personalizada o logo. La Premium incluye sándwich gourmet, jugo natural en envase, fruta picada, postre o dulce y empaque en caja premium. En todas, los sabores y opciones se confirman al cotizar.',
   },
   {
     q: '¿Hacen refrigerios para jornadas escolares o eventos infantiles?',
@@ -325,7 +318,7 @@ export default function RefrigeriosEmpresarialesMedellinPage() {
     '@id': `${PAGE_URL}#localbusiness`,
     name: 'Creaciones Vane — Refrigerios Empresariales en Medellín',
     description:
-      'Servicio de refrigerios para empresas en Medellín y el Valle de Aburrá: cajas individuales, opciones vegetarianas y sin gluten, personalización con logo y factura electrónica. Pedido mínimo 10 unidades. Desde $5.000 por persona.',
+      'Servicio de refrigerios para empresas en Medellín y el Valle de Aburrá: cajas individuales, opciones vegetarianas y sin gluten, personalización con logo y factura electrónica. Pedido mínimo 10 unidades. Desde $7.000 por persona.',
     url: PAGE_URL,
     telephone: BUSINESS.phoneE164,
     priceRange: BUSINESS.priceRange,

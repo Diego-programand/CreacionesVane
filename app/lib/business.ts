@@ -113,7 +113,7 @@ export const BUSINESS = {
     peluches: { low: 35_000, high: 120_000 },
     ramos: { low: 50_000, high: 160_000 },
     chocolates: { low: 25_000, high: 80_000 },
-    refrigerios: { low: 5_000, high: 15_000 },
+    refrigerios: { low: 7_000, high: 13_000 },
     decoracion: { low: 300_000, high: 650_000 },
   },
 } as const;

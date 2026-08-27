@@ -120,7 +120,7 @@ export default async function Home() {
     },
     {
       q: '¿Tienen refrigerios para fiestas infantiles?',
-      a: 'Sí. Manejamos refrigerios individuales para fiestas infantiles desde $5.000 por unidad, con pedido mínimo de 10 unidades. Empaque higiénico y opciones temáticas disponibles.',
+      a: 'Sí. Manejamos refrigerios individuales para eventos y fiestas desde $7.000 por unidad, con pedido mínimo de 10 unidades. Empaque en caja individual y opciones temáticas disponibles.',
     },
     {
       q: '¿Dónde está ubicada la tienda física?',

@@ -171,7 +171,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
       landing: {
         label: 'Refrigerios empresariales en Medellín',
         path: '/refrigerios-empresariales-medellin',
-        lead: 'Desde $5.000 por persona — pedido mínimo 10 unidades',
+        lead: 'Desde $7.000 por persona — pedido mínimo 10 unidades',
       },
     },
     Decoraciones: {

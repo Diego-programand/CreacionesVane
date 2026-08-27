@@ -58,7 +58,7 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
     descripcion:
       'Cuánto cuesta un refrigerio para eventos en Medellín en 2026: precios por persona según el tipo de caja, qué incluye cada una, pedido mínimo y qué factores suben el costo.',
     respuestaDirecta:
-      'Un refrigerio para eventos en Medellín cuesta entre $5.000 y $15.000 COP por persona en 2026. La caja básica con sándwich, fruta, jugo y postre está en $5.000; la empresarial con jugo natural y snack salado en $9.000; y la premium con ensalada de fruta y dos bebidas en $15.000. El pedido mínimo habitual es de 10 unidades.',
+      'Un refrigerio para eventos en Medellín cuesta entre $7.000 y $13.000 COP por persona en 2026. La caja básica con sándwich, jugo y empaque en caja está en $7.000; la empresarial con sándwich, jugo, fruta entera y empaque en caja en $9.000; y la premium con sándwich gourmet, jugo en envase, fruta picada, postre o dulce y empaque en caja en $13.000. El pedido mínimo habitual es de 10 unidades.',
     publicado: '2026-08-10',
     actualizado: '2026-08-10',
     categoria: 'Refrigerios',
@@ -89,25 +89,25 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
         filas: [
           [
             'Básica',
-            '$5.000',
-            'Sándwich del día, una fruta de temporada, jugo en caja y un postre pequeño',
+            '$7.000',
+            'Sándwich artesanal del día, jugo en caja y presentación individual en caja',
           ],
           [
             'Empresarial',
             '$9.000',
-            'Sándwich gourmet, fruta, snack salado, jugo natural en botella, postre artesanal, agua o té',
+            'Sándwich gourmet, jugo, fruta entera y empaque en caja con opción de etiqueta o logo',
           ],
           [
             'Premium',
-            '$15.000',
-            'Sándwich gourmet o wrap, ensalada de fruta, dos snacks, jugo natural y agua, postre de la casa',
+            '$13.000',
+            'Sándwich gourmet especial, jugo natural en envase, fruta picada, postre o dulce artesanal y empaque en caja premium',
           ],
         ],
         nota: 'Precios de Creaciones Vane vigentes en agosto de 2026 para Medellín y el Valle de Aburrá. Pedido mínimo de 10 unidades en todas las cajas.',
       },
       {
         type: 'parrafo',
-        text: 'La diferencia entre la caja básica y la empresarial no es solo cantidad de comida: es el jugo. La caja de $5.000 lleva jugo en caja industrial y la de $9.000 lleva jugo natural en botella. Si el evento tiene clientes externos o gente de otras empresas, esa diferencia de $4.000 por persona es la que se nota en la mesa.',
+        text: 'La diferencia entre la caja básica ($7.000) y la empresarial ($9.000) radica principalmente en que la empresarial incluye fruta entera seleccionada y empaque personalizable para eventos corporativos. Por su parte, la caja Premium ($13.000) suma fruta picada fresca, jugo natural en envase y un delicioso postre o dulce artesanal.',
       },
       {
         type: 'h2',
@@ -121,9 +121,9 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
         type: 'tabla',
         encabezados: ['Asistentes', 'Caja básica', 'Caja empresarial', 'Caja premium'],
         filas: [
-          ['30 personas', '$150.000', '$270.000', '$450.000'],
-          ['50 personas', '$250.000', '$450.000', '$750.000'],
-          ['100 personas', '$500.000', '$900.000', '$1.500.000'],
+          ['30 personas', '$210.000', '$270.000', '$390.000'],
+          ['50 personas', '$350.000', '$450.000', '$650.000'],
+          ['100 personas', '$700.000', '$900.000', '$1.300.000'],
         ],
         nota: 'A partir de 50 unidades aplica descuento por volumen, así que el valor real suele quedar por debajo de estas cifras. Conviene pedir la cotización con la cantidad exacta.',
       },
@@ -189,7 +189,7 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
     faqs: [
       {
         q: '¿Cuál es el precio mínimo de un refrigerio para eventos en Medellín?',
-        a: 'La caja más económica está en $5.000 COP por persona e incluye sándwich del día, una fruta de temporada, jugo en caja y un postre pequeño. Por debajo de ese valor es difícil mantener la calidad y la presentación individual en caja.',
+        a: 'La caja más económica está en $7.000 COP por persona e incluye sándwich artesanal del día, jugo en caja y presentación en caja.',
       },
       {
         q: '¿Cuántas unidades hay que pedir como mínimo?',
