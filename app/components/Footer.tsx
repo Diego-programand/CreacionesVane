@@ -62,6 +62,7 @@ export default function Footer() {
                 { label: 'Refrigerios', href: '/refrigerios' },
                 { label: 'Decoraciones', href: '/decoraciones' },
                 { label: 'Guías y precios', href: '/blog' },
+                { label: 'Alerta de estafas y seguridad', href: '/blog/comunicado-oficial-alerta-estafas-suplantacion-identidad-creaciones-vane' },
               ].map((item) => (
                 <li key={item.href}>
                   <Link

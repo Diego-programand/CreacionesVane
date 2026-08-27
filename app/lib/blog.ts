@@ -1,3 +1,5 @@
+import { waUrl } from './whatsapp';
+
 /**
  * Contenido editorial del blog.
  *
@@ -21,7 +23,9 @@ export type BlogBlock =
   | { type: 'h3'; text: string }
   | { type: 'lista'; items: string[]; ordenada?: boolean }
   | { type: 'tabla'; encabezados: string[]; filas: string[][]; nota?: string }
-  | { type: 'destacado'; titulo: string; text: string };
+  | { type: 'destacado'; titulo: string; text: string }
+  | { type: 'imagen'; src: string; alt: string; caption?: string }
+  | { type: 'alerta'; variante: 'danger' | 'warning' | 'success' | 'info'; titulo: string; text: string };
 
 export interface BlogPost {
   slug: string;
@@ -453,7 +457,156 @@ const POST_DESAYUNOS: BlogPost = {
   },
 };
 
-export const BLOG_POSTS: BlogPost[] = [...POSTS_REFRIGERIOS, POST_DESAYUNOS];
+const POST_ESTAFAS: BlogPost = {
+  slug: 'comunicado-oficial-alerta-estafas-suplantacion-identidad-creaciones-vane',
+  titulo: 'Comunicado Oficial: Alerta de estafas por suplantación de identidad y cómo comprar seguro en línea',
+  tituloSeo: 'Comunicado Oficial | Alerta de Estafas Creaciones Vane',
+  descripcion:
+    'Comunicado oficial de Creaciones Vane sobre personas y números no autorizados que suplantan nuestra marca. Consulta la lista de números reportados y nuestros únicos canales autorizados.',
+  respuestaDirecta:
+    'Creaciones Vane informa a todos sus clientes y seguidores que personas inescrupulosas están suplantando la identidad de la empresa usando números falsos en WhatsApp e Instagram. El único número de contacto oficial y autorizado para cotizar, recibir anticipos o realizar reservas es +57 312 823 5654 (Vanessa Cárdenas). Ningún otro número representa a nuestra marca.',
+  publicado: '2026-08-27',
+  actualizado: '2026-08-27',
+  categoria: 'Seguridad y Canales Oficiales',
+  lecturaMin: 5,
+  origenGsc:
+    'Comunicado de seguridad institucional para proteger a los clientes contra suplantación de identidad y números fraudulentos',
+  keywords: [
+    'comunicado oficial creaciones vane estafas',
+    'estafas desayunos sorpresa medellin',
+    'numeros autorizados creaciones vane',
+    'suplantacion decoraciones vane',
+    'evitar estafas compras en linea medellin',
+    'vanessa cardenas creaciones vane whatsapp',
+  ],
+  bloques: [
+    {
+      type: 'alerta',
+      variante: 'danger',
+      titulo: 'COMUNICADO URGENTE — SUPLANTACIÓN DE IDENTIDAD',
+      text: 'Informamos a todos nuestros clientes y seguidores que personas inescrupulosas están utilizando de manera fraudulenta el nombre de Creaciones Vane y nuestras marcas aliadas (@decoraciones_vane10 y @complice_que_endulza) para solicitar pagos y anticipos.',
+    },
+    {
+      type: 'imagen',
+      src: '/images/comunicado-oficial-estafas.png',
+      alt: 'Comunicado oficial sobre suplantación de identidad y alerta de estafas en Creaciones Vane',
+      caption: 'Afiche oficial emitido por Creaciones Vane para alertar sobre números no autorizados y fraudes.',
+    },
+    {
+      type: 'h2',
+      text: '¿Cuáles son los números NO autorizados y reportados por estafa?',
+    },
+    {
+      type: 'parrafo',
+      text: 'Alertamos públicamente que los siguientes números de teléfono y perfiles NO hacen parte de ninguna de nuestras empresas ni cuentan con autorización para actuar en nuestro nombre:',
+    },
+    {
+      type: 'tabla',
+      encabezados: ['Número de Teléfono', 'Nombre o Perfil Falso', 'Estado'],
+      filas: [
+        ['350 464 5703', 'Karen Tellez', 'REPORTADO POR ESTAFA — NO AUTORIZADO'],
+        ['315 049 7869', 'Encantos Victoria', 'REPORTADO POR ESTAFA — NO AUTORIZADO'],
+        ['317 835 7689', 'Dayana Bravo', 'REPORTADO POR ESTAFA — NO AUTORIZADO'],
+        ['350 418 0485', 'Karen Rodriguez', 'REPORTADO POR ESTAFA — NO AUTORIZADO'],
+      ],
+      nota: 'Estas personas/números NO están autorizados para ofrecer, cobrar, recibir anticipos ni realizar reservas en nombre de nuestras empresas.',
+    },
+    {
+      type: 'alerta',
+      variante: 'warning',
+      titulo: 'Descargo de responsabilidad',
+      text: 'NO nos hacemos responsables de transacciones o transferencias realizadas a estos números o personas, ya que NO pertenecen a nuestras empresas.',
+    },
+    {
+      type: 'h2',
+      text: '¿Cuál es el ÚNICO número autorizado y nuestros puntos físicos?',
+    },
+    {
+      type: 'parrafo',
+      text: 'Para garantizar la autenticidad y seguridad de su compra, comuníquese únicamente a través de nuestros canales oficiales verificados:',
+    },
+    {
+      type: 'tabla',
+      encabezados: ['Canal Oficial', 'Detalle / Dirección', 'Titular / Responsable'],
+      filas: [
+        ['Único WhatsApp Autorizado', '+57 312 823 5654', 'Vanessa Cárdenas'],
+        ['Punto Físico Principal', 'Cra 50 #120-13, Medellín', 'Atención directa'],
+        ['Punto Físico Secundario', 'Cra 50 #121-40, Medellín', 'Atención directa'],
+        ['Sitio Web Oficial', 'https://creacionesvane.com', 'Creaciones Vane'],
+        ['Instagram Oficial', '@complice_que_endulza', 'Canal oficial'],
+        ['Instagram Secundario', '@decoraciones_vane10', 'Canal oficial'],
+      ],
+    },
+    {
+      type: 'h2',
+      text: 'Cómo evitar caer en estafas al comprar regalos y desayunos sorpresa en línea',
+    },
+    {
+      type: 'parrafo',
+      text: 'La suplantación de identidad en redes sociales es una problemática común que afecta a compradores de regalos, flores y refrigerios en Medellín. Los delincuentes copian fotografías de marcas reconocidas para engañar a los clientes.',
+    },
+    {
+      type: 'parrafo',
+      text: 'A continuación te compartimos 5 claves esenciales para verificar la legitimidad de un negocio antes de realizar pagos:',
+    },
+    {
+      type: 'lista',
+      ordenada: true,
+      items: [
+        'Confirma el número telefónico oficial en el sitio web oficial: Antes de transferir, ingresa a la página web del negocio (creacionesvane.com) y comprueba que el WhatsApp coincida exactamente (+57 312 823 5654).',
+        'Verifica el nombre del titular al transferir (Nequi / Bancolombia): Al realizar la transferencia en la app del banco, verifica que el destinatario corresponda a Vanessa Cárdenas o a las cuentas oficiales. Si aparece un titular extraño (ej. Karen Tellez, Dayana Bravo, etc.), detén la operación.',
+        'Exige comprobante oficial y dirección de sede física: Negocios serios como Creaciones Vane cuentan con puntos físicos verificables (Cra 50 #120-13 y Cra 50 #121-40 en Medellín).',
+        'Desconfía de promociones extremas o urgencia de consignar: Si te presionan para transferir el dinero a una cuenta personal bajo la promesa de un descuento "solo por hoy", ponte en alerta.',
+        'Revisa los enlaces de redes sociales desde la web: No hagas clic en números de WhatsApp colocados en comentarios o chats privados no verificados.',
+      ],
+    },
+    {
+      type: 'h2',
+      text: '¿Qué pasos seguir si fuiste contactado por los estafadores?',
+    },
+    {
+      type: 'lista',
+      items: [
+        'No realices ningún pago ni entregues información personal.',
+        'Reporta y bloquea de inmediato el número fraudulento en WhatsApp e Instagram.',
+        'Conserva los chats, números y comprobantes en caso de haber sido víctima de fraude.',
+        'Presenta tu caso ante el CAI Virtual de la Policía Nacional de Colombia (https://caivirtual.policia.gov.co/).',
+        'Notifícanos por nuestro WhatsApp oficial (+57 312 823 5654) para estar al tanto y continuar alertando a la comunidad.',
+      ],
+    },
+    {
+      type: 'destacado',
+      titulo: 'Gracias por apoyarnos',
+      text: 'Gracias por ayudarnos a compartir esta información y evitar que más personas puedan ser víctimas de posibles estafas. En Creaciones Vane seguimos trabajando con honestidad y cariño para endulzar cada una de sus fechas especiales.',
+    },
+  ],
+  faqs: [
+    {
+      q: '¿Cuál es el único número oficial de Creaciones Vane?',
+      a: 'El único número de WhatsApp autorizado es el +57 312 823 5654 a nombre de Vanessa Cárdenas.',
+    },
+    {
+      q: '¿Qué números han sido reportados por suplantar a Creaciones Vane?',
+      a: 'Los números no autorizados reportados por fraude son: 350 464 5703, 315 049 7869, 317 835 7689 y 350 418 0485.',
+    },
+    {
+      q: '¿Dónde quedan ubicados los puntos físicos de Creaciones Vane?',
+      a: 'Nuestros puntos físicos oficiales en Medellín están en Cra 50 #120-13 y Cra 50 #121-40.',
+    },
+    {
+      q: '¿Qué hago si realicé una transferencia a un número no autorizado?',
+      a: 'Comunícate inmediatamente con tu entidad bancaria para solicitar el bloqueo o reclamo de la transacción y presenta la denuncia ante el CAI Virtual de la Policía Nacional.',
+    },
+  ],
+  cta: {
+    titulo: '¿Necesitas realizar un pedido 100% seguro?',
+    texto: 'Escríbenos directamente a nuestra única línea autorizada en WhatsApp. Con gusto atendemos tu solicitud con total respaldo y confianza.',
+    label: 'Contactar al WhatsApp Autorizado',
+    path: waUrl('Hola Vanessa, quiero hacer un pedido seguro.'),
+  },
+};
+
+export const BLOG_POSTS: BlogPost[] = [POST_ESTAFAS, ...POSTS_REFRIGERIOS, POST_DESAYUNOS];
 
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);

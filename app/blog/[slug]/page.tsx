@@ -38,6 +38,86 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
   });
 }
 
+function renderCeldaContenido(celda: string) {
+  if (celda.includes('NO AUTORIZADO') || celda.includes('REPORTADO POR ESTAFA')) {
+    return (
+      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-800 border border-rose-200 shadow-xs">
+        <svg className="w-3.5 h-3.5 text-rose-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        {celda}
+      </span>
+    );
+  }
+
+  if (celda.includes('WhatsApp Autorizado')) {
+    return (
+      <span className="inline-flex items-center gap-2 text-stone-900 font-semibold">
+        <span className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
+          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+          </svg>
+        </span>
+        {celda}
+      </span>
+    );
+  }
+
+  if (celda.includes('Punto Físico')) {
+    return (
+      <span className="inline-flex items-center gap-2 text-stone-900 font-semibold">
+        <span className="w-6 h-6 rounded-full bg-rose-100 text-[#D81B60] flex items-center justify-center flex-shrink-0">
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </span>
+        {celda}
+      </span>
+    );
+  }
+
+  if (celda.includes('Sitio Web')) {
+    return (
+      <span className="inline-flex items-center gap-2 text-stone-900 font-semibold">
+        <span className="w-6 h-6 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center flex-shrink-0">
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+          </svg>
+        </span>
+        {celda}
+      </span>
+    );
+  }
+
+  if (celda.includes('Instagram')) {
+    return (
+      <span className="inline-flex items-center gap-2 text-stone-900 font-semibold">
+        <span className="w-6 h-6 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center flex-shrink-0">
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+        </span>
+        {celda}
+      </span>
+    );
+  }
+
+  if (celda === 'Vanessa Cárdenas' || celda === 'Canal oficial' || celda === 'Atención directa') {
+    return (
+      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+        <svg className="w-3 h-3 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+        </svg>
+        {celda}
+      </span>
+    );
+  }
+
+  return celda;
+}
+
 /** Renderiza un bloque de contenido según su tipo. */
 function Bloque({ bloque }: { bloque: BlogBlock }) {
   switch (bloque.type) {
@@ -80,9 +160,7 @@ function Bloque({ bloque }: { bloque: BlogBlock }) {
     case 'tabla':
       return (
         <figure className="my-8">
-          {/* overflow-x-auto: las tablas de precios no caben en móvil y el
-              cuerpo de la página nunca debe desplazarse en horizontal. */}
-          <div className="overflow-x-auto border border-stone-200 rounded-2xl">
+          <div className="overflow-x-auto border border-stone-200 rounded-2xl bg-white shadow-xs">
             <table className="w-full text-left border-collapse min-w-[32rem]">
               <thead>
                 <tr className="bg-stone-50">
@@ -98,17 +176,17 @@ function Bloque({ bloque }: { bloque: BlogBlock }) {
               </thead>
               <tbody>
                 {bloque.filas.map((fila, i) => (
-                  <tr key={i} className="border-b border-stone-100 last:border-0">
+                  <tr key={i} className="border-b border-stone-100 last:border-0 hover:bg-stone-50/50 transition-colors">
                     {fila.map((celda, j) => (
                       <td
                         key={j}
                         className={
                           j === 0
-                            ? 'px-5 py-4 text-sm font-semibold text-stone-900 align-top'
-                            : 'px-5 py-4 text-sm text-stone-700 align-top leading-relaxed'
+                            ? 'px-5 py-4 text-sm font-semibold text-stone-900 align-middle'
+                            : 'px-5 py-4 text-sm text-stone-700 align-middle leading-relaxed'
                         }
                       >
-                        {celda}
+                        {renderCeldaContenido(celda)}
                       </td>
                     ))}
                   </tr>
@@ -135,6 +213,75 @@ function Bloque({ bloque }: { bloque: BlogBlock }) {
           </p>
         </aside>
       );
+
+    case 'imagen':
+      return (
+        <figure className="my-8">
+          <div className="overflow-hidden rounded-2xl border border-stone-200 shadow-md bg-stone-100 max-w-2xl mx-auto">
+            <img
+              src={bloque.src}
+              alt={bloque.alt}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          {bloque.caption && (
+            <figcaption className="mt-3 text-center text-xs text-stone-500 font-medium">
+              {bloque.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+
+    case 'alerta': {
+      const varianteStyles = {
+        danger: 'bg-rose-50 border-rose-500 text-rose-900',
+        warning: 'bg-amber-50 border-amber-500 text-amber-900',
+        success: 'bg-emerald-50 border-emerald-500 text-emerald-900',
+        info: 'bg-sky-50 border-sky-500 text-sky-900',
+      }[bloque.variante];
+
+      const titleColors = {
+        danger: 'text-rose-700',
+        warning: 'text-amber-800',
+        success: 'text-emerald-700',
+        info: 'text-sky-700',
+      }[bloque.variante];
+
+      const icons = {
+        danger: (
+          <svg className="w-5 h-5 text-rose-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+          </svg>
+        ),
+        warning: (
+          <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        ),
+        success: (
+          <svg className="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        ),
+        info: (
+          <svg className="w-5 h-5 text-sky-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        ),
+      }[bloque.variante];
+
+      return (
+        <aside className={`my-8 border-l-4 rounded-r-2xl p-6 sm:p-7 shadow-sm ${varianteStyles}`}>
+          <div className="flex items-center gap-2 mb-2">
+            {icons}
+            <p className={`font-bold text-sm uppercase tracking-wider ${titleColors}`}>
+              {bloque.titulo}
+            </p>
+          </div>
+          <p className="text-base sm:text-lg leading-relaxed">{bloque.text}</p>
+        </aside>
+      );
+    }
   }
 }
 
@@ -338,12 +485,23 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
               >
                 Cotizar por WhatsApp
               </a>
-              <Link
-                href={post.cta.path}
-                className="inline-flex items-center justify-center gap-2 border border-white/40 text-white hover:bg-white/10 px-7 py-4 rounded-full font-medium text-base transition-colors duration-200"
-              >
-                {post.cta.label}
-              </Link>
+              {post.cta.path.startsWith('http') ? (
+                <a
+                  href={post.cta.path}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 border border-white/40 text-white hover:bg-white/10 px-7 py-4 rounded-full font-medium text-base transition-colors duration-200"
+                >
+                  {post.cta.label}
+                </a>
+              ) : (
+                <Link
+                  href={post.cta.path}
+                  className="inline-flex items-center justify-center gap-2 border border-white/40 text-white hover:bg-white/10 px-7 py-4 rounded-full font-medium text-base transition-colors duration-200"
+                >
+                  {post.cta.label}
+                </Link>
+              )}
             </div>
           </div>
         </section>
