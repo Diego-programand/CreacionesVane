@@ -36,7 +36,7 @@ export default function ServicesSection({ categorias }: { categorias: ServiceCat
           <span className="bg-primary-100 text-primary-700 px-4 py-1.5 rounded-full font-bold tracking-wider uppercase text-xs mb-4 inline-block border border-primary-200">
             Cómplices de tus sorpresas
           </span>
-          <h2 className="text-4xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 mb-4 tracking-tight px-2">
             Detalles y Regalos en <span className="text-primary-600 italic">Medellín</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl font-light">

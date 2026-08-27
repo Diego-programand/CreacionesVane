@@ -15,7 +15,7 @@ export default function HeroSection() {
     return (
         /* role="banner" semántico para el hero principal */
         <section
-            className="relative h-[500px] flex items-center justify-center overflow-hidden"
+            className="relative min-h-[520px] py-12 md:py-16 flex items-center justify-center overflow-hidden"
             aria-label="Sección principal de Creaciones Vane - Regalos en Medellín"
         >
             {/* Imagen de fondo con ALT geo-localizado */}
@@ -38,40 +38,38 @@ export default function HeroSection() {
                 <Image
                     src="/logo.png"
                     alt="Logo de Creaciones Vane - Tienda de regalos y desayunos sorpresa en Medellín, Colombia"
-                    width={120}
-                    height={120}
+                    width={110}
+                    height={110}
                     priority
-                    className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2"
+                    className="mx-auto mb-3 rounded-full shadow-2xl bg-white p-2 w-[90px] h-[90px] md:w-[110px] md:h-[110px]"
                 />
 
-                {/* ===== H1 PRINCIPAL — ÚNICO POR PÁGINA =====
-                     Maximiza relevancia semántica "Regalos" + "Medellín"
-                     + keywords transaccionales de alta intención */}
-                <h1 className="text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg">
+                {/* ===== H1 PRINCIPAL — ÚNICO POR PÁGINA ===== */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-sm font-script text-white mb-3 drop-shadow-lg leading-tight">
                     Regalos y Desayunos Sorpresa en Medellín
                 </h1>
 
-                {/* Subtítulo de marca — NO es H2 para no robar peso al H1 */}
-                <p className="text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
+                {/* Subtítulo de marca */}
+                <p className="text-xl sm:text-2xl md:text-3xl text-white/95 mb-4 font-script drop-shadow-md">
                     Creaciones Vane — Cómplice que Endulza
                 </p>
 
                 {/* Descripción con keywords long-tail */}
-                <p className="text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md">
+                <p className="text-sm sm:text-base md:text-lg text-white/95 mb-6 max-w-2xl mx-auto drop-shadow-md leading-relaxed px-2">
                     Anchetas personalizadas, peluches, ramos de rosas, decoraciones para eventos
                     y refrigerios a domicilio en Medellín, Envigado, Sabaneta e Itagüí. Confirma
                     con 24 horas y coordinamos la hora exacta de la entrega.
                 </p>
 
-                {/* CTAs principales */}
+                {/* CTAs principales sin desbordamiento en móvil */}
                 <ScrollReveal direction="up" delay={0.2}>
-                    <div className="grid grid-cols-2 p-3 gap-3 sm:flex sm:justify-center sm:gap-6">
-                        {/* CTA WhatsApp — Mensaje predefinido geo-localizado */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-sm sm:max-w-none mx-auto w-full px-2">
+                        {/* CTA WhatsApp */}
                         <a
                             href={waUrl('¡Hola! Quiero pedir un regalo a domicilio en Medellín 💝')}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center bg-white text-primary-600 px-4 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary-50 transition-all duration-300 text-center"
+                            className="w-full sm:w-auto flex items-center justify-center bg-white text-primary-600 px-6 py-3.5 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-primary-50 transition-all duration-300 text-center"
                             id="hero-cta-whatsapp"
                         >
                             Pedir Ahora
@@ -79,7 +77,7 @@ export default function HeroSection() {
                         {/* CTA Ubicación */}
                         <a
                             href="#location"
-                            className="flex items-center justify-center bg-transparent border border-white text-white px-4 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-white hover:text-primary-600 hover:border-primary-600 transition-all duration-300 text-center"
+                            className="w-full sm:w-auto flex items-center justify-center bg-transparent border border-white text-white px-6 py-3.5 md:px-8 md:py-4 rounded-full font-bold text-base md:text-lg shadow-xl hover:shadow-2xl hover:scale-105 hover:bg-white hover:text-primary-600 hover:border-primary-600 transition-all duration-300 text-center"
                             id="hero-cta-location"
                         >
                             Cómo Llegar

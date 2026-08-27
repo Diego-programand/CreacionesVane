@@ -29,12 +29,12 @@ export default function Header() {
   const isActive = (path: string) => pathname === path;
 
   return (
-    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-primary-100">
-      <nav className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
+    <header className="bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-primary-100 max-w-full overflow-x-hidden">
+      <nav className="container mx-auto px-3 sm:px-4 py-2.5 sm:py-3">
+        <div className="flex items-center justify-between gap-2">
 
           {/* Video del gatito en mobile */}
-          <div className="lg:hidden w-[45px] h-[45px]">
+          <div className="lg:hidden w-[38px] h-[38px] flex-shrink-0">
             <video
               autoPlay
               loop
@@ -47,14 +47,14 @@ export default function Header() {
           </div>
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group lg:flex-1 relative z-10">
-            <div className="relative">
+          <Link href="/" className="flex items-center gap-2 sm:gap-3 group lg:flex-1 relative z-10">
+            <div className="relative flex-shrink-0">
               <Image
                 src="/logo.png"
                 alt="Logo Creaciones Vane - Regalos y anchetas a domicilio en Medellín"
-                width={55}
-                height={55}
-                className="rounded-full transition-transform duration-300 group-hover:scale-105"
+                width={48}
+                height={48}
+                className="rounded-full transition-transform duration-300 group-hover:scale-105 w-[42px] h-[42px] sm:w-[50px] sm:h-[50px]"
               />
               <div className="absolute -top-1 -right-1 text-lg opacity-0 group-hover:opacity-100 group-hover:animate-bounce transition-opacity pointer-events-none select-none">
                 💗

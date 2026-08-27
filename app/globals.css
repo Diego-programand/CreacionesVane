@@ -19,11 +19,16 @@
     overflow-x: hidden;
     position: relative;
     width: 100%;
+    max-width: 100%;
   }
   
+  img, svg, video, iframe {
+    max-width: 100%;
+  }
+
   /* Fix para prevenir scroll horizontal en móvil */
-  #catalog-section {
-    overflow-x: hidden;
+  #catalog-section, main, header, section {
+    max-width: 100%;
   }
 }
 
