@@ -123,7 +123,7 @@ const INCLUYE_SIEMPRE = [
   {
     icon: 'reloj' as const,
     title: 'A primera hora',
-    body: 'Confirmando con 24 horas de anticipación llega a la hora que elijas en zona cercana del Valle de Aburrá.',
+    body: 'Confirmando con 24 horas de anticipación llega a la hora que elijas en Medellín y el Valle de Aburrá.',
   },
 ];
 
@@ -178,7 +178,7 @@ const FAQS = [
   },
   {
     q: '¿Con cuánta anticipación debo pedir el desayuno sorpresa?',
-    a: 'Con 24 horas de anticipación sobre la hora en que quieres que llegue. Como la mayoría de los desayunos se entregan entre las 6:00 y las 9:00 de la mañana, en la práctica significa confirmar el día anterior: así la fruta se corta la madrugada de la entrega y tu franja queda reservada. Entregamos en zona cercana: Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí y Bello.',
+    a: 'Con 24 horas de anticipación sobre la hora en que quieres que llegue. Como la mayoría de los desayunos se entregan entre las 6:00 y las 9:00 de la mañana, en la práctica significa confirmar el día anterior: así la fruta se corta la madrugada de la entrega y tu franja queda reservada. Entregamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa.',
   },
   {
     q: '¿A qué hora entregan los desayunos sorpresa?',
@@ -202,7 +202,7 @@ const FAQS = [
   },
   {
     q: '¿En qué zonas entregan desayunos sorpresa?',
-    a: 'Entregamos sin costo adicional en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí y Bello. En La Estrella, Caldas, Copacabana, Girardota y Barbosa cobramos un adicional de transporte que te confirmamos antes de cerrar el pedido.',
+    a: 'Entregamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Te confirmamos los detalles de tu entrega al cotizar por WhatsApp.',
   },
   {
     q: '¿Cómo se paga el pedido?',
@@ -501,7 +501,7 @@ export default function DesayunosSorpresaMedellinPage() {
         >
           <div className="max-w-3xl mx-auto">
             <p className="text-base sm:text-lg text-stone-700 leading-relaxed">
-              <strong className="text-stone-900">Un desayuno sorpresa en Medellín cuesta entre $90.000 y $190.000 COP</strong> según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Creaciones Vane entrega en Medellín, El Poblado, Laureles, Envigado, Sabaneta, Itagüí y Bello confirmando el pedido por WhatsApp al {BUSINESS.phoneDisplay} con 24 horas de anticipación.
+              <strong className="text-stone-900">Un desayuno sorpresa en Medellín cuesta entre $90.000 y $190.000 COP</strong> según el tamaño y los extras. Todos incluyen fruta fresca, jugo natural, sándwich gourmet, decoración temática y tarjeta con tu mensaje. Creaciones Vane entrega en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa confirmando el pedido por WhatsApp al {BUSINESS.phoneDisplay} con 24 horas de anticipación.
             </p>
           </div>
         </section>
@@ -639,71 +639,43 @@ export default function DesayunosSorpresaMedellinPage() {
               </h2>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mt-8 sm:mt-12">
-              <ScrollReveal direction="up" delay={0.1}>
-                <div className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <ICONS.mapa className="w-6 h-6 text-[#D81B60]" />
-                    <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
-                      Zona cercana, sin costo extra
-                    </h3>
-                  </div>
-                  <p className="text-sm text-stone-600 leading-relaxed mb-5">
-                    Confirmando el pedido con 24 horas de anticipación entregamos en:
-                  </p>
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-stone-800">
-                    {[
-                      'Medellín',
-                      'El Poblado',
-                      'Laureles',
-                      'Belén',
-                      'Robledo',
-                      'Centro',
-                      'Envigado',
-                      'Sabaneta',
-                      'Itagüí',
-                      'Bello',
-                    ].map((zona) => (
-                      <li key={zona} className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-stone-400" />
-                        {zona}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="up" delay={0.2}>
-                <div className="bg-white border border-stone-200 rounded-2xl p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <ICONS.mapa className="w-6 h-6 text-stone-500" />
-                    <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
-                      Con adicional de transporte
-                    </h3>
-                  </div>
-                  <p className="text-sm text-stone-600 leading-relaxed mb-5">
-                    En estas zonas cotizamos un valor adicional según la distancia y la hora de entrega:
-                  </p>
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-stone-800">
-                    {[
-                      'La Estrella',
-                      'Caldas',
-                      'Copacabana',
-                      'Girardota',
-                      'Barbosa',
-                      'Fuera del Valle',
-                    ].map((zona) => (
-                      <li key={zona} className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-stone-400" />
-                        {zona}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-5 text-xs text-stone-500 leading-relaxed">
-                    Te confirmamos el valor exacto antes de cerrar el pedido.
-                  </p>
-                </div>
-              </ScrollReveal>
+            <div className="mt-8 sm:mt-12 bg-white border border-stone-200 rounded-2xl p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <ICONS.mapa className="w-6 h-6 text-[#D81B60]" />
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
+                  Cobertura en Medellín y el Valle de Aburrá
+                </h3>
+              </div>
+              <p className="text-sm text-stone-600 leading-relaxed mb-5">
+                Confirmando el pedido con 24 horas de anticipación entregamos en:
+              </p>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2.5 text-sm text-stone-800 font-medium">
+                {[
+                  'Medellín',
+                  'El Poblado',
+                  'Laureles',
+                  'Belén',
+                  'Robledo',
+                  'Centro',
+                  'Envigado',
+                  'Sabaneta',
+                  'Itagüí',
+                  'Bello',
+                  'La Estrella',
+                  'Caldas',
+                  'Copacabana',
+                  'Girardota',
+                  'Barbosa',
+                ].map((zona) => (
+                  <li key={zona} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D81B60]" />
+                    {zona}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs text-stone-500 leading-relaxed border-t border-stone-200/80 pt-4">
+                Te confirmamos todos los detalles al momento de cotizar por WhatsApp.
+              </p>
             </div>
           </div>
         </section>

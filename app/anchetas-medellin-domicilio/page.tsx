@@ -169,7 +169,7 @@ const FAQS = [
   },
   {
     q: '¿En qué zonas hacen entrega?',
-    a: 'Entregamos en zona cercana sin costo adicional: Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí y Bello. En zona lejana (La Estrella, Caldas, Copacabana, Girardota, Barbosa) cobramos un valor adicional por el transporte. Te confirmamos el valor exacto antes de cerrar el pedido.',
+    a: 'Entregamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Te confirmamos los detalles de tu entrega antes de cerrar el pedido.',
   },
   {
     q: '¿Hacen anchetas para hombres también?',
@@ -722,72 +722,43 @@ export default function AnchetasMedellinDomicilioPage() {
               </h2>
             </ScrollReveal>
 
-            <div className="grid md:grid-cols-2 gap-8 sm:gap-12 mt-8 sm:mt-12">
-              <ScrollReveal direction="up" delay={0.1}>
-                <div className="bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <ICONS.mapa className="w-6 h-6 text-[#D81B60]" />
-                    <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
-                      Zona cercana — sin costo extra
-                    </h3>
-                  </div>
-                  <p className="text-sm text-stone-600 leading-relaxed mb-5">
-                    Entregamos sin costo adicional en:
-                  </p>
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-stone-800">
-                    {[
-                      'Medellín',
-                      'El Poblado',
-                      'Laureles',
-                      'Belén',
-                      'Envigado',
-                      'Bello',
-                    ].map((zona) => (
-                      <li key={zona} className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-stone-400" />
-                        {zona}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-5 text-xs text-stone-500 leading-relaxed">
-                    Confirmando con 24 horas de anticipación reservamos la hora exacta de la entrega.
-                  </p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal direction="up" delay={0.2}>
-                <div className="bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8">
-                  <div className="flex items-center gap-3 mb-5">
-                    <ICONS.mapa className="w-6 h-6 text-stone-500" />
-                    <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
-                      Zona lejana — con valor adicional
-                    </h3>
-                  </div>
-                  <p className="text-sm text-stone-600 leading-relaxed mb-5">
-                    En estas zonas cobramos un adicional según la distancia:
-                  </p>
-                  <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-stone-800">
-                    {[
-                      'La Estrella',
-                      'Caldas',
-                      'Copacabana',
-                      'Girardota',
-                      'Barbosa',
-                      'Sabaneta',
-                      'Itagüí',
-                      'Sitios fuera del Valle',
-                    ].map((zona) => (
-                      <li key={zona} className="flex items-center gap-2">
-                        <span className="w-1 h-1 rounded-full bg-stone-400" />
-                        {zona}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-5 text-xs text-stone-500 leading-relaxed">
-                    Te confirmamos el valor exacto antes de cerrar el pedido.
-                  </p>
-                </div>
-              </ScrollReveal>
+            <div className="mt-8 sm:mt-12 bg-[#FBF7F4] border border-stone-200 rounded-2xl p-6 sm:p-8">
+              <div className="flex items-center gap-3 mb-5">
+                <ICONS.mapa className="w-6 h-6 text-[#D81B60]" />
+                <h3 className="text-lg sm:text-xl font-semibold text-stone-900">
+                  Cobertura en Medellín y el Valle de Aburrá
+                </h3>
+              </div>
+              <p className="text-sm text-stone-600 leading-relaxed mb-5">
+                Confirmando el pedido con 24 horas de anticipación entregamos en:
+              </p>
+              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-2.5 text-sm text-stone-800 font-medium">
+                {[
+                  'Medellín',
+                  'El Poblado',
+                  'Laureles',
+                  'Belén',
+                  'Robledo',
+                  'Centro',
+                  'Envigado',
+                  'Sabaneta',
+                  'Itagüí',
+                  'Bello',
+                  'La Estrella',
+                  'Caldas',
+                  'Copacabana',
+                  'Girardota',
+                  'Barbosa',
+                ].map((zona) => (
+                  <li key={zona} className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#D81B60]" />
+                    {zona}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-xs text-stone-500 leading-relaxed border-t border-stone-200/80 pt-4">
+                Te confirmamos todos los detalles al momento de cotizar por WhatsApp.
+              </p>
             </div>
 
             {/*

@@ -215,7 +215,7 @@ export default async function DecoracionesPage() {
       {
         '@type': 'Offer',
         name: 'Transporte Incluido',
-        description: 'Llevamos todo el material a tu evento sin costo adicional en el área metropolitana',
+        description: 'Llevamos todo el material a tu evento en Medellín y el área metropolitana',
       },
     ],
   };

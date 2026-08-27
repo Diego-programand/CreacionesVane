@@ -145,9 +145,9 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
         items: [
           'Tipo de bebida. Pasar de jugo en caja a jugo natural en botella es el salto de precio más grande dentro de una misma caja.',
           'Personalización de la caja. Imprimir el logo de la empresa o poner etiqueta con el nombre del evento se cotiza aparte del valor por persona.',
-          'Zona de entrega. En Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí y Bello la entrega va incluida. La Estrella, Caldas, Copacabana, Girardota y Barbosa suman un adicional según distancia.',
+          'Zona de entrega. Entregamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Los detalles del transporte se confirman al momento de cotizar.',
           'Hora de entrega. Las entregas antes de las 7:00 de la mañana o en fines de semana pueden tener recargo por la logística de producción.',
-          'Restricciones alimentarias. Las opciones vegetarianas y sin gluten no deberían costar más; si una cotización se las cobra aparte, vale la pena preguntar por qué.',
+          'Restricciones alimentarias. Las opciones vegetarianas y sin gluten se adaptan según lo que necesites para tu grupo.',
         ],
       },
       {
@@ -177,7 +177,7 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
           'El valor por persona y el valor total, separados.',
           'Si el transporte hasta el sitio del evento está incluido o se cobra aparte.',
           'La hora exacta de entrega comprometida.',
-          'Cuántas unidades vegetarianas o sin gluten van incluidas y si tienen sobrecosto.',
+          'Cuántas unidades vegetarianas o sin gluten van incluidas.',
           'Si se emite factura electrónica y qué datos de la empresa se necesitan para ello.',
         ],
       },
@@ -197,7 +197,7 @@ const POSTS_REFRIGERIOS: BlogPost[] = [
       },
       {
         q: '¿Los refrigerios para eventos incluyen el transporte?',
-        a: 'En zona cercana del Valle de Aburrá (Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí y Bello) el transporte va incluido en el precio por persona. En La Estrella, Caldas, Copacabana, Girardota y Barbosa se cotiza un adicional según la distancia y la hora de entrega.',
+        a: 'Entregamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Te confirmamos los detalles de tu entrega al cotizar por WhatsApp.',
       },
       {
         q: '¿Hay descuento si pido muchos refrigerios?',

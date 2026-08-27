@@ -141,7 +141,7 @@ const FAQS = [
   },
   {
     q: '¿Qué zonas cubren para Amor y Amistad?',
-    a: 'Entregamos sin costo adicional en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí y Bello. En La Estrella, Caldas, Copacabana, Girardota y Barbosa cotizamos un adicional de transporte que te confirmamos antes de cerrar el pedido.',
+    a: 'Entregamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Te confirmamos los detalles de tu entrega al cotizar por WhatsApp.',
   },
   {
     q: '¿Qué pasa si la persona no está cuando llega la entrega?',

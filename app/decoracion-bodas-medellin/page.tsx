@@ -228,7 +228,7 @@ const INVITACIONES = [
 const FAQS = [
   {
     q: '¿Cuánto cuestan los arreglos para una boda en Medellín?',
-    a: 'Los arreglos completos para una boda en Medellín cuestan desde $480.000 COP con el paquete Esencial, que cubre ceremonia, zona de fotos y mesa de bienvenida. El paquete Premium cuesta $650.000 COP e incluye además arreglos de recepción, iluminación e invitaciones digitales. Todos incluyen transporte, montaje y desmontaje en zona cercana del Valle de Aburrá.',
+    a: 'Los arreglos completos para una boda en Medellín cuestan desde $480.000 COP con el paquete Esencial, que cubre ceremonia, zona de fotos y mesa de bienvenida. El paquete Premium cuesta $650.000 COP e incluye además arreglos de recepción, iluminación e invitaciones digitales. Todos incluyen transporte, montaje y desmontaje en Medellín y el Valle de Aburrá.',
   },
   {
     q: '¿Hacen solo los arreglos o toda la decoración de la boda?',
@@ -236,19 +236,19 @@ const FAQS = [
   },
   {
     q: '¿Hacen arreglos para bodas en Envigado y el sur del Valle de Aburrá?',
-    a: 'Sí. Envigado, Sabaneta e Itagüí entran en zona cercana, así que el transporte, montaje y desmontaje van incluidos en el precio del paquete sin costo adicional. Para La Estrella, Caldas y fincas fuera del Valle cotizamos un adicional según la distancia y el tiempo de montaje.',
+    a: 'Sí. Atendemos eventos en Medellín, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Te confirmamos los detalles de tu entrega y montaje al cotizar por WhatsApp.',
   },
   {
     q: '¿Cuánto cuesta decorar una boda en Medellín?',
-    a: 'Nuestros paquetes van desde $480.000 COP (Esencial, para bodas íntimas) hasta $650.000 COP (Premium, el más solicitado). El paquete Lujo se cotiza a medida según locación, cantidad de invitados y montaje requerido. Los precios incluyen aros con forros, backings de madera, cilindros y mesas reloj. El transporte está incluido en zona cercana del Valle de Aburrá; locaciones lejanas se cotizan aparte.',
+    a: 'Nuestros paquetes van desde $480.000 COP (Esencial, para bodas íntimas) hasta $650.000 COP (Premium, el más solicitado). El paquete Lujo se cotiza a medida según locación, cantidad de invitados y montaje requerido. Los precios incluyen aros con forros, backings de madera, cilindros y mesas reloj. Te confirmamos los detalles según tu locación al cotizar.',
   },
   {
     q: '¿Qué incluye exactamente la decoración?',
-    a: 'Trabajamos con aros con forros, backings de madera con forros temáticos, cilindros decorativos, cilindros de madera y mesas reloj. Cada paquete incluye el diseño, transporte en zona cercana, montaje y desmontaje. Las flores naturales y los arreglos florales se cotizan aparte según disponibilidad de proveedores.',
+    a: 'Trabajamos con aros con forros, backings de madera con forros temáticos, cilindros decorativos, cilindros de madera y mesas reloj. Cada paquete incluye el diseño, transporte, montaje y desmontaje. Las flores naturales y los arreglos florales se cotizan aparte según disponibilidad de proveedores.',
   },
   {
     q: '¿Cómo funciona el transporte? ¿Cubren todo el Valle de Aburrá?',
-    a: 'El transporte está incluido en zonas cercanas (Medellín, El Poblado, Laureles, Belén, Envigado, Sabaneta, Itagüí). Para destinos lejanos (Copacabana, Caldas, Barbosa, Girardota o fincas fuera del Valle) cotizamos un adicional según la distancia y el tiempo de montaje. Te confirmamos el valor exacto antes de reservar.',
+    a: 'Entregamos y montamos en Medellín, El Poblado, Laureles, Belén, Robledo, Centro, Envigado, Sabaneta, Itagüí, Bello, La Estrella, Caldas, Copacabana, Girardota y Barbosa. Te confirmamos los detalles exactos según la locación y el tiempo de montaje al cotizar por WhatsApp.',
   },
   {
     q: '¿Hacen también las invitaciones de la boda?',
@@ -272,7 +272,7 @@ const FAQS = [
   },
   {
     q: '¿Decoran bodas al aire libre y en fincas?',
-    a: 'Sí. Tenemos experiencia decorando bodas campestres, en fincas, jardines y terrazas. Para eventos al aire libre reforzamos las estructuras y coordinamos plan de contingencia por clima. Si la finca está fuera del Valle de Aburrá, cotizamos transporte adicional según la ruta.',
+    a: 'Sí. Tenemos experiencia decorando bodas campestres, en fincas, jardines y terrazas. Para eventos al aire libre reforzamos las estructuras y coordinamos plan de contingencia por clima. Te confirmamos la logística de montaje y transporte al cotizar por WhatsApp.',
   },
   {
     q: '¿Puedo elegir mis propios colores y temática?',
@@ -662,7 +662,7 @@ export default function DecoracionBodasMedellinPage() {
                 Tres formas de empezar
               </h2>
               <p className="text-stone-600 text-base sm:text-lg max-w-2xl leading-relaxed mb-10 sm:mb-14">
-                Todos los paquetes incluyen montaje y desmontaje en zona cercana del Valle de Aburrá. Locaciones lejanas se cotizan aparte.
+                Todos los paquetes incluyen montaje y desmontaje en Medellín y el Valle de Aburrá.
               </p>
             </ScrollReveal>
 
